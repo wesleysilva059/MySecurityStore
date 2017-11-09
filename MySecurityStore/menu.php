@@ -15,7 +15,7 @@
                   <ul class="dropdown-menu">
                     <li><a href="#"><span class="fa fa-whatsapp" aria-hidden="true"></span> Claudio Maia - (35)98816-1903</a></li>
                     <li><a href="#"><span class="fa fa-whatsapp" aria-hidden="true"></span> Higor Belini - (35)99824-0185</a></li>
-                    <li><a href="#"><span class="fa fa-whatsapp" aria-hidden="true"></span> Junior Cesar - (37)99904-4728</a></li>
+                    <li><a href="#"><span class="fa fa-whatsapp" aria-hidden="true"></span> Júnior César - (37)99904-4728</a></li>
                     <li><a href="#"><span class="fa fa-whatsapp" aria-hidden="true"></span> Wesley Silva - (35)99975-9812</a></li>
                   </ul>
                   </div>
