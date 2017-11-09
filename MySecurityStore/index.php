@@ -1,5 +1,7 @@
-<!-- Sistema de Ecomerce 
+<!-- Sistema de Eccomerce 
 	Desenvolvido pela Equipe -->
+
+	<!--Alterado-->
 
 <?php
 
