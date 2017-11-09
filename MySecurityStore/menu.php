@@ -52,7 +52,7 @@
        <div class="col-sm-push-8">
             <div>
                 <div class="text-center nav navbar-nav">
-                    <li><a href="#"><img src="Imagens/shoppingcart.png"><span class="badge">0</span></a></li>
+                    <li><a href="carrinhoCompras.php"><img src="Imagens/shoppingcart.png"><span class="badge">0</span></a></li>
                 </div>
             </div> 
         </div>
