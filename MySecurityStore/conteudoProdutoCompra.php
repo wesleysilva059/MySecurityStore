@@ -60,28 +60,84 @@ function showDivs(n) {
   dots[slideIndex-1].className += " w3-opacity-off";
 }
 </script>
-<div class="container">
-		<div class="latest-product">
-			<div class="margem-produtos-geral-home">
-			<br>
-        		<h2 class="section-title-produto"><b>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</b></h2>
-				<div class="row">
-					<div class="col-md-3">
-						<p class="fonte-cont text-left">Cod: 0000000</p>
-					</div>
-					<div class="col-md-4">
-					<p class="fonte-cont text-right">Marca: Intelbras</p>
-					</div>
-					<div class="col-md-6 product-carousel-price">
-                    <del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                    </div>  
-                    <div class="col-md-6 product-carousel-price">
-                    <del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                    </div>  
-				</div>
-			</div>
-		</div>
+<div class="container-pc">
+	<div class="latest-product">
+		<div class="margem-produtos-geral-home">
+				<br>
 
+        		<h2 class="section-title-produto"><b>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</b></h2>
+			<div class="row ">
+				<div class="col-md-2">
+						<p class="fonte-cont-ini-pc text-left">Cod: 0000000</p>
+				</div>
+				<div class="col-md-2">
+						<p class="fonte-cont-ini-pc text-center">Marca: Intelbras</p>
+				</div>
+				<div class="col-md-3">
+						<p class="fonte-cont-ini-pc text-right">Disponibilidade: Pronta entrega</p>
+				</div>
+				
+                <div class="margem-produtos-geral-breadcrumb"></div>
+           		<div class="col-sm-4 product-carousel-price">
+                   	<p class="fonte-cont-pc">De: <del class="fonte-cont-preco">$1355.00</del></p>
+                    <p class="fonte-cont-pc">Por apenas: <ins>R$1200.00</ins> a vista ou</p>
+                    <p class="fonte-cont-pc"> <ins>R$1288.00</ins> a prazo</p>
+                    <p class="fonte-cont-pc"> em até <ins>3x</ins> de <ins>R$429,33</ins></p>
+                    <p class="fonte-cont-pc"> ou <ins>6x</ins> de <ins>R$253,88</ins> iguais</p>
+                </div>
+                    
+
+                <div class="col-sm-3">
+                   	<form action="">
+                        <div class="quantity">
+                        	<p>Quantidade:
+                           	<input type="number" size="100" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1" class="text-right"></p>
+                        </div>
+                </div>
+                <div class="col-md-7 text-center">
+                    <div class="margem-produtos-geral-breadcrumb"></div>
+	                   	<button class="btn btn-primary btn-lg" type="submit">Adicionar ao carrinho</button>
+	                   	</form>
+                  	</div>
+				</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Descrição do produto</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body">
+        	<p>- 01 DVR 8 CANAIS MULTI HD INTELBRAS MHDX 1008;</p>
+			<p>- 03 CÂMERAS HDCVI HB 2000;</p>
+			<p>- 04 CÂMERAS HDCVI HB 306;</p>
+			<p>- 01 Dísco Rígido HD (capacidade a escolher);</p>
+			<p>- 01 Fonte 12v 10A;</p>
+			<p>- 01 Rolo de Cabo Coaxial 100 Metros;</p>
+			<p>- Conectores de vídeo e alimentação inclusos.</p> 
+		</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Especificações técnicas</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+        	<p>Processador principal: Integrado de alta perfomance</p>
+        	<p>Entradas de vídeo: 8 canais BNC + 2 canais IP ou 10 canais IP no modo NVR¹ Saídas de vídeo (monitores), 1 HDMI, 1 VGA e Saída analógica BNC. Resolução máxima de gravação 1080N (tecnologia analógica) e 5 MP² (tecnologia IP)
+</p>
+        </div>
+      </div>
+    </div>
+  </div> 
 </div>
 
 <?php include("rodape.php");?>
