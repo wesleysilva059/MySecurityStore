@@ -31,15 +31,26 @@
                     </div>
                         <div class="col-md-3 col-sm-6">
                             <div class="footer-about-us">
+                                <h2 class="fonte-rodape-title">A empresa</h2>
+                                    <ul>
+                                        <li class="list-group-item"><a href="#">Sobre nós</a></li>
+                                        <li class="list-group-item"><a href="#">Politicas de privacidade</a></li>
+                                        <li class="list-group-item"><a href="#">Formas de pagamento</a></li>
+                                        <li class="list-group-item"><a href="#">Prazos de entrega e devoluções</a></li>
+                                    </ul>                        
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="footer-about-us">
                                 <h2 class="fonte-rodape-title">Usuário</h2>
                                     <ul>
                                         <li class="list-group-item"><a href="#">Minha conta</a></li>
-                                        <li class="list-group-item"><a href="#">A empresa</a></li>
-                                        <li class="list-group-item"><a href="#">Missão</a></li>
-                                        <li class="list-group-item"><a href="#">Visão</a></li>
-                                        <li class="list-group-item"><a href="#">Valores</a></li>
+                                        <li class="list-group-item"><a href="#">Central de suporte</a></li>
+                                        <li class="list-group-item"><a href="#">Trocas e devoluções</a></li>
+                                        <li class="list-group-item"><a href="#">Meus pedidos</a></li>
+                                        <li class="list-group-item"><a href="#">Televendas</a></li>
                                         <li class="list-group-item"><a href="#">Contato</a></li>
-                                    </ul>                        
+                                    <ul>                        
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -52,22 +63,8 @@
                                         <li class="list-group-item"><a href="#">DVRs</a></li>
                                         <li class="list-group-item"><a href="#">Navegadores de acesso</a></li>
                                         <li class="list-group-item"><a href="#">Ofertas</a></li>
-                                        <li class="list-group-item"><a href="#">Navegadores de acesso</a></li>
                                     </ul>                        
                             </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="footer-about-us">
-                                <h2 class="fonte-rodape-title">Newsletter</h2>
-                                    <p>Envie seu E-mail se deseja receber informações e novidades o nosso site!</p>
-                                <div class="busca">
-                                    <form class="entrada" action="#">
-                                        <input type="email" placeholder="Digite seu email">
-                                        <input type="submit" value="Enviar">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
                 </div>
             </div>
         </div>
