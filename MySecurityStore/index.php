@@ -1,7 +1,7 @@
 <!-- Sistema de Eccomerce 
 	Desenvolvido pela Equipe -->
 
-	<!--Alterado-->
+	<!--Alterado mais uma vez-->
 
 <?php
 
