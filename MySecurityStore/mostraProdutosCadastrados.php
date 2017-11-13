@@ -50,8 +50,8 @@
 					<td><img class="tamanhofoto"
 					src="fotos/'.$produto['foto'].'"/></td>
 					<td><a href="foto.php?id='.$produto['Codigo'].'" class="btn btn sucess">foto</a>
-					<td><a href="formpessoa.php?id='.$produto['Codigo'].'"class="btn btn-primary">Alterar</a>
-					<a href="excluir.php?id='.$produto['Codigo'].'&foto='.$produto['foto'].'" class="btn btn-danger" 
+					<td><a href="cadastraProdutos.php?id='.$produto['Codigo'].'"class="btn btn-primary">Alterar</a>
+					<a href="excluirProduto.php?id='.$produto['Codigo'].'&foto='.$produto['foto'].'" class="btn btn-danger" 
 					onclick="return confirm(\'Deseja excluir?\');">Excluir</a>
 					</td>
 					</tr>';

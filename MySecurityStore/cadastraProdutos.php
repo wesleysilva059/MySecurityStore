@@ -22,14 +22,14 @@
 	else{ // Alterar um Registro Existente da Tabela
 		// Busca os dados do BD
 		include("conexao.php");
-		function RetornaPessoaPorId($Codigo){
+		function RetornaprodutoPorId($Codigo){
 			$sql = "SELECT * FROM produtos,prodprecos,prodtecnologia,prodestoque,fabricantes,fornecedor WHERE produtos.Codigo = ".$Codigo;
 			$conexao = AbreConexao();//abre a conexao com o BD
 			$resultado = $conexao->query($sql);
 			$conexao->close();//fecha a conexão com o BD
 			if(mysqli_num_rows($resultado) > 0){
-			$pessoa = mysqli_fetch_array($resultado);
-			return $pessoa;
+			$produto = mysqli_fetch_array($resultado);
+			return $produto;
 			}else{
 				return null;
 			}
