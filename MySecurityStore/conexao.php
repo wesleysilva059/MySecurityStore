@@ -19,5 +19,5 @@
 		$con = new mysqli(SERVIDOR,USUARIO,SENHA,BANCO);
 		return $con;
 	}
-
+	
 ?>

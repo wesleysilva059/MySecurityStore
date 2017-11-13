@@ -19,7 +19,7 @@
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="pessoa_fisica">
                         <div style="padding-top:20px;">
-                            <form action="" method="POST" id="validate">  
+                            <form action="cadastroUsuario.php" method="POST" id="validate">  
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">* Nome</label>
                                     <div class="col-sm-8">
