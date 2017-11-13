@@ -64,7 +64,7 @@
  										</div>
  								</div>
  								<div class="form-group row">
- 									<label class="col-sm-2 col-form-label text-right" for="classFant">Nome Fantasia</label>
+ 									<label class="col-sm-2 col-form-label text-right" for="cFant">Nome Fantasia</label>
  										<div class="col-sm-8">
  											<input class="form-control" type="text" name="txtNomeFantasia" id="cFant" placeholder="Nome Fantasia" value="<?php echo $nomefantasia; ?>">
  										</div>

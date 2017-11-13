@@ -12,7 +12,7 @@ if(file_exists("fotos/".$foto)){
 }
 	function ExcluiProduto($Codigo){
 		// Define o comando SQL (delete)
-		$sql =  "DELETE FROM produtos,grupo,fabricantes WHERE produtos.Codigo = ".$Codigo;
+		$sql =  "DELETE FROM `produtos` WHERE `produtos`.`Codigo` =".$Codigo;
 		$conexao = AbreConexao(); // Abre conexão com o BD
 		// Executa o comando SQL 
 		$conexao->query($sql);
