@@ -34,7 +34,7 @@
 
               <ul class="nav navbar-nav navbar-right">
                   <li><a href="login.php">Entrar</a></li>
-                  <li><a href="cadastro.php">Cadastre-se</a></li>
+                  <li><a href="formCadastroUsuario.php">Cadastre-se</a></li>
               </ul>
   </div>
 </nav>
