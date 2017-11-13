@@ -22,24 +22,7 @@
    		</div>  		
 </div>
 <div class="container">
-      <?php
-      function RetornaProdutos(){
-        $sql = "SELECT * FROM `produtos`,`prodprecos` WHERE produtos.Codigo = prodprecos.idproduto";
-        $conexao = AbreConexao();//abre a conexao com o BD
-        $resultado = $conexao->query($sql);
-        $conexao->close();//fecha a conexão com o BD
-        if(mysqli_num_rows($resultado) > 0){
-        while ($row = mysqli_fetch_array($resultado)){
-          $listar[] = $row;
-        }
-        return $listar;
-        }else{
-        return null;
-        }
-      }
-        $vetProdutos = RetornaProdutos();
-        foreach($vetProdutos as $listar):
-      ?>
+      
 	<div class="float">
     <div class="latest-product">
         <ul class="breadcrumb fonte-cont-breadcrumb text-left">
@@ -118,6 +101,24 @@
               <li><a href="#">5</a></li>
           </ul>
     </div>
+    <?php
+      function RetornaProdutos(){
+        $sql = "SELECT * FROM `produtos`,`prodprecos` WHERE produtos.Codigo = prodprecos.idproduto";
+        $conexao = AbreConexao();//abre a conexao com o BD
+        $resultado = $conexao->query($sql);
+        $conexao->close();//fecha a conexão com o BD
+        if(mysqli_num_rows($resultado) > 0){
+        while ($row = mysqli_fetch_array($resultado)){
+          $listar[] = $row;
+        }
+        return $listar;
+        }else{
+        return null;
+        }
+      }
+        $vetProdutos = RetornaProdutos();
+        foreach($vetProdutos as $listar):
+      ?>
       
 		<h2 class="section-title">Ofertas</h2>
         <div class="row">
@@ -126,12 +127,12 @@
               <div class="img-thumbnail-promo">
                 <div class="single-product-pag-prod">
                   <div class="product-f-image">
-                              <img src="Imagens/kitCompleto1.jpg" alt="">
+                              <img src="Imagens/<?=$listar['imagem']?>" alt="Nome da empresa: <?=$listar['descricao']?>" title="Nome da empresa: <?=$listar['descricao']?>">
                                   <div class="product-hover">
                                     <a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
                                     <a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
                                   </div>
-                          </div>
+                  </div>
                           <h2 class="fonte-cont"><a href="#"><center><?=($listar['descricao'])?></center></a></h2>
                   <div class="product-carousel-price">
                     <center>
