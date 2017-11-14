@@ -14,6 +14,9 @@
 	function InsereProduto($codbarras, $marca, $modelo, $grupo, $descricao, $garantia, $obs, $idfabricante, $pesoliquido, $pesoembalagem){
 		//define o comando SQL(insert)
 		$sql = "INSERT INTO `produtos`(`codbarras`, `marca`, `modelo`, `grupo`, `descricao`, `garantia`, `obs`, `idfabricante`, `pesoliquido`, `pesoembalagem`) VALUES ('".$codbarras."', '".$marca."', '".$modelo."', '".$grupo."', '".$descricao."', '".$garantia."', '".$obs."', '".$idfabricante."', '".$pesoliquido."', '".$pesoembalagem."')";
+            //resgatar ultimo id  select * from produtos order by Codigo pegar o comando de pegar o ultimo registro e resgatar id
+			//cadastrar prodpreco
+		
 		//abre a conexao com o BD
 		$conexao = AbreConexao();
 		//executa o comando SQL
