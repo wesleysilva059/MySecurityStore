@@ -187,7 +187,11 @@
 .transicao{
 	overflow: static;
 }
-
+.painel{
+	color:#333;
+	background-color: #f5f5f5;
+	padding: 15px;
+}
 
 /*TAMANHO DO LOGO*/
 .tam_img{
