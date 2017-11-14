@@ -48,8 +48,8 @@
 					<td>'.$produto['pesoliquido'].'</td>
 					<td>'.$produto['pesoembalagem'].'</td>
 					<td><img class="tamanhofoto"
-					src="fotos/'.$produto['foto'].'"/></td>
-					<td><a href="foto.php?idproduto='.$produto['Codigo'].'" class="btn btn sucess">foto</a>
+					src="Imagens/'.$produto['foto'].'"/></td>
+					<td><a href="foto.php?Codigo='.$produto['Codigo'].'" class="btn btn sucess">foto</a>
 					<td><a href="cadastraProdutos.php?Codigo='.$produto['Codigo'].'"class="btn btn-primary">Alterar</a>
 					<a href="excluirProduto.php?Codigo='.$produto['Codigo'].'&foto='.$produto['foto'].'" class="btn btn-danger" 
 					onclick="return confirm(\'Deseja excluir?\');">Excluir</a>

@@ -22,7 +22,7 @@
 	else{ // Alterar um Registro Existente da Tabela
 		// Busca os dados do BD
 		include("conexao.php");
-		function RetornaprodutoPorId($Codigo){
+		function RetornaProdutoPorId($Codigo){
 			$sql = "SELECT * FROM produtos,prodprecos,prodtecnologia,prodestoque,fabricantes,fornecedor WHERE produtos.Codigo = ".$Codigo;
 			$conexao = AbreConexao();//abre a conexao com o BD
 			$resultado = $conexao->query($sql);
