@@ -18,6 +18,14 @@
 		$idfabricante = "";
 		$pesoliquido = "";
 		$pesoembalagem = "";
+		$data = "";
+		$pcusto = "";
+		$pmedio = "";
+		$pvenda = "";
+		$estoque = "";
+		$estmin = "";
+		$estideal = "";
+		$codtecnologia = "";
 	}
 	else{ // Alterar um Registro Existente da Tabela
 		// Busca os dados do BD
@@ -48,6 +56,14 @@
 			$idfabricante = $p["idfabricante"];
 			$pesoliquido = $p["pesoliquido"];
 			$pesoembalagem = $p["pesoembalagem"];
+			$data = $p["data"];
+			$pcusto = $p["pcusto"];
+			$pmedio = $p["pmedio"];
+			$pvenda = $p["pvenda"];
+			$estoque = $p["estoque"];
+			$estmin = $p["estmin"];
+			$estideal = $p["estideal"];
+			$codtecnologia = $p["codtecnologia"];
 		}
 	}
     include("topo.php");
@@ -125,6 +141,48 @@
  									<label class="col-sm-2 col-form-label text-right" for="cPesoEmbalagem">Peso Embalagem</label>
  										<div class="col-sm-8">
  											<input class="form-control"  type="text" name="txtPesoEmbalagem" id="cPesoEmbalagem" placeholder="Peso Embalagem" value="<?php echo $pesoembalagem; ?>">
+ 										</div>
+ 								</div>
+ 								<div class="form-group row">
+ 									<label class="col-sm-2 col-form-label text-right" for="cPCusto">Preço de custo</label>
+ 										<div class="col-sm-8">
+ 											<input class="form-control"  type="text" name="txtPCusto" id="cPCusto" placeholder="Preço de custo" value="<?php echo $pcusto; ?>">
+ 										</div>
+ 								</div>
+ 								<div class="form-group row">
+ 									<label class="col-sm-2 col-form-label text-right" for="cPMedio">Preço médio</label>
+ 										<div class="col-sm-8">
+ 											<input class="form-control"  type="text" name="txtPMedio" id="cPMedio" placeholder="Preço médio" value="<?php echo $pmedio; ?>">
+ 										</div>
+ 								</div>
+ 								<div class="form-group row">
+ 									<label class="col-sm-2 col-form-label text-right" for="cPesoEmbalagem">Preço venda</label>
+ 										<div class="col-sm-8">
+ 											<input class="form-control"  type="text" name="txtPVenda" id="cPVenda" placeholder="Preço venda" value="<?php echo $pvenda; ?>">
+ 										</div>
+ 								</div>
+ 								<div class="form-group row">
+ 									<label class="col-sm-2 col-form-label text-right" for="cEstoque">Estoque</label>
+ 										<div class="col-sm-8">
+ 											<input class="form-control"  type="text" name="txtEstoque" id="cEstoque" placeholder="Estoque" value="<?php echo $estoque; ?>">
+ 										</div>
+ 								</div> 
+ 								<div class="form-group row">
+ 									<label class="col-sm-2 col-form-label text-right" for="cEstMin">Estoque mínimo</label>
+ 										<div class="col-sm-8">
+ 											<input class="form-control"  type="text" name="txtEstMin" id="cEstMin" placeholder="Estoque mínimo" value="<?php echo $estmin; ?>">
+ 										</div>
+ 								</div>
+ 								<div class="form-group row">
+ 									<label class="col-sm-2 col-form-label text-right" for="cEstIdeal">Estoque Ideal</label>
+ 										<div class="col-sm-8">
+ 											<input class="form-control"  type="text" name="txtEstIdeal" id="cEstIdeal" placeholder="Estoque Ideal" value="<?php echo $estideal; ?>">
+ 										</div>
+ 								</div>
+ 								<div class="form-group row">
+ 									<label class="col-sm-2 col-form-label text-right" for="cCodTec">Codigo tecnologia</label>
+ 										<div class="col-sm-8">
+ 											<input class="form-control"  type="text" name="txtCodTec" id="cCodTec" placeholder="Codigo tecnologia" value="<?php echo $codtecnologia; ?>">
  										</div>
  								</div>
  								<div class="text-center">
