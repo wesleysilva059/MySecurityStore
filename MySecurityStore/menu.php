@@ -31,11 +31,29 @@
                   <a class="navbar-brand" href="nossoEndereco.php"><span class="fa fa-map-marker" aria-hidden="true"></span> Nosso endereço</a>
                   </div> 
               </ul>
-
-              <ul class="nav navbar-nav navbar-right">
-                  <li><a href="login.php">Entrar</a></li>
-                  <li><a href="formCadastroUsuario.php">Cadastre-se</a></li>
-              </ul>
+				
+	  		  	<?php
+	  			
+	  				if (empty($_SESSION['id'])) {
+	  			
+	  		  	?>
+	  
+              	<ul class="nav navbar-nav navbar-right">
+                  	<li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
+					<li><a href="formCadastroUsuario.php"><span class="glyphicon glyphicon-log-in"></span> Cadastre-se</a></li>
+	  			</ul>
+				<?php } else { 
+					$consulta_user = $conexao->query("SELECT nome FROM pfisicadados WHERE idpfisica = '$_SESSION[id]'");
+					$exibe_user = $consulta_user->fetch(PDO::FETCH_ASSOC);
+				?>
+				<ul class="nav navbar-nav navbar-right">	
+	  				<li><a href="#"><span class="glyphicon glyphicon-user"></span> <?php echo $exibe_user['nome'];?></a></li>
+			  		<li><a href="sair.php"><span class="glyphicon glyphicon-off"></span> Sair</a></li>
+				</ul>
+                <?php
+					}
+	  			?>
+              
   </div>
 </nav>
 <div class="container container-inicio">
