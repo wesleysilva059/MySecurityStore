@@ -33,10 +33,10 @@
                             <div class="footer-about-us">
                                 <h2 class="fonte-rodape-title">A empresa</h2>
                                     <ul>
-                                        <li class="list-group-item"><a href="#">Sobre nós</a></li>
-                                        <li class="list-group-item"><a href="#">Politicas de privacidade</a></li>
-                                        <li class="list-group-item"><a href="#">Formas de pagamento</a></li>
-                                        <li class="list-group-item"><a href="#">Prazos de entrega e devoluções</a></li>
+                                        <li class="list-group-item"><a href="sobreNos.php">Sobre nós</a></li>
+                                        <li class="list-group-item"><a href="politicasPrivacidade.php">Politicas de privacidade</a></li>
+                                        <li class="list-group-item"><a href="formasPagamento.php">Formas de pagamento</a></li>
+                                        <li class="list-group-item"><a href="politicasPrivacidade.php">Prazos de entrega e devoluções</a></li>
                                     </ul>                        
                             </div>
                         </div>
@@ -44,12 +44,10 @@
                             <div class="footer-about-us">
                                 <h2 class="fonte-rodape-title">Usuário</h2>
                                     <ul>
-                                        <li class="list-group-item"><a href="#">Minha conta</a></li>
-                                        <li class="list-group-item"><a href="#">Central de suporte</a></li>
-                                        <li class="list-group-item"><a href="#">Trocas e devoluções</a></li>
-                                        <li class="list-group-item"><a href="#">Meus pedidos</a></li>
-                                        <li class="list-group-item"><a href="#">Televendas</a></li>
-                                        <li class="list-group-item"><a href="#">Contato</a></li>
+                                        <li class="list-group-item"><a href="login.php">Minha conta</a></li>
+                                        <li class="list-group-item"><a href="pedidos.php">Meus pedidos</a></li>
+                                        <li class="list-group-item"><a href="televendas.php">Televendas</a></li>
+                                        <li class="list-group-item"><a href="nossoEndereco.php">Contato</a></li>
                                     <ul>                        
                             </div>
                         </div>

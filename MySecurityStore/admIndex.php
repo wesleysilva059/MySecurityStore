@@ -5,10 +5,13 @@
 	<div class="text-center">
 		<h3>Administrativo - Página inicial</h3>
 		<div class="btn-group" role="group">
-			<a href="listaprodutos.php" class="btn btn-primary">Cadastro de produtos</a>
-			<a href="listapessoas.php" class="btn btn-primary">Cadastro de produtos</a>
-			<a href="listapessoas.php" class="btn btn-primary">Cadastro de produtos</a>
-			<a href="listapessoas.php" class="btn btn-primary">Cadastro de produtos</a>
+			<ul>
+			<li><a href="mostraFornecedoresCadastrados.php" class="btn btn-primary">Fornecedores</a></li>
+			<li><a href="mostraFabricantesCadastrados.php" class="btn btn-primary">Fabricantes</a></li>
+			<li><a href="mostraGruposCadastrados.php" class="btn btn-primary">Grupos de produtos</a></li>
+			<li><a href="mostraTecnologiasCadastradas.php" class="btn btn-primary">Tecnologias</a></li>
+			<li><a href="mostraProdutosCadastrados.php" class="btn btn-primary">Produtos</a></li>
+		</ul>
 		</div>
 	</div>
 </div>

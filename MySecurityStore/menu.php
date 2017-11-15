@@ -28,7 +28,7 @@
                   </ul>
                   </div>
                   <div class="navbar-header">
-                  <a class="navbar-brand" href="#"><span class="fa fa-map-marker" aria-hidden="true"></span> Nosso endereço</a>
+                  <a class="navbar-brand" href="nossoEndereco.php"><span class="fa fa-map-marker" aria-hidden="true"></span> Nosso endereço</a>
                   </div> 
               </ul>
 
