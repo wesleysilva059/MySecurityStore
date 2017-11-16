@@ -1,33 +1,42 @@
-<?php include("topo.php");?>
-<?php include("menu.php");?>
+<?php session_start();
+      include'conexao.php';
+      include("topo.php");
+      include("menu.php");
+      
+      if(!empty($_GET['Codigo'])){
+
+      $Codigo = $_GET['Codigo'];
+
+      $consulta = $conexao->query("SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto AND produtos.Codigo='$Codigo'");
+
+      $listar = $consulta->fetch(PDO::FETCH_ASSOC);
+      }else{
+        header('location:index.php');
+      }
+?>
 	<div class="float-compra">
 		<div class="latest-product">
         	<ul class="breadcrumb fonte-cont-breadcrumb text-left">
           		<li><a href="index.php">Home</a></li>
 				<li><a href="conteudoPaginaPrincipal.php">Ofertas</a></li>
-				<li class="active"><a href="#">Produto</a></li>
+				<li class="active"><a href="#"><?php echo $listar['descricao'];?></a></li>
 
        		</ul>
     	</div>
     <div class="margem-produtos-geral-breadcrumb"></div>
 	<div class="w3-content zoom" style="max-width:400px">
-	  <img class="mySlides" src="Imagens/kitCompleto1.jpg" style="width:100%">
-	  <img class="mySlides" src="Imagens/kitCompleto2.jpg" style="width:100%">
-	  <img class="mySlides" src="Imagens/kitCompleto3.jpg" style="width:100%">
-
+	  <img src="Imagens/<?php echo $listar['foto'];?>" class="mySlides" style="width:100%">
+	  <img src="Imagens/<?php echo $listar['foto2'];?>" class="mySlides" style="width:100%">
+	  <img src="Imagens/<?php echo $listar['foto3'];?>" class="mySlides" style="width:100%">
 	  <div class="w3-row-padding w3-section text-center">
-
 	    <div class="w3-col s4 img-thumbnail">
-	      <img class="demo w3-opacity margin-right" 
-	      src="Imagens/kitCompleto1.jpg" class="img-responsive" style="max-width:80px" onclick="currentDiv(1)">
+	      <img src="Imagens/<?php echo $listar['foto'];?>" class="demo w3-opacity margin-right" class="img-responsive" style="max-width:80px" onclick="currentDiv(1)">
 	    </div>
 	    <div class="w3-col s4 img-thumbnail">
-	      <img class="demo w3-opacity margin-right"
-	      src="Imagens/kitCompleto2.jpg" class="img-responsive" style="max-width:80px" onclick="currentDiv(2)">
+	      <img class="demo w3-opacity margin-right" src="Imagens/<?php echo $listar['foto2'];?>" class="img-responsive" style="max-width:80px" onclick="currentDiv(2)">
 	    </div>
 	    <div class="w3-col s4 img-thumbnail">
-	      <img class="demo w3-opacity margin-right" 
-	      src="Imagens/kitCompleto3.jpg" class="img-responsive" style="max-width:80px" onclick="currentDiv(3)">
+	      <img class="demo w3-opacity margin-right" src="Imagens/<?php echo $listar['foto3'];?>" class="img-responsive" style="max-width:80px" onclick="currentDiv(3)">
 	    </div>
 	  </div>
 	</div>
@@ -65,25 +74,25 @@ function showDivs(n) {
 		<div class="margem-produtos-geral-home">
 				<br>
 
-        		<h2 class="section-title-produto"><b>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</b></h2>
+        		<h2 class="section-title-produto"><b><?php echo $listar['descricao']; ?></b></h2>
 			<div class="row ">
 				<div class="col-md-2">
-						<p class="fonte-cont-ini-pc text-left">Cod: 0000000</p>
+						<p class="fonte-cont-ini-pc text-left">Código:<?php echo $listar['codbarras']; ?> </p>
 				</div>
 				<div class="col-md-2">
-						<p class="fonte-cont-ini-pc text-center">Marca: Intelbras</p>
+						<p class="fonte-cont-ini-pc text-center">Marca: <?php echo $listar['marca']; ?> </p>
 				</div>
 				<div class="col-md-3">
-						<p class="fonte-cont-ini-pc text-right">Disponibilidade: Pronta entrega</p>
+						<p class="fonte-cont-ini-pc text-right">Disponibilidade: <?php if ($listar['estoque']>0){echo 'Disponível';}else{echo'indisponível';}?></p>
 				</div>
 				
                 <div class="margem-produtos-geral-breadcrumb"></div>
            		<div class="col-sm-4 product-carousel-price">
-                   	<p class="fonte-cont-pc">De: <del class="fonte-cont-preco">$1355.00</del></p>
-                    <p class="fonte-cont-pc">Por apenas: <ins>R$1200.00</ins> a vista ou</p>
-                    <p class="fonte-cont-pc"> <ins>R$1288.00</ins> a prazo</p>
-                    <p class="fonte-cont-pc"> em até <ins>3x</ins> de <ins>R$429,33</ins></p>
-                    <p class="fonte-cont-pc"> ou <ins>6x</ins> de <ins>R$253,88</ins> iguais</p>
+                   	<p class="fonte-cont-pc">De: <del class="fonte-cont-preco"><?php echo number_format($listar['pvenda'], 2,',','.');?></del></p>
+                    <p class="fonte-cont-pc">Por apenas: <ins>R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins> a vista ou</p>
+                    <p class="fonte-cont-pc"> <ins>R$<?php echo number_format($listar['pvenda'], 2,',','.');?></ins> a prazo</p>
+                    <p class="fonte-cont-pc"> em até <ins>3x</ins> de <ins>R$<?php echo number_format($listar['pvenda'], 2,',','.');?></ins></p>
+                    <p class="fonte-cont-pc"> ou <ins>6x</ins> de <ins>R$<?php echo number_format($listar['pvenda'], 2,',','.');?></ins> iguais</p>
                 </div>
                     
 
@@ -113,13 +122,7 @@ function showDivs(n) {
       </div>
       <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body">
-        	<p>- 01 DVR 8 CANAIS MULTI HD INTELBRAS MHDX 1008;</p>
-			<p>- 03 CÂMERAS HDCVI HB 2000;</p>
-			<p>- 04 CÂMERAS HDCVI HB 306;</p>
-			<p>- 01 Dísco Rígido HD (capacidade a escolher);</p>
-			<p>- 01 Fonte 12v 10A;</p>
-			<p>- 01 Rolo de Cabo Coaxial 100 Metros;</p>
-			<p>- Conectores de vídeo e alimentação inclusos.</p> 
+        	<p><?php echo $listar['descricao']; ?></p> 
 		</div>
       </div>
     </div>
@@ -131,9 +134,7 @@ function showDivs(n) {
       </div>
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
-        	<p>Processador principal: Integrado de alta perfomance</p>
-        	<p>Entradas de vídeo: 8 canais BNC + 2 canais IP ou 10 canais IP no modo NVR¹ Saídas de vídeo (monitores), 1 HDMI, 1 VGA e Saída analógica BNC. Resolução máxima de gravação 1080N (tecnologia analógica) e 5 MP² (tecnologia IP)
-</p>
+        	<p><?php echo $listar['descricao']; ?></p>
         </div>
       </div>
     </div>
