@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include ("conexao.php");
+  include 'conexao.php';
   include("topo.php"); 
   include("menu.php");
   ?>
@@ -101,51 +101,48 @@
               <li><a href="#">5</a></li>
           </ul>
     </div>
-    <?php
-      function RetornaProdutos(){
-        $sql = "SELECT * FROM `produtos`,`prodprecos` WHERE produtos.Codigo = prodprecos.idproduto";
-        $conexao = AbreConexao();//abre a conexao com o BD
-        $resultado = $conexao->query($sql);
-        $conexao->close();//fecha a conexão com o BD
-        if(mysqli_num_rows($resultado) > 0){
-        while ($row = mysqli_fetch_array($resultado)){
-          $listar[] = $row;
-        }
-        return $listar;
-        }else{
-        return null;
-        }
-      }
-        $vetProdutos = RetornaProdutos();
-        foreach($vetProdutos as $listar):
+   
+      <?php 
+        $consulta = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto');
       ?>
-      
 		<h2 class="section-title">Ofertas</h2>
-        <div class="row">
+    <div class="row">
+      <?php 
+        while ($listar=$consulta->fetch(PDO::FETCH_ASSOC)){
+      ?>
           <div class="col-lg-3">
             <div class="margem">
               <div class="img-thumbnail-promo">
                 <div class="single-product-pag-prod">
                   <div class="product-f-image">
-                              <img src="Imagens/<?=$listar['imagem']?>" alt="Nome da empresa: <?=$listar['descricao']?>" title="Nome da empresa: <?=$listar['descricao']?>">
-                                  <div class="product-hover">
-                                    <a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                                    <a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
-                                  </div>
+                      <img src="Imagens/<?php echo $listar['foto']; ?>" alt="Nome da empresa: <?php echo $listar['descricao'];?>" title="Produto: <?php echo $listar['descricao'];?>">
+                      <div class="product-hover">
+                          <?php if ($listar['estoque']>0) { ?>
+                            <a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
+
+                            <a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar['Codigo']; ?>" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
+
+                          <?php }else{ ?>
+
+                            <a class="add-to-cart-link"><i class="glyphicon glyphicon-ban-circle"></i> Indisponível</a>
+                          <?php } ?>
+                      </div>
                   </div>
-                          <h2 class="fonte-cont"><a href="#"><center><?=($listar['descricao'])?></center></a></h2>
+                    <h2 class="fonte-cont"><a href="#"><center><?php echo $listar['descricao']; ?></center></a></h2>
                   <div class="product-carousel-price">
                     <center>
-                        <del class="fonte-cont-preco">$1355.00</del> <ins>Por: R$ <?= number_format($listar['pvenda'], 2,',','.')?></ins>
+                        <del class="fonte-cont-preco">$1355.00</del> <ins>Por: R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins>
                     </center>
                   </div>   
                 </div>
               </div>
             </div>
           </div>
-        </div>
+          <?php 
+        }
+           ?>
+  </div>
 </div>
-<?php endforeach; ?>
 	
 <?php include("rodape.php");
 
