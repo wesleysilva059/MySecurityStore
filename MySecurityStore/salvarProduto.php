@@ -12,6 +12,7 @@
 	$pesoliquido = $_POST["txtPesoLiquido"];
 	$pesoembalagem = $_POST["txtPesoEmbalagem"];
 	$pcusto = $_POST["txtPCusto"];
+	//$data = date('Y-m-d H:i:s');
 	$pmedio = $_POST["txtPMedio"];
 	$pvenda = $_POST["txtPVenda"];
 	$estoque = $_POST["txtEstoque"];
@@ -29,10 +30,11 @@
 		$conexao->close();
             //resgatar ultimo id  select * from produtos order by Codigo pegar o comando de pegar o ultimo registro e resgatar id
 		$sqlCod = "SELECT MAX(Codigo) AS 'codprod' FROM produtos";
-
-		$sqlPreco = "INSERT INTO 'prodprecos'('pcusto','pmedio','pvenda','data','idproduto') VALUES('".$pcusto."', '".$pmedio."','".$pvenda."', '".NOW()."', '".$codprod."')";
-		$sqlTec = "INSERT INTO 'prodtecnologia'('codtecnologia','codproduto') VALUES('".$codtecnologia."','".$codprod."')";
-		$sqlEstoque="INSERT INTO'prodestoque'('estoque','estmin','estideal','idproduto') VALUES('".$estoque."','".$estmin."','".$estideal."','".$codprod."')";
+		//pegará a data automatica do sistema
+		$sqlData = date_default_timezone_set('America/Sao_Paulo');
+		$sqlPreco = "INSERT INTO 'prodprecos'('pcusto','pmedio','pvenda','data','idproduto') VALUES('".$pcusto."', '".$pmedio."','".$pvenda."', '".$sqlData."', '".$sqlCod."')";
+		$sqlTec = "INSERT INTO 'prodtecnologia'('codtecnologia','codproduto') VALUES('".$codtecnologia."','".$sqlCod."')";
+		$sqlEstoque="INSERT INTO'prodestoque'('estoque','estmin','estideal','idproduto') VALUES('".$estoque."','".$estmin."','".$estideal."','".$sqlCod."')";
 		//abre a conexao com o BD
 		$conexao = AbreConexao();
 		//executa o comando SQL
@@ -54,7 +56,7 @@
 		$conexao->close();
 	}
 	if ($Codigo==0){//novo cadastro
-		InsereProduto($codbarras, $marca, $modelo, $grupo, $descricao, $garantia, $obs, $idfabricante, $pesoliquido, $pesoembalagem, $pcusto, $pmedio, $pvenda, $codtecnologia, $estoque, $estmin, $estideal);
+		InsereProduto($codbarras, $marca, $modelo, $grupo, $descricao, $garantia, $obs, $idfabricante, $pesoliquido, $pesoembalagem, $pcusto, $pmedio, $pvenda, $codtecnologia, $estoque, $estmin,$sqlCod,$sqlData,$estideal);
 	}else{//atualiza cadastro existente
 		AlteraProduto($codbarras, $marca, $modelo, $grupo, $descricao, $garantia, $obs, $idfabricante, $pesoliquido, $pesoembalagem,$pcusto,$pmedio,$pvenda,$data,$codprod,$codtecnologia,$estoque,$estmin,$estideal,$Codigo);
 	}
