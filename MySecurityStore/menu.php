@@ -43,14 +43,25 @@
 					<li><a href="formCadastroUsuario.php"><span class="glyphicon glyphicon-log-in"></span> Cadastre-se</a></li>
 	  			</ul>
 				<?php } else { 
-					$consulta_user = $conexao->query("SELECT nome FROM pfisicadados WHERE idpfisica = '$_SESSION[id]'");
-					$exibe_user = $consulta_user->fetch(PDO::FETCH_ASSOC);
-				?>
-				<ul class="nav navbar-nav navbar-right">	
-	  				<li><a href="#"><span class="glyphicon glyphicon-user"></span> <?php echo $exibe_user['nome'];?></a></li>
-			  		<li><a href="sair.php"><span class="glyphicon glyphicon-off"></span> Sair</a></li>
-				</ul>
-                <?php
+						
+					if($_SESSION['adm']==0){	
+						$consulta_user = $conexao->query("SELECT nome FROM pfisicadados WHERE idpfisica = '$_SESSION[id]'");
+						$exibe_user = $consulta_user->fetch(PDO::FETCH_ASSOC);
+					?>
+						<ul class="nav navbar-nav navbar-right">	
+							<li><a href="#"><span class="glyphicon glyphicon-user"></span> <?php echo $exibe_user['nome'];?></a></li>
+							<li><a href="sair.php"><span class="glyphicon glyphicon-off"></span> Sair</a></li>
+						</ul>
+					<?php
+
+						} else { ?>
+						<ul class="nav navbar-nav navbar-right">	
+							<li><a href="admIndex.php"><button class="btn btn-sm btn-danger">Adm</button></a></li>
+							<li><a href="sair.php"><span class="glyphicon glyphicon-off"></span> Sair</a></li>
+						</ul>
+						<?php
+
+						}
 					}
 	  			?>
               

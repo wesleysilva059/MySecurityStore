@@ -15,9 +15,19 @@ $consulta = $conexao->query("SELECT * FROM login WHERE email='$recebe_email' AND
 if($consulta->rowCount()==1){
 	$exibeUser = $consulta->fetch(PDO::FETCH_ASSOC);
 	
-	$_SESSION['id']=$exibeUser['idcliente'];
-	
-	header('location:index.php');
+	if($exibeUser['tipousuario']!=1){
+			
+		$_SESSION['id']=$exibeUser['idcliente'];
+		$_SESSION['adm']=0;
+				
+		header('location:index.php');
+	} else {
+		
+		$_SESSION['id']=$exibeUser['idcliente'];
+		$_SESSION['adm']=1;
+		
+		header('location:index.php');
+	}
 }
 else
 {
