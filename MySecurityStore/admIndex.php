@@ -1,5 +1,8 @@
-<?php include("topo.php");
-	  include("menuSecundario.php");
+<?php 
+	session_start();
+
+	include("topo.php");
+	include("menuSecundario.php");
 ?>
 <div class="container">
 	<div class="text-center">
