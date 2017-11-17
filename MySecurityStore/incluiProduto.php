@@ -60,8 +60,12 @@ $img_nome3 = md5(uniqid(time())).".".$extensao3[1];
 try {
 	
 	$inserir=$conexao->query("INSERT INTO produtos(codbarras, marca, modelo, grupo, descricao, garantia, obs, idfabricante, pesoliquido, pesoembalagem, foto, foto2,foto3) VALUES ('$recebe_codbarras', '$recebe_marca', '$recebe_modelo', '$recebe_grupo', '$recebe_descricao', '$recebe_garantia', '$recebe_observacao','$recebe_idfabricante','$recebe_pesoliquido','$recebe_pesoembalagem', '$img_nome1', '$img_nome2', '$img_nome3')");
-	
-		
+
+	$inserir=$conexao->query("INSERT INTO prodprecos(pcusto,pmedio,pvenda,idproduto)VALUES('$recebe_pcusto','$recebe_pmedio','$recebe_pvenda',(SELECT MAX(Codigo) AS 'idproduto' FROM produtos)",
+		"INSERT INTO prodestoque(estoque,estmin,estideal,idproduto)VALUES('$recebe_estoque','$recebe_estmin','$recebe_estideal',
+		(SELECT MAX(Codigo) AS 'idproduto' FROM produtos)",
+		"INSERT INTO `prodtecnologia`(`codproduto`, `codtecnologia`) VALUES ('$recebe_codtecnologia',(SELECT MAX(Codigo) AS 'idproduto' FROM produtos))");
+
 		move_uploaded_file($recebe_foto1['tmp_name'], $destino.$img_nome1);//propriedade para fazer upload             
 		$resizeObj = new resize($destino.$img_nome1);//funcao da classe
 		$resizeObj -> resizeImage(450, 450, 'crop');// redimensionar e cortar imagem

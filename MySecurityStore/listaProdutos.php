@@ -23,30 +23,23 @@
 	
 	
 	<?php while ($exibe = $consulta->fetch(PDO::FETCH_ASSOC)) {
-	
+	/*Não será habilitado o comando de exclusão pois os dados inseridos serão armazenados no histórico de compra,
+	se levar em consideração um e-commerce profissional*/
 	?>
 	
 	
 	<div class="row" style="margin-top: 15px;">
 		
 		<div class="col-sm-1 col-sm-offset-1"><img src="Imagens/<?php echo $exibe['foto']; ?>" class="img-responsive"></div>
-		<div class="col-sm-5"><h4 style="padding-top:20px"><?php echo $exibe['descricao']; ?></h4></div>
-		<div class="col-sm-2" style="padding-top:20px">
+		<div class="col-sm-6"><h4 style="padding-top:20px"><?php echo $exibe['descricao']; ?></h4></div>
 		
-			
+		<div class="col-sm-3" style="padding-top:20px">	
 		<a href="formAlterarProd.php?Codigo=<?php echo $exibe['Codigo']; ?>">	
-		<button class="btn btn-lg btn-block btn-default">
+		<button class="btn btn-lg btn-block btn-primary">
 		<span class="glyphicon glyphicon-pencil"></span> Alterar
 		</button>
 		</a>
 		</div>
-		
-		<div class="col-sm-2 col-xs-offset-right-1" style="padding-top:20px">
-		<a href="excluir.php?Codigo=<?php echo $exibe['Codigo']; ?>">	
-		<button class="btn btn-lg btn-block btn-danger">
-		<span class="glyphicon glyphicon-remove"></span> Excluir		
-		</button>
-		</a>
 		
 		
 		</div> 
