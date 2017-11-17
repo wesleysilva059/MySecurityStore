@@ -15,10 +15,14 @@
 			<ul>
 			<li><a href="formProduto.php" class="btn btn-primary">Cadastrar produto</a></li>
 			<li><a href="listaProdutos.php" class="btn btn-primary">Editar produto</a></li>
-			<li><a href="mostraFabricantesCadastrados.php" class="btn btn-primary">Fabricantes</a></li>
-			<li><a href="mostraGruposCadastrados.php" class="btn btn-primary">Grupos de produtos</a></li>
-			<li><a href="mostraTecnologiasCadastradas.php" class="btn btn-primary">Tecnologias</a></li>
-			<li><a href="mostraProdutosCadastrados.php" class="btn btn-primary">Produtos</a></li>
+			<li><a href="formFab.php" class="btn btn-primary">Cadastrar fabricante</a></li>
+            <li><a href="listaFabricantes.php" class="btn btn-primary">Editar fabricante</a></li>
+            <li><a href="formForn.php" class="btn btn-primary">Cadastrar fornecedor</a></li>
+            <li><a href="listaFornecedores.php" class="btn btn-primary">Editar fornecedor</a></li>
+			<li><a href="formGrup.php" class="btn btn-primary">Cadastrar grupos de produtos</a></li>
+			<li><a href="listaGrupos.php" class="btn btn-primary">Editar grupos de produtos</a></li>
+			<li><a href="formTec.php" class="btn btn-primary">Cadastrar Tecnologias</a></li>
+			<li><a href="listaTecnologias.php" class="btn btn-primary">Editar Tecnologias</a></li>
 		</ul>
 		</div>
 	</div>
