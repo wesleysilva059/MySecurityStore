@@ -1,3 +1,8 @@
+<?php
+  include 'conexao.php';
+?>
+
+
 <div class="container">
     <div class="row">
 			  <style>
@@ -98,480 +103,183 @@ $(document).ready(function(){
 <div class="margem-produtos-geral-home"></div>
 
 <div class="margem-produtos-geral-home"></div>
-	<div class="container">
-		<div class="latest-product">
-			<div class="margem-produtos-geral-home">
-        		<h2 class="section-title">Os melhores CFTVs do mercado</h2>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="margem">
-							<div class="img-thumbnail-promo">
-				 				<div class="single-product">
-									<div class="product-f-image">
-               		     				<img src="Imagens/kitCompleto1.jpg" alt="">
-                      		  			<div class="product-hover">
-                        	 	   			<a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                         		   			<a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
-                        				</div>
-                					</div>
-                						<h2 class="fonte-cont"><a href=""><center>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</center></a></h2>
-										<div class="product-carousel-price"><center>
-                                        <del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                                  		</center></div>  
-								</div>	
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="margem">
-							<div class="img-thumbnail-promo">
-				 				<div class="single-product">
-									<div class="product-f-image">
-               		     				<img src="Imagens/kitCompleto1.jpg" alt="">
-                      		  			<div class="product-hover">
-                        	 	  			<a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                         		   			<a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
-                        				</div>
-                					</div>
-                						<h2 class="fonte-cont"><a href=""><center>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</center></a></h2>
-										<div class="product-carousel-price">
-											<center>
-                                        	<del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                                    		</center>
-                                    	</div>  
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="margem">
-							<div class="img-thumbnail-promo">
-				 				<div class="single-product">
-									<div class="product-f-image">
-               		     				<img src="Imagens/kitCompleto1.jpg" alt="">
-                      		  			<div class="product-hover">
-                        	 	  			<a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                         		   			<a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
-                        				</div>
-									</div>
-                						<h2 class="fonte-cont"><a href=""><center>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</center></a></h2>
-										<div class="product-carousel-price">
-										<center>
-                                        	<del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                                    	</center>
-                                    	</div>  
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-			<div class="container">
-    			<div class="brands-area">
-          			<div class="row">
-               			<div class="col-md-12">
-                   			<div class="brand-wrapper">
-                       			<div class="brand-list">
-                            		<a href="#"><img src="Imagens/intelbrasLogo.png" alt=""></a>
-                            		<a href="#"><img src="Imagens/luxvisionLogo.png" alt=""></a>
-                            		<a href="#"><img src="Imagens/tecVozLogo.png" alt=""></a>
-                            		<a href="#"><img src="Imagens/gigaByteLogo.png" alt=""></a>
-                            	</div>
-                    		</div>
-                		</div>
-            		</div>
-	       		</div>
-	    	</div>
-		<div class="latest-product">
-				<div class="margem-produtos-geral-home">
-      				<h2 class="section-title">Os melhores CFTVs do mercado</h2>
-    			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-3">
-						<div class="margem">
-							<div class="img-thumbnail-promo">
-				 				<div class="single-product">
-									<div class="product-f-image">
-               		     				<img src="Imagens/kitCompleto1.jpg" alt="">
-                      		  			<div class="product-hover">
-                        	 	  		 	<a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                         		   			<a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
-										</div>
-                					</div>
-                					<h2 class="fonte-cont"><a href=""><center>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</center></a></h2>
-									<div class="product-carousel-price">
-										<center>
-                                        	<del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                                   		</center>
-                                    </div>   
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3">
-						<div class="margem">
-							<div class="img-thumbnail-promo">
-				 				<div class="single-product">
-									<div class="product-f-image">
-               		     				<img src="Imagens/kitCompleto1.jpg" alt="">
-                      		  			<div class="product-hover">
-                        	 	   			<a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                         		   			<a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
-                        				</div>
-                					</div>
-                					<h2 class="fonte-cont"><a href=""><center>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</center></a></h2>
-									<div class="product-carousel-price">
-										<center>
-                                        	<del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                                    	</center>
-                                    </div>  
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3">
-						<div class="margem">
-							<div class="img-thumbnail-promo">
-				 				<div class="single-product">
-									<div class="product-f-image">
-               		     				<img src="Imagens/kitCompleto1.jpg" alt="">
-                      		  			<div class="product-hover">
-                        	 	   			<a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                         		   			<a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
-                        				</div>
-                					</div>
-                					<h2 class="fonte-cont"><a href=""><center>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</center></a></h2>
-									<div class="product-carousel-price">
-										<center>
-                                        	<del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                            	        </center>
-                            	    </div>  
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3">
-						<div class="margem">
-							<div class="img-thumbnail-promo">
-				 				<div class="single-product">
-									<div class="product-f-image">
-               		     				<img src="Imagens/kitCompleto1.jpg" alt="">
-                      		  			<div class="product-hover">
-                        	 	   			<a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                         		   			<a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
-                        				</div>
-                					</div>
-                					<h2 class="fonte-cont"><a href=""><center>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</center></a></h2>
-									<div class="product-carousel-price">
-										<center>
-                                        	<del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                                    	</center>
-                                    </div>  
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="container-fim">
-    <div class="brands-area">
-  		<div class="container">
-          	<div class="row">
-       			<div class="col-md-12">
-                   	<div class="brand-wrapper">
-                       	<div class="brand-list">
-                      		<img src="Imagens/correiosLogo.png" alt="">
-                       		<img src="Imagens/bbLogo.png" alt="">
-                       		<img src="Imagens/pagSeguroLogo.png" alt="">
-                       		<a href="#"><img src="Imagens/superOfertasLogo.png" alt=""></a>
-                        </div>
-                  	</div>
-          		</div>
-       		</div>
-   		</div>
-   	</div>
-</div>
-	<div class="latest-product">
-		<div class="margem-produtos-geral-home">
-		<div class="margem-produtos-geral-home"></div>
-        	<h2 class="section-title">Os melhores CFTVs do mercado</h2>
-    	</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
-					<div class="margem">
-						<div class="img-thumbnail-promo">
-				 			<div class="single-product">
-								<div class="product-f-image">
-               		     			<img src="Imagens/kitCompleto1.jpg" alt="">
-                      		  		<div class="product-hover">
-                        	 	   		<a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Comprar</a>
-                         		   		<a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> Mais detalhes</a>
-                        			</div>
-                				</div>
-                				<h2 class="fonte-cont"><a href=""><center>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</center></a></h2>
-									<div class="product-carousel-price">
-										<center>
-                                        	<del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                                    	</center>
-                                    </div>  
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="margem">
-						<div class="img-thumbnail-promo">
-				 			<div class="single-product">
-								<div class="product-f-image">
-               		     			<img src="Imagens/kitCompleto1.jpg" alt="">
-                      		  		<div class="product-hover">
-                        	 	   		<a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                         		   			<a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
-                        			</div>
-                				</div>
-                				<h2 class="fonte-cont"><a href=""><center>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</center></a></h2>
-								<div class="product-carousel-price">
-									<center>
-                                       <del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                                    </center>
-                                </div>  
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="margem">
-						<div class="img-thumbnail-promo">
-				 			<div class="single-product">
-								<div class="product-f-image">
-               		     			<img src="Imagens/kitCompleto1.jpg" alt="">
-                      		  		<div class="product-hover">
-                        	 	   		<a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                         		   			<a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
-                        			</div>
-                				</div>
-                				<h2 class="fonte-cont"><a href=""><center>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</center></a></h2>
-									<div class="product-carousel-price">
-										<center>
-                                        	<del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                                    	</center>
-                                    </div>  
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="margem">
-						<div class="img-thumbnail-promo">
-				 			<div class="single-product">
-								<div class="product-f-image">
-               		     			<img src="Imagens/kitCompleto1.jpg" alt="">
-                      		  			<div class="product-hover">
-                        	 	   			<a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                         		   			<a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
- 		                       			</div>
-        	        			</div>
-                				<h2 class="fonte-cont"><a href=""><center>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</center></a></h2>
-									<div class="product-carousel-price">
-										<center>
-                                        	<del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                                    	</center>
-                                    </div>  
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-<div class="latest-product">
-	<div class="margem-produtos-geral-home">
-        <h2 class="section-title">Os melhores CFTVs do mercado</h2>
+<div class="container">
+  <div class="latest-product">
+    <div class="margem-produtos-geral-home">
+      <?php 
+          $consulta = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto');
+          ?>
+          <h2 class="section-title">Os melhores CFTVs do mercado</h2>
+      <div class="row">
+      <?php 
+          while ($listar=$consulta->fetch(PDO::FETCH_ASSOC)){
+        ?>
+        <div class="col-md-4">
+          <div class="margem">
+            <div class="img-thumbnail-promo">
+              <div class="single-product-pag-prod">
+                <div class="product-f-image">
+                    <img src="Imagens/<?php echo $listar['foto']; ?>" alt="Nome da empresa: <?php echo $listar['descricao'];?>" title="Produto: <?php echo $listar['descricao'];?>">
+                    <div class="product-hover">
+                      <?php if ($listar['estoque']>0) { ?>
+                      <a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
+                      <a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar['Codigo']; ?>" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
+                      <?php }else{ ?>
+                      <a class="add-to-cart-link"><i class="glyphicon glyphicon-ban-circle"></i> Indisponível</a>
+                      <?php } ?>
+                    </div>
+                </div>
+                  <h2 class="fonte-cont"><a href="#"><center><?php echo $listar['descricao']; ?></center></a></h2>
+                <div class="product-carousel-price">
+                  <center>
+                    <del class="fonte-cont-preco">$1355.00</del> <ins>Por: R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins>
+                  </center>
+                </div>   
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php }?>
+      </div>
     </div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-3">
-				<div class="margem">
-					<div class="img-thumbnail-promo">
-				 		<div class="single-product">
-							<div class="product-f-image">
-               		     		<img src="Imagens/kitCompleto1.jpg" alt="">
-                      		  		<div class="product-hover">
-                        	 	   		<a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                         		   			<a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
-                        			</div>
-                			</div>
-                			<h2 class="fonte-cont"><a href=""><center>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</center></a></h2>
-								<div class="product-carousel-price">
-									<center>
-                                       <del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                                    </center>
-                                </div>  
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="margem">
-					<div class="img-thumbnail-promo">
-				 		<div class="single-product">
-							<div class="product-f-image">
-               		     		<img src="Imagens/kitCompleto1.jpg" alt="">
-                      		  		<div class="product-hover">
-                        	 	   		<a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                         		   			<a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
-                        			</div>
-                			</div>
-                			<h2 class="fonte-cont"><a href=""><center>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</center></a></h2>
-								<div class="product-carousel-price">
-									<center>
-                                        <del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                                    </center>
-                                </div>  
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="margem">
-					<div class="img-thumbnail-promo">
-				 		<div class="single-product">
-							<div class="product-f-image">
-               		     		<img src="Imagens/kitCompleto1.jpg" alt="">
-                      		  		<div class="product-hover">
-                        	 	   		<a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                         		   			<a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
-                        			</div>
-                			</div>
-                			<h2 class="fonte-cont"><a href=""><center>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</center></a></h2>
-								<div class="product-carousel-price">
-									<center>
-                                    	<del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                                 	</center>
-                                </div>  
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="margem">
-					<div class="img-thumbnail-promo">
-				 		<div class="single-product">
-							<div class="product-f-image">
-               		     		<img src="Imagens/kitCompleto1.jpg" alt="">
-                      		  	<div class="product-hover">
-                        	 	   <a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                         		   			<a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
-                        		</div>
-                			</div>
-                				<h2 class="fonte-cont"><a href=""><center>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</center></a></h2>
-								<div class="product-carousel-price">
-									<center>
-                                       	<del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                                    </center>
-                                </div>  
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  </div>
 </div>
-<div class="latest-product">
-	<div class="margem-produtos-geral-home">
-        <h2 class="section-title">Os melhores CFTVs do mercado</h2>
+	<div class="container">
+  	<div class="brands-area">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="brand-wrapper">
+            <div class="brand-list">
+              <a href="#"><img src="Imagens/intelbrasLogo.png" alt=""></a>
+              <a href="#"><img src="Imagens/luxvisionLogo.png" alt=""></a>
+              <a href="#"><img src="Imagens/tecVozLogo.png" alt=""></a>
+              <a href="#"><img src="Imagens/gigaByteLogo.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+	  </div>
+	</div>
+  <div class="latest-product">
+    <div class="margem-produtos-geral-home">
+      <?php 
+        $consulta1 = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto');
+      ?>
+      <h2 class="section-title">Os melhores CFTVs do mercado</h2>
     </div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-3">
-				<div class="margem">
-					<div class="img-thumbnail-promo">
-				 		<div class="single-product">
-							<div class="product-f-image">
-               		     		<img src="Imagens/kitCompleto1.jpg" alt="">
-                      		  		<div class="product-hover">
-                        	 	   		<a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                         		   			<a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
-                        			</div>
-                			</div>
-                			<h2 class="fonte-cont"><a href=""><center>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</center></a></h2>
-								<div class="product-carousel-price">
-									<center>
-                                       <del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                                    </center>
-                                </div>  
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="margem">
-					<div class="img-thumbnail-promo">
-				 		<div class="single-product">
-							<div class="product-f-image">
-               		     		<img src="Imagens/kitCompleto1.jpg" alt="">
-                      		  		<div class="product-hover">
-                        	 	   		<a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                         		   			<a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
-                        			</div>
-                			</div>
-                			<h2 class="fonte-cont"><a href=""><center>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</center></a></h2>
-								<div class="product-carousel-price">
-									<center>
-                                        <del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                                    </center>
-                                </div>  
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="margem">
-					<div class="img-thumbnail-promo">
-				 		<div class="single-product">
-							<div class="product-f-image">
-               		     		<img src="Imagens/kitCompleto1.jpg" alt="">
-                      		  		<div class="product-hover">
-                        	 	   		<a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                         		   			<a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
-                        			</div>
-                			</div>
-                			<h2 class="fonte-cont"><a href=""><center>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</center></a></h2>
-								<div class="product-carousel-price">
-									<center>
-                                    	<del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                                 	</center>
-                                </div>  
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="margem">
-					<div class="img-thumbnail-promo">
-				 		<div class="single-product">
-							<div class="product-f-image">
-               		     		<img src="Imagens/kitCompleto1.jpg" alt="">
-                      		  	<div class="product-hover">
-                        	 	   <a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                         		   			<a href="conteudoProdutoCompra.php" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
-                        		</div>
-                			</div>
-                				<h2 class="fonte-cont"><a href=""><center>KIT CFTV COMPLETO HDCVI 4 CÂMERAS E ACESSÓRIOS (DISCO RÍGIDO OPCIONAL)</center></a></h2>
-								<div class="product-carousel-price">
-									<center>
-                                       	<del class="fonte-cont-preco">$1355.00</del> <ins>$1200.00</ins>
-                                    </center>
-                                </div>  
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+    <div class="container">
+      <div class="row">
+        <?php 
+        while ($listar1=$consulta1->fetch(PDO::FETCH_ASSOC)){
+        ?>          
+        <div class="col-md-3">
+          <div class="margem">
+            <div class="img-thumbnail-promo">
+              <div class="single-product-pag-prod">
+                <div class="product-f-image">
+                  <img src="Imagens/<?php echo $listar1['foto']; ?>" alt="Nome do produto: <?php echo $listar1['descricao'];?>" title="Produto: <?php echo $listar1['descricao'];?>">
+                  <div class="product-hover">
+                    <?php if ($listar1['estoque']>0) { ?>
+                    <a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
+                    <a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar1['Codigo']; ?>" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
+                    <?php }else{ ?>
+                    <a class="add-to-cart-link"><i class="glyphicon glyphicon-ban-circle"></i> Indisponível</a>
+                    <?php } ?>
+                  </div>
+                </div>
+                  <h2 class="fonte-cont"><a href="#"><center><?php echo $listar1['descricao']; ?></center></a></h2>
+                <div class="product-carousel-price">
+                  <center>
+                    <del class="fonte-cont-preco">$1355.00</del> <ins>Por: R$ <?php echo number_format($listar1['pvenda'], 2,',','.');?></ins>
+                  </center>
+                </div>   
+              </div>
+            </div>
+          </div>
+        </div> 
+          <?php } ?> 
+      </div>
+    </div>
+  </div>
+    <div class="latest-product">
+    <div class="margem-produtos-geral-home">
+      <?php 
+        $consulta2 = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto');
+      ?>
+      <h2 class="section-title">Os melhores CFTVs do mercado</h2>
+    </div>
+    <div class="container">
+      <div class="row">
+        <?php 
+        while ($listar2=$consulta2->fetch(PDO::FETCH_ASSOC)){
+        ?>          
+        <div class="col-md-3">
+          <div class="margem">
+            <div class="img-thumbnail-promo">
+              <div class="single-product-pag-prod">
+                <div class="product-f-image">
+                  <img src="Imagens/<?php echo $listar2['foto']; ?>" alt="Nome do produto: <?php echo $listar2['descricao'];?>" title="Produto: <?php echo $listar2['descricao'];?>">
+                  <div class="product-hover">
+                    <?php if ($listar2['estoque']>0) { ?>
+                    <a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
+                    <a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar2['Codigo']; ?>" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
+                    <?php }else{ ?>
+                    <a class="add-to-cart-link"><i class="glyphicon glyphicon-ban-circle"></i> Indisponível</a>
+                    <?php } ?>
+                  </div>
+                </div>
+                  <h2 class="fonte-cont"><a href="#"><center><?php echo $listar2['descricao']; ?></center></a></h2>
+                <div class="product-carousel-price">
+                  <center>
+                    <del class="fonte-cont-preco">$1355.00</del> <ins>Por: R$ <?php echo number_format($listar2['pvenda'], 2,',','.');?></ins>
+                  </center>
+                </div>   
+              </div>
+            </div>
+          </div>
+        </div> 
+        <?php } ?> 
+      </div>
+    </div>
+  </div>
+    <div class="latest-product">
+    <div class="margem-produtos-geral-home">
+      <?php 
+        $consulta3 = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto');
+      ?>
+      <h2 class="section-title">Os melhores CFTVs do mercado</h2>
+    </div>
+    <div class="container">
+      <div class="row">
+        <?php 
+        while ($listar3=$consulta3->fetch(PDO::FETCH_ASSOC)){
+        ?>          
+        <div class="col-md-3">
+          <div class="margem">
+            <div class="img-thumbnail-promo">
+              <div class="single-product-pag-prod">
+                <div class="product-f-image">
+                  <img src="Imagens/<?php echo $listar3['foto']; ?>" alt="Nome do produto: <?php echo $listar3['descricao'];?>" title="Produto: <?php echo $listar3['descricao'];?>">
+                  <div class="product-hover">
+                    <?php if ($listar3['estoque']>0) { ?>
+                    <a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
+                    <a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar3['Codigo']; ?>" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
+                    <?php }else{ ?>
+                    <a class="add-to-cart-link"><i class="glyphicon glyphicon-ban-circle"></i> Indisponível</a>
+                    <?php } ?>
+                  </div>
+                </div>
+                  <h2 class="fonte-cont"><a href="#"><center><?php echo $listar3['descricao']; ?></center></a></h2>
+                <div class="product-carousel-price">
+                  <center>
+                    <del class="fonte-cont-preco">$1355.00</del> <ins>Por: R$ <?php echo number_format($listar3['pvenda'], 2,',','.');?></ins>
+                  </center>
+                </div>   
+              </div>
+            </div>
+          </div>
+        </div> 
+        <?php } ?> 
+      </div>
+    </div>
+  </div>

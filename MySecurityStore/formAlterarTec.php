@@ -7,7 +7,7 @@
 	$idtecnologia = $_GET['idtecnologia'];
 	include("topo.php");
 	include("menu.php");
-	include 'conexao_teste.php';
+	include 'conexao.php';
 
 ?>
 <div class="container">

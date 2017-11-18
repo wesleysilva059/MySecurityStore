@@ -6,7 +6,7 @@
 	}
 	include("topo.php");
 	include("menu.php");
-	include 'conexao_teste.php';
+	include 'conexao.php';
 	include'resize-class.php';//classe que redimensionará a imagem
 
 $Codigo = $_GET['Codigo'];

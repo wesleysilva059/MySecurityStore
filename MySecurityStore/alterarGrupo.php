@@ -6,7 +6,7 @@
 	}
 	include("topo.php");
 	include("menu.php");
-	include 'conexao_teste.php';
+	include 'conexao.php';
 
 $idgrupo = $_GET['idgrupo'];
 $consulta = $conexao->query("SELECT * FROM grupo WHERE idgrupo='$idgrupo'");

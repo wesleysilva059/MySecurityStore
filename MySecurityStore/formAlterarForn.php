@@ -7,7 +7,7 @@
 	$idfornecedor = $_GET['idfornecedor'];
 	include("topo.php");
 	include("menu.php");
-	include 'conexao_teste.php';
+	include 'conexao.php';
 
 ?>
 </script>
