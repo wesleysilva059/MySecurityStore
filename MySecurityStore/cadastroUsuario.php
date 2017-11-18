@@ -1,5 +1,5 @@
 <?php
-	
+
 	include("conexao.php");
 
 	$nome = $_POST["nome"];
@@ -21,17 +21,28 @@
 	$estado = $_POST["estado"];
 	$pais = $_POST["pais"];
 	$senha = $_POST["senha_2"];
+	$dtAtual = date('d/m/Y');
 
-	function InserePessoa($nome,$sexo,$dataNasc,$cpf,$rg,$orgaoEmissor,$email,$telefone,$celular,$cep,$endereco,$numero,$complemento,$referencia,$bairro,$cidade,$estado,$pais,$senha){
+	$consulta = $conexao->query("SELECT email FROM login WHERE email='$email'");
+
+	$exibe = $consulta->fetch(PDO::FETCH_ASSOC);
+
+	if($consulta->rowCount()==1)
+	{
+		header('location:erro1.php');
+	} 
+	else
+	{
+		$incluir = $conexao->query("
+			INSERT INTO pfisicadados (nome,sexo,dtnasc,cpf,rg,orgEmissor,dtcadastro)
+			VALUES ('$nome','$sexo','$dataNasc','$cpf','$rg','$orgaoEmissor','$dtAtual')");
 		
-		$sql = "insert into usuario_pf(nome, sexo, dtnasc, cpf, rg_nro, rg_emissao, email, telefone, celular, cep, endereco, nro_endereco, complemento_end, referencia_end, bairro, cidade, estado, pais, senha) values ('$nome','$sexo','$dataNasc','$cpf','$rg','$orgaoEmissor','$email','$telefone','$celular','$cep','$endereco','$numero','$complemento','$referencia','$bairro','$cidade','$estado','$pais','$senha')";
-
-		$conexao = AbreConexao();
-		$resultado = $conexao->query($sql);
-		$conexao->close();
+		//$pegaId = $conexao->query("SELECT LAST_INSERT_ID() INTO pfisicadados");
+		//$exibe2 = $pegaId->fetch(PDO::FETCH_ASSOC);
+		
+		//echo $exibe2;
+		
+		header('location;ok.php');
 	}
 
-	
-
-	InserePessoa($nome,$sexo,$dataNasc,$cpf,$rg,$orgaoEmissor,$email,$telefone,$celular,$cep,$endereco,$numero,$complemento,$referencia,$bairro,$cidade,$estado,$pais,$senha);
 ?>

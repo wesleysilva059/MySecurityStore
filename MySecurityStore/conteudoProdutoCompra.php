@@ -1,5 +1,5 @@
 <?php session_start();
-      include'conexao_teste.php';
+      include'conexao.php';
       include("topo.php");
       include("menu.php");
       

@@ -3,6 +3,17 @@
   include 'conexao.php';
   include("topo.php"); 
   include("menu.php");
+ if(empty($_GET['txtBusca'])){
+
+  echo "<html><script>location.href='index.php'</script></html";
+
+ }
+
+  $recebebusca = $_GET['txtBusca'];
+
+  $consulta = $conexao->query("SELECT DISTINCT * FROM produtos,prodprecos,prodestoque WHERE descricao LIKE CONCAT ('%','$recebebusca','%')");
+
+ 
   ?>
 <div class="margem-produtos-geral-home">
 </div>
@@ -37,13 +48,13 @@
       						<div class="panel-heading">Filtrar por marca</div>
       						<div class="panel-body">
                     <div class="checkbox">
-                      <label><input type="checkbox" value="">Intelbras<span class="badge">0</span></label>
+                      <label><a href="busca.php?txtBusca=intelbras" value="">Intelbras<span class="badge">0</span></a></label>
                     </div>
                     <div class="checkbox">
-                      <label><input type="checkbox" value="">LuxVision<span class="badge">0</span></label>
+                      <label><a href="busca.php?txtBusca=luxvision" value="">LuxVision<span class="badge">0</span></a></label>
                     </div>
                     <div class="checkbox">
-                      <label><input type="checkbox" value="">Outras<span class="badge">0</span></label>
+                      <label><a href="busca.php?txtBusca=tecvoz" value="">Tecvoz<span class="badge">0</span></a></label>
                     </div>      
                   </div>
     					</div>
@@ -101,15 +112,10 @@
               <li><a href="#">5</a></li>
           </ul>
     </div>
-   
-      <?php 
-        $consulta = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto');
-      ?>
 		<h2 class="section-title">Ofertas</h2>
     <div class="row">
-      <?php 
-        while ($listar=$consulta->fetch(PDO::FETCH_ASSOC)){
-      ?>
+       <?php while ($listar = $consulta->fetch(PDO::FETCH_ASSOC)){
+    ?>
           <div class="col-lg-3">
             <div class="margem">
               <div class="img-thumbnail-promo">
@@ -128,7 +134,7 @@
                           <?php } ?>
                       </div>
                   </div>
-                    <h2 class="fonte-cont"><a href="#"><center><?php echo $listar['descricao']; ?></center></a></h2>
+                    <h2 class="fonte-cont"><a href="#"><center><?php echo $listar['descricao'];?></center></a></h2>
                   <div class="product-carousel-price">
                     <center>
                         <del class="fonte-cont-preco">$1355.00</del> <ins>Por: R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins>
@@ -138,9 +144,7 @@
               </div>
             </div>
           </div>
-          <?php 
-        }
-           ?>
+          <?php }   ?>
   </div>
 </div>
 	

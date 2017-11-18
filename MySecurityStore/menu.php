@@ -20,12 +20,8 @@
                   </ul>
                   </div>
                   <div class="navbar-header">
-                  <a class="navbar-brand" data-toggle="dropdown" href="dropdown-menu"><span class="fa fa-phone" aria-hidden="true"></span> Televendas
-                   <b class="caret"></b>
+                  <a class="navbar-brand"><span class="fa fa-phone" aria-hidden="true"></span> Televendas - (35)3531-7961
                   </a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#"><span class="fa fa-phone" aria-hidden="true"></span> (35)3531-7961</a></li>
-                  </ul>
                   </div>
                   <div class="navbar-header">
                   <a class="navbar-brand" href="nossoEndereco.php"><span class="fa fa-map-marker" aria-hidden="true"></span> Nosso endereço</a>
@@ -72,7 +68,7 @@
        <div class="topo">
       <div class="busca">
         <a href="index.php"><img src="Imagens/logo.png" class="tam_img"></a>
-        <form class="entrada">
+        <form  method="GET" action="busca.php" class="entrada">
           <input type="text" name="txtBusca" placeholder="O que você deseja buscar?">
          <button class="btn btn-danger btn-lg" name="btnBuscar" value=""><span class="glyphicon glyphicon-search"></span>
         </button>
@@ -97,16 +93,16 @@
                   <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Todos os produtos</a></li>
-                    <li><a href="#">Intelbras</a></li>
-                    <li><a href="#">LuxVision</a></li>
-                    <li><a href="#">TecVoz</a></li>
+                    <li><a href="paginaProdutos.php">Todos os produtos</a></li>
+                    <li><a href="busca.php?txtBusca=Intelbras">Intelbras</a></li>
+                    <li><a href="busca.php?txtBusca=LuxVision">LuxVision</a></li>
+                    <li><a href="busca.php?txtBusca=TecVoz">TecVoz</a></li>
                   </ul>
-						        <a href="#" class="btn btn-primary">Câmeras</a>
-						        <a href="#" class="btn btn-primary">Cabeamento</a>
-						        <a href="#" class="btn btn-primary">DVRs</a>
-						        <a href="#" class="btn btn-primary">Controladores de acesso</a>
-						        <a href="#" class="btn btn-primary">Ofertas</a>
+						        <a href="busca.php?txtBusca=Câmera" class="btn btn-primary">Câmeras</a>
+						        <a href="busca.php?txtBusca=Cabeamento" class="btn btn-primary">Cabeamento</a>
+						        <a href="busca.php?txtBusca=DVR" class="btn btn-primary">DVRs</a>
+						        <a href="busca.php?txtBusca=Controlador" class="btn btn-primary">Controladores de acesso</a>
+						        <a href="busca.php?txtBusca=Ofertas" class="btn btn-primary">Ofertas</a>
 					       </div>
               </div>
             </div>
