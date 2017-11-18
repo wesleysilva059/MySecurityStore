@@ -1,25 +1,49 @@
 <?php
-	
+
 	include("conexao.php");
 
-	$nome = $_POST[""];
-	$sexo = $_POST[""];
-	$dataNasc = $_POST[""];
-	$cpf = $_POST[""];
-	$rg = $_POST[""];
-	$orgaoEmissor = $_POST[""];
-	$email = $_POST[""];
-	$telefone = $_POST[""];
-	$celular = $_POST[""];
-	$cep = $_POST[""];
-	$endereco = $_POST[""];
-	$numero = $_POST[""];
-	$complemento = $_POST[""];
-	$referencia = $_POST[""];
-	$bairro = $_POST[""];
-	$cidade = $_POST[""];
-	$estado = $_POST[""];
-	$pais = $_POST[""];
-	$senha = $_POST[""];
+	$nome = $_POST["nome"];
+	$sexo = $_POST["sexo"];
+	$dataNasc = $_POST["dtnasc"];
+	$cpf = $_POST["cpf"];
+	$rg = $_POST["rg_nro"];
+	$orgaoEmissor = $_POST["rg_emissao"];
+	$email = $_POST["email"];
+	$telefone = $_POST["telefone"];
+	$celular = $_POST["celular"];
+	$cep = $_POST["cep"];
+	$endereco = $_POST["endereco"];
+	$numero = $_POST["nro_endereco"];
+	$complemento = $_POST["complemento_end"];
+	$referencia = $_POST["referencia_end"];
+	$bairro = $_POST["bairro"];
+	$cidade = $_POST["cidade"];
+	$estado = $_POST["estado"];
+	$pais = $_POST["pais"];
+	$senha = $_POST["senha_2"];
+
+	$consulta = $conexao->query("SELECT email FROM login WHERE email='$email'");
+
+	$exibe = $consulta->fetch(PDO::FETCH_ASSOC);
+
+	if($consulta->rowCount()==1)
+	{
+		header('location:erro1.php');
+	} 
+	else
+	{
+		$incluir = $conexao->query("
+			INSERT INTO pfisicadados (nome,sexo,dtnasc,naturalidade,nacionaliade,dtcadastro)
+			VALUES (
+			'$nome','$sexo','$dataNasc','$cidade','$pais')");
+		
+		//$pegaId = $conexao->query("SELECT LAST_INSERT_ID() INTO pfisicadados");
+		//$exibe2 = $pegaId->fetch(PDO::FETCH_ASSOC);
+		
+		//echo $exibe2;
+		
+		header('location;ok.php');
+	}
+
 
 ?>
