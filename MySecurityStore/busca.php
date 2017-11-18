@@ -3,15 +3,17 @@
   include 'conexao.php';
   include("topo.php"); 
   include("menu.php");
+ if(empty($_GET['txtBusca'])){
+
+  echo "<html><script>location.href='index.php'</script></html";
+
+ }
+
   $recebebusca = $_GET['txtBusca'];
 
   $consulta = $conexao->query("SELECT DISTINCT * FROM produtos,prodprecos,prodestoque WHERE descricao LIKE CONCAT ('%','$recebebusca','%')");
 
- /* if ($consulta->rowCount()==0) {
-    
-    echo"<html><script>location.href='erro.php'<script><html>";
-  }
-*/
+ 
   ?>
 <div class="margem-produtos-geral-home">
 </div>
