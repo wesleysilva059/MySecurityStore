@@ -6,7 +6,7 @@
 	}
 	include("topo.php");
 	include("menu.php");
-	include 'conexao_teste.php';
+	include 'conexao.php';
 
 $idfabricante = $_GET['idfabricante'];
 $consulta = $conexao->query("SELECT * FROM fabricantes WHERE idfabricante='$idfabricante'");

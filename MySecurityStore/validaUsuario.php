@@ -3,7 +3,7 @@
 session_start();
 
 
-include 'conexao_teste.php' ;
+include 'conexao.php' ;
 
 $recebe_email = $_POST['email'];
 $recebe_senha = $_POST['password'];

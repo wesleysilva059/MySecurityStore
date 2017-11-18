@@ -6,7 +6,7 @@
 	}
 	include("topo.php");
 	include("menu.php");
-	include 'conexao_teste.php';
+	include 'conexao.php';
 
 $idtecnologia = $_GET['idtecnologia'];
 $consulta = $conexao->query("SELECT * FROM tecnologias WHERE idtecnologia='$idtecnologia'");

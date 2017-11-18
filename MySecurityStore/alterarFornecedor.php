@@ -6,7 +6,7 @@
 	}
 	include("topo.php");
 	include("menu.php");
-	include 'conexao_teste.php';
+	include 'conexao.php';
 
 $idfornecedor = $_GET['idfornecedor'];
 $consulta = $conexao->query("SELECT * FROM fornecedor WHERE idfornecedor='$idfornecedor'");

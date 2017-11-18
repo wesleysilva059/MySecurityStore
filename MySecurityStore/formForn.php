@@ -6,13 +6,9 @@
 	}
 	include("topo.php");
 	include("menu.php");
-	include 'conexao_teste.php';
+	include 'conexao.php';
 ?>
-<script>
-$(document).ready(function(){
-$('#preco').mask('000.000.000.000.000,00', {reverse: true});		
-});
-</script>
+
 <div class="container">
 	
 		<div class="row">

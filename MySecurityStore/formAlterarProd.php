@@ -7,7 +7,7 @@
 	$Codigo = $_GET['Codigo'];
 	include("topo.php");
 	include("menu.php");
-	include 'conexao_teste.php';
+	include 'conexao.php';
 
 ?>
 <script>
