@@ -109,7 +109,7 @@ $(document).ready(function(){
       <?php 
           $consulta = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto');
           ?>
-          <h2 class="section-title">Os melhores CFTVs do mercado</h2>
+          <h2 class="section-title">Promoções bombásticas!</h2>
       <div class="row">
       <?php 
           while ($listar=$consulta->fetch(PDO::FETCH_ASSOC)){
@@ -122,14 +122,15 @@ $(document).ready(function(){
                     <img src="Imagens/<?php echo $listar['foto']; ?>" alt="Nome da empresa: <?php echo $listar['descricao'];?>" title="Produto: <?php echo $listar['descricao'];?>">
                     <div class="product-hover">
                       <?php if ($listar['estoque']>0) { ?>
-                      <a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
+
+                      <a href="carrinhoCompras.php?Codigo=<?php echo $listar['Codigo']?>" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
                       <a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar['Codigo']; ?>" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
                       <?php }else{ ?>
                       <a class="add-to-cart-link"><i class="glyphicon glyphicon-ban-circle"></i> Indisponível</a>
                       <?php } ?>
                     </div>
                 </div>
-                  <h2 class="fonte-cont"><a href="#"><center><?php echo $listar['descricao']; ?></center></a></h2>
+                  <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar['Codigo']; ?>"><center><?php echo $listar['descricao']; ?></center></a></h2>
                 <div class="product-carousel-price">
                   <center>
                     <del class="fonte-cont-preco">$1355.00</del> <ins>Por: R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins>
@@ -141,6 +142,7 @@ $(document).ready(function(){
         </div>
         <?php }?>
       </div>
+      <button class="btn btn-primary" style="float:right;" >Clique aqui e veja mais</button>
     </div>
   </div>
 </div>
@@ -180,14 +182,14 @@ $(document).ready(function(){
                   <img src="Imagens/<?php echo $listar1['foto']; ?>" alt="Nome do produto: <?php echo $listar1['descricao'];?>" title="Produto: <?php echo $listar1['descricao'];?>">
                   <div class="product-hover">
                     <?php if ($listar1['estoque']>0) { ?>
-                    <a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
+                    <a href="carrinhoCompras.php?Codigo=<?php echo $listar1['Codigo']?>" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
                     <a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar1['Codigo']; ?>" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
                     <?php }else{ ?>
                     <a class="add-to-cart-link"><i class="glyphicon glyphicon-ban-circle"></i> Indisponível</a>
                     <?php } ?>
                   </div>
                 </div>
-                  <h2 class="fonte-cont"><a href="#"><center><?php echo $listar1['descricao']; ?></center></a></h2>
+                  <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar1['Codigo']; ?>"><center><?php echo $listar1['descricao']; ?></center></a></h2>
                 <div class="product-carousel-price">
                   <center>
                     <del class="fonte-cont-preco">$1355.00</del> <ins>Por: R$ <?php echo number_format($listar1['pvenda'], 2,',','.');?></ins>
@@ -199,6 +201,7 @@ $(document).ready(function(){
         </div> 
           <?php } ?> 
       </div>
+        <button class="btn btn-primary" style="float:right;" >Clique aqui e veja mais</button>
     </div>
   </div>
     <div class="latest-product">
@@ -221,14 +224,14 @@ $(document).ready(function(){
                   <img src="Imagens/<?php echo $listar2['foto']; ?>" alt="Nome do produto: <?php echo $listar2['descricao'];?>" title="Produto: <?php echo $listar2['descricao'];?>">
                   <div class="product-hover">
                     <?php if ($listar2['estoque']>0) { ?>
-                    <a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
+                    <a href="carrinhoCompras.php?Codigo=<?php echo $listar2['Codigo']?>" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
                     <a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar2['Codigo']; ?>" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
                     <?php }else{ ?>
                     <a class="add-to-cart-link"><i class="glyphicon glyphicon-ban-circle"></i> Indisponível</a>
                     <?php } ?>
                   </div>
                 </div>
-                  <h2 class="fonte-cont"><a href="#"><center><?php echo $listar2['descricao']; ?></center></a></h2>
+                  <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar2['Codigo']; ?>"><center><?php echo $listar2['descricao']; ?></center></a></h2>
                 <div class="product-carousel-price">
                   <center>
                     <del class="fonte-cont-preco">$1355.00</del> <ins>Por: R$ <?php echo number_format($listar2['pvenda'], 2,',','.');?></ins>
@@ -240,6 +243,7 @@ $(document).ready(function(){
         </div> 
         <?php } ?> 
       </div>
+       <button class="btn btn-primary" style="float:right;" >Clique aqui e veja mais</button>
     </div>
   </div>
     <div class="latest-product">
@@ -262,14 +266,14 @@ $(document).ready(function(){
                   <img src="Imagens/<?php echo $listar3['foto']; ?>" alt="Nome do produto: <?php echo $listar3['descricao'];?>" title="Produto: <?php echo $listar3['descricao'];?>">
                   <div class="product-hover">
                     <?php if ($listar3['estoque']>0) { ?>
-                    <a href="#" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
+                    <a href="carrinhoCompras.php?Codigo=<?php echo $listar3['Codigo']?>" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
                     <a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar3['Codigo']; ?>" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
                     <?php }else{ ?>
                     <a class="add-to-cart-link"><i class="glyphicon glyphicon-ban-circle"></i> Indisponível</a>
                     <?php } ?>
                   </div>
                 </div>
-                  <h2 class="fonte-cont"><a href="#"><center><?php echo $listar3['descricao']; ?></center></a></h2>
+                  <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar3['Codigo']; ?>"><center><?php echo $listar3['descricao']; ?></center></a></h2>
                 <div class="product-carousel-price">
                   <center>
                     <del class="fonte-cont-preco">$1355.00</del> <ins>Por: R$ <?php echo number_format($listar3['pvenda'], 2,',','.');?></ins>
@@ -281,5 +285,6 @@ $(document).ready(function(){
         </div> 
         <?php } ?> 
       </div>
+       <button class="btn btn-primary" style="float:right;">Clique aqui e veja mais</button>
     </div>
   </div>
