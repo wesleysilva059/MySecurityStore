@@ -35,14 +35,19 @@
 	{
 		$incluir = $conexao->query("
 			INSERT INTO pfisicadados (nome,sexo,dtnasc,cpf,rg,orgEmissor,dtcadastro)
-			VALUES ('$nome','$sexo','$dataNasc','$cpf','$rg','$orgaoEmissor','$dtAtual')");
+			VALUES ('$nome','$sexo','$dataNasc','$cpf','$rg','$orgaoEmissor','$dtAtual');
+			select last_insert_id() into @id;
+			INSERT INTO `login`(`tipousuario`, `email`, `senha`, `idcliente`) VALUES (1,'$email','$senha',@id);
+			INSERT INTO `pfisicacontatos` (`tipoemail`, `email`, `tipotelefone`, `fone`, `idcliente`) VALUES (1,'$email',1,'$telefone',@id)
+			
+			");
 		
 		//$pegaId = $conexao->query("SELECT LAST_INSERT_ID() INTO pfisicadados");
 		//$exibe2 = $pegaId->fetch(PDO::FETCH_ASSOC);
 		
 		//echo $exibe2;
 		
-		header('location;ok.php');
+		header('location:ok.php');
 	}
 
 ?>
