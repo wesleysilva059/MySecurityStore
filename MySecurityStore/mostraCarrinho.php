@@ -33,11 +33,11 @@
                                 ?>
                                 <tr>
                                     <td class="product-remove">
-                                        <a title="Remover este item" class="remove" href="removeCarrinho.php?Codigo=<?php echo $Codigo; ?> "><span class="fa fa-trash-o" aria-hidden="true"></span></a> 
+                                        <a title="Remover este item" class="remove" href="excluirCarrinho.php?Codigo=<?php echo $Codigo; ?> "><span class="fa fa-trash-o" aria-hidden="true"></span></a> 
                                     </td>
 
                                     <td class="product-thumbnail">
-                                        <a href="conteudoProdutoCompra.php?Codigo=<?php echo $exibe['Codigo']?>"><img alt="" class="" src="Imagens/ <?php echo $exibe['foto']; ?> "></a>
+                                        <a href="conteudoProdutoCompra.php?Codigo=<?php echo $exibe['Codigo']?>"><img alt="" class="" src="Imagens/<?php echo $exibe['foto']; ?>"></a>
                                     </td>
 
                                     <td class="product-name">

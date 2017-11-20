@@ -33,9 +33,9 @@
                                         <tr>
                                             <td class="actions" colspan="6">
                                                 <h2 class="section-title">Total: <strong>R$<?php echo number_format($total,2,',','.');?></strong></h2>
-                                                <input type="submit" value="Continuar comprando" name="continuarComprando" class="button text-left">
-                                                <input type="submit" value="Fechar compra" name="fecharCompra" class="add_to_cart_button text-left">
-                                            </td>
+                                                <a href=""><input type="submit" value="Continuar comprando" name="continuarComprando" class="button text-left"></a>
+                                                <a href=""><input type="submit" value="Fechar compra" name="fecharCompra" class="add_to_cart_button text-left">
+                                            </td></a>
                                         </tr>
                                     </tbody>
                                 </table>
