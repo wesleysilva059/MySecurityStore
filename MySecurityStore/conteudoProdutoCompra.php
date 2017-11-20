@@ -7,7 +7,7 @@
 
       $Codigo = $_GET['Codigo'];
 
-      $consulta = $conexao->query("SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto AND produtos.Codigo='$Codigo'");
+      $consulta = $conexao->query("SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto AND produtos.Codigo = '$Codigo'");
 
       $listar = $consulta->fetch(PDO::FETCH_ASSOC);
       }else{
@@ -96,16 +96,11 @@ function showDivs(n) {
                 </div>
                     
 
-                <div class="col-sm-3">
-                   	<form action="">
-                        <div class="quantity">
-                        	<p>Quantidade:
-                           	<input type="number" size="100" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1" class="text-right"></p>
-                        </div>
-                </div>
                 <div class="col-md-7 text-center">
                     <div class="margem-produtos-geral-breadcrumb"></div>
+                    <a href="carrinhoCompras.php?Codigo=<?php echo $listar['Codigo'];?>">
 	                   	<button class="btn btn-primary btn-lg" type="submit">Adicionar ao carrinho</button>
+                    </a>
 	                   	</form>
                   	</div>
 				</div>

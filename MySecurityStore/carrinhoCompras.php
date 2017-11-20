@@ -1,58 +1,38 @@
-<?php include("topo.php"); ?>
-<?php include("menu.php");?>
+<?php
+    session_start();
+    include'conexao.php';
+    if (empty($_SESSION['id'])){//se usuario não está logado
+        header('location:login.php');//vai até a tela de login
+    }
+     include("topo.php");
+     include("menu.php");
+    if(!empty($_GET['Codigo'])){ //se nao recebe o codigo do produto nao pode add mais nada no carrinho
+        $Codigo = $_GET['Codigo'];//pega o codigo do produto que esta sendo comprado
+    
+    if(!isset($_SESSION['carrinho'])){//se sessão carrinho não estiver setada
+        $_SESSION['carrinho'] = array();//cria sessao carrinho
+    }
+    if(!isset($_SESSION['carrinho'][$Codigo])){
+        $_SESSION['carrinho'][$Codigo]=1;//após criar, adiciona um produto a ele
+    }else{
+        $_SESSION['carrinho'][$Codigo]+=1;//se ela ja estiver setada, adiciona outro produto ao carrinho
+    }
+    include'mostraCarrinho.php';
+
+    }else{
+        include'mostraCarrinho.php';
+    }
+?>
  <div class="container">
- 		<div class="latest-product">
-			<div class="margem-produtos-geral-home">
-        		<h2 class="section-title">Meu carrinho</h2>
-        	</div>
-        </div>
         <div class="col-md-12">
                     <div class="product-content-right">
                         <div class="woocommerce">
                             <form method="post" action="#">
                                 <table cellspacing="0" class="shop_table cart">
-                                    <thead>
-                                        <tr>
-                                            <th>Remover</th>
-                                            <th>Imagem</th>
-                                            <th>Produto</th>
-                                            <th>Preço</th>
-                                            <th>Quantidade</th>
-                                            <th>Total</th>
-                                        </tr>
-                                    </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="product-remove">
-                                                <a title="Remover este item" class="remove" href="#"><span class="fa fa-trash-o" aria-hidden="true"></span></a> 
-                                            </td>
-
-                                            <td class="product-thumbnail">
-                                                <a href="conteudoProdutoCompra.php"><img alt="" class="" src="Imagens/kitCompleto1.jpg"></a>
-                                            </td>
-
-                                            <td class="product-name">
-                                                <a href="conteudoProdutoCompra.php">KIT 4 CÂMERAS</a> 
-                                            </td>
-
-                                            <td class="product-price">
-                                                <span class="amount">R$2200,00</span> 
-                                            </td>
-
-                                            <td class="product-quantity">
-                                                <div class="quantity buttons_added">
-                                                    <input type="button" class="minus" value="-">
-                                                    <input type="number" size="4" class="input-text qty text" title="Qty" value="1" min="0" step="1">
-                                                    <input type="button" class="plus" value="+">
-                                                </div>
-                                            </td>
-
-                                            <td class="product-subtotal">
-                                                <span class="amount">R$2200.00</span> 
-                                            </td>
-                                        </tr>
-                                        <tr>
                                             <td class="actions" colspan="6">
+                                                <h2 class="section-title">Total: <strong>R$<?php echo number_format($total,2,',','.');?></strong></h2>
                                                 <input type="submit" value="Continuar comprando" name="continuarComprando" class="button text-left">
                                                 <input type="submit" value="Fechar compra" name="fecharCompra" class="add_to_cart_button text-left">
                                             </td>
@@ -60,57 +40,44 @@
                                     </tbody>
                                 </table>
                             </form>
+                             <div>
+                                <div class="cross-sells">
+                                  <h2>Calcular frete</h2>
+                                    <form method="POST" action="#" class="shipping_calculator">
+                                        <input type="text" placeholder="Digite seu CEP" value="" id="calculaFrete" class="input-text" name="calculaFrete">
+                                        <button type="submit" class="shipping-calculator-button add_to_cart_button" data-toggle="collapse" href="#calculaFretetotal" aria-expanded="false" aria-controls="calcalute-shipping-wrap">Calcular</button>
+                                        <section id="calculaFretetotal" class="shipping-calculator-form collapse">
+                                        <div class="margem"></div>
+                                            <p class="form-row form-row-wide">Valor sedex: R$33,00</p>
+                                            <p class="form-row form-row-wide">Valor sedex: R$33,00</p>
+                                    </form>
+                                </div>
+                                <div class="cart_totals ">
+                                    <h2>Total da compra</h2>
 
-                            <div>
+                                    <table cellspacing="0">
+                                        <tbody>
+                                            <tr class="cart-subtotal">
+                                                <th>Subtotal</th>
+                                                <td><span class="amount"><?php echo number_format($total,2,',','.');?></span></td>
+                                            </tr>
 
+                                            <tr class="shipping">
+                                                <th>Produto</th>
+                                                <td><?php echo $produto; ?></td>
+                                            </tr>
 
-	                            <div class="cross-sells">
-	                              <h2>Calcular frete</h2>
-	                                <form method="POST" action="#" class="shipping_calculator">
-	                                	<input type="text" placeholder="Digite seu CEP" value="" id="calculaFrete" class="input-text" name="calculaFrete">
-	                                    <button type="submit" class="shipping-calculator-button add_to_cart_button" data-toggle="collapse" href="#calculaFretetotal" aria-expanded="false" aria-controls="calcalute-shipping-wrap">Calcular</button>
-	                                    <section id="calculaFretetotal" class="shipping-calculator-form collapse">
-	                                    <div class="margem"></div>
-	                                        <p class="form-row form-row-wide">Valor sedex: R$33,00</p>
-	                                        <p class="form-row form-row-wide">Valor sedex: R$33,00</p>
-
-	                                </form>
-	                            </div>
-
-
-	                            <div class="cart_totals ">
-	                                <h2>Total da compra</h2>
-
-	                                <table cellspacing="0">
-	                                    <tbody>
-	                                        <tr class="cart-subtotal">
-	                                            <th>Subtotal</th>
-	                                            <td><span class="amount">R$2200.00</span></td>
-	                                        </tr>
-
-	                                        <tr class="shipping">
-	                                            <th>Produto</th>
-	                                            <td>KIT 4 CÂMERAS</td>
-	                                        </tr>
-
-	                                        <tr class="order-total">
-	                                            <th>Preço Total</th>
-	                                            <td><strong><span class="amount">R$2200.00</span></strong> </td>
-	                                        </tr>
-	                                    </tbody>
-	                                </table>
-	                            </div>
-	                        </div>
-
-
-                           
-                         
-
-
+                                            <tr class="order-total">
+                                                <th>Preço Total</th>
+                                                <td><strong><span class="amount"><?php echo number_format($total,2,',','.');?></span></strong> </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                        </div>                        
-                    </div>                    
+                        </div>
+                    </div>
                 </div>
+            </div>
+<?php include("rodape.php"); ?>
 
-    </div>
-<?php include("rodape.php");?>
