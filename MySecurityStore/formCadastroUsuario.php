@@ -405,7 +405,7 @@
 								<div class="form-group">
                                     <label class="col-sm-2 control-label">Razão Social</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="" placeholder="">
+                                        <input type="text" name="razaosocial" class="form-control" id="razaosocial" placeholder="">
                                     </div>
                                 </div>
 								<div class="form-group">

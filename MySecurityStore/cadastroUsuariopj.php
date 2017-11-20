@@ -5,7 +5,7 @@
 	$razaosocial = $_POST["razaosocial"];
 	$nomefantasia = $_POST["nfantasia"];
 	$cnpj = $_POST["cnpj"];
-	$inscrestadual = $_POST["inscest"];
+	$inscEst = $_POST["inscest"];
 	$email = $_POST["email"];
 	$telefone = $_POST["telefone"];
 	$celular = $_POST["celular"];
@@ -33,8 +33,8 @@
 	{
 		try{
 		$incluir = $conexao->query("
-			INSERT INTO pjuridicadados (nome,sexo,dtnasc,cpf,rg,orgEmissor,dtcadastro)
-			VALUES ('$nome','$sexo','$dataNasc','$cpf','$rg','$orgaoEmissor','$dtAtual');
+			INSERT INTO `pjuridicadados`(`razaosocial`, `nomefantasia`, `cnpj`, `inscest`, `dtcadastro`)
+			VALUES ('$razaosocial','$nomefantasia','$cnpj','$inscEst','$dtAtual');
 			select last_insert_id() into @id;
 			INSERT INTO `pjuridicacontatos` (`tipoemail`, `email`, `tipotelefone`, `fone`, `idcliente`) VALUES (1,'$email',1,'$telefone',@id);
 			INSERT INTO `login`(`tipousuario`, `email`, `senha`, `idcliente`) VALUES (1,'$email','$senha',@id);
