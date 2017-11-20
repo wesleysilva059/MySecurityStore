@@ -33,6 +33,12 @@
                   </div> 
               </ul>
 
+<<<<<<< HEAD
+              <ul class="nav navbar-nav navbar-right">
+                  <li><a href="login.php">Entrar</a></li>
+                  <li><a href="formCadastroUsuario.php">Cadastre-se</a></li>
+              </ul>
+=======
                 <?php
           
             if (empty($_SESSION['id'])) {
@@ -65,6 +71,7 @@
             }
           }
           ?>
+>>>>>>> 77f026966b297b47d1b9bba3aa9ecae5a98ac133
   </div>
 </nav>
 <div class="container container-inicio">
