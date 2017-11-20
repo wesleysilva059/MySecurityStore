@@ -92,15 +92,7 @@
     		        <img src="Imagens/intelbrasLado.png" class="img-rounded">
                 <!--<img src="Imagens/branco.png" class="img-rounded"> -->
   </div>
-    <div class="text-right">
-          <ul class="pagination fonte-cont">
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-          </ul>
-    </div>
+
    
       <?php 
         $consulta = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto');

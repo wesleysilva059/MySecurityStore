@@ -26,16 +26,18 @@
  <div class="container">
         <div class="col-md-12">
                     <div class="product-content-right">
-                        <div class="woocommerce">
+                        <div>
                             <form method="post" action="#">
                                 <table cellspacing="0" class="shop_table cart">
                                     <tbody>
                                         <tr>
                                             <td class="actions" colspan="6">
                                                 <h2 class="section-title">Total: <strong>R$<?php echo number_format($total,2,',','.');?></strong></h2>
-                                                <a href=""><input type="submit" value="Continuar comprando" name="continuarComprando" class="button text-left"></a>
-                                                <a href=""><input type="submit" value="Fechar compra" name="fecharCompra" class="add_to_cart_button text-left">
-                                            </td></a>
+                                                <a href="index.php"><input type="submit" value="Continuar comprando" name="continuarComprando" class="button text-left"></a>
+                                                 <?php if (count($_SESSION['carrinho'])>0){?>
+                                                <a href="finalizarCompre.php"><input type="submit" value="Fechar compra" name="fecharCompra" class="add_to_cart_button text-left"></a>
+                                                <?php } ?>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>

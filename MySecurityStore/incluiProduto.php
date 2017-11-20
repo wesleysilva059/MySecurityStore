@@ -63,7 +63,7 @@ try {
 	$inserir=$conexao->query("
 		INSERT INTO produtos(codbarras, marca, modelo, grupo, descricao, garantia, obs, idfabricante, pesoliquido, pesoembalagem, foto, foto2,foto3) VALUES ('$recebe_codbarras', '$recebe_marca', '$recebe_modelo', '$recebe_grupo', '$recebe_descricao', '$recebe_garantia', '$recebe_observacao','$recebe_idfabricante','$recebe_pesoliquido','$recebe_pesoembalagem', '$img_nome1', '$img_nome2', '$img_nome3');
 		SELECT last_insert_id() into @Codigo;
-		INSERT INTO prodprecos(pcusto,pmedio,pvenda,idproduto)VALUES('$recebe_pcusto','$recebe_pmedio','$recebe_pvenda',@Codigo);
+		INSERT INTO prodprecos(pcusto,pmedio,pvenda,idproduto,data)VALUES('$recebe_pcusto','$recebe_pmedio','$recebe_pvenda',@Codigo,'$dtAtual');
 		INSERT INTO prodestoque(estoque,estmin,estideal,idproduto)VALUES('$recebe_estoque','$recebe_estmin','$recebe_estideal',@Codigo);
 		INSERT INTO `prodtecnologia`(`codproduto`, `codtecnologia`) VALUES (@Codigo,'$recebe_codtecnologia');
 

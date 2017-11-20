@@ -1,14 +1,19 @@
-    <div class="container">
-        <div class="latest-product">
-            <div class="margem-produtos-geral-home">
-                <h2 class="section-title">Meu carrinho</h2>
-            </div>
-         
-        </div>
-        <div class="col-md-12">
-            <div class="product-content-right">
-                <div>
-                    <form>
+<?php
+    session_start();
+    include'conexao.php';
+    if (empty($_SESSION['id'])){//se usuario não está logado
+        header('location:login.php');//vai até a tela de login
+    }
+    include("topo.php");
+    include("menu.php");
+?>
+<div class="container">
+    <div class="col-md-12">
+    <h2 class="text-center">Revisão</h2>
+    </div>
+    <br>    
+    <div class="col-md-9">
+        <form>
                         <table cellspacing="0" class="shop_table cart">
                             <thead>
                                 <tr>
@@ -21,10 +26,6 @@
                             </thead>
                             <tbody>
                                 <?php 
-                                if(!isset($_SESSION['carrinho'])){
-
-                                    $_SESSION['carrinho'] = array();
-                                }
                                 $total = null;
                                 foreach ($_SESSION['carrinho'] as $Codigo => $qnt) { // sessao carrinho criada anteriormente
                                     $consulta = $conexao->query("SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto AND produtos.Codigo = '$Codigo'"); //
@@ -61,8 +62,38 @@
                             <?php } ?>
                             </tbody>
                         </table>
+                        <tr>
+                            <a href="index.php"><input type="submit" value="Continuar comprando" name="continuarComprando" class="button text-right"></a>
+                            <a href="formasPagamento.php"><input type="submit" value="Fechar a compra" name="formasPagamento" class="text-right"></a>
+                            <a href="excluirCarrinho.php"><input type="submit" value="Cancelar compra" name="cancelarCompra" class="text-right"></a>
+                        </tr>
                     </form>         
-                </div>
-            </div>                        
-        </div>                    
     </div>
+    <div class="col-md-3">
+            <div class="box" id="order-summary">
+                <div>
+                    <h3>Valores a pagar</h3>
+                </div>
+                    <p>Valor total do seu produto já com o frete incluso.</p>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>Subtotal</td>
+                                <th>R$446.00</th>
+                            </tr>
+                            <tr>
+                                <td>Frete</td>
+                                <th>$10.00</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Total</strong></td>
+                                <th><strong>$456.00</strong></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>               
+</div>
+<?php   include("rodape.php"); ?>
