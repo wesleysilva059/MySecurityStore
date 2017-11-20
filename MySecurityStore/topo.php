@@ -28,13 +28,8 @@
 	    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
 		<script src="js/tour.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/font-awesome.js"></script>
-		<script src="/js/jquery.mask.js"></script>
 		<title>My Security Store - A loja de segurança perfeita para você</title>
 		
-		<script>
-			$(document).ready(function(){
-				$("cep").mask(00.000-000);
-			})
-		</script>
+
 	</head>
 	<body>
