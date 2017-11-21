@@ -15,10 +15,11 @@ $consulta = $conexao->query("SELECT * FROM login WHERE email='$recebe_email' AND
 if($consulta->rowCount()==1){
 	$exibeUser = $consulta->fetch(PDO::FETCH_ASSOC);
 	
-	if($exibeUser['tipousuario']!=1){
+	if($exibeUser['adm']!=1){
 			
 		$_SESSION['id']=$exibeUser['idcliente'];
 		$_SESSION['adm']=0;
+		$_SESSION['tipousuario']=$exibeUser['tipousuario'];
 				
 		header('location:index.php');
 	} else {

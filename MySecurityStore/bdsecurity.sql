@@ -1,22 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
+-- version 4.1.14
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 12-Nov-2017 às 19:35
--- Versão do servidor: 10.1.25-MariaDB
--- PHP Version: 7.1.7
+-- Generation Time: 21-Nov-2017 às 03:35
+-- Versão do servidor: 5.6.17
+-- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `bdsecurity`
@@ -28,12 +26,13 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `contaspagar`
 --
 
-CREATE TABLE `contaspagar` (
+CREATE TABLE IF NOT EXISTS `contaspagar` (
   `lancamento` int(11) NOT NULL,
   `vencimento` date NOT NULL,
   `parcela` int(11) NOT NULL,
   `valor` float NOT NULL,
-  `nrodocumento` int(11) NOT NULL
+  `nrodocumento` int(11) NOT NULL,
+  PRIMARY KEY (`nrodocumento`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -49,12 +48,14 @@ INSERT INTO `contaspagar` (`lancamento`, `vencimento`, `parcela`, `valor`, `nrod
 -- Estrutura da tabela `contasreceber`
 --
 
-CREATE TABLE `contasreceber` (
+CREATE TABLE IF NOT EXISTS `contasreceber` (
   `lancamento` int(11) NOT NULL,
   `vencimento` date NOT NULL,
   `parcela` int(11) NOT NULL,
   `valor` float NOT NULL,
-  `nrodocumento` int(11) NOT NULL
+  `nrodocumento` int(11) NOT NULL,
+  PRIMARY KEY (`nrodocumento`),
+  KEY `ContasRec_vendas` (`lancamento`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -70,8 +71,8 @@ INSERT INTO `contasreceber` (`lancamento`, `vencimento`, `parcela`, `valor`, `nr
 -- Estrutura da tabela `enderecos`
 --
 
-CREATE TABLE `enderecos` (
-  `idpessoa` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `enderecos` (
+  `idlogin` int(11) NOT NULL,
   `tipo` int(11) NOT NULL,
   `logradouro` varchar(50) NOT NULL,
   `numero` varchar(10) NOT NULL,
@@ -82,19 +83,23 @@ CREATE TABLE `enderecos` (
   `pais` varchar(30) NOT NULL,
   `referencia` varchar(50) NOT NULL,
   `complemento` varchar(20) NOT NULL,
-  `idendereco` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `idendereco` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`idendereco`) USING BTREE,
+  KEY `fk_endlogin` (`idlogin`) USING BTREE
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Extraindo dados da tabela `enderecos`
 --
 
-INSERT INTO `enderecos` (`idpessoa`, `tipo`, `logradouro`, `numero`, `bairro`, `cidade`, `cep`, `uf`, `pais`, `referencia`, `complemento`, `idendereco`) VALUES
+INSERT INTO `enderecos` (`idlogin`, `tipo`, `logradouro`, `numero`, `bairro`, `cidade`, `cep`, `uf`, `pais`, `referencia`, `complemento`, `idendereco`) VALUES
 (1, 1, 'AA', 'NN', 'BB', 'CC', '123', 'MG', 'PP', 'RR', 'CC', 1),
 (1, 2, 'AA', 'NN', 'BB', 'CC', '123', 'MG', 'PP', 'RR', 'CC', 2),
 (1, 3, 'AA', 'NN', 'BB', 'CC', '123', 'MG', 'PP', 'RR', 'CC', 3),
 (1, 4, 'AAAA', '23456', 'BBBBB', 'CCCCC', '123456', 'MG', 'PPPP', 'RERERE', 'CPCPCPC', 4),
-(1, 5, 'AAAA', '23456', 'BBBBB', 'CCCCC', '123456', 'MG', 'PPPP', 'RERERE', 'CPCPCPC', 5);
+(19, 1, 'rua Varginha', '220', 'Jardim Primavera', 'Passos', '37903-214', 'MG', 'Brasil', '', '', 12),
+(20, 1, '', '', '', '', '', '', 'Brasil', '', '', 13),
+(21, 2, 'rua 7 de setembro', '100', 'centro', 'passos', '37903214', 'MG', 'Brasil', '', '', 14);
 
 -- --------------------------------------------------------
 
@@ -102,11 +107,13 @@ INSERT INTO `enderecos` (`idpessoa`, `tipo`, `logradouro`, `numero`, `bairro`, `
 -- Estrutura da tabela `entprod`
 --
 
-CREATE TABLE `entprod` (
+CREATE TABLE IF NOT EXISTS `entprod` (
   `lancamento` int(11) NOT NULL,
   `idproduto` int(11) NOT NULL,
   `qtde` int(11) NOT NULL,
-  `punit` float NOT NULL
+  `punit` float NOT NULL,
+  KEY `Ent_prod` (`idproduto`),
+  KEY `Entprod_entradas` (`lancamento`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -122,8 +129,8 @@ INSERT INTO `entprod` (`lancamento`, `idproduto`, `qtde`, `punit`) VALUES
 -- Estrutura da tabela `entradas`
 --
 
-CREATE TABLE `entradas` (
-  `lancamento` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `entradas` (
+  `lancamento` int(11) NOT NULL AUTO_INCREMENT,
   `notafiscal` int(11) NOT NULL,
   `dtpedido` date NOT NULL,
   `dtentrada` date NOT NULL,
@@ -134,8 +141,12 @@ CREATE TABLE `entradas` (
   `situacao` int(11) NOT NULL,
   `idtransportador` int(11) NOT NULL,
   `tipopag` int(11) NOT NULL,
-  `vlfrete` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `vlfrete` float NOT NULL,
+  PRIMARY KEY (`lancamento`),
+  KEY `Entradas_tipo` (`tipopag`),
+  KEY `Tranportes_ent` (`idtransportador`),
+  KEY `Ent_forn` (`idfornecedor`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Extraindo dados da tabela `entradas`
@@ -150,15 +161,18 @@ INSERT INTO `entradas` (`lancamento`, `notafiscal`, `dtpedido`, `dtentrada`, `id
 -- Estrutura da tabela `envio`
 --
 
-CREATE TABLE `envio` (
-  `idenvio` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `envio` (
+  `idenvio` int(11) NOT NULL AUTO_INCREMENT,
   `forma` int(11) NOT NULL,
   `vlfrete` float NOT NULL,
   `dataenvio` datetime NOT NULL,
   `dataentrega` datetime NOT NULL,
   `idtransportador` int(11) NOT NULL,
-  `idendereco` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `idendereco` int(11) NOT NULL,
+  PRIMARY KEY (`idenvio`),
+  KEY `Envio_end` (`idendereco`),
+  KEY `Envio_trans` (`idtransportador`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Extraindo dados da tabela `envio`
@@ -173,11 +187,12 @@ INSERT INTO `envio` (`idenvio`, `forma`, `vlfrete`, `dataenvio`, `dataentrega`, 
 -- Estrutura da tabela `fabricantes`
 --
 
-CREATE TABLE `fabricantes` (
-  `idfabricante` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `fabricantes` (
+  `idfabricante` int(11) NOT NULL AUTO_INCREMENT,
   `descricao` varchar(50) NOT NULL,
-  `origem` varchar(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `origem` varchar(12) NOT NULL,
+  PRIMARY KEY (`idfabricante`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Extraindo dados da tabela `fabricantes`
@@ -192,14 +207,16 @@ INSERT INTO `fabricantes` (`idfabricante`, `descricao`, `origem`) VALUES
 -- Estrutura da tabela `fornecedor`
 --
 
-CREATE TABLE `fornecedor` (
-  `idfornecedor` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `fornecedor` (
+  `idfornecedor` int(11) NOT NULL AUTO_INCREMENT,
   `razaosocial` varchar(50) NOT NULL,
   `nomefantasia` varchar(50) NOT NULL,
   `cnpj` varchar(20) NOT NULL,
   `inscest` varchar(20) NOT NULL,
-  `idendereco` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `idendereco` int(11) NOT NULL,
+  PRIMARY KEY (`idfornecedor`),
+  KEY `Forn_end` (`idendereco`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Extraindo dados da tabela `fornecedor`
@@ -211,98 +228,20 @@ INSERT INTO `fornecedor` (`idfornecedor`, `razaosocial`, `nomefantasia`, `cnpj`,
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `funccontatos`
---
-
-CREATE TABLE `funccontatos` (
-  `idfuncionario` int(11) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `fone` varchar(30) NOT NULL,
-  `tipoemail` int(11) NOT NULL,
-  `tipofone` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `funccontatos`
---
-
-INSERT INTO `funccontatos` (`idfuncionario`, `email`, `fone`, `tipoemail`, `tipofone`) VALUES
-(1, 'CONTATOCLAUDIOMAIA', '(35)98816-1903', 1, 1),
-(1, 'CLAUDIO.TECNUS@GMAIL.COM', '(35)3522-7887', 2, 2),
-(2, 'WESLEY', '(35)3522-7887', 1, 1),
-(3, '@@@@@', '(35)3522-7887', 1, 1),
-(4, '@@@@@', '(35)3522-7887', 1, 1);
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `funcdoc`
---
-
-CREATE TABLE `funcdoc` (
-  `idfuncionario` int(11) NOT NULL,
-  `rgnro` varchar(14) NOT NULL,
-  `rgssp` varchar(2) NOT NULL,
-  `rgdata` date NOT NULL,
-  `cpf` varchar(20) NOT NULL,
-  `ctps` int(11) NOT NULL,
-  `titulo` int(11) NOT NULL,
-  `reservista` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `funcdoc`
---
-
-INSERT INTO `funcdoc` (`idfuncionario`, `rgnro`, `rgssp`, `rgdata`, `cpf`, `ctps`, `titulo`, `reservista`) VALUES
-(1, 'm7906903', 'MG', '0000-00-00', '03577578661', 111, 222, 333),
-(2, 'm7906903', 'MG', '0000-00-00', '222222', 111, 222, 333),
-(3, 'm7906903', 'MG', '0000-00-00', '3333333', 111, 222, 333),
-(4, 'm7906903', 'MG', '0000-00-00', '444444', 111, 222, 333);
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `funcionarios`
---
-
-CREATE TABLE `funcionarios` (
-  `idfuncionario` int(11) NOT NULL,
-  `nome` varchar(50) NOT NULL,
-  `sexo` varchar(1) NOT NULL,
-  `dtnaasc` date NOT NULL,
-  `naturalidade` varchar(50) NOT NULL,
-  `nacionalidade` varchar(50) NOT NULL,
-  `dtcadastro` date NOT NULL,
-  `idnivel` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `funcionarios`
---
-
-INSERT INTO `funcionarios` (`idfuncionario`, `nome`, `sexo`, `dtnaasc`, `naturalidade`, `nacionalidade`, `dtcadastro`, `idnivel`) VALUES
-(1, 'CLAUDIO ROBERTO MAIA', 'M', '0000-00-00', 'PASSOS', 'BRASILEIRO', '0000-00-00', 1),
-(2, 'HIGOR', 'M', '0000-00-00', 'PASSOS', 'BRASILEIRO', '0000-00-00', 1),
-(3, 'WESLEY', 'M', '0000-00-00', 'PASSOS', 'BRASILEIRO', '0000-00-00', 2),
-(4, 'JUNIOR CESAR', 'M', '0000-00-00', 'PASSOS', 'BRASILEIRO', '0000-00-00', 2);
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `grupo`
 --
 
-CREATE TABLE `grupo` (
-  `idgrupo` int(11) NOT NULL,
-  `descricao` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `grupo` (
+  `idgrupo` int(11) NOT NULL AUTO_INCREMENT,
+  `descrigrupo` varchar(30) NOT NULL,
+  PRIMARY KEY (`idgrupo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Extraindo dados da tabela `grupo`
 --
 
-INSERT INTO `grupo` (`idgrupo`, `descricao`) VALUES
+INSERT INTO `grupo` (`idgrupo`, `descrigrupo`) VALUES
 (1, 'CAMERAS');
 
 -- --------------------------------------------------------
@@ -311,41 +250,43 @@ INSERT INTO `grupo` (`idgrupo`, `descricao`) VALUES
 -- Estrutura da tabela `login`
 --
 
-CREATE TABLE `login` (
-  `idlogin` int(11) NOT NULL,
-  `tipousuario` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `login` (
+  `idlogin` int(11) NOT NULL AUTO_INCREMENT,
+  `adm` int(1) NOT NULL,
+  `tipousuario` int(1) NOT NULL,
   `email` varchar(50) NOT NULL,
   `senha` varchar(20) NOT NULL,
-  `idcliente` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `idcliente` int(11) NOT NULL,
+  PRIMARY KEY (`idlogin`),
+  KEY `idcliente` (`idcliente`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
 -- Extraindo dados da tabela `login`
 --
 
-INSERT INTO `login` (`idlogin`, `tipousuario`, `email`, `senha`, `idcliente`) VALUES
-(1, 1, 'CONTATOCLAUDIOMAIA@GMAIL.COM', '1234', 1),
-(2, 2, 'CRAUDIO@GMAIL.COM', '1234', 1),
-(3, 3, 'EMAIL@EMAIL', '321', 1);
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `nivel`
---
-
-CREATE TABLE `nivel` (
-  `idnivel` int(11) NOT NULL,
-  `descricao` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `nivel`
---
-
-INSERT INTO `nivel` (`idnivel`, `descricao`) VALUES
-(1, 'ADM'),
-(2, 'USUARIO');
+INSERT INTO `login` (`idlogin`, `adm`, `tipousuario`, `email`, `senha`, `idcliente`) VALUES
+(1, 1, 0, 'CONTATOCLAUDIOMAIA@GMAIL.COM', '1234', 1),
+(2, 2, 0, 'CRAUDIO@GMAIL.COM', '1234', 1),
+(3, 3, 0, 'EMAIL@EMAIL', '321', 1),
+(4, 1, 0, 'wesley@silva', '123', 1),
+(5, 2, 0, 'zxcv', '123', 2),
+(6, 2, 0, 'zxcv', '123', 5),
+(7, 1, 0, 'wesley@silva', '12345', 3),
+(8, 1, 0, 'wesley@silva', '12345', 7),
+(9, 1, 0, 'wesley@silva', '12345', 3),
+(10, 1, 0, 'wesley@silva', '12345', 9),
+(11, 1, 0, 'asdg@asdf', '123', 12),
+(12, 1, 0, 'asdg@asdf123', '1234', 14),
+(13, 1, 0, 'asdg@asdf12', '123', 15),
+(14, 1, 0, 'asdg@asdf1', 'asd', 16),
+(15, 1, 0, 'asdg@asdf10', 'zxc', 17),
+(16, 1, 0, 'wesleysilva059@gmail.com', '123', 18),
+(17, 1, 0, 'wesleysilva059@gmail.com.br', '123', 19),
+(18, 1, 0, 'wesleysilva059@gmail', '1234', 20),
+(19, 1, 0, 'wesleysilva059@gmail.br', '123', 21),
+(20, 1, 0, '', '', 22),
+(21, 0, 2, 'teste@teste.com.br', '123', 6);
 
 -- --------------------------------------------------------
 
@@ -353,14 +294,15 @@ INSERT INTO `nivel` (`idnivel`, `descricao`) VALUES
 -- Estrutura da tabela `pagamentos`
 --
 
-CREATE TABLE `pagamentos` (
+CREATE TABLE IF NOT EXISTS `pagamentos` (
   `lancamento` int(11) NOT NULL,
   `vlpago` float NOT NULL,
   `data` date NOT NULL,
   `desconto` float NOT NULL,
   `acrescimo` float NOT NULL,
   `situacao` varchar(20) NOT NULL,
-  `nrodocumento` int(11) NOT NULL
+  `nrodocumento` int(11) NOT NULL,
+  KEY `Pagar` (`nrodocumento`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -376,10 +318,11 @@ INSERT INTO `pagamentos` (`lancamento`, `vlpago`, `data`, `desconto`, `acrescimo
 -- Estrutura da tabela `permissoes`
 --
 
-CREATE TABLE `permissoes` (
-  `idpermissao` int(11) NOT NULL,
-  `descricao` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `permissoes` (
+  `idpermissao` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(50) NOT NULL,
+  PRIMARY KEY (`idpermissao`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Extraindo dados da tabela `permissoes`
@@ -394,22 +337,27 @@ INSERT INTO `permissoes` (`idpermissao`, `descricao`) VALUES
 -- Estrutura da tabela `pfisicacontatos`
 --
 
-CREATE TABLE `pfisicacontatos` (
-  `idpfisica` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `pfisicacontatos` (
+  `idpfcontato` int(11) NOT NULL AUTO_INCREMENT,
   `tipoemail` int(11) NOT NULL,
-  `email` varchar(50) NOT NULL,
+  `email` varchar(60) NOT NULL,
   `tipotelefone` int(11) NOT NULL,
-  `fone` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `fone` varchar(15) NOT NULL,
+  `idcliente` int(11) NOT NULL,
+  PRIMARY KEY (`idpfcontato`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Extraindo dados da tabela `pfisicacontatos`
 --
 
-INSERT INTO `pfisicacontatos` (`idpfisica`, `tipoemail`, `email`, `tipotelefone`, `fone`) VALUES
-(1, 1, 'CRAUDIO@GMAIL.COM', 1, '11111'),
-(1, 2, 'CRAUDIO2@HOTMAIL.COM', 2, '323232'),
-(2, 1, 'CABELO@HOTMAIL.COM', 21, '3232572');
+INSERT INTO `pfisicacontatos` (`idpfcontato`, `tipoemail`, `email`, `tipotelefone`, `fone`, `idcliente`) VALUES
+(1, 1, 'asdg@asdf10', 1, '(12) 3123-1231', 17),
+(2, 1, 'wesleysilva059@gmail.com', 1, '(35) 3521-7373', 18),
+(3, 1, 'wesleysilva059@gmail.com.br', 1, '(35) 3521-7373', 19),
+(4, 1, 'wesleysilva059@gmail', 1, '(35) 3521-7373', 20),
+(5, 1, 'wesleysilva059@gmail.br', 1, '(35) 3521-7373', 21),
+(6, 1, '', 1, '', 22);
 
 -- --------------------------------------------------------
 
@@ -417,49 +365,41 @@ INSERT INTO `pfisicacontatos` (`idpfisica`, `tipoemail`, `email`, `tipotelefone`
 -- Estrutura da tabela `pfisicadados`
 --
 
-CREATE TABLE `pfisicadados` (
-  `idpfisica` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `pfisicadados` (
+  `idpfisica` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
   `sexo` varchar(1) NOT NULL,
   `dtnasc` date NOT NULL,
-  `naturalidade` varchar(50) NOT NULL,
-  `nacionalidade` varchar(50) NOT NULL,
-  `dtcadastro` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `cpf` varchar(14) NOT NULL,
+  `rg` varchar(10) NOT NULL,
+  `orgEmissor` varchar(10) NOT NULL,
+  `dtcadastro` date NOT NULL,
+  PRIMARY KEY (`idpfisica`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
 
 --
 -- Extraindo dados da tabela `pfisicadados`
 --
 
-INSERT INTO `pfisicadados` (`idpfisica`, `nome`, `sexo`, `dtnasc`, `naturalidade`, `nacionalidade`, `dtcadastro`) VALUES
-(1, 'CRAUDIO ROBERTO', 'M', '0000-00-00', 'PASSOS', 'BRASILEIRO', '0000-00-00'),
-(2, 'CABELO', 'M', '0000-00-00', 'PASSOS', 'BRASILEIRO', '0000-00-00'),
-(3, 'CAPIVARA', 'M', '0000-00-00', 'PASSOS', 'BRASILEIRO', '0000-00-00'),
-(4, 'DUCAPITOLIO', 'M', '0000-00-00', 'PASSOS', 'BRASILEIRO', '0000-00-00');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `pfisicadoc`
---
-
-CREATE TABLE `pfisicadoc` (
-  `idpfisica` int(11) NOT NULL,
-  `rgnro` varchar(20) NOT NULL,
-  `rgssp` varchar(2) NOT NULL,
-  `rgdata` date NOT NULL,
-  `cpf` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `pfisicadoc`
---
-
-INSERT INTO `pfisicadoc` (`idpfisica`, `rgnro`, `rgssp`, `rgdata`, `cpf`) VALUES
-(1, 'm7906903', 'MG', '0000-00-00', '3577578661'),
-(2, 'm7906903', 'MG', '0000-00-00', '2222222'),
-(3, 'm7906903', 'MG', '0000-00-00', '3333333'),
-(4, 'm7906903', 'MG', '0000-00-00', '4444');
+INSERT INTO `pfisicadados` (`idpfisica`, `nome`, `sexo`, `dtnasc`, `cpf`, `rg`, `orgEmissor`, `dtcadastro`) VALUES
+(1, 'CRAUDIO ROBERTO', 'M', '0000-00-00', '', '', '', '0000-00-00'),
+(2, 'CABELO', 'M', '0000-00-00', '', '', '', '0000-00-00'),
+(3, 'CAPIVARA', 'M', '0000-00-00', '', '', '', '0000-00-00'),
+(4, 'DUCAPITOLIO', 'M', '0000-00-00', '', '', '', '0000-00-00'),
+(9, 'Wesley Samuel da Silva', '1', '0000-00-00', '059.149.186-93', '1232125', 'SSP', '0000-00-00'),
+(10, 'asdf', '2', '0000-00-00', '123.123.123-12', 'cbzs', 'SSP', '0000-00-00'),
+(11, 'asdf', '2', '0000-00-00', '123.123.123-12', 'cbzs', 'SSP', '0000-00-00'),
+(12, 'asdf', '2', '0000-00-00', '123.123.123-12', 'cbzs', 'SSP', '0000-00-00'),
+(13, 'asdf', '2', '0000-00-00', '123.123.123-12', 'cbzs', 'SSP', '0000-00-00'),
+(14, 'asdf', '2', '0000-00-00', '123.123.123-12', 'cbzs', 'SSP', '0000-00-00'),
+(15, 'asdf', '2', '0000-00-00', '123.123.123-12', 'cbzs', 'SSP', '0000-00-00'),
+(16, 'asdf', '2', '0000-00-00', '123.123.123-12', 'cbzs', 'SSP', '0000-00-00'),
+(17, 'asdf', '2', '0000-00-00', '123.123.123-12', 'cbzs', 'SSP', '0000-00-00'),
+(18, 'Wesley', '1', '0000-00-00', '059.149.186-93', 'mg11271963', 'SSP', '0000-00-00'),
+(19, 'Wesley', '1', '0000-00-00', '059.149.186-93', 'mg11271963', 'SSP', '0000-00-00'),
+(20, 'Wesley', '1', '0000-00-00', '059.149.186-93', 'mg11271963', 'SSP', '0000-00-00'),
+(21, 'Wesley', '1', '0000-00-00', '059.149.186-93', 'mg11271963', 'SSP', '0000-00-00'),
+(22, '', '', '0000-00-00', '', '', '', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -467,19 +407,22 @@ INSERT INTO `pfisicadoc` (`idpfisica`, `rgnro`, `rgssp`, `rgdata`, `cpf`) VALUES
 -- Estrutura da tabela `pjuridicacontatos`
 --
 
-CREATE TABLE `pjuridicacontatos` (
-  `idpjuridica` int(11) NOT NULL,
-  `contato` varchar(30) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `fone` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `pjuridicacontatos` (
+  `idpjcontato` int(11) NOT NULL AUTO_INCREMENT,
+  `tipoemail` int(11) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `tipotelefone` int(11) NOT NULL,
+  `fone` varchar(15) NOT NULL,
+  `idcliente` int(11) NOT NULL,
+  PRIMARY KEY (`idpjcontato`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Extraindo dados da tabela `pjuridicacontatos`
 --
 
-INSERT INTO `pjuridicacontatos` (`idpjuridica`, `contato`, `email`, `fone`) VALUES
-(1, 'ZE DA LOJA', 'ZEDALOJA@LOJA', '45455656565');
+INSERT INTO `pjuridicacontatos` (`idpjcontato`, `tipoemail`, `email`, `tipotelefone`, `fone`, `idcliente`) VALUES
+(1, 1, 'teste@teste.com.br', 1, '123123123', 6);
 
 -- --------------------------------------------------------
 
@@ -487,41 +430,27 @@ INSERT INTO `pjuridicacontatos` (`idpjuridica`, `contato`, `email`, `fone`) VALU
 -- Estrutura da tabela `pjuridicadados`
 --
 
-CREATE TABLE `pjuridicadados` (
-  `idpjuridica` int(11) NOT NULL,
-  `tipo` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `pjuridicadados` (
+  `idpjuridica` int(11) NOT NULL AUTO_INCREMENT,
   `razaosocial` varchar(50) NOT NULL,
   `nomefantasia` varchar(50) NOT NULL,
-  `dtfundacao` date NOT NULL,
-  `dtultimaalt` date NOT NULL,
-  `dtcadastro` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `cnpj` int(18) NOT NULL,
+  `inscest` int(20) NOT NULL,
+  `dtcadastro` date NOT NULL,
+  PRIMARY KEY (`idpjuridica`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Extraindo dados da tabela `pjuridicadados`
 --
 
-INSERT INTO `pjuridicadados` (`idpjuridica`, `tipo`, `razaosocial`, `nomefantasia`, `dtfundacao`, `dtultimaalt`, `dtcadastro`) VALUES
-(1, 1, 'LOJA', 'LOJINHA', '0000-00-00', '0000-00-00', '0000-00-00');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `pjuridicadoc`
---
-
-CREATE TABLE `pjuridicadoc` (
-  `idpjuridica` int(11) NOT NULL,
-  `cnpj` varchar(30) NOT NULL,
-  `inscest` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `pjuridicadoc`
---
-
-INSERT INTO `pjuridicadoc` (`idpjuridica`, `cnpj`, `inscest`) VALUES
-(1, '0101010', '2929292');
+INSERT INTO `pjuridicadados` (`idpjuridica`, `razaosocial`, `nomefantasia`, `cnpj`, `inscest`, `dtcadastro`) VALUES
+(1, 'LOJA', 'LOJINHA', 0, 0, '0000-00-00'),
+(2, '', 'ind', 521, 0, '0000-00-00'),
+(3, 'teste', 'teste', 0, 0, '0000-00-00'),
+(4, 'teste', 'teste', 0, 0, '0000-00-00'),
+(5, 'teste2', 'teste', 0, 0, '0000-00-00'),
+(6, 'teste2', 'teste', 0, 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -529,11 +458,12 @@ INSERT INTO `pjuridicadoc` (`idpjuridica`, `cnpj`, `inscest`) VALUES
 -- Estrutura da tabela `prodestoque`
 --
 
-CREATE TABLE `prodestoque` (
+CREATE TABLE IF NOT EXISTS `prodestoque` (
   `idproduto` int(11) NOT NULL,
   `estoque` int(11) NOT NULL,
   `estmin` int(11) NOT NULL,
-  `estideal` int(11) NOT NULL
+  `estideal` int(11) NOT NULL,
+  KEY `Prod_estoque` (`idproduto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -549,12 +479,13 @@ INSERT INTO `prodestoque` (`idproduto`, `estoque`, `estmin`, `estideal`) VALUES
 -- Estrutura da tabela `prodprecos`
 --
 
-CREATE TABLE `prodprecos` (
+CREATE TABLE IF NOT EXISTS `prodprecos` (
   `idproduto` int(11) NOT NULL,
   `data` date NOT NULL,
   `pcusto` float NOT NULL,
   `pmedio` float NOT NULL,
-  `pvenda` float NOT NULL
+  `pvenda` float NOT NULL,
+  KEY `Prod_precos` (`idproduto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -570,10 +501,12 @@ INSERT INTO `prodprecos` (`idproduto`, `data`, `pcusto`, `pmedio`, `pvenda`) VAL
 -- Estrutura da tabela `prodpromocao`
 --
 
-CREATE TABLE `prodpromocao` (
+CREATE TABLE IF NOT EXISTS `prodpromocao` (
   `idpromocao` int(11) NOT NULL,
   `idproduto` int(11) NOT NULL,
-  `desconto` float NOT NULL
+  `desconto` float NOT NULL,
+  KEY `Promo_prod` (`idproduto`),
+  KEY `Prod_promo` (`idpromocao`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -589,9 +522,11 @@ INSERT INTO `prodpromocao` (`idpromocao`, `idproduto`, `desconto`) VALUES
 -- Estrutura da tabela `prodtecnologia`
 --
 
-CREATE TABLE `prodtecnologia` (
+CREATE TABLE IF NOT EXISTS `prodtecnologia` (
   `codproduto` int(11) NOT NULL,
-  `codtecnologia` int(11) NOT NULL
+  `codtecnologia` int(11) NOT NULL,
+  KEY `Prod_tec` (`codproduto`),
+  KEY `Tec_prod` (`codtecnologia`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -608,8 +543,8 @@ INSERT INTO `prodtecnologia` (`codproduto`, `codtecnologia`) VALUES
 -- Estrutura da tabela `produtos`
 --
 
-CREATE TABLE `produtos` (
-  `Codigo` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `produtos` (
+  `Codigo` int(11) NOT NULL AUTO_INCREMENT,
   `codbarras` varchar(30) NOT NULL,
   `marca` varchar(30) NOT NULL,
   `modelo` varchar(30) NOT NULL,
@@ -619,16 +554,22 @@ CREATE TABLE `produtos` (
   `obs` varchar(100) NOT NULL,
   `idfabricante` int(11) NOT NULL,
   `pesoliquido` float NOT NULL,
-  `pesoembalagem` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `pesoembalagem` float NOT NULL,
+  `foto` varchar(50) NOT NULL,
+  `foto2` varchar(50) NOT NULL,
+  `foto3` varchar(50) NOT NULL,
+  PRIMARY KEY (`Codigo`),
+  KEY `Produtos_fab` (`idfabricante`),
+  KEY `Produtos_grupo` (`grupo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Extraindo dados da tabela `produtos`
 --
 
-INSERT INTO `produtos` (`Codigo`, `codbarras`, `marca`, `modelo`, `grupo`, `descricao`, `garantia`, `obs`, `idfabricante`, `pesoliquido`, `pesoembalagem`) VALUES
-(1, '99999999', 'MARC', '10M', 1, 'CAMERA AHCD E IP', '120', 'OTIMO', 1, 10, 2),
-(2, '9999999888', 'MARC', '10M', 1, 'CAMERA IP', '90', 'OTIMO', 1, 10, 2);
+INSERT INTO `produtos` (`Codigo`, `codbarras`, `marca`, `modelo`, `grupo`, `descricao`, `garantia`, `obs`, `idfabricante`, `pesoliquido`, `pesoembalagem`, `foto`, `foto2`, `foto3`) VALUES
+(1, '99999999', 'MARC', '10M', 1, 'CAMERA AHCD E IP', '120', 'OTIMO', 1, 10, 2, '', '', ''),
+(2, '9999999888', 'MARC', '10M', 1, 'CAMERA IP', '90', 'OTIMO', 1, 10, 2, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -636,12 +577,13 @@ INSERT INTO `produtos` (`Codigo`, `codbarras`, `marca`, `modelo`, `grupo`, `desc
 -- Estrutura da tabela `promocoes`
 --
 
-CREATE TABLE `promocoes` (
-  `idpromocao` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `promocoes` (
+  `idpromocao` int(11) NOT NULL AUTO_INCREMENT,
   `descricao` varchar(30) NOT NULL,
   `dtini` date NOT NULL,
-  `dtfim` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `dtfim` date NOT NULL,
+  PRIMARY KEY (`idpromocao`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Extraindo dados da tabela `promocoes`
@@ -656,14 +598,15 @@ INSERT INTO `promocoes` (`idpromocao`, `descricao`, `dtini`, `dtfim`) VALUES
 -- Estrutura da tabela `recebimentos`
 --
 
-CREATE TABLE `recebimentos` (
+CREATE TABLE IF NOT EXISTS `recebimentos` (
   `lancamento` int(11) NOT NULL,
   `nrodocumento` int(11) NOT NULL,
   `vlrecebido` float NOT NULL,
   `desconto` float NOT NULL,
   `acrescimo` float NOT NULL,
   `data` date NOT NULL,
-  `situacao` int(11) NOT NULL
+  `situacao` int(11) NOT NULL,
+  KEY `Recebimentos` (`nrodocumento`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -679,13 +622,15 @@ INSERT INTO `recebimentos` (`lancamento`, `nrodocumento`, `vlrecebido`, `descont
 -- Estrutura da tabela `saiprod`
 --
 
-CREATE TABLE `saiprod` (
+CREATE TABLE IF NOT EXISTS `saiprod` (
   `lancamento` int(11) NOT NULL,
   `idproduto` int(11) NOT NULL,
   `qtde` int(11) NOT NULL,
   `desconto` float NOT NULL,
   `acrescimo` float NOT NULL,
-  `motivo` int(11) NOT NULL
+  `motivo` int(11) NOT NULL,
+  KEY `Sai_prod` (`idproduto`),
+  KEY `sai_vendas` (`lancamento`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -694,17 +639,18 @@ CREATE TABLE `saiprod` (
 -- Estrutura da tabela `tecnologias`
 --
 
-CREATE TABLE `tecnologias` (
-  `idtecnologia` int(11) NOT NULL,
-  `descricao` varchar(50) NOT NULL,
-  `caracteristicas` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `tecnologias` (
+  `idtecnologia` int(11) NOT NULL AUTO_INCREMENT,
+  `descritec` varchar(50) NOT NULL,
+  `caracteristicas` varchar(100) NOT NULL,
+  PRIMARY KEY (`idtecnologia`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Extraindo dados da tabela `tecnologias`
 --
 
-INSERT INTO `tecnologias` (`idtecnologia`, `descricao`, `caracteristicas`) VALUES
+INSERT INTO `tecnologias` (`idtecnologia`, `descritec`, `caracteristicas`) VALUES
 (1, 'IP', 'CONECTA SEM FIO ATRAVES DE PROTOCOLO DA INTERNET'),
 (2, 'AHCD', 'OTIMA IMAGEM DIGITAL');
 
@@ -714,17 +660,18 @@ INSERT INTO `tecnologias` (`idtecnologia`, `descricao`, `caracteristicas`) VALUE
 -- Estrutura da tabela `tipopagamentos`
 --
 
-CREATE TABLE `tipopagamentos` (
-  `idtipo` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tipopagamentos` (
+  `idtipo` int(11) NOT NULL AUTO_INCREMENT,
   `descricao` varchar(30) NOT NULL,
-  `paecelas` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `parcelas` int(11) NOT NULL,
+  PRIMARY KEY (`idtipo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Extraindo dados da tabela `tipopagamentos`
 --
 
-INSERT INTO `tipopagamentos` (`idtipo`, `descricao`, `paecelas`) VALUES
+INSERT INTO `tipopagamentos` (`idtipo`, `descricao`, `parcelas`) VALUES
 (1, '3X', 3);
 
 -- --------------------------------------------------------
@@ -733,15 +680,17 @@ INSERT INTO `tipopagamentos` (`idtipo`, `descricao`, `paecelas`) VALUES
 -- Estrutura da tabela `titularcartao`
 --
 
-CREATE TABLE `titularcartao` (
-  `idcartao` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `titularcartao` (
+  `idcartao` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
   `numero` int(11) NOT NULL,
   `validade` varchar(7) NOT NULL,
   `cpf` varchar(20) NOT NULL,
   `bandeira` varchar(20) NOT NULL,
-  `idlogin` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `idlogin` int(11) NOT NULL,
+  PRIMARY KEY (`idcartao`),
+  KEY `Titular_login` (`idlogin`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Extraindo dados da tabela `titularcartao`
@@ -756,14 +705,16 @@ INSERT INTO `titularcartao` (`idcartao`, `nome`, `numero`, `validade`, `cpf`, `b
 -- Estrutura da tabela `transportadora`
 --
 
-CREATE TABLE `transportadora` (
-  `idtransportadora` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `transportadora` (
+  `idtransportadora` int(11) NOT NULL AUTO_INCREMENT,
   `razaosocial` varchar(50) NOT NULL,
   `nomefantasia` varchar(50) NOT NULL,
   `cnpj` varchar(20) NOT NULL,
   `inscest` varchar(20) NOT NULL,
-  `idendereco` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `idendereco` int(11) NOT NULL,
+  PRIMARY KEY (`idtransportadora`),
+  KEY `Transportes_end` (`idendereco`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Extraindo dados da tabela `transportadora`
@@ -778,9 +729,11 @@ INSERT INTO `transportadora` (`idtransportadora`, `razaosocial`, `nomefantasia`,
 -- Estrutura da tabela `usuariopermissoes`
 --
 
-CREATE TABLE `usuariopermissoes` (
+CREATE TABLE IF NOT EXISTS `usuariopermissoes` (
   `idfuncionario` int(11) NOT NULL,
-  `idpermissao` int(11) NOT NULL
+  `idpermissao` int(11) NOT NULL,
+  PRIMARY KEY (`idfuncionario`),
+  KEY `Usu_permissoes` (`idpermissao`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -799,8 +752,8 @@ INSERT INTO `usuariopermissoes` (`idfuncionario`, `idpermissao`) VALUES
 -- Estrutura da tabela `vendas`
 --
 
-CREATE TABLE `vendas` (
-  `lancamento` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `vendas` (
+  `lancamento` int(11) NOT NULL AUTO_INCREMENT,
   `notafiscal` int(11) NOT NULL,
   `dtvenda` datetime NOT NULL,
   `dtsaida` datetime NOT NULL,
@@ -810,8 +763,13 @@ CREATE TABLE `vendas` (
   `situacao` int(11) NOT NULL,
   `envio` int(11) NOT NULL,
   `idlogin` int(11) NOT NULL,
-  `idcartao` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `idcartao` int(11) NOT NULL,
+  PRIMARY KEY (`lancamento`),
+  KEY `Vendas_envio` (`envio`),
+  KEY `Vendas_titular` (`idcartao`),
+  KEY `Vendas_tipo` (`tipo`),
+  KEY `Vendas_login` (`idlogin`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Extraindo dados da tabela `vendas`
@@ -820,336 +778,6 @@ CREATE TABLE `vendas` (
 INSERT INTO `vendas` (`lancamento`, `notafiscal`, `dtvenda`, `dtsaida`, `totalitens`, `valortotal`, `tipo`, `situacao`, `envio`, `idlogin`, `idcartao`) VALUES
 (1, 11, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 200, 1, 0, 1, 1, 0);
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `contaspagar`
---
-ALTER TABLE `contaspagar`
-  ADD PRIMARY KEY (`nrodocumento`);
-
---
--- Indexes for table `contasreceber`
---
-ALTER TABLE `contasreceber`
-  ADD PRIMARY KEY (`nrodocumento`),
-  ADD KEY `ContasRec_vendas` (`lancamento`);
-
---
--- Indexes for table `enderecos`
---
-ALTER TABLE `enderecos`
-  ADD PRIMARY KEY (`idendereco`,`tipo`),
-  ADD KEY `end_funcionarios` (`idpessoa`);
-
---
--- Indexes for table `entprod`
---
-ALTER TABLE `entprod`
-  ADD KEY `Ent_prod` (`idproduto`),
-  ADD KEY `Entprod_entradas` (`lancamento`);
-
---
--- Indexes for table `entradas`
---
-ALTER TABLE `entradas`
-  ADD PRIMARY KEY (`lancamento`),
-  ADD KEY `Entradas_tipo` (`tipopag`),
-  ADD KEY `Tranportes_ent` (`idtransportador`),
-  ADD KEY `Ent_forn` (`idfornecedor`);
-
---
--- Indexes for table `envio`
---
-ALTER TABLE `envio`
-  ADD PRIMARY KEY (`idenvio`),
-  ADD KEY `Envio_end` (`idendereco`),
-  ADD KEY `Envio_trans` (`idtransportador`);
-
---
--- Indexes for table `fabricantes`
---
-ALTER TABLE `fabricantes`
-  ADD PRIMARY KEY (`idfabricante`);
-
---
--- Indexes for table `fornecedor`
---
-ALTER TABLE `fornecedor`
-  ADD PRIMARY KEY (`idfornecedor`),
-  ADD KEY `Forn_end` (`idendereco`);
-
---
--- Indexes for table `funcdoc`
---
-ALTER TABLE `funcdoc`
-  ADD PRIMARY KEY (`idfuncionario`);
-
---
--- Indexes for table `funcionarios`
---
-ALTER TABLE `funcionarios`
-  ADD PRIMARY KEY (`idfuncionario`),
-  ADD KEY `func_nivel` (`idnivel`);
-
---
--- Indexes for table `grupo`
---
-ALTER TABLE `grupo`
-  ADD PRIMARY KEY (`idgrupo`);
-
---
--- Indexes for table `login`
---
-ALTER TABLE `login`
-  ADD PRIMARY KEY (`idlogin`),
-  ADD KEY `idcliente` (`idcliente`);
-
---
--- Indexes for table `nivel`
---
-ALTER TABLE `nivel`
-  ADD PRIMARY KEY (`idnivel`);
-
---
--- Indexes for table `pagamentos`
---
-ALTER TABLE `pagamentos`
-  ADD KEY `Pagar` (`nrodocumento`);
-
---
--- Indexes for table `permissoes`
---
-ALTER TABLE `permissoes`
-  ADD PRIMARY KEY (`idpermissao`);
-
---
--- Indexes for table `pfisicadados`
---
-ALTER TABLE `pfisicadados`
-  ADD PRIMARY KEY (`idpfisica`);
-
---
--- Indexes for table `pfisicadoc`
---
-ALTER TABLE `pfisicadoc`
-  ADD PRIMARY KEY (`idpfisica`);
-
---
--- Indexes for table `pjuridicacontatos`
---
-ALTER TABLE `pjuridicacontatos`
-  ADD PRIMARY KEY (`idpjuridica`);
-
---
--- Indexes for table `pjuridicadados`
---
-ALTER TABLE `pjuridicadados`
-  ADD PRIMARY KEY (`idpjuridica`);
-
---
--- Indexes for table `pjuridicadoc`
---
-ALTER TABLE `pjuridicadoc`
-  ADD PRIMARY KEY (`idpjuridica`);
-
---
--- Indexes for table `prodestoque`
---
-ALTER TABLE `prodestoque`
-  ADD KEY `Prod_estoque` (`idproduto`);
-
---
--- Indexes for table `prodprecos`
---
-ALTER TABLE `prodprecos`
-  ADD KEY `Prod_precos` (`idproduto`);
-
---
--- Indexes for table `prodpromocao`
---
-ALTER TABLE `prodpromocao`
-  ADD KEY `Promo_prod` (`idproduto`),
-  ADD KEY `Prod_promo` (`idpromocao`);
-
---
--- Indexes for table `prodtecnologia`
---
-ALTER TABLE `prodtecnologia`
-  ADD KEY `Prod_tec` (`codproduto`),
-  ADD KEY `Tec_prod` (`codtecnologia`);
-
---
--- Indexes for table `produtos`
---
-ALTER TABLE `produtos`
-  ADD PRIMARY KEY (`Codigo`),
-  ADD KEY `Produtos_fab` (`idfabricante`),
-  ADD KEY `Produtos_grupo` (`grupo`);
-
---
--- Indexes for table `promocoes`
---
-ALTER TABLE `promocoes`
-  ADD PRIMARY KEY (`idpromocao`);
-
---
--- Indexes for table `recebimentos`
---
-ALTER TABLE `recebimentos`
-  ADD KEY `Recebimentos` (`nrodocumento`);
-
---
--- Indexes for table `saiprod`
---
-ALTER TABLE `saiprod`
-  ADD KEY `Sai_prod` (`idproduto`),
-  ADD KEY `sai_vendas` (`lancamento`);
-
---
--- Indexes for table `tecnologias`
---
-ALTER TABLE `tecnologias`
-  ADD PRIMARY KEY (`idtecnologia`);
-
---
--- Indexes for table `tipopagamentos`
---
-ALTER TABLE `tipopagamentos`
-  ADD PRIMARY KEY (`idtipo`);
-
---
--- Indexes for table `titularcartao`
---
-ALTER TABLE `titularcartao`
-  ADD PRIMARY KEY (`idcartao`),
-  ADD KEY `Titular_login` (`idlogin`);
-
---
--- Indexes for table `transportadora`
---
-ALTER TABLE `transportadora`
-  ADD PRIMARY KEY (`idtransportadora`),
-  ADD KEY `Transportes_end` (`idendereco`);
-
---
--- Indexes for table `usuariopermissoes`
---
-ALTER TABLE `usuariopermissoes`
-  ADD PRIMARY KEY (`idfuncionario`),
-  ADD KEY `Usu_permissoes` (`idpermissao`);
-
---
--- Indexes for table `vendas`
---
-ALTER TABLE `vendas`
-  ADD PRIMARY KEY (`lancamento`),
-  ADD KEY `Vendas_envio` (`envio`),
-  ADD KEY `Vendas_titular` (`idcartao`),
-  ADD KEY `Vendas_tipo` (`tipo`),
-  ADD KEY `Vendas_login` (`idlogin`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `enderecos`
---
-ALTER TABLE `enderecos`
-  MODIFY `idendereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `entradas`
---
-ALTER TABLE `entradas`
-  MODIFY `lancamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `envio`
---
-ALTER TABLE `envio`
-  MODIFY `idenvio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `fabricantes`
---
-ALTER TABLE `fabricantes`
-  MODIFY `idfabricante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `fornecedor`
---
-ALTER TABLE `fornecedor`
-  MODIFY `idfornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `funcionarios`
---
-ALTER TABLE `funcionarios`
-  MODIFY `idfuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `grupo`
---
-ALTER TABLE `grupo`
-  MODIFY `idgrupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `login`
---
-ALTER TABLE `login`
-  MODIFY `idlogin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `nivel`
---
-ALTER TABLE `nivel`
-  MODIFY `idnivel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `permissoes`
---
-ALTER TABLE `permissoes`
-  MODIFY `idpermissao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `pfisicadados`
---
-ALTER TABLE `pfisicadados`
-  MODIFY `idpfisica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `pjuridicadados`
---
-ALTER TABLE `pjuridicadados`
-  MODIFY `idpjuridica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `produtos`
---
-ALTER TABLE `produtos`
-  MODIFY `Codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `promocoes`
---
-ALTER TABLE `promocoes`
-  MODIFY `idpromocao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `tecnologias`
---
-ALTER TABLE `tecnologias`
-  MODIFY `idtecnologia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `tipopagamentos`
---
-ALTER TABLE `tipopagamentos`
-  MODIFY `idtipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `titularcartao`
---
-ALTER TABLE `titularcartao`
-  MODIFY `idcartao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `transportadora`
---
-ALTER TABLE `transportadora`
-  MODIFY `idtransportadora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `vendas`
---
-ALTER TABLE `vendas`
-  MODIFY `lancamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --
@@ -1164,9 +792,7 @@ ALTER TABLE `contasreceber`
 -- Limitadores para a tabela `enderecos`
 --
 ALTER TABLE `enderecos`
-  ADD CONSTRAINT `end_funcionarios` FOREIGN KEY (`idpessoa`) REFERENCES `funcionarios` (`idfuncionario`),
-  ADD CONSTRAINT `end_pfisica` FOREIGN KEY (`idpessoa`) REFERENCES `pfisicadados` (`idpfisica`),
-  ADD CONSTRAINT `end_pjuridica` FOREIGN KEY (`idpessoa`) REFERENCES `pjuridicadados` (`idpjuridica`);
+  ADD CONSTRAINT `fk_endLogin` FOREIGN KEY (`idlogin`) REFERENCES `login` (`idlogin`);
 
 --
 -- Limitadores para a tabela `entprod`
@@ -1191,28 +817,10 @@ ALTER TABLE `envio`
   ADD CONSTRAINT `Envio_trans` FOREIGN KEY (`idtransportador`) REFERENCES `transportadora` (`idtransportadora`);
 
 --
--- Limitadores para a tabela `funcdoc`
---
-ALTER TABLE `funcdoc`
-  ADD CONSTRAINT `funcdoc_ibfk_1` FOREIGN KEY (`idfuncionario`) REFERENCES `funcionarios` (`idfuncionario`);
-
---
--- Limitadores para a tabela `funcionarios`
---
-ALTER TABLE `funcionarios`
-  ADD CONSTRAINT `func_nivel` FOREIGN KEY (`idnivel`) REFERENCES `nivel` (`idnivel`);
-
---
 -- Limitadores para a tabela `pagamentos`
 --
 ALTER TABLE `pagamentos`
   ADD CONSTRAINT `Pagar` FOREIGN KEY (`nrodocumento`) REFERENCES `contaspagar` (`nrodocumento`);
-
---
--- Limitadores para a tabela `pfisicadoc`
---
-ALTER TABLE `pfisicadoc`
-  ADD CONSTRAINT `pfisicadoc_ibfk_1` FOREIGN KEY (`idpfisica`) REFERENCES `pfisicadados` (`idpfisica`);
 
 --
 -- Limitadores para a tabela `prodestoque`
@@ -1270,8 +878,7 @@ ALTER TABLE `titularcartao`
 -- Limitadores para a tabela `usuariopermissoes`
 --
 ALTER TABLE `usuariopermissoes`
-  ADD CONSTRAINT `Usu_permissoes` FOREIGN KEY (`idpermissao`) REFERENCES `permissoes` (`idpermissao`),
-  ADD CONSTRAINT `usuariopermissoes_ibfk_1` FOREIGN KEY (`idfuncionario`) REFERENCES `funcionarios` (`idfuncionario`);
+  ADD CONSTRAINT `Usu_permissoes` FOREIGN KEY (`idpermissao`) REFERENCES `permissoes` (`idpermissao`);
 
 --
 -- Limitadores para a tabela `vendas`
@@ -1280,7 +887,6 @@ ALTER TABLE `vendas`
   ADD CONSTRAINT `Vendas_envio` FOREIGN KEY (`envio`) REFERENCES `envio` (`idenvio`),
   ADD CONSTRAINT `Vendas_login` FOREIGN KEY (`idlogin`) REFERENCES `login` (`idlogin`),
   ADD CONSTRAINT `Vendas_tipo` FOREIGN KEY (`tipo`) REFERENCES `tipopagamentos` (`idtipo`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
