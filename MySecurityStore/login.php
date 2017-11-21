@@ -1,6 +1,6 @@
 <?php
 	include("topo.php");
-	include("menuSecundario.php");
+	include("menu.php");
 ?>
 
 <div class="login_tela">
