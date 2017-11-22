@@ -1,9 +1,7 @@
 <?php
     session_start();
     include'conexao.php';
-    if (empty($_SESSION['id'])){//se usuario não está logado
-        header('location:login.php');//vai até a tela de login
-    }
+    
      include("topo.php");
      include("menu.php");
     if(!empty($_GET['Codigo'])){ //se nao recebe o codigo do produto nao pode add mais nada no carrinho
@@ -23,25 +21,24 @@
         include'mostraCarrinho.php';
     }
 ?>
+
  <div class="container">
         <div class="col-md-12">
                     <div class="product-content-right">
                         <div>
-                            <form method="post" action="#">
                                 <table cellspacing="0" class="shop_table cart">
                                     <tbody>
                                         <tr>
-                                            <td class="actions" colspan="6">
+                                            <td>
                                                 <h2 class="section-title">Total: <strong>R$<?php echo number_format($total,2,',','.');?></strong></h2>
-                                                <a href="index.php"><input type="submit" value="Continuar comprando" name="continuarComprando" class="button text-left"></a>
+                                                <a href="index.php"><input type="submit" value="Continuar comprando" name="" class="button text-left"></a>
                                                  <?php if (count($_SESSION['carrinho'])>0){?>
-                                                <a href="finalizarCompre.php"><input type="submit" value="Fechar compra" name="fecharCompra" class="add_to_cart_button text-left"></a>
+                                                <a href="entrega.php"><input type="submit" value="Fechar compra" name="fecharCompra" class="add_to_cart_button text-left"></a>
                                                 <?php } ?>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                            </form>
                              <div>
                                 <div class="cross-sells">
                                   <h2>Calcular frete</h2>
@@ -62,11 +59,6 @@
                                             <tr class="cart-subtotal">
                                                 <th>Subtotal</th>
                                                 <td><span class="amount"><?php echo number_format($total,2,',','.');?></span></td>
-                                            </tr>
-
-                                            <tr class="shipping">
-                                                <th>Produto</th>
-                                                <td><?php echo $produto; ?></td>
                                             </tr>
 
                                             <tr class="order-total">
