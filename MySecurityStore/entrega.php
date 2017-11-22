@@ -27,11 +27,11 @@
                                         <div class="col-sm-4 box">
                                            <div class="text-center">
 
-                                                <h4></h4>
+                                                <h4>Sedex</h4>
 
                                                 <p>De 3 a 5 dias úteis</p>
 
-                                                <p>Valor - R$ 33,00</p>
+                                                <p>Valor - R$ 52,00</p>
 
                                                 <div class="text-center">
 
@@ -42,11 +42,11 @@
                                         <div class="col-sm-4 box">
                                            <div class="text-center">
 
-                                                <h4></h4>
+                                                <h4>PAC</h4>
 
-                                                <p>De 3 a 5 dias úteis</p>
+                                                <p>De 10 a 15 dias úteis</p>
 
-                                                <p>Valor - R$ 33,00</p>
+                                                <p>Valor - R$ 17,00</p>
 
                                                 <div class="text-center">
 
@@ -57,11 +57,11 @@
                                         <div class="col-sm-4 box">
                                            <div class="text-center">
 
-                                                <h4></h4>
+                                                <h4>Transportadora</h4>
 
-                                                <p>De 3 a 5 dias úteis</p>
+                                                <p>De 6 a 10 dias úteis</p>
 
-                                                <p>Valor - R$ 33,00</p>
+                                                <p>Valor - R$ 38,00</p>
 
                                                 <div class="text-center">
 
@@ -72,30 +72,60 @@
                                         <input type="submit" value="Escolher" name="formaEnvio">
                                     </form>
                                     <div class="margem"></div>
+
+                                       <?php if (isset($_POST['formaEnvio'])) {
+                                           
+
+                                       if (isset($_POST['opcao'])) {
+                                           $forma = $_POST['opcao'];
+                                           if($forma == 1){
+                                            unset($_SESSION['idtransportadora']);
+                                            unset($_SESSION['nome']);
+                                            unset($_SESSION['valor']);
+                                            $_SESSION['idtransportadora']=1;
+                                            $_SESSION['nome'] = "Sedex";
+                                            $_SESSION['valor'] = 52;
+                                           }else if($forma==2){
+                                            unset($_SESSION['idtransportadora']);
+                                            unset($_SESSION['nome']);
+                                            unset($_SESSION['valor']);
+                                            $_SESSION['idtransportadora']=2;
+                                            $_SESSION['nome'] = "PAC";
+                                            $_SESSION['valor'] = 17;
+                                           }else if($forma==3){
+                                            unset($_SESSION['idtransportadora']);
+                                            unset($_SESSION['nome']);
+                                            unset($_SESSION['valor']);
+                                            $_SESSION['idtransportadora']=3;
+                                            $_SESSION['nome'] = "Transportadora";
+                                            $_SESSION['valor'] = 38;
+                                            }
+                                          }
+                                        }
+                                        $idtrans = $_SESSION['idtransportadora'];
+                                        ?>
+                                        <?php if (empty($idtrans)){?>
                                     <tr>
                                         <a href="index.php"><input type="submit" value="Continuar comprando" name="continuarComprando" class="button text-right"></a>
-                                        <a href="formasPagamento.php"><input type="submit" value="Ir para as formas de pagamento" name="formasPagamento" class="text-right"></a>
                                         <a href="excluirCarrinho.php"><input type="submit" value="Cancelar compra" name="cancelarCompra" class="text-right"></a>
+                                    </tr>
+                                        <?php }else{ ?>
+                                    <tr>
+                                        <a href="index.php"><input type="submit" value="Continuar comprando" name="continuarComprando" class="button text-right"></a>
+
+                                        <a href="pagamento.php"><input type="submit" value="Ir para as formas de pagamento" name="formasPagamento" class="text-right"></a>
+                                        <a href="excluirCarrinho.php"><input type="submit" value="Cancelar compra" name="cancelarCompra" class="text-right"></a>
+                                        <?php } ?>
                                     </tr>
                                 </div>
                             </div>
-                           <?php if (isset($_POST['formaEnvio'])) {
-                               
-
-                           if (isset($_POST['opcao'])) {
-                               $forma = $_POST['opcao'];
-                               echo "$forma";
-                              }
-                            }
-                            ?>
-
                 </div>
            
-                <div class="col-md-3">
-                    <div class="box" id="order-summary">
-                        <div>
-                            <h3>Valores a pagar</h3>
-                        </div>
+            <div class="col-md-3">
+                <div class="box" id="order-summary">
+                    <div>
+                        <h3>Valores a pagar</h3>
+                    </div>
                         <p>Valor total do seu produto já com o frete incluso.</p>
 
                         <div class="table-responsive">
@@ -112,21 +142,32 @@
                                         <th><strong>R$<?php echo number_format($total,2,',','.');?></strong></th>
                                     </tr>
                                     <tr>
+                                        
                                         <td>Frete</td>
+                                        <?php if(empty($idtrans)){ ?>
                                         <th>A escolher</th>
+                                        <?php }else{ ?>
+                                        <th>R$<?php $val = $_SESSION['valor']; 
+                                        echo number_format($val,2,',','.');?></th>
+                                        <?php } ?>
                                     </tr>
                                     <tr>
                                         <td><strong>Total</strong></td>
-                                        <th><strong> <strong>R$<?php echo number_format($total,2,',','.');?></strong></strong></th>
+                                        <?php if(empty($idtrans)){ ?>
+                                        <th><strong>R$<?php echo number_format($total,2,',','.');?></strong></th>
+                                        <?php }else{ ?>
+                                        <th><strong>R$<?php $comFrete = $val + $total;
+                                         echo number_format($comFrete,2,',','.');?></strong></th>
+                                         <?php } ?>
                                     </tr>
                                     <?php } ?>
                                 </tbody>
                             </table>
                         </div>
 
-                    </div>
-
                 </div>
+
+            </div>
                
 </div>
 <?php include("rodape.php"); ?>

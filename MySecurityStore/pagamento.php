@@ -74,30 +74,51 @@
         </form>
                     </div>
         <div class="col-md-3">
-            <div class="box" id="order-summary">
-                <div>
-                    <h3>Valores a pagar</h3>
+                <div class="box" id="order-summary">
+                    <div>
+                        <h3>Valores a pagar</h3>
+                    </div>
+                        <p>Valor total do seu produto já com o frete incluso.</p>
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                    <?php foreach ($_SESSION['carrinho'] as $Codigo => $qnt) { // sessao carrinho criada anteriormente
+                                    $consulta = $conexao->query("SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto AND produtos.Codigo = '$Codigo'"); //
+                                    $exibe = $consulta->fetch(PDO::FETCH_ASSOC);
+                                    $preco = $exibe['pvenda'];
+                                    $preco = number_format($exibe['pvenda'],2,',','.');
+                                    $total = $exibe['pvenda'] *$qnt; ?>
+                                    <tr>
+                                        <td>Subtotal</td>
+                                        <th><strong>R$<?php echo number_format($total,2,',','.');?></strong></th>
+                                    </tr>
+                                    <tr>
+                                        <?php  $idtrans = $_SESSION['idtransportadora']; ?>
+                                        <td>Frete</td>
+                                        <?php if(empty($idtrans)){ ?>
+                                        <th>A escolher</th>
+                                        <?php }else{ ?>
+                                        <th>R$<?php $val = $_SESSION['valor']; 
+                                        echo number_format($val,2,',','.');?></th>
+                                        <?php } ?>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Total</strong></td>
+                                        <?php if(empty($idtrans)){ ?>
+                                        <th><strong>R$<?php echo number_format($total,2,',','.');?></strong></th>
+                                        <?php }else{ ?>
+                                        <th><strong>R$<?php $comFrete = $val + $total;
+                                         echo number_format($comFrete,2,',','.');?></strong></th>
+                                         <?php } ?>
+                                    </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+
                 </div>
-                    <p>Valor total do seu produto já com o frete incluso.</p>
-                <div class="table-responsive">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>Subtotal</td>
-                                <th>R$446.00</th>
-                            </tr>
-                            <tr>
-                                <td>Frete</td>
-                                <th>$10.00</th>
-                            </tr>
-                            <tr>
-                                <td><strong>Total</strong></td>
-                                <th><strong>$456.00</strong></th>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>               
+
+            </div>       
 </div>
 <?php include("rodape.php"); ?>
