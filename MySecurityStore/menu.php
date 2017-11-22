@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <nav class="navbar navbar-inverse  navbar-expand-lg navbar-fixed-top">
   <div class="container-fluid">
                 <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">                    
@@ -94,6 +95,8 @@
     </div>
         
     </div>
+=======
+>>>>>>> 79b1dbaf13df9cd2d76434f1f5679bee73417929
 </div>
         <div class="container">
             <div class="row-menu-inicial">

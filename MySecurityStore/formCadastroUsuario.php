@@ -1,6 +1,5 @@
 <?php
     include("topo.php");
-    include("menu.php");
 ?>
 <div class="cadastro_tela">
     <div class="container theme-showcase" role="main">
