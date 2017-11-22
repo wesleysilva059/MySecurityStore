@@ -9,6 +9,7 @@
             <div class="product-content-right">
                 <div>
                     <form>
+                        
                         <table cellspacing="0" class="shop_table cart">
                             <thead>
                                 <tr>
@@ -37,7 +38,7 @@
                                 ?>
                                 <tr>
                                     <td class="product-remove">
-                                        <a title="Remover este item" class="remove" href="excluirCarrinho.php?Codigo=<?php echo $Codigo; ?> "><span class="fa fa-trash-o" aria-hidden="true"></span></a> 
+                                        <a title="Remover este item" class="remove" href="excluirCarrinho.php?Codigo=<?php echo $Codigo; ?> "><span class="fa fa-trash-o" aria-hidden="true"></span>Excluir</a> 
                                     </td>
 
                                     <td class="product-thumbnail">
