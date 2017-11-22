@@ -46,7 +46,7 @@
 							$exibe_user = $consulta_user->fetch(PDO::FETCH_ASSOC);
 				?>
 							<ul class="nav navbar-nav navbar-right">	
-								<li><a href="#"><span class="glyphicon glyphicon-user"></span> <?php echo $exibe_user['nome'];?></a></li>
+								<li><a href="formAlteraCliente.php"><span class="glyphicon glyphicon-user"></span> <?php echo $exibe_user['nome'];?></a></li>
 								<li><a href="sair.php"><span class="glyphicon glyphicon-off"></span> Sair</a></li>
 							</ul>
 							<?php } else {
