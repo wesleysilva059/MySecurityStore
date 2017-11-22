@@ -11,7 +11,7 @@
 ?>
 <div class="container">
     <div class="col-md-12">
-                <h1 class="text-center">Formas de entrega</h1>
+                <h1 class="text-center">Formas de entrega</h1><br><br>
     </div>
     <div class="col-md-9">
                 <ul class="nav nav-pills">
@@ -21,9 +21,27 @@
                 </ul>
                             <div class="margem"></div>
                             <div class="content">
-                                
+                            <?php
+                            //$consulta3 = $conexao->query("SELECT * FROM `enderecos`, login WHERE,  login.idlogin='$_SESSION['id']' AND idendereco='$idendereco'");
+                            //$listar=$consulta3->fetch(PDO::FETCH_ASSOC)
+                            ?>  
+
                                 <div class="row">
+                                    <h2>Endereço de entrega</h2>
+                                    <div class="col-sm-6 box">
+                                        <h4>Rua:</h4>
+                                        <p>Número:</p>
+                                        <p>Bairro:</p>
+                                        <p>CEP:</p>
+                                        <P>UF:</P>
+                                    </div>
+                                </div>
+                                <a href="index.php"><input type="submit" value="Cadastrar novo" name="outroEndereco" class="button text-right"></a>
+<div class="container">
+                                <div class="col-md-9">
                                    <form name="form" method="POST">
+                                    <br>
+                                        <h2>Métodos de envio</h2>
                                         <div class="col-sm-4 box">
                                            <div class="text-center">
 
@@ -107,20 +125,21 @@
                                         <?php if (empty($idtrans)){?>
                                     <tr>
                                         <a href="index.php"><input type="submit" value="Continuar comprando" name="continuarComprando" class="button text-right"></a>
-                                        <a href="excluirCarrinho.php"><input type="submit" value="Cancelar compra" name="cancelarCompra" class="text-right"></a>
+                                        <a title="Cancelar" class="remove" href="excluirCarrinho.php?Codigo=<?php echo $Codigo; ?> "><input type="submit" value="Cancelar compra" name="cancelarCompra" class="text-right"></a>
                                     </tr>
                                         <?php }else{ ?>
                                     <tr>
                                         <a href="index.php"><input type="submit" value="Continuar comprando" name="continuarComprando" class="button text-right"></a>
 
                                         <a href="pagamento.php"><input type="submit" value="Ir para as formas de pagamento" name="formasPagamento" class="text-right"></a>
-                                        <a href="excluirCarrinho.php"><input type="submit" value="Cancelar compra" name="cancelarCompra" class="text-right"></a>
+                                        <a title="Cancelar" class="remove" href="excluirCarrinho.php?Codigo=<?php echo $Codigo; ?> "><input type="submit" value="Cancelar compra" name="cancelarCompra" class="text-right"></a>
                                         <?php } ?>
                                     </tr>
                                 </div>
                             </div>
-                </div>
-           
+                        </div>
+                    </div>
+           <br><br><br><br><br><br><br>
             <div class="col-md-3">
                 <div class="box" id="order-summary">
                     <div>

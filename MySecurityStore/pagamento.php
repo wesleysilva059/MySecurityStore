@@ -6,74 +6,106 @@
     }
     include("topo.php");
     include("menu.php");
+       
+   
 ?>
 <div class="container">
     <div class="col-md-12">
-        <form method="post" action="">
-                <h1 class="text-center">Formas de pagamento</h1>
+                <h1 class="text-center">Formas de entrega</h1><br><br>
     </div>
-                    <div class="col-md-9">
-                        <ul class="nav nav-pills">
-                            <li class="disabled"><a href="#"><i class="fa fa-truck"></i> Formas de entrega</a></li>
-                            <li class="active"><a href="#"><i class="fa fa-money"></i> Formas de pagamento</a></li>
-                            <li class="disabled"><a href="#"><i class="fa fa-eye"></i> Meus produtos</a></li>
-                        </ul>
+    <div class="col-md-9">
+                <ul class="nav nav-pills">
+                    <li class="disabled"><a href="#"><i class="fa fa-truck"></i> Formas de entrega</a></li>
+                    <li class="active"><a href="#"><i class="fa fa-money"></i> Formas de pagamento</a></li>
+                    <li class="disabled"><a href="#"><i class="fa fa-eye"></i> Meus produtos</a></li>
+                </ul>
                             <div class="margem"></div>
                             <div class="content">
-                                <div class="row">
-                                    <div class="col-sm-4 box">
-                                        <div class="text-center">
-                                            <h4>Boleto bancário</h4>
-                                            <br>    
-                                            <p><strong>Atenção: O boleto bancário deverá ser pago em no maximo 2 dias úteis</strong></p>
-                                            <br>   
-                                            <p>Pagamento por boleto</p>
-                                            <div class="text-center">
-                                                <input type="radio" name="pagamento" value="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                            <div class="col-sm-4 box">
+                            <?php
+                            //$consulta3 = $conexao->query("SELECT * FROM `enderecos`, login WHERE,  login.idlogin='$_SESSION['id']' AND idendereco='$idendereco'");
+                            //$listar=$consulta3->fetch(PDO::FETCH_ASSOC)
+                            ?>  
+                                <div class="col-md-9">
+                                   <form name="form" method="POST">
+                                        <div class="col-sm-4 box">
+                                           <div class="text-center">
+
+                                                <h4>Boleto bancário</h4>
+
                                                 <div class="text-center">
-                                                   <h4>Cartão de crédito</h4>
-                                                    <br>    
-                                                    <p><strong>Atenção: É necessário pagar somente com um cartão de crédito</strong></p>
-                                                    <br>    
-                                                    <p>Pagamento por cartão de crédito</p>
-                                                    <div class="text-center">
-                                                      <input type="radio" name="pagamento" data-toggle="" href="#pagamento" value="">    
-                                                    </div>
-                                                 </div>
-                                            </div>
-                                            <div class="col-sm-4 box">
-                                                    <div class="text-center">
-                                                    <h4>Transferência bancária</h4>
-                                                    <p><strong>Atenção: A transferência só e confirmada após um dia útil e poderá ser pago uma taxa extra se o banco não for Itaú</strong></p>
-                                                        <p>Pagamento via transferência bancária</p>
-                                                    <div class="text-center">
-                                                          <input type="radio" name="pagamento" value="">
-                                                    </div>
+
+                                                    <input type="radio" name="opcao1" value="1">
                                                 </div>
                                             </div>
-                                         
-                                        <div class="margem"></div>
+                                        </div>
+                                        <div class="col-sm-4 box">
+                                           <div class="text-center">
+
+                                                <h4>Cartão de credito</h4>
+
+                                                <div class="text-center">
+
+                                                    <input type="radio" name="opcao1" value="2">
+                                                </div>
+                                            </div>
+                                        </div>       
+                                        <div class="col-sm-4 box">
+                                           <div class="text-center">
+
+                                                <h4>Cartão de debito</h4>
+
+                                                <div class="text-center">
+
+                                                    <input type="radio" name="opcao1" value="3">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="submit" value="Escolha" name="formaPagamento">
+                                    </form>
+                                    <div class="margem"></div>
+
+                                       <?php if (isset($_POST['formaPagamento'])) {
+                                           
+
+                                       if (isset($_POST['opcao1'])) {
+                                           $forma = $_POST['opcao1'];
+                                           if($forma == 1){
+                                            unset($_SESSION['idPagamento']);
+                                            unset($_SESSION['opcPag']);
+                                            $_SESSION['idPagamento']=1;
+                                            $_SESSION['opcPag'] = "Boleto";
+                                           }else if($forma==2){
+                                            unset($_SESSION['idPagamento']);
+                                            unset($_SESSION['opcPag']);
+                                            $_SESSION['idPagamento']=2;
+                                            $_SESSION['opcPag'] = "Credito";
+                                           }else if($forma==3){
+                                            unset($_SESSION['idPagamento']);
+                                            unset($_SESSION['opcPag']);
+                                            $_SESSION['idPagamento']=3;
+                                            $_SESSION['opcPag'] = "Debito";
+                                           }
+                                         }
+                                        }
+                                        $idpag = $_SESSION['idPagamento'];
+                                        ?>
+                                        <?php if (empty($idpag)){?>
+                                    <tr>
+                                        <a href="index.php"><input type="submit" value="Continuar comprando" name="continuarComprando" class="button text-right"></a>
+                                        <a href="excluirCarrinho.php"><input type="submit" value="Cancelar compra" name="cancelarCompra" class="text-right"></a>
+                                    </tr>
+                                        <?php }else{ ?>
+                                    <tr>
+                                        <a href="index.php"><input type="submit" value="Continuar comprando" name="continuarComprando" class="button text-right"></a>
+                                        <a href="revisao.php"><input type="submit" value="Revisar o carrinho" name="revisarCarrinho" class="text-right"></a>
+                                        <a title="Cancelar" class="remove" href="excluirCarrinho.php?Codigo=<?php echo $Codigo; ?> "><input type="submit" value="Cancelar compra" name="cancelarCompra" class="text-right"></a>
+                                        <?php } ?>
+                                    </tr>
                                 </div>
-                            </div>
-                           <div class="margem"></div>
-                                <div class="col-md-12">
-                                    <section id="pagamento" class="shipping-calculator-form collapse">
-                                        <p class="form-row form-row-wide">Valor sedex: R$33,00</p>
-                                        <p class="form-row form-row-wide">Valor sedex: R$33,00</p>
-                                    </section> 
-                                </div>
-                                <tr>
-                                    <a href="index.php"><input type="submit" value="Continuar comprando" name="continuarComprando" class="button text-right"></a>
-                                    <a href="formasPagamento.php"><input type="submit" value="Revisar o carrinho" name="formasPagamento" class="text-right"></a>
-                                    <a href="excluirCarrinho.php"><input type="submit" value="Cancelar compra" name="cancelarCompra" class="text-right"></a>
-                                </tr>
-        </form>
+                        </div>
                     </div>
-        <div class="col-md-3">
+           <br><br><br>
+            <div class="col-md-3">
                 <div class="box" id="order-summary">
                     <div>
                         <h3>Valores a pagar</h3>
@@ -93,14 +125,23 @@
                                         <td>Subtotal</td>
                                         <th><strong>R$<?php echo number_format($total,2,',','.');?></strong></th>
                                     </tr>
-                                    <tr>
-                                        <?php  $idtrans = $_SESSION['idtransportadora']; ?>
+                                    <tr> 
                                         <td>Frete</td>
-                                        <?php if(empty($idtrans)){ ?>
+                                        <?php $idtrans = $_SESSION['idtransportadora']; 
+                                        if(empty($idtrans)){ ?>
                                         <th>A escolher</th>
                                         <?php }else{ ?>
                                         <th>R$<?php $val = $_SESSION['valor']; 
                                         echo number_format($val,2,',','.');?></th>
+                                        <?php } ?>
+                                    </tr>
+                                    <tr> 
+                                        <td>Pagamento</td>
+                                        <?php if(empty($idpag)){ ?>
+                                        <th>A escolher</th>
+                                        <?php }else{ ?>
+                                        <th><?php $frm = $_SESSION['opcPag']; 
+                                        echo $frm ?></th>
                                         <?php } ?>
                                     </tr>
                                     <tr>
@@ -108,7 +149,8 @@
                                         <?php if(empty($idtrans)){ ?>
                                         <th><strong>R$<?php echo number_format($total,2,',','.');?></strong></th>
                                         <?php }else{ ?>
-                                        <th><strong>R$<?php $comFrete = $val + $total;
+                                        <th><strong>R$<?php $val = $_SESSION['valor'];
+                                         $comFrete = $val + $total;
                                          echo number_format($comFrete,2,',','.');?></strong></th>
                                          <?php } ?>
                                     </tr>
@@ -119,6 +161,7 @@
 
                 </div>
 
-            </div>       
+            </div>
+               
 </div>
 <?php include("rodape.php"); ?>
