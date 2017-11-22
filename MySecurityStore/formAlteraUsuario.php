@@ -1,5 +1,8 @@
 <?php
-    include("topo.php");
+    session_start();
+
+	include("topo.php");
+    include("menu.php");
 ?>
 <div class="cadastro_tela">
     <div class="container theme-showcase" role="main">
