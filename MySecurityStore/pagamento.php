@@ -67,24 +67,35 @@
                                            if($forma == 1){
                                             unset($_SESSION['idPagamento']);
                                             unset($_SESSION['opcPag']);
+                                            unset($_SESSION['nBoleto']);
+                                            unset($_SESSION['nomecartao']);
+                                            unset($_SESSION['bandeiracartao']);
+                                            unset($_SESSION['validadecartao']);
+                                            unset($_SESSION['numerocartao']);
                                             $_SESSION['idPagamento']=1;
                                             $_SESSION['opcPag'] = "Boleto";
+                                            $_SESSION['nBoleto'] = "2648359670";
                                            }else if($forma==2){
                                             unset($_SESSION['idPagamento']);
                                             unset($_SESSION['opcPag']);
+                                            unset($_SESSION['nBoleto']);
+                                            unset($_SESSION['nomecartao']);
+                                            unset($_SESSION['bandeiracartao']);
+                                            unset($_SESSION['validadecartao']);
+                                            unset($_SESSION['numerocartao']);
                                             $_SESSION['idPagamento']=2;
                                             $_SESSION['opcPag'] = "Credito";
                                             ?>
-                                            <form>
+                                            <form method="POST">
                                                 <div class="col-sm-12 box">
                                                     <h2>Cartão de crédito</h2>
                                                     <div class="form-group">
                                                         <label for="numero-cartao">Número - CVV</label>
-                                                        <input type="text" class="form-control" id="numero-cartao" name="numero-cartao">
+                                                        <input type="text" class="form-control" id="numero-cartao" name="numerocartao">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="bandeira-cartao">Bandeira <span class="fa fa-cc-mastercard" aria-hidden="true"></span> <i class="fa fa-cc-visa" aria-hidden="true"></i> <i class="fa fa-cc-amex" aria-hidden="true"></i></label>
-                                                        <select name="bandeira-cartao" id="bandeira-cartao" class="form-control">
+                                                        <select name="bandeiracartao" id="bandeira-cartao" class="form-control">
                                                             <option value="master">MasterCard</option>
                                                             <option value="visa">VISA</option>
                                                             <option value="amex">American Express</option>
@@ -92,33 +103,58 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="validade-cartao">Validade</label>
-                                                        <input type="month" class="form-control" id="validade-cartao" name="validade-cartao">
+                                                        <input type="month" class="form-control" id="validadecartao" name="validadecartao">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="validade-cartao">Nome no cartão</label>
-                                                        <input type="text" class="form-control" id="nome-cartao" name="nome-cartao">
+                                                        <input type="text" class="form-control" id="nomecartao" name="nomecartao">
                                                     </div>
-                                                    <button type="submit" class="pull-right">
+                                                    <button type="submit" class="pull-right" name="Cartao1">
                                                     Confirmar</button>
                                                 </div>
                                             </form>
+                                            <?php
+                                            if(isset($_POST['Cartao1'])){
+                                                if
+                                                (isset($_POST["numerocartao"]) AND 
+                                                isset($_POST["bandeiracartao"]) AND
+                                                isset($_POST["validadecartao"]) AND
+                                                isset($_POST["nomecartao"])){
+                                                $numero = $_POST["numerocartao"];
+                                                $bandeira = $_POST["bandeiracartao"];
+                                                $validade = $_POST["validadecartao"];
+                                                $nome = $_POST["nomecartao"];
+                                                $_SESSION['nomecartao'] = $nome;
+                                                $_SESSION['bandeiracartao'] = $bandeira;
+                                                $_SESSION['validadecartao'] = $validade;
+                                                $_SESSION['numerocartao'] = $numero;
+                                                $teste = $_SESSION['nomecartao'];
+                                                echo "$teste";
+                                                }
+                                            }
+                                             ?>
                                             <?php
                                            }else if($forma==3){
                                             unset($_SESSION['idPagamento']);
                                             unset($_SESSION['opcPag']);
+                                            unset($_SESSION['nBoleto']);
+                                            unset($_SESSION['nomecartao']);
+                                            unset($_SESSION['bandeiracartao']);
+                                            unset($_SESSION['validadecartao']);
+                                            unset($_SESSION['numerocartao']);
                                             $_SESSION['idPagamento']=3;
                                             $_SESSION['opcPag'] = "Debito";
                                             ?>
-                                            <form>
+                                            <form method="POST">
                                                 <div class="col-sm-12 box">
                                                     <h2>Cartão de dédito</h2>
                                                     <div class="form-group">
                                                         <label for="numero-cartao">Número - CVV</label>
-                                                        <input type="text" class="form-control" id="numero-cartao" name="numero-cartao">
+                                                        <input type="text" class="form-control" id="numero-cartao" name="numerocartao2">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="bandeira-cartao">Bandeira <span class="fa fa-cc-mastercard" aria-hidden="true"></span> <i class="fa fa-cc-visa" aria-hidden="true"></i> <i class="fa fa-cc-amex" aria-hidden="true"></i></label>
-                                                        <select name="bandeira-cartao" id="bandeira-cartao" class="form-control">
+                                                        <select name="bandeiracartao2" id="bandeira-cartao" class="form-control">
                                                             <option value="master">MasterCard</option>
                                                             <option value="visa">VISA</option>
                                                             <option value="amex">American Express</option>
@@ -126,19 +162,36 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="validade-cartao">Validade</label>
-                                                        <input type="month" class="form-control" id="validade-cartao" name="validade-cartao">
+                                                        <input type="month" class="form-control" id="validade-cartao" name="validadecartao2">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="validade-cartao">Nome no cartão</label>
-                                                        <input type="text" class="form-control" id="nome-cartao" name="nome-cartao">
+                                                        <input type="text" class="form-control" id="nome-cartao" name="nomecartao2">
                                                     </div>
-                                                    <button type="submit" class="pull-right">
+                                                    <button type="submit" class="pull-right" name="Cartao2">
                                                     Confirmar</button>
                                                 </div>
                                             </form>
                                             <?php
-                                           }
-                                         }
+                                            if(isset($_POST['Cartao2'])){
+                                            
+                                                if (isset($_POST["numerocartao2"]) AND 
+                                                isset($_POST["bandeiracartao2"]) AND
+                                                isset($_POST["validadecartao2"]) AND
+                                                isset($_POST["nomecartao2"])){
+                                                $numero = $_POST["numerocartao2"];
+                                                $bandeira = $_POST["bandeiracartao2"];
+                                                $validade = $_POST["validadecartao2"];
+                                                $nome = $_POST["nomecartao2"];
+                                                $_SESSION['nomecartao'] = $nome;
+                                                $_SESSION['bandeiracartao'] = $bandeira;
+                                                $_SESSION['validadecartao'] = $validade;
+                                                $_SESSION['numerocartao'] = $numero;
+
+                                                }
+                                            }
+                                            }
+                                          }
                                         }
                                         $idpag = $_SESSION['idPagamento'];
                                         ?>
