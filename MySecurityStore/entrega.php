@@ -24,27 +24,47 @@
                             <?php
                             $idlogin = $_SESSION['id'];
                             $consulta3 = $conexao->query("SELECT * FROM `enderecos`, login WHERE enderecos.idlogin = login.idlogin AND login.idlogin = '$idlogin'");
-                            $listar=$consulta3->fetch(PDO::FETCH_ASSOC)
+                            $listar3=$consulta3->fetch(PDO::FETCH_ASSOC)
                             ?>  
 
                                 <div class="row">
-                                    <h2>Endereços de entrega</h2>
                                     <div class="col-sm-6 box">
-                                        <h4 class="text-center">Endereço</h4>
-                                        <p>Rua: <?php echo $listar['logradouro']; ?></p>
-                                        <p>Número: <?php echo $listar['numero']; ?></p>
-                                        <p>Bairro: <?php echo $listar['bairro']; ?></p>
-                                        <p>CEP: <?php echo $listar['cep']; ?></p>
-                                        <p>Estado: <?php echo $listar['uf']; ?></p>
+                                        <h4 class="text-center">Endereço principal</h4>
+                                        <p>Rua: <?php echo $listar3['logradouro']; ?></p>
+                                        <p>Número: <?php echo $listar3['numero']; ?></p>
+                                        <p>Bairro: <?php echo $listar3['bairro']; ?></p>
+                                        <p>CEP: <?php echo $listar3['cep']; ?></p>
+                                        <p>Estado: <?php echo $listar3['uf']; ?></p>
                                         <h4 class="text-center"><strong>Escolher este endereço</strong></h4>
                                         <div class="text-center">
                                             <input type="radio" name="opcaoend" value="1">
                                         </div>
+                                    </div>     
+                                    <div class="col-sm-6 box">
+                                        <?php if(empty($listar3['idenderecoalt'])){ ?>
+                                        <h4 class="text-center">Outro endereço</h4><br><br><br><br>
+                                        <h4 class="text-center">Não há outros endereços cadastrados</h4><br><br><br><br>
+                                        <?php }else{ ?>
+                                        <h4 class="text-center">Endereço Alternativo</h4>
+                                        <p>Rua: <?php echo $listar3['logradouro']; ?></p>
+                                        <p>Número: <?php echo $listar3['numero']; ?></p>
+                                        <p>Bairro: <?php echo $listar3['bairro']; ?></p>
+                                        <p>CEP: <?php echo $listar3['cep']; ?></p>
+                                        <p>Estado: <?php echo $listar3['uf']; ?></p>
+                                        <h4 class="text-center"><strong>Escolher este endereço</strong></h4>
+                                        <div class="text-center">
+                                            <input type="radio" name="opcaoend" value="2">
+                                        </div>
+                                        <?php } ?>
                                     </div>
                                 </div>
-                                <a href="index.php"><input type="submit" value="Cadastrar novo" name="outroEndereco" class="button pull-right"></a>
+                                    <?php if(!empty($listar3['idendereco'])){ ?>
+                                <a href="endereco.php?idendereco=<?php echo $idendereco ?>"><input type="submit" value="Atualizar endereço principal" name="enderecoPrincipal" class="button pull-left"></a>
+                                <a href="endereco.php"><input type="submit" value="Cadastrar ou editar endereço Alternativo" name="outroEndereco" class="button pull-right"></a>
+                                    <?php }?>
+
 <div class="container">
-                                <div class="col-md-9">
+                                <div class="col-md-11">
                                    <form name="form" method="POST">
                                     <br>
                                         <h2>Métodos de envio</h2>
