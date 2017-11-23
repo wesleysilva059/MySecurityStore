@@ -22,21 +22,27 @@
                             <div class="margem"></div>
                             <div class="content">
                             <?php
-                            //$consulta3 = $conexao->query("SELECT * FROM `enderecos`, login WHERE,  login.idlogin='$_SESSION['id']' AND idendereco='$idendereco'");
-                            //$listar=$consulta3->fetch(PDO::FETCH_ASSOC)
+                            $idlogin = $_SESSION['id'];
+                            $consulta3 = $conexao->query("SELECT * FROM `enderecos`, login WHERE enderecos.idlogin = login.idlogin AND login.idlogin = '$idlogin'");
+                            $listar=$consulta3->fetch(PDO::FETCH_ASSOC)
                             ?>  
 
                                 <div class="row">
                                     <h2>Endereços de entrega</h2>
                                     <div class="col-sm-6 box">
-                                        <h4>Rua:</h4>
-                                        <p>Número:</p>
-                                        <p>Bairro:</p>
-                                        <p>CEP:</p>
-                                        <P>UF:</P>
+                                        <h4 class="text-center">Endereço</h4>
+                                        <p>Rua: <?php echo $listar['logradouro']; ?></p>
+                                        <p>Número: <?php echo $listar['numero']; ?></p>
+                                        <p>Bairro: <?php echo $listar['bairro']; ?></p>
+                                        <p>CEP: <?php echo $listar['cep']; ?></p>
+                                        <p>Estado: <?php echo $listar['uf']; ?></p>
+                                        <h4 class="text-center"><strong>Escolher este endereço</strong></h4>
+                                        <div class="text-center">
+                                            <input type="radio" name="opcaoend" value="1">
+                                        </div>
                                     </div>
                                 </div>
-                                <a href="index.php"><input type="submit" value="Cadastrar novo" name="outroEndereco" class="button text-right"></a>
+                                <a href="index.php"><input type="submit" value="Cadastrar novo" name="outroEndereco" class="button pull-right"></a>
 <div class="container">
                                 <div class="col-md-9">
                                    <form name="form" method="POST">

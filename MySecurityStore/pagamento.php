@@ -6,7 +6,6 @@
     }
     include("topo.php");
     include("menu.php");
-       
    
 ?>
 <div class="container">
@@ -72,6 +71,7 @@
                                             unset($_SESSION['bandeiracartao']);
                                             unset($_SESSION['validadecartao']);
                                             unset($_SESSION['numerocartao']);
+                                            unset($_SESSION['numeroparcelas']);
                                             $_SESSION['idPagamento']=1;
                                             $_SESSION['opcPag'] = "Boleto";
                                             $_SESSION['nBoleto'] = "2648359670";
@@ -83,19 +83,59 @@
                                             unset($_SESSION['bandeiracartao']);
                                             unset($_SESSION['validadecartao']);
                                             unset($_SESSION['numerocartao']);
+                                            unset($_SESSION['numeroparcelas']);
                                             $_SESSION['idPagamento']=2;
                                             $_SESSION['opcPag'] = "Credito";
                                             ?>
                                             <form method="POST">
                                                 <div class="col-sm-12 box">
+                                                            <?php foreach ($_SESSION['carrinho'] as $Codigo => $qnt) { // sessao carrinho criada anteriormente
+                                                            $consulta = $conexao->query("SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto AND produtos.Codigo = '$Codigo'"); //
+                                                            $exibe = $consulta->fetch(PDO::FETCH_ASSOC);
+                                                            $preco = $exibe['pvenda'];
+                                                            $preco = number_format($exibe['pvenda'],2,',','.');
+                                                            $total = $exibe['pvenda'] *$qnt;
+                                                             ?>                                                    
                                                     <h2>Cartão de crédito</h2>
                                                     <div class="form-group">
+                                                        <label for="numero-parcelas">Número de parcelas</label>
+                                                        <select required name="numeroparcelas" class="form-control">
+                                                            <option value="selecione">Selecione</option>
+                                                            <option value="1">1x de R$<?php $val = $_SESSION['valor'];
+                                                            $comFrete = $val + $total;
+                                                            $parcelas = $comFrete/1;
+                                                            echo number_format($parcelas,2,',','.'); ?> sem juros</option>
+                                                            <option value="2">2x de R$<?php $val = $_SESSION['valor'];
+                                                            $comFrete = $val + $total;
+                                                            $parcelas = $comFrete/2;
+                                                            echo number_format($parcelas,2,',','.'); ?> sem juros</option>
+                                                            <option value="3">3x de R$<?php $val = $_SESSION['valor'];
+                                                            $comFrete = $val + $total;
+                                                            $parcelas = $comFrete/3;
+                                                            echo number_format($parcelas,2,',','.'); ?> sem juros</option>
+                                                            <option value="4">4x de R$<?php $val = $_SESSION['valor'];
+                                                            $comFrete = $val + $total;
+                                                            $parcelas = ($comFrete/4) + 13;
+                                                            echo number_format($parcelas,2,',','.'); ?> com juros</option>
+                                                            <option value="5">5x de R$<?php $val = $_SESSION['valor'];
+                                                            $comFrete = $val + $total;
+                                                            $parcelas = ($comFrete/5) + 13 ;
+                                                            echo number_format($parcelas,2,',','.'); ?> com juros</option>
+                                                            <option value="6">6x de R$<?php $val = $_SESSION['valor'];
+                                                            $comFrete = $val + $total;
+                                                            $parcelas = ($comFrete/6) + 13;
+                                                            echo number_format($parcelas,2,',','.'); ?> com juros</option>
+                                                        </select>
+                                                    </div>
+                                                    <?php } ?>
+                                                    <div class="form-group">
                                                         <label for="numero-cartao">Número - CVV</label>
-                                                        <input type="text" class="form-control" id="numero-cartao" name="numerocartao">
+                                                        <input type="text" class="form-control" id="numero-cartao" required name="numerocartao">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="bandeira-cartao">Bandeira <span class="fa fa-cc-mastercard" aria-hidden="true"></span> <i class="fa fa-cc-visa" aria-hidden="true"></i> <i class="fa fa-cc-amex" aria-hidden="true"></i></label>
-                                                        <select name="bandeiracartao" id="bandeira-cartao" class="form-control">
+                                                        <select required name="bandeiracartao" id="bandeira-cartao" class="form-control">
+                                                            <option value="selecione">Selecione</option>
                                                             <option value="master">MasterCard</option>
                                                             <option value="visa">VISA</option>
                                                             <option value="amex">American Express</option>
@@ -103,11 +143,11 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="validade-cartao">Validade</label>
-                                                        <input type="month" class="form-control" id="validadecartao" name="validadecartao">
+                                                        <input type="month" class="form-control" id="validadecartao" required name="validadecartao">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="validade-cartao">Nome no cartão</label>
-                                                        <input type="text" class="form-control" id="nomecartao" name="nomecartao">
+                                                        <input type="text" class="form-control" id="nomecartao" required name="nomecartao">
                                                     </div>
                                                     <button type="submit" class="pull-right" name="Cartao1">
                                                     Confirmar</button>
@@ -119,11 +159,13 @@
                                                 (isset($_POST["numerocartao"]) AND 
                                                 isset($_POST["bandeiracartao"]) AND
                                                 isset($_POST["validadecartao"]) AND
-                                                isset($_POST["nomecartao"])){
+                                                isset($_POST["nomecartao"]) AND
+                                                isset($_POST["numeroparcelas"])){
                                                 $numero = $_POST["numerocartao"];
                                                 $bandeira = $_POST["bandeiracartao"];
                                                 $validade = $_POST["validadecartao"];
                                                 $nome = $_POST["nomecartao"];
+                                                $numeroparcelas = $_POST["numeroparcelas"];
                                                 $_SESSION['nomecartao'] = $nome;
                                                 $_SESSION['bandeiracartao'] = $bandeira;
                                                 $_SESSION['validadecartao'] = $validade;
@@ -142,12 +184,13 @@
                                             unset($_SESSION['bandeiracartao']);
                                             unset($_SESSION['validadecartao']);
                                             unset($_SESSION['numerocartao']);
+                                            unset($_SESSION['numeroparcelas']);
                                             $_SESSION['idPagamento']=3;
                                             $_SESSION['opcPag'] = "Debito";
                                             ?>
                                             <form method="POST">
                                                 <div class="col-sm-12 box">
-                                                    <h2>Cartão de dédito</h2>
+                                                    <h2>Cartão de débito</h2>
                                                     <div class="form-group">
                                                         <label for="numero-cartao">Número - CVV</label>
                                                         <input type="text" class="form-control" id="numero-cartao" name="numerocartao2">

@@ -65,17 +65,18 @@ $('#preco').mask('000.000.000.000.000,00', {reverse: true});
 					<div class="form-group">
 					<label for="garantia">Garantia</label>
 					<select class="form-control" required name="txtGarantia">
-					  <option value="dois">60</option>
-					  <option value="tres">90</option>
-					  <option value="quatro">120</option>
-					  <option value="cinco">150</option>
-					  <option value="seis">180</option>
-					  <option value="sete">210</option>
-					  <option value="oito">240</option>
-					  <option value="nove">270</option>
-					  <option value="dez">300</option>
-					  <option value="onze">330</option>
-					  <option value="doze">365</option>
+					  <optionvalue="Selecione">Selecione</option>
+					  <option value="60">60</option>
+					  <option value="90">90</option>
+					  <option value="120">120</option>
+					  <option value="150">150</option>
+					  <option value="180">180</option>
+					  <option value="210">210</option>
+					  <option value="240">240</option>
+					  <option value="270">270</option>
+					  <option value="300">300</option>
+					  <option value="330">330</option>
+					  <option value="365">365</option>
 					</select>
 					</div>
 

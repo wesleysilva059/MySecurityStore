@@ -4,11 +4,7 @@
 <div class="cadastro_tela">
     <div class="container theme-showcase" role="main">
         <h3 class="form-signin-heading">Cadastro</h3>      
-        <div class="row espaco">
-            <div class="pull-left">
-                <a href="destroi_sessao.php"><button type='button' class='btn btn-sm btn-success'>Novo Usuário</button></a>
-            </div>
-        </div><br/>
+        <br/>
         <div>
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active"><a href="#pessoa_fisica" aria-controls="pessoa_fisica" role="tab" data-toggle="tab">Pessoa Física</a></li>

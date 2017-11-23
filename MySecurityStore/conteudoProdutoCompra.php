@@ -19,8 +19,7 @@
         	<ul class="breadcrumb fonte-cont-breadcrumb text-left">
           		<li><a href="index.php">Home</a></li>
 				<li><a href="conteudoPaginaPrincipal.php">Ofertas</a></li>
-				<li class="active"><a href="#"><?php echo $listar['descricao'];?></a></li>
-
+				<li class="active"><a href="#"><?php echo $listar['descricao'];?></a></li}
        		</ul>
     	</div>
     <div class="margem-produtos-geral-breadcrumb"></div>
@@ -71,7 +70,7 @@ function showDivs(n) {
 </script>
 <div class="container-pc">
 	<div class="latest-product">
-		<div class="margem-produtos-geral-home">
+		<div class="margem-produtos-geral-home"></div>
 				<br>
 
         		<h2 class="section-title-produto"><b><?php echo $listar['descricao']; ?></b></h2>
@@ -87,26 +86,45 @@ function showDivs(n) {
 				</div>
 				
                 <div class="margem-produtos-geral-breadcrumb"></div>
-           		<div class="col-sm-4 product-carousel-price">
+           		<div class="col-sm-7 product-carousel-price">
                    	<p class="fonte-cont-pc">De: <del class="fonte-cont-preco"><?php echo number_format($listar['pvenda'], 2,',','.');?></del></p>
                     <p class="fonte-cont-pc">Por apenas: <ins>R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins> a vista ou</p>
                     <p class="fonte-cont-pc"> <ins>R$<?php echo number_format($listar['pvenda'], 2,',','.');?></ins> a prazo</p>
                     <p class="fonte-cont-pc"> em até <ins>3x</ins> de <ins>R$<?php echo number_format($listar['pvenda'], 2,',','.');?></ins></p>
                     <p class="fonte-cont-pc"> ou <ins>6x</ins> de <ins>R$<?php echo number_format($listar['pvenda'], 2,',','.');?></ins> iguais</p>
+              </div>
+                <div class="col-md-6 text-center">
+                  <a href="carrinhoCompras.php?Codigo=<?php echo $listar['Codigo'];?>">
+                   <button class="btn btn-primary btn-lg" type="submit">Adicionar ao carrinho</button>
+                  </a>
                 </div>
-                    
+                <br>
+                  <div class="col-sm-6">
+                    <h4 class="text-center">Formas de pagamento</h4>
+                  </div>
+                  <div class="col-sm-6 box">
+                    <table class="table">
+                      <tbody>
 
-                <div class="col-md-7 text-center">
-                    <div class="margem-produtos-geral-breadcrumb"></div>
-                    <a href="carrinhoCompras.php?Codigo=<?php echo $listar['Codigo'];?>">
-	                   	<button class="btn btn-primary btn-lg" type="submit">Adicionar ao carrinho</button>
-                    </a>
-	                   	</form>
-                  	</div>
-				</div>
-		</div>
+                        <tr>
+                          <td>1x sem juros de R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></td>
+                          <td>2x sem juros de R$ <?php $val = ($listar['pvenda'] /2); echo number_format($val, 2,',','.');?></td>
+                        </tr>
+                        <tr>
+                          <td>3x sem juros de R$ <?php $val = ($listar['pvenda'] /3); echo number_format($val, 2,',','.');?></td>
+                          <td>4x com juros de R$ <?php $val = ($listar['pvenda'] /4) + 13; echo number_format($val, 2,',','.');?></td>
+                        </tr>
+                        <tr>
+                          <td>5x com juros de R$ <?php $val = ($listar['pvenda'] /5) + 13; echo number_format($val, 2,',','.');?></td>
+                          <td>6x com juros de R$ <?php $val = ($listar['pvenda'] /6) + 13; echo number_format($val, 2,',','.');?></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>                  
+				        </div>
 	</div>
 </div>
+<br><br>
 <div class="container">
   <div class="panel-group" id="accordion">
     <div class="panel panel-default">
