@@ -120,6 +120,7 @@
                                             }
                                           }
                                         }
+                                        
                                         $idtrans = $_SESSION['idtransportadora'];
                                         ?>
                                         <?php if (empty($idtrans)){?>
