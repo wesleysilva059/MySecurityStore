@@ -27,7 +27,7 @@
                             ?>  
 
                                 <div class="row">
-                                    <h2>Endereço de entrega</h2>
+                                    <h2>Endereços de entrega</h2>
                                     <div class="col-sm-6 box">
                                         <h4>Rua:</h4>
                                         <p>Número:</p>
@@ -120,7 +120,7 @@
                                             }
                                           }
                                         }
-                                        
+
                                         $idtrans = $_SESSION['idtransportadora'];
                                         ?>
                                         <?php if (empty($idtrans)){?>
@@ -131,9 +131,8 @@
                                         <?php }else{ ?>
                                     <tr>
                                         <a href="index.php"><input type="submit" value="Continuar comprando" name="continuarComprando" class="button text-right"></a>
-
-                                        <a href="pagamento.php"><input type="submit" value="Ir para as formas de pagamento" name="formasPagamento" class="text-right"></a>
                                         <a title="Cancelar" class="remove" href="excluirCarrinho.php?Codigo=<?php echo $Codigo; ?> "><input type="submit" value="Cancelar compra" name="cancelarCompra" class="text-right"></a>
+                                        <a href="pagamento.php"><input type="submit" value="Ir para as formas de pagamento" name="formasPagamento" class="pull-right"></a>
                                         <?php } ?>
                                     </tr>
                                 </div>
