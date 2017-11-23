@@ -43,7 +43,7 @@
                                     <?php  $consulta4 = $conexao->query("SELECT * FROM `enderecoalternativo`, login WHERE enderecoalternativo.idlogin = login.idlogin AND login.idlogin = '$idlogin'");
                                     $listar4=$consulta4->fetch(PDO::FETCH_ASSOC) ?> 
                                     <div class="col-sm-6 box">
-                                        <?php if(empty($listar3['idenderecoalt'])){ ?>
+                                        <?php if(empty($listar4['idenderecoalt'])){ ?>
                                         <h4 class="text-center">Outro endereço</h4><br><br><br><br>
                                         <h4 class="text-center">Não há outros endereços cadastrados</h4><br><br><br><br>
                                         <?php }else{ ?>
