@@ -24,12 +24,12 @@
                             <?php
                             $idlogin = $_SESSION['id'];
                             $consulta3 = $conexao->query("SELECT * FROM `enderecos`, login WHERE enderecos.idlogin = login.idlogin AND login.idlogin = '$idlogin'");
-                            $listar3=$consulta3->fetch(PDO::FETCH_ASSOC)
+                           while ($listar3=$consulta3->fetch(PDO::FETCH_ASSOC)){ 
+                                $tipoendereco = $listar3['tipo'];
+                                if($tipoendereco==1){
                             ?>  
-
+                            <form name="form" method="POST">
                                 <div class="row">
-                                     <?php $tipoendereco = $listar3['tipo']; echo $tipoendereco;
-                                      if($tipoendereco==1){ ?>
                                     <div class="col-sm-6 box">
                                         <h4 class="text-center">Endereço principal</h4>
                                         <p>Rua: <?php echo $listar3['logradouro']; ?></p>
@@ -41,13 +41,9 @@
                                         <div class="text-center">
                                             <input type="radio" name="opcaoend" value="1">
                                         </div>
-                                    </div> 
-                                     <div class="col-sm-6 box">
-                                        <?php if(empty($listar3['idendereco'])){ ?>
-                                        <h4 class="text-center">Outro endereço</h4><br><br><br><br>
-                                        <h4 class="text-center">Não há outros endereços cadastrados</h4><br><br><br><br>
-                                        <?php }else{ ?>
-                                    <?php }else{ ?>   
+                                    </div>
+                                    <?php }else{ ?>    
+                                    <div class="col-sm-6 box">
                                         <h4 class="text-center">Endereço Alternativo</h4>
                                         <p>Rua: <?php echo $listar3['logradouro']; ?></p>
                                         <p>Número: <?php echo $listar3['numero']; ?></p>
@@ -58,13 +54,33 @@
                                         <div class="text-center">
                                             <input type="radio" name="opcaoend" value="2">
                                         </div>
-                                        <?php } } ?>
                                     </div>
+                                      <?php } }?>
+                                    <input type="submit" value="Escolher" name="endEnvio">
                                 </div>
-                                    <?php if(!empty($listar3['idendereco'])){ ?>
+                            </form>
+                            <br>
+                                <?php if (isset($_POST['endEnvio'])) {
+                                           
+
+                                       if (isset($_POST['opcaoend'])) {
+                                           $forma = $_POST['opcaoend'];
+                                           if($forma == 1){
+                                            unset($_SESSION['idendereco']);
+                                            $_SESSION['idendereco']=1;
+                                            }else if($forma==2){
+                                            unset($_SESSION['idendereco']);
+                                            $_SESSION['idendereco'] = 2;
+                                            }
+                                          }
+                                        }
+                                        $resul = $_SESSION['idendereco'];
+
+                                        ?>
+
                                 <a href="endereco.php?idendereco=<?php echo $idendereco ?>"><input type="submit" value="Atualizar endereço principal" name="enderecoPrincipal" class="button pull-left"></a>
                                 <a href="endereco.php"><input type="submit" value="Cadastrar ou editar endereço Alternativo" name="outroEndereco" class="button pull-right"></a>
-                                    <?php }?>
+
 
 <div class="container">
                                 <div class="col-md-11">
