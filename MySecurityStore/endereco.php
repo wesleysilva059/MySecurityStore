@@ -22,49 +22,49 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">* Endereço</label>
                                     <div class="col-sm-8">
-                                        <input name="endereco" type="text" class="form-control" placeholder="Digite seu endereço">
+                                        <input name="enderecoalt" type="text" class="form-control" placeholder="Digite seu endereço">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">* Número</label>
                                     <div class="col-sm-8">
-                                        <input name="nro_endereco" type="number" class="form-control">
+                                        <input name="nro_enderecoalt" type="number" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Complemento</label>
                                     <div class="col-sm-8">
-                                        <input name="complemento_end" type="text" class="form-control" placeholder="Digite o complemento">
+                                        <input name="complemento_endalt" type="text" class="form-control" placeholder="Digite o complemento">
                                     </div>
                                 </div>
                                  <div class="form-group">
                                     <label class="col-sm-2 control-label">Referência</label>
                                     <div class="col-sm-8">
-                                        <input name="referencia_end" type="text" class="form-control" placeholder="Digite a referência">
+                                        <input name="referencia_endalt" type="text" class="form-control" placeholder="Digite a referência">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">* Bairro</label>
                                     <div class="col-sm-8">
-                                        <input name="bairro" type="text" class="form-control" placeholder="Digite o nome de seu bairro">
+                                        <input name="bairroalt" type="text" class="form-control" placeholder="Digite o nome de seu bairro">
                                     </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">* CEP</label>
                                     <div class="col-sm-8">
-                                        <input name="cep" type="text" class="form-control" placeholder="Digite seu CEP" id="cep">
+                                        <input name="cepalt" type="text" class="form-control" placeholder="Digite seu CEP" id="cep">
                                     </div>
                                 </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">* Cidade</label>
                                     <div class="col-sm-8">
-                                        <input name="cidade" type="text" class="form-control" placeholder="Digite o nome da sua cidade">
+                                        <input name="cidadealt" type="text" class="form-control" placeholder="Digite o nome da sua cidade">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">* Estado</label>
                                     <div class="col-sm-8">
-                                        <select name="estado" class="form-control">
+                                        <select name="estadoalt" class="form-control">
                                             <option value="">Selecione</option>
                                             <option value="Exterior">Estado no Exterior</option>
                                             <option value="AC">Acre</option>
@@ -100,7 +100,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">* País</label>
                                     <div class="col-sm-8">
-                                        <select name="pais" class="form-control">
+                                        <select name="paisalt" class="form-control">
                                             <option value="África do Sul">África do Sul</option>
                                             <option value="Albânia">Albânia</option>
                                             <option value="Alemanha">Alemanha</option>

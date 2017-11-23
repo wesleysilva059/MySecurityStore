@@ -28,6 +28,8 @@
                             ?>  
 
                                 <div class="row">
+                                     <?php $tipoendereco = $listar3['tipo']; echo $tipoendereco;
+                                      if($tipoendereco==1){ ?>
                                     <div class="col-sm-6 box">
                                         <h4 class="text-center">Endereço principal</h4>
                                         <p>Rua: <?php echo $listar3['logradouro']; ?></p>
@@ -39,25 +41,24 @@
                                         <div class="text-center">
                                             <input type="radio" name="opcaoend" value="1">
                                         </div>
-                                    </div>    
-                                    <?php  $consulta4 = $conexao->query("SELECT * FROM `enderecoalternativo`, login WHERE enderecoalternativo.idlogin = login.idlogin AND login.idlogin = '$idlogin'");
-                                    $listar4=$consulta4->fetch(PDO::FETCH_ASSOC) ?> 
-                                    <div class="col-sm-6 box">
-                                        <?php if(empty($listar4['idenderecoalt'])){ ?>
+                                    </div> 
+                                     <div class="col-sm-6 box">
+                                        <?php if(empty($listar3['idendereco'])){ ?>
                                         <h4 class="text-center">Outro endereço</h4><br><br><br><br>
                                         <h4 class="text-center">Não há outros endereços cadastrados</h4><br><br><br><br>
                                         <?php }else{ ?>
+                                    <?php }else{ ?>   
                                         <h4 class="text-center">Endereço Alternativo</h4>
-                                        <p>Rua: <?php echo $listar4['logradouro']; ?></p>
-                                        <p>Número: <?php echo $listar4['numero']; ?></p>
-                                        <p>Bairro: <?php echo $listar4['bairro']; ?></p>
-                                        <p>CEP: <?php echo $listar4['cep']; ?></p>
-                                        <p>Estado: <?php echo $listar4['uf']; ?></p>
+                                        <p>Rua: <?php echo $listar3['logradouro']; ?></p>
+                                        <p>Número: <?php echo $listar3['numero']; ?></p>
+                                        <p>Bairro: <?php echo $listar3['bairro']; ?></p>
+                                        <p>CEP: <?php echo $listar3['cep']; ?></p>
+                                        <p>Estado: <?php echo $listar3['uf']; ?></p>
                                         <h4 class="text-center"><strong>Escolher este endereço</strong></h4>
                                         <div class="text-center">
                                             <input type="radio" name="opcaoend" value="2">
                                         </div>
-                                        <?php } ?>
+                                        <?php } } ?>
                                     </div>
                                 </div>
                                     <?php if(!empty($listar3['idendereco'])){ ?>
