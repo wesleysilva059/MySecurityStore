@@ -10,7 +10,7 @@
 ?>
 <?php
 
-include 'conexao_teste.php';
+include 'conexao.php';
 
 $recebe_descricao = $_POST['txtDescricao'];
 $recebe_origem = $_POST['txtOrigem'];

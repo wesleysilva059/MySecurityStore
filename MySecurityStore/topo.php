@@ -33,6 +33,7 @@
 
 	</head>
 <body>
+		<?php include("conexao.php"); ?>
 <nav class="navbar navbar-inverse  navbar-expand-lg navbar-fixed-top">
   <div class="container-fluid">
                 <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">                    

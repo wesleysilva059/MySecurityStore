@@ -8,14 +8,14 @@
 	include("conexao.php");
 
 	if($tipousuariologado == 1){
-		$consultausuario = $conexao->query("select 	a.nome as nome, 
+		$consultausuario = $conexao->query("SELECT 	a.nome as nome, 
 													a.sexo as sexo,
 													a.dtnasc as dtnasc, 
 													a.cpf as cpf, 
 													a.rg as rg, 
 													a.orgEmissor as orgEmissor, 
 													a.dtcadastro as dtcadastro, 
-													b.email as email,
+													b.email as email, 
 													b.fone as fone,
 													c.logradouro as logradouro, 
 													c.numero as numero, 
@@ -29,7 +29,7 @@
 													from pfisicadados a 
 													inner join pfisicacontatos b on a.idpfisica = '$idusuariologado' and a.idpfisica = b.idcliente
 													inner join login d on a.idpfisica = d.idcliente
-													inner join enderecos c on d.idlogin = c.idlogin");
+													inner join enderecos c on d.idlogin = c.idlogin, SELECT if(tipoemail == 1) end if) as email from pfisicacontatos");
 		$exibe = $consultausuario->fetch(PDO::FETCH_ASSOC);
 			
 		echo $exibe['nome']."<br>";
@@ -38,7 +38,7 @@
 		
 	}
 
-/*
+
 ?>
 <div class="cadastro_tela">
     <div class="container theme-showcase" role="main">
@@ -779,4 +779,3 @@
 <?php
 include("rodape.php");
 ?>
-*/

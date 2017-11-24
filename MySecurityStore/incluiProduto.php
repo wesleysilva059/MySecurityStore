@@ -84,7 +84,7 @@ try {
 		$resizeObj -> resizeImage(450, 450, 'crop');// redimensionar e cortar imagem
 		$resizeObj -> saveImage($destino.$img_nome3, 100);//salva a imagem com qualidade 100
 	
-
+		
 }catch(PDOException $e) {
 	
 	

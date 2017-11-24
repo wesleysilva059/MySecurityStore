@@ -25,7 +25,7 @@ try {
 	nomefantasia = '$recebe_nomefantasia',
 	cnpj = '$recebe_cnpj',
 	inscest = '$recebe_inscest',
-	idproduto = '$recebe_idproduto', 
+	idproduto = '$recebe_idproduto' 
 	
 	WHERE idfornecedor = '$idfornecedor'
 	
