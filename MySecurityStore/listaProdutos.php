@@ -34,7 +34,7 @@
 		<div class="col-sm-6"><h4 style="padding-top:20px"><?php echo $exibe['descricao']; ?></h4></div>
 		
 		<div class="col-sm-3" style="padding-top:20px">	
-		<a href="formAlterarProd.php?Codigo=<?php echo $exibe['Codigo']; ?>">	
+		<a href="formAlterarProd.php?Codigo=<?php echo $exibe['Codigo']; ?>&idcodigo=<?php echo $exibe['Codigo']; ?>">	
 		<button class="btn btn-lg btn-block btn-primary">
 		<span class="glyphicon glyphicon-pencil"></span> Alterar
 		</button>

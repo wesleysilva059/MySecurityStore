@@ -8,23 +8,25 @@
 	include("menu.php");
 	include 'conexao.php';
 ?>
-<div class="container">
-	<div class="text-center">
-		<h3>Administrativo - Página inicial</h3>
-		<div class="btn-group" role="group">
-			<ul>
-			<a href="formProduto.php" class="btn btn-primary">Cadastrar produto</a>
-			<a href="listaProdutos.php" class="btn btn-primary">Editar produto</a>
-			<a href="formFab.php" class="btn btn-primary">Cadastrar fabricante</a>
-            <a href="listaFabricantes.php" class="btn btn-primary">Editar fabricante</a>
-            <a href="formForn.php" class="btn btn-primary">Cadastrar fornecedor</a></li>
-            <a href="listaFornecedores.php" class="btn btn-primary">Editar fornecedor</a>
-			<a href="formGrup.php" class="btn btn-primary">Cadastrar grupos de produtos</a>
-			<a href="listaGrupos.php" class="btn btn-primary">Editar grupos de produtos</a>
-			<a href="formTec.php" class="btn btn-primary">Cadastrar Tecnologias</a>
-			<a href="listaTecnologias.php" class="btn btn-primary">Editar Tecnologias</a>
-		</ul>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-4 col-sm-offset-4 text-center">
+			<h3>Administrativo - Página inicial</h3>
+
+			<div class="btn-group">
+				<a href="formProduto.php"><button type="submit" class="btn btn-block btn-primary">Cadastrar produto</button></a><br>
+				<a href="listaProdutos.php"><button type="submit" class="btn btn-block btn-primary">Editar produto</button></a><br>
+				<a href="formFab.php"><button type="submit" class="btn btn-block btn-primary">Cadastrar fabricante</button></a><br>
+	            <a href="listaFabricantes.php"><button type="submit" class="btn btn-block btn-primary">Editar fabricante</button></a><br>
+	            <a href="formForn.php"><button type="submit" class="btn btn-block btn-primary">Cadastrar fornecedor</button></a></li><br>
+	            <a href="listaFornecedores.php"><button type="submit" class="btn btn-block btn-primary">Editar fornecedor</button></a><br>
+				<a href="formGrup.php"><button type="submit" class="btn btn-block btn-primary">Cadastrar grupos de produtos</button></a><br>
+				<a href="listaGrupos.php"><button type="submit" class="btn btn-block btn-primary">Editar grupos de produtos</button></a><br>
+				<a href="formTec.php"><button type="submit" class="btn btn-block btn-primary">Cadastrar Tecnologias</button></a><br>
+				<a href="listaTecnologias.php"><button type="submit" class="btn btn-block btn-primary">Editar Tecnologias</button></a><br>
+			</div>
 		</div>
 	</div>
 </div>
+
 <?php include ("rodape.php");?>

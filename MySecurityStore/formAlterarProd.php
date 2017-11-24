@@ -30,7 +30,7 @@ $('#pmedio').mask('000.000.000.000.000,00', {reverse: true});
 				
 					<div class="form-group">
 						<label for="codbarras">Codigo de barras</label>
-						<input required name="txtCodBarras" value="<?php echo $exibe['codbarras']; ?>" type="text" class="form-control">
+						<input name="txtCodBarras" value="<?php echo $exibe['codbarras']; ?>" type="text" class="form-control">
 					</div>
 					
 					<div class="form-group">
@@ -45,7 +45,7 @@ $('#pmedio').mask('000.000.000.000.000,00', {reverse: true});
 					
 					<div class="form-group">
 						<label for="modelo">Modelo</label>
-						<input required name="txtModelo" value="<?php echo $exibe['modelo']; ?>" type="text" class="form-control">
+						<input name="txtModelo" value="<?php echo $exibe['modelo']; ?>" type="text" class="form-control">
 					</div>
 					<?php 
        				$consulta1 = $conexao->query('SELECT * FROM `grupo`');
@@ -64,7 +64,7 @@ $('#pmedio').mask('000.000.000.000.000,00', {reverse: true});
 					
 					<div class="form-group">
 						<label for="descricao">Descrição</label>
-						<input required name="txtDescricao" value="<?php echo $exibe['descricao']; ?>" type="text" class="form-control">
+						<input name="txtDescricao" value="<?php echo $exibe['descricao']; ?>" type="text" class="form-control">
 					</div>
 					
 					<div class="form-group">
@@ -86,14 +86,14 @@ $('#pmedio').mask('000.000.000.000.000,00', {reverse: true});
 
 					<div class="form-group">
 					<label for="descricao">Observações</label>
-						<textarea rows="5" class="form-control" value="<?php echo $exibe['obs']; ?>" required name="txtObservacoes"></textarea>
+						<textarea rows="5" class="form-control" value="<?php echo $exibe['obs']; ?>" name="txtObservacoes"></textarea>
 					</div>
 					<?php 
        				$consulta2 = $conexao->query('SELECT * FROM `fabricantes`');
      				 ?>
 					<div class="form-group">
 					<label for="fabricante">ID Fabricante</label>
-					<select class="form-control" required name="txtIdFabricante">
+					<select class="form-control" name="txtIdFabricante">
 					  <option value="selecione">Selecione</option>
 					<?php while ($listar2=$consulta2->fetch(PDO::FETCH_ASSOC)){?>
 					<option value="<?php echo $listar2 ['idfabricante'];?>"><?php echo $listar2 ['idfabricante'];?> - <?php echo $listar2 ['descricao'];?></option>
@@ -103,42 +103,42 @@ $('#pmedio').mask('000.000.000.000.000,00', {reverse: true});
 					
 					<div class="form-group">
 					<label for="pesoliquido">Peso liquido</label>
-					<input type="text" class="form-control" value="<?php echo $exibe['pesoliquido']; ?>" required name="txtPesoLiquido" id="txtPesoLiquido">
+					<input type="text" class="form-control" value="<?php echo $exibe['pesoliquido']; ?>" name="txtPesoLiquido" id="txtPesoLiquido">
 					</div>
 					
 					<div class="form-group">
 					<label for="pesobruto">Peso Bruto</label>
-					<input type="text" class="form-control" value="<?php echo $exibe['pesoembalagem']; ?>" required name="txtPesoEmbalagem" id="txtPesoEmbalagem">
+					<input type="text" class="form-control" value="<?php echo $exibe['pesoembalagem']; ?>" name="txtPesoEmbalagem" id="txtPesoEmbalagem">
 					</div>
 
 					<div class="form-group">
 					<label for="precocusto">Preço de custo</label>
-					<input type="text" class="form-control" value="<?php echo $exibe['pcusto']; ?>" required name="txtPCusto" id="txtPCusto">
+					<input type="text" class="form-control" value="<?php echo $exibe['pcusto']; ?>" name="txtPCusto" id="txtPCusto">
 					</div>
 
 					<div class="form-group">
 					<label for="precomedio">Preço médio</label>
-					<input type="text" class="form-control" value="<?php echo $exibe['pmedio']; ?>" required name="txtPMedio" id="txtPMedio">
+					<input type="text" class="form-control" value="<?php echo $exibe['pmedio']; ?>" name="txtPMedio" id="txtPMedio">
 					</div>
 
 					<div class="form-group">
 					<label for="precovenda">Preço de venda</label>
-					<input type="text" class="form-control" value="<?php echo $exibe['pvenda']; ?>" required name="txtPVenda" id="txtPVenda">
+					<input type="text" class="form-control" value="<?php echo $exibe['pvenda']; ?>" name="txtPVenda" id="txtPVenda">
 					</div>
 
 					<div class="form-group">
 					<label for="estoque">Estoque</label>
-					<input type="text" class="form-control" value="<?php echo $exibe['estoque']; ?>" required name="txtEstoque" id="txtEstoque">
+					<input type="text" class="form-control" value="<?php echo $exibe['estoque']; ?>" name="txtEstoque" id="txtEstoque">
 					</div>
 
 					<div class="form-group">
 					<label for="estoquemedio">Estoque médio</label>
-					<input type="text" class="form-control" value="<?php echo $exibe['estmin']; ?>" required name="txtEstMin" id="txtEstMin">
+					<input type="text" class="form-control" value="<?php echo $exibe['estmin']; ?>" name="txtEstMin" id="txtEstMin">
 					</div>
 
 					<div class="form-group">
 					<label for="estoqueideal">Estoque ideal</label>
-					<input type="text" class="form-control" value="<?php echo $exibe['estideal']; ?>" required name="txtEstIdeal" id="txtEstIdeal">
+					<input type="text" class="form-control" value="<?php echo $exibe['estideal']; ?>" name="txtEstIdeal" id="txtEstIdeal">
 					</div>
 					<?php 
        				$consulta3 = $conexao->query('SELECT * FROM `tecnologias`');

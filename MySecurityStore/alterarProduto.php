@@ -127,7 +127,7 @@ try {
 	estmin = '$recebe_estmin',
 	estideal = '$recebe_estideal'
 
-	WHERE idproduto = 'Codigo';
+	WHERE idproduto = '$Codigo';
 
 	UPDATE prodtecnologia SET
 
