@@ -11,7 +11,7 @@
 	$cidadealt = $_POST["cidadealt"];
 	$estadoalt = $_POST["estadoalt"];
 	$paisalt = $_POST["paisalt"];
-	$dtAtual = date('d/m/Y');
+	$dtAtual = date('Y-m-d');
 
 	
 	

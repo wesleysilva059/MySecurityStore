@@ -21,7 +21,7 @@
 	$estado = $_POST["estado"];
 	$pais = $_POST["pais"];
 	$senha = $_POST["senha_2"];
-	$dtAtual = date('d/m/Y');
+	$dtAtual = date('Y-m-d');
 
 	$consulta = $conexao->query("SELECT email FROM login WHERE email='$email'");
 

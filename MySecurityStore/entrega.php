@@ -67,14 +67,14 @@
                                            $forma = $_POST['opcaoend'];
                                            if($forma == 1){
                                             unset($_SESSION['idendereco']);
-                                            $_SESSION['idendereco']=1;
+                                            $_SESSION['idendereco'] = $id;
                                             }else if($forma==2){
+                                            $id=$_POST['idendereco'];
                                             unset($_SESSION['idendereco']);
-                                            $_SESSION['idendereco'] = 2;
+                                            $_SESSION['idendereco'] = $id;
                                             }
                                           }
                                         }
-                                        $resul = $_SESSION['idendereco'];
 
                                         ?>
 

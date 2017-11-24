@@ -29,7 +29,7 @@ $recebe_estoque = $_POST['txtEstoque'];
 $recebe_estmin = $_POST['txtEstMin'];
 $recebe_estideal = $_POST['txtEstIdeal'];
 $recebe_codtecnologia = $_POST['txtCodTecnologia'];
-$dtAtual = date('d/m/Y');
+$dtAtual = date('Y-m-d');
 
 $remover1='.';
 $recebe_pcusto = str_replace($remover1, '', $recebe_pcusto);

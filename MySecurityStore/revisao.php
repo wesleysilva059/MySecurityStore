@@ -89,7 +89,7 @@
                                     <tr>
                                         <a href="index.php"><input type="submit" value="Continuar comprando" name="continuarComprando" class="button text-right"></a>
                                         <a title="Cancelar" class="remove" href="excluirCarrinho.php?Codigo=<?php echo $Codigo; ?> "><input type="submit" value="Cancelar compra" name="cancelarCompra" class="text-right"></a>
-                                        <a href="revisao.php"><input type="submit" value="Finalizar pedido" name="revisarCarrinho" class="pull-right"></a>
+                                        <a href="finalizarCompra.php"><input type="submit" value="Finalizar pedido" name="revisarCarrinho" class="pull-right"></a>
                                     </tr>
                                 </div>
                         </div>

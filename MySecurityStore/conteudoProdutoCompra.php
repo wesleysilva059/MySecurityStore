@@ -24,9 +24,12 @@
     	</div>
     <div class="margem-produtos-geral-breadcrumb"></div>
 	<div class="w3-content zoom" style="max-width:400px">
-	  <img src="Imagens/<?php echo $listar['foto'];?>" class="mySlides" style="width:100%">
-	  <img src="Imagens/<?php echo $listar['foto2'];?>" class="mySlides" style="width:100%">
-	  <img src="Imagens/<?php echo $listar['foto3'];?>" class="mySlides" style="width:100%">
+    <a href="Imagens/<?php echo $listar['foto'];?>" data-lightbox="galeria" data-title="<?php echo $listar['descricao'] ?>">
+	  <img src="Imagens/<?php echo $listar['foto'];?>" class="mySlides" style="width:100%"></a>
+    <a href="Imagens/<?php echo $listar['foto2'];?>" data-lightbox="galeria" data-title="<?php echo $listar['descricao'] ?>">
+	  <img src="Imagens/<?php echo $listar['foto2'];?>" class="mySlides" style="width:100%"></a>
+    <a href="Imagens/<?php echo $listar['foto3'];?>" data-lightbox="galeria" data-title="<?php echo $listar['descricao'] ?>">
+	  <img src="Imagens/<?php echo $listar['foto3'];?>" class="mySlides" style="width:100%"></a>
 	  <div class="w3-row-padding w3-section text-center">
 	    <div class="w3-col s4 img-thumbnail">
 	      <img src="Imagens/<?php echo $listar['foto'];?>" class="demo w3-opacity margin-right" class="img-responsive" style="max-width:80px" onclick="currentDiv(1)">
@@ -94,9 +97,13 @@ function showDivs(n) {
                     <p class="fonte-cont-pc"> ou <ins>6x</ins> de <ins>R$<?php echo number_format($listar['pvenda'], 2,',','.');?></ins> iguais</p>
               </div>
                 <div class="col-md-6 text-center">
+                  <?php if ($listar['estoque']>0){ ?>
                   <a href="carrinhoCompras.php?Codigo=<?php echo $listar['Codigo'];?>">
                    <button class="btn btn-primary btn-lg" type="submit">Adicionar ao carrinho</button>
                   </a>
+                  <?php }else{ ?>
+                  <button class="btn btn-danger btn-lg">INDISPONÍVEL</button>
+                  <?php } ?>
                 </div>
                 <br>
                   <div class="col-sm-6">
