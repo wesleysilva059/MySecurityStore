@@ -9,7 +9,7 @@
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
       width: 2024px;
-      height: 400px;
+      height: 350px;
       overflow: hidden;
   }
   </style>

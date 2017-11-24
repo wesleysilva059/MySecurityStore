@@ -25,18 +25,17 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6">
                         <div class="footer-about-us">
-                            <h2 class="fonte-rodape-title">My Security Store.</h2>
-                                <p>My Security Store é uma empresa que tem como principal objetivo atender clientes de todos os tipos de classe econômica oferecendo seus produtos de segurança. A empresa não se responsabiliza por produtos com má instalação ou com mal uso de sua função.</p>
+                            <h2 class="fonte-rodape-title">My Security Store</h2>
+                                <p class="fonte_paragrafo">My Security Store é uma empresa que tem como principal objetivo atender clientes de todos os tipos de classe econômica oferecendo seus produtos de segurança. A empresa não se responsabiliza por produtos com má instalação ou com mal uso de sua função.</p>
                         </div>
                     </div>
                         <div class="col-md-3 col-sm-6">
                             <div class="footer-about-us">
                                 <h2 class="fonte-rodape-title">A empresa</h2>
                                     <ul>
-                                        <li class="list-group-item"><a href="sobreNos.php">Sobre nós</a></li>
-                                        <li class="list-group-item"><a href="politicasPrivacidade.php">Politicas de privacidade</a></li>
+                                        <li class="list-group-item"><a href="sobreNos.php">Quem Somos</a></li>
+                                        <li class="list-group-item"><a href="politicasPrivacidade.php">Política de Entrega e Devolução</a></li>
                                         <li class="list-group-item"><a href="formasPagamento.php">Formas de pagamento</a></li>
-                                        <li class="list-group-item"><a href="politicasPrivacidade.php">Prazos de entrega e devoluções</a></li>
                                     </ul>                        
                             </div>
                         </div>
@@ -55,12 +54,11 @@
                             <div class="footer-about-us">
                                 <h2 class="fonte-rodape-title">Categorias</h2>
                                     <ul>
-                                        <li class="list-group-item"><a href="#">CFTV</a></li>
-                                        <li class="list-group-item"><a href="#">Câmeras</a></li>
-                                        <li class="list-group-item"><a href="#">Cabeamento</a></li>
-                                        <li class="list-group-item"><a href="#">DVRs</a></li>
-                                        <li class="list-group-item"><a href="#">Navegadores de acesso</a></li>
-                                        <li class="list-group-item"><a href="#">Ofertas</a></li>
+                                        <li class="list-group-item"><a href="">CFTV</a></li>
+                                        <li class="list-group-item"><a href="">Câmeras</a></li>
+                                        <li class="list-group-item"><a href="">Cabeamento</a></li>
+                                        <li class="list-group-item"><a href="">DVRs</a></li>
+                                        <li class="list-group-item"><a href="">Ofertas</a></li>
                                     </ul>                        
                             </div>
                 </div>
@@ -74,7 +72,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="fonte-rodape-cont">
-                                <p>My Security Store 2017 Comércio Eletrônico Ltda. Todos os direitos reservados.</p>
+                                <p class="fonte_paragrafo">My Security Store 2017 Comércio Eletrônico Ltda. Todos os direitos reservados.</p>
                             </div>
                         </div>
                     </div>

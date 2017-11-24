@@ -48,7 +48,7 @@
                   <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a href="#"><span class="fa fa-whatsapp" aria-hidden="true"></span> Claudio Maia - (35)98816-1903</a></li>
+                    <li><a href="#"><span class="fa fa-whatsapp" aria-hidden="true"></span> Cláudio Maia - (35)98816-1903</a></li>
                     <li><a href="#"><span class="fa fa-whatsapp" aria-hidden="true"></span> Higor Belini - (35)99824-0185</a></li>
                     <li><a href="#"><span class="fa fa-whatsapp" aria-hidden="true"></span> Júnior César - (37)99904-4728</a></li>
                     <li><a href="#"><span class="fa fa-whatsapp" aria-hidden="true"></span> Wesley Silva - (35)99975-9812</a></li>
@@ -70,8 +70,8 @@
 	  		  	?>
 	  
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
-					  <li><a href="formCadastroUsuario.php"><span class="glyphicon glyphicon-log-in"></span> Cadastre-se</a></li>
+            <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>  Entrar</a></li>
+					  <li><a href="formCadastroUsuario.php"><span class="glyphicon glyphicon-log-in"></span>  Cadastre-se</a></li>
 	  			</ul>
 				<?php } else { 
 						
@@ -81,23 +81,23 @@
 							$exibe_user = $consulta_user->fetch(PDO::FETCH_ASSOC);
 				?>
 							<ul class="nav navbar-nav navbar-right">	
-								<li><a href="#"><span class="glyphicon glyphicon-user"></span> <?php echo $exibe_user['nome'];?></a></li>
-								<li><a href="sair.php"><span class="glyphicon glyphicon-off"></span> Sair</a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-user"></span>  <?php echo $exibe_user['nome'];?></a></li>
+								<li><a href="sair.php"><span class="glyphicon glyphicon-off"></span>  Sair</a></li>
 							</ul>
 							<?php } else {
 							$consulta_user = $conexao->query("SELECT razaosocial FROM pjuridicadados WHERE idpjuridica = '$_SESSION[id]'");
 							$exibe_user = $consulta_user->fetch(PDO::FETCH_ASSOC);
 							?>
 						<ul class="nav navbar-nav navbar-right">	
-							<li><a href="#"><span class="glyphicon glyphicon-user"></span> <?php echo $exibe_user['razaosocial'];?></a></li>
-							<li><a href="sair.php"><span class="glyphicon glyphicon-off"></span> Sair</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-user"></span>  <?php echo $exibe_user['razaosocial'];?></a></li>
+							<li><a href="sair.php"><span class="glyphicon glyphicon-off"></span>  Sair</a></li>
 						</ul>
 						<?php	}
 					}
 						 else { ?>
 						<ul class="nav navbar-nav navbar-right">	
-							<li><a href="admIndex.php"><button class="btn btn-sm btn-danger">Adm</button></a></li>
-							<li><a href="sair.php"><span class="glyphicon glyphicon-off"></span> Sair</a></li>
+							<li><a href="admIndex.php"><button class="btn btn-sm btn-danger">  Adm</button></a></li>
+							<li><a href="sair.php"><span class="glyphicon glyphicon-off"></span>  Sair</a></li>
 						</ul>
 						<?php
 

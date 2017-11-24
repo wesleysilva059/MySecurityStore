@@ -6,7 +6,7 @@ include("menu.php");
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<h1 class="text-center">Formas de pagamento</h1>
+			<h1 class="text-left">Formas de pagamento</h1>
 			<div class="painel">
 				<h3 class="text-center">Cartões de crédito</h3>
 				<p class="text-center"><img src="Imagens/formasPagamento1.jpg"></p>
