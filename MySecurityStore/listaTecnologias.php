@@ -35,7 +35,7 @@
 		
 		<div class="col-sm-3" style="padding-top:20px">	
 		<a href="formAlterarTec.php?idtecnologia=<?php echo $exibe['idtecnologia']; ?>">	
-		<button class="btn btn-lg btn-block btn-primary">
+		<button class="btn btn-block btn-primary">
 		<span class="glyphicon glyphicon-pencil"></span> Alterar
 		</button>
 		</a>

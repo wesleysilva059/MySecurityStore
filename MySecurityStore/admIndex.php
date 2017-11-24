@@ -11,8 +11,8 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-4 text-center">
-			<h3>Administrativo - Página inicial</h3>
-
+			<h2>Administrativo - Página inicial</h2>
+			<br>
 			<div class="btn-group">
 				<a href="formProduto.php"><button type="submit" class="btn btn-block btn-primary">Cadastrar produto</button></a><br>
 				<a href="listaProdutos.php"><button type="submit" class="btn btn-block btn-primary">Editar produto</button></a><br>

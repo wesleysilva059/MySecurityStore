@@ -34,7 +34,7 @@
 		<div class="col-sm-6"><h4 style="padding-top:20px"><?php echo $exibe['origem']; ?></h4></div>
 		<div class="col-sm-3" style="padding-top:20px">	
 		<a href="formAlterarFab.php?idfabricante=<?php echo $exibe['idfabricante']; ?>">	
-		<button class="btn btn-lg btn-block btn-primary">
+		<button class="btn btn-block btn-primary">
 		<span class="glyphicon glyphicon-pencil"></span> Alterar
 		</button>
 		</a>

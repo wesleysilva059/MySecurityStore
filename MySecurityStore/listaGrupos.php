@@ -33,7 +33,7 @@
 		<div class="col-sm-3"><h4 style="padding-top:20px"><?php echo $exibe['descrigrupo']; ?></h4></div>
 		<div class="col-sm-3" style="padding-top:20px">	
 		<a href="formAlterarGrupo.php?idgrupo=<?php echo $exibe['idgrupo']; ?>">	
-		<button class="btn btn-lg btn-block btn-primary">
+		<button class="btn btn-block btn-primary">
 		<span class="glyphicon glyphicon-pencil"></span> Alterar
 		</button>
 		</a>
