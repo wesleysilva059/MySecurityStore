@@ -38,7 +38,7 @@
                                         <div class="col-sm-4 box">
                                            <div class="text-center">
 
-                                                <h4>Cartão de credito</h4>
+                                                <h4>Cartão de Crédito</h4>
                                                 <div class="text-center">
 
                                                     <input type="radio" name="opcao1" value="2">
@@ -48,7 +48,7 @@
                                         <div class="col-sm-4 box">
                                            <div class="text-center">
 
-                                                <h4>Cartão de debito</h4>
+                                                <h4>Cartão de Débito</h4>
 
                                                 <div class="text-center">
 
@@ -276,7 +276,7 @@
                                     $total = $exibe['pvenda'] *$qnt; ?>
                                     <tr>
                                         <td>Subtotal</td>
-                                        <th><strong>R$<?php echo number_format($total,2,',','.');?></strong></th>
+                                        <th><strong>R$ <?php echo number_format($total,2,',','.');?></strong></th>
                                     </tr>
                                     <tr> 
                                         <td>Frete</td>
@@ -284,7 +284,7 @@
                                         if(empty($idtrans)){ ?>
                                         <th>A escolher</th>
                                         <?php }else{ ?>
-                                        <th>R$<?php $val = $_SESSION['valor']; 
+                                        <th>R$ <?php $val = $_SESSION['valor']; 
                                         echo number_format($val,2,',','.');?></th>
                                         <?php } ?>
                                     </tr>
@@ -300,9 +300,9 @@
                                     <tr>
                                         <td><strong>Total</strong></td>
                                         <?php if(empty($idtrans)){ ?>
-                                        <th><strong>R$<?php echo number_format($total,2,',','.');?></strong></th>
+                                        <th><strong>R$ <?php echo number_format($total,2,',','.');?></strong></th>
                                         <?php }else{ ?>
-                                        <th><strong>R$<?php $val = $_SESSION['valor'];
+                                        <th><strong>R$ <?php $val = $_SESSION['valor'];
                                          $comFrete = $val + $total;
                                          echo number_format($comFrete,2,',','.');?></strong></th>
                                          <?php } ?>

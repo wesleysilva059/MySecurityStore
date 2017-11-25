@@ -30,7 +30,7 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <h2 class="section-title">Total: <strong>R$<?php echo number_format($total,2,',','.');?></strong></h2>
+                                                <h2 class="section-title">Total: <strong>R$ <?php echo number_format($total,2,',','.');?></strong></h2>
                                                 <a href="index.php"><input type="submit" value="Continuar comprando" name="" class="button text-left"></a>
                                                  <?php if (count($_SESSION['carrinho'])>0){?>
                                                 <a href="entrega.php"><input type="submit" value="Fechar compra" name="fecharCompra" class="add_to_cart_button text-left"></a>
@@ -138,12 +138,12 @@
                                         <tbody>
                                             <tr>
                                                 <th>Subtotal</th>
-                                                <td><span class="amount"><?php echo number_format($total,2,',','.');?></span></td>
+                                                <td>R$ <span class="amount"><?php echo number_format($total,2,',','.');?></span></td>
                                             </tr>
 
                                             <tr>
                                                 <th>Preço Total</th>
-                                                <td><strong><span class="amount"><?php echo number_format($total,2,',','.');?></span></strong> </td>
+                                                <td><strong>R$ <span class="amount"><?php echo number_format($total,2,',','.');?></span></strong> </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -152,16 +152,16 @@
                                         <tbody>
                                             <tr>
                                                 <th>Subtotal</th>
-                                                <td><span class="amount">R$<?php echo number_format($total,2,',','.');?></span></td>
+                                                <td><span class="amount">R$ <?php echo number_format($total,2,',','.');?></span></td>
                                             </tr>
                                             <tr>
                                                 <th>Frete</th>
-                                                <td>R$<?php $val = $_SESSION['valor']; 
+                                                <td>R$ <?php $val = $_SESSION['valor']; 
                                                     echo number_format($val,2,',','.');?></td>
                                             </tr>
                                             <tr>
                                                 <th><strong>Total</strong></th>
-                                                <td><strong>R$<?php $comFrete = $val + $total;
+                                                <td><strong>R$ <?php $comFrete = $val + $total;
                                                 echo number_format($comFrete,2,',','.');?></strong></td>              
                                             </tr>
                                         </tbody>

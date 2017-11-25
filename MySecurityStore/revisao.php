@@ -31,12 +31,12 @@
                         <table cellspacing="0" class="shop_table cart">
                             <thead>
                                 <tr>
-                                    <th>Remover</th>
                                     <th>Imagem</th>
                                     <th>Produto</th>
                                     <th>Preço</th>
                                     <th>Quantidade</th>
                                     <th>Total</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -56,10 +56,6 @@
 
                                 ?>
                                 <tr>
-                                    <td class="product-remove">
-                                        <a title="Remover este item" class="remove" href="excluirCarrinho.php?Codigo=<?php echo $Codigo; ?> "><span class="fa fa-trash-o" aria-hidden="true"></span>Excluir</a> 
-                                    </td>
-
                                     <td class="product-thumbnail">
                                         <a href="conteudoProdutoCompra.php?Codigo=<?php echo $exibe['Codigo']?>"><img alt="" class="" src="Imagens/<?php echo $exibe['foto']; ?>"></a>
                                     </td>
@@ -79,6 +75,9 @@
                                     </td>
                                     <td>
                                         <h4><strong>R$<?php echo number_format($total,2,',','.');?></strong></h4>
+                                    </td>
+                                    <td class="product-remove">
+                                        <a title="Remover este item" class="remove" href="excluirCarrinho.php?Codigo=<?php echo $Codigo; ?> "><span class="fa fa-trash-o" aria-hidden="true"></span> Excluir</a> 
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -113,7 +112,7 @@
                                     $total = $exibe['pvenda'] *$qnt; ?>
                                     <tr>
                                         <td>Subtotal</td>
-                                        <th><strong>R$<?php echo number_format($total,2,',','.');?></strong></th>
+                                        <th><strong>R$ <?php echo number_format($total,2,',','.');?></strong></th>
                                     </tr>
                                     <tr> 
                                         <td>Frete</td>
@@ -121,16 +120,16 @@
                                         if(empty($idtrans)){ ?>
                                         <th>A escolher</th>
                                         <?php }else{ ?>
-                                        <th>R$<?php $val = $_SESSION['valor']; 
+                                        <th>R$ <?php $val = $_SESSION['valor']; 
                                         echo number_format($val,2,',','.');?></th>
                                         <?php } ?>
                                     </tr>
                                     <tr>
                                         <td><strong>Total</strong></td>
                                         <?php if(empty($idtrans)){ ?>
-                                        <th><strong>R$<?php echo number_format($total,2,',','.');?></strong></th>
+                                        <th><strong>R$ <?php echo number_format($total,2,',','.');?></strong></th>
                                         <?php }else{ ?>
-                                        <th><strong>R$<?php $val = $_SESSION['valor'];
+                                        <th><strong>R$ <?php $val = $_SESSION['valor'];
                                          $comFrete = $val + $total;
                                          echo number_format($comFrete,2,',','.');?></strong></th>
                                          <?php } ?>

@@ -104,7 +104,7 @@
 
                                                 <p>De 3 a 5 dias úteis</p>
 
-                                                <p>Valor - R$ 52,00</p>
+                                                <p>Valor: R$ 52,00</p>
 
                                                 <div class="text-center">
 
@@ -119,7 +119,7 @@
 
                                                 <p>De 10 a 15 dias úteis</p>
 
-                                                <p>Valor - R$ 17,00</p>
+                                                <p>Valor: R$ 17,00</p>
 
                                                 <div class="text-center">
 
@@ -134,7 +134,7 @@
 
                                                 <p>De 6 a 10 dias úteis</p>
 
-                                                <p>Valor - R$ 38,00</p>
+                                                <p>Valor: R$ 38,00</p>
 
                                                 <div class="text-center">
 
@@ -213,7 +213,7 @@
                                     $total = $exibe['pvenda'] *$qnt; ?>
                                     <tr>
                                         <td>Subtotal</td>
-                                        <th><strong>R$<?php echo number_format($total,2,',','.');?></strong></th>
+                                        <th><strong>R$ <?php echo number_format($total,2,',','.');?></strong></th>
                                     </tr>
                                     <tr>
                                         
@@ -221,16 +221,16 @@
                                         <?php if(empty($idtrans)){ ?>
                                         <th>A escolher</th>
                                         <?php }else{ ?>
-                                        <th>R$<?php $val = $_SESSION['valor']; 
+                                        <th>R$ <?php $val = $_SESSION['valor']; 
                                         echo number_format($val,2,',','.');?></th>
                                         <?php } ?>
                                     </tr>
                                     <tr>
                                         <td><strong>Total</strong></td>
                                         <?php if(empty($idtrans)){ ?>
-                                        <th><strong>R$<?php echo number_format($total,2,',','.');?></strong></th>
+                                        <th><strong>R$ <?php echo number_format($total,2,',','.');?></strong></th>
                                         <?php }else{ ?>
-                                        <th><strong>R$<?php $comFrete = $val + $total;
+                                        <th><strong>R$ <?php $comFrete = $val + $total;
                                          echo number_format($comFrete,2,',','.');?></strong></th>
                                          <?php } ?>
                                     </tr>
