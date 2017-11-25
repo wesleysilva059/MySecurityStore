@@ -11,7 +11,7 @@
 
   $recebebusca = $_GET['txtBusca'];
 
-  $consulta = $conexao->query("SELECT DISTINCT * FROM produtos,prodprecos,prodestoque WHERE descricao LIKE CONCAT ('%','$recebebusca','%')");
+  $consulta = $conexao->query("SELECT DISTINCT * FROM produtos,prodprecos,prodestoque WHERE descricao LIKE CONCAT ('%','$recebebusca','%') OR marca LIKE CONCAT ('%','$recebebusca','%') OR modelo LIKE CONCAT ('%','$recebebusca','%')");
 
  
   ?>

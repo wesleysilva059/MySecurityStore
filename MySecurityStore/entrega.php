@@ -37,6 +37,7 @@
                                         <p>Bairro: <?php echo $listar3['bairro']; ?></p>
                                         <p>CEP: <?php echo $listar3['cep']; ?></p>
                                         <p>Estado: <?php echo $listar3['uf']; ?></p>
+                                        <?php $sessao = $listar3['idendereco']; ?>
                                         <h4 class="text-center"><strong>Escolher este endereço</strong></h4>
                                         <div class="text-center">
                                             <input type="radio" name="opcaoend" value="1">
@@ -50,6 +51,7 @@
                                         <p>Bairro: <?php echo $listar3['bairro']; ?></p>
                                         <p>CEP: <?php echo $listar3['cep']; ?></p>
                                         <p>Estado: <?php echo $listar3['uf']; ?></p>
+                                        <?php $sessao2 = $listar3['idendereco']; ?>
                                         <h4 class="text-center"><strong>Escolher este endereço</strong></h4>
                                         <div class="text-center">
                                             <input type="radio" name="opcaoend" value="2">
@@ -60,6 +62,10 @@
                                 </div>
                             </form>
                             <br>
+                            <?php $idlogin = $_SESSION['id'];
+                            $consulta3 = $conexao->query("SELECT * FROM `enderecos`, login WHERE enderecos.idlogin = login.idlogin AND login.idlogin = '$idlogin'");
+                           while ($listar3=$consulta3->fetch(PDO::FETCH_ASSOC)){ 
+                                $tipoendereco = $listar3['tipo']; ?>
                                 <?php if (isset($_POST['endEnvio'])) {
                                            
 
@@ -67,15 +73,14 @@
                                            $forma = $_POST['opcaoend'];
                                            if($forma == 1){
                                             unset($_SESSION['idendereco']);
-                                            $_SESSION['idendereco'] = $id;
+                                            $_SESSION['idendereco']=$sessao;
                                             }else if($forma==2){
-                                            $id=$_POST['idendereco'];
                                             unset($_SESSION['idendereco']);
-                                            $_SESSION['idendereco'] = $id;
+                                            $_SESSION['idendereco']=$sessao2;
                                             }
                                           }
                                         }
-
+                                    }
                                         ?>
 
                                 <a href="endereco.php?idendereco=<?php echo $idendereco ?>"><input type="submit" value="Atualizar endereço principal" name="enderecoPrincipal" class="button pull-left"></a>
