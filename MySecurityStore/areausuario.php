@@ -1,8 +1,11 @@
 <?php 
-	  session_start();
-	  include ("topo.php"); 
-	  include ("menu");
-	  include 'conexao.php';
+	session_start();
+	if (empty($_SESSION['id'])){//se usuario não está logado
+        header('location:login.php');//vai até a tela de login
+    }
+	include("topo.php");
+	include("menu.php");
+	include 'conexao.php';
 ?>
 <div class="container-fluid">
 	<div class="row">
@@ -16,4 +19,5 @@
 		</div>
 	</div>
 </div>
-<?php include 'rodape.php'; ?>
+
+<?php include ("rodape.php");?>
