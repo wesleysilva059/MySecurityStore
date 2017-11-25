@@ -8,12 +8,13 @@
 	include 'conexao.php';
 	$usuario = $_SESSION['id'];
 	$notafiscal = $_GET['notafiscal'];
-	$consultaVenda = $conexao->query("SELECT * from vendas WHERE notafiscal = '$notafiscal'"); 
+	$consultaVenda = $conexao->query("SELECT * FROM vendas WHERE notafiscal = '$notafiscal'"); 
+	$consultaVenda2 = $conexao->query("SELECT * FROM vendas WHERE notafiscal = '$notafiscal'"); 
 ?>
-<div class="container-fluid">
-	<?php $exibevenda = $consultaVenda->fetch(PDO::FETCH_ASSOC)
+<div class="container">
+	<?php $exibevenda2 = $consultaVenda2->fetch(PDO::FETCH_ASSOC)
 	?>
-	<h3 class="text-center">Nota: <?php echo $exibevenda ['notafiscal']; ?></h3>
+	<h3 class="text-center">Nota: <?php echo $exibevenda2 ['notafiscal']; ?></h3>
 	<br><br>
 	<div class="row" style="margin-top: 15px;">
 		
@@ -62,6 +63,9 @@
 
 	</div>	
 	<?php } ?>
+	<br><br>
+	<a href="pedidos.php"><button type="submit" class="btn btn-primary pull-right"><span class="fa fa-arrow-left" aria-hidden="true"></span> Voltar</button></a></div>
+		
 </div>
 
 <?php include ("rodape.php");?>
