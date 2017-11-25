@@ -64,7 +64,7 @@
 	</div>	
 	<?php } ?>
 	<br><br>
-	<a href="pedidos.php"><button type="submit" class="btn btn-primary pull-right"><span class="fa fa-arrow-left" aria-hidden="true"></span> Voltar</button></a></div>
+	<a href="pedidos.php"><button class="btn btn-primary pull-right"><span class="fa fa-arrow-left" aria-hidden="true"></span> Voltar</button></a></div>
 		
 </div>
 

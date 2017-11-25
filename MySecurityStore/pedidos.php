@@ -9,7 +9,7 @@
 	$usuario = $_SESSION['id'];
 	$consultaVenda = $conexao->query("SELECT * from vendas WHERE idlogin = '$usuario' GROUP BY notafiscal"); 
 ?>
-<div class="container-fluid">
+<div class="container">
 	<h1 class="text-center">Meus pedidos</h1>
 	<br><br>
 	<div class="row" style="margin-top: 15px;">
@@ -28,6 +28,9 @@
 		
 	</div>
 	<?php } ?>
+	<br><br>
+	<a href="pedidos.php"><div class="col-sm-5 col-sm-offset-5"><button class="btn btn-primary text-center"><span class="fa fa-arrow-left" aria-hidden="true"></span> Voltar</button></div></a>
+	<br><br><br>
 </div>
 </div
 
