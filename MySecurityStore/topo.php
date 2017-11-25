@@ -115,7 +115,7 @@
 		else { ?>
 		<ul class="nav navbar-nav navbar-right">	
 			<li><a href="admIndex.php"><button class="btn btn-sm btn-danger">  Adm</button></a></li>
-			<li><a href="sair.php"><span class="glyphicon glyphicon-off"></span>  Sair!</a></li>
+			<li><a href="sair.php"><span class="glyphicon glyphicon-off"></span>  Sair</a></li>
 		</ul>
 		<?php
 	}

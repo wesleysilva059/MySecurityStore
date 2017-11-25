@@ -58,7 +58,7 @@
                                         <li class="list-group-item"><a href="busca.php?txtBusca=Câmera">Câmeras</a></li>
                                         <li class="list-group-item"><a href="busca.php?txtBusca=Cabeamento">Cabeamento</a></li>
                                         <li class="list-group-item"><a href="busca.php?txtBusca=DVR">DVRs</a></li>
-                                        <li class="list-group-item"><a href="#">Ofertas</a></li>
+                                        <li class="list-group-item"><a href="promocoes.php">Promoções</a></li>
                                     </ul>                        
                             </div>
                 </div>

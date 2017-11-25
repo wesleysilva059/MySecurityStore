@@ -1,7 +1,5 @@
-<!-- Sistema de Eccomerce 
-	Desenvolvido pela Equipe -->
-
-
+<!-- Sistema de e-commerce 
+	Desenvolvido por Higor Bellini, Wesley Samuel, Júnior César e Cláudio Maia-->
 <?php
 
 session_start();
