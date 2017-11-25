@@ -109,7 +109,7 @@ $(document).ready(function(){
       <?php 
           $consulta = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto');
           ?>
-          <h2 class="section-title">Promoções bombásticas!</h2>
+          <h3 class="section-title">Promoções bombásticas!</h3>
       <div class="row">
       <?php 
           while ($listar=$consulta->fetch(PDO::FETCH_ASSOC)){
@@ -133,7 +133,7 @@ $(document).ready(function(){
                   <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar['Codigo']; ?>"><center><?php echo $listar['descricao']; ?></center></a></h2>
                 <div class="product-carousel-price">
                   <center>
-                    <del class="fonte-cont-preco">$1355.00</del> <ins>Por: R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins>
+                    <del class="fonte-cont-preco">R$ 1355,00</del><br/><ins>Por: R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins>
                   </center>
                 </div>   
               </div>
@@ -167,7 +167,7 @@ $(document).ready(function(){
       <?php 
         $consulta1 = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto');
       ?>
-      <h2 class="section-title">Os melhores CFTVs do mercado</h2>
+      <h3 class="section-title">Os melhores CFTVs do mercado</h3>
     </div>
     <div class="container">
       <div class="row">
@@ -192,7 +192,7 @@ $(document).ready(function(){
                   <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar1['Codigo']; ?>"><center><?php echo $listar1['descricao']; ?></center></a></h2>
                 <div class="product-carousel-price">
                   <center>
-                    <del class="fonte-cont-preco">$1355.00</del> <ins>Por: R$ <?php echo number_format($listar1['pvenda'], 2,',','.');?></ins>
+                    <del class="fonte-cont-preco">R$ 1355,00</del><br/><ins>Por: R$ <?php echo number_format($listar1['pvenda'], 2,',','.');?></ins>
                   </center>
                 </div>   
               </div>
@@ -209,7 +209,7 @@ $(document).ready(function(){
       <?php 
         $consulta2 = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto');
       ?>
-      <h2 class="section-title">Os melhores CFTVs do mercado</h2>
+      <h3 class="section-title">Os melhores CFTVs do mercado</h3>
     </div>
     <div class="container">
       <div class="row">
@@ -234,7 +234,7 @@ $(document).ready(function(){
                   <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar2['Codigo']; ?>"><center><?php echo $listar2['descricao']; ?></center></a></h2>
                 <div class="product-carousel-price">
                   <center>
-                    <del class="fonte-cont-preco">$1355.00</del> <ins>Por: R$ <?php echo number_format($listar2['pvenda'], 2,',','.');?></ins>
+                    <del class="fonte-cont-preco">R$ 1355,00</del><br/><ins>Por: R$ <?php echo number_format($listar2['pvenda'], 2,',','.');?></ins>
                   </center>
                 </div>   
               </div>
@@ -251,7 +251,7 @@ $(document).ready(function(){
       <?php 
         $consulta3 = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto');
       ?>
-      <h2 class="section-title">Os melhores CFTVs do mercado</h2>
+      <h3 class="section-title">Os melhores CFTVs do mercado</h3>
     </div>
     <div class="container">
       <div class="row">
@@ -276,7 +276,7 @@ $(document).ready(function(){
                   <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar3['Codigo']; ?>"><center><?php echo $listar3['descricao']; ?></center></a></h2>
                 <div class="product-carousel-price">
                   <center>
-                    <del class="fonte-cont-preco">$1355.00</del> <ins>Por: R$ <?php echo number_format($listar3['pvenda'], 2,',','.');?></ins>
+                    <del class="fonte-cont-preco">R$ 1355,00</del><br/><ins>Por: R$ <?php echo number_format($listar3['pvenda'], 2,',','.');?></ins>
                   </center>
                 </div>   
               </div>
