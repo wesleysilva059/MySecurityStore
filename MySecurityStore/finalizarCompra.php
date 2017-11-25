@@ -6,7 +6,9 @@ include 'conexao.php';
 if (empty($_SESSION['id'])){//se usuario não está logado
     header('location:login.php');//vai até a tela de login
 }
-
+if (empty($_SESSION['carrinho'])){
+        header('location:index.php');
+    }
 $dtvenda = date('Y-m-d');
 $notafiscal = uniqid();//gera identificador único
 $usuario = $_SESSION['id'];

@@ -19,5 +19,9 @@
 		</div>
 </div>
 <?php
+	unset($_SESSION['carrinho']);
+	unset($_SESSION['idendereco']);
+	unset($_SESSION['idtransportadora']);
+	unset($_SESSION['idpagamento']);
 	include("rodape.php");
 ?>

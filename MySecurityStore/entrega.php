@@ -6,7 +6,12 @@
     }
     include("topo.php");
     include("menu.php");
-       
+    if (empty($_SESSION['idtransportadora'])){
+        $_SESSION['idtransportadora']=0;
+    }
+    if (empty($_SESSION['idendereco'])){
+        $_SESSION['idendereco']=0;
+    }
    
 ?>
 <div class="container">
@@ -173,7 +178,7 @@
 
                                         $idtrans = $_SESSION['idtransportadora'];
                                         ?>
-                                        <?php if (empty($idtrans)){?>
+                                        <?php if ($idtrans==0){?>
                                     <tr>
                                         <a href="index.php"><input type="submit" value="Continuar comprando" name="continuarComprando" class="button text-right"></a>
                                         <a title="Cancelar" class="remove" href="excluirCarrinho.php?Codigo=<?php echo $Codigo; ?> "><input type="submit" value="Cancelar compra" name="cancelarCompra" class="text-right"></a>

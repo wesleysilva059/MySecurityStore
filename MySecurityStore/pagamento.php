@@ -6,7 +6,9 @@
     }
     include("topo.php");
     include("menu.php");
-   
+    if (empty($_SESSION['idPagamento'])){
+        $_SESSION['idPagamento']=0;
+    }
 ?>
 <div class="container">
     <div class="col-md-12">
