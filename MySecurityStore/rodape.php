@@ -43,7 +43,7 @@
                             <div class="footer-about-us">
                                 <h2 class="fonte-rodape-title">Usuário</h2>
                                     <ul>
-                                        <li class="list-group-item"><a href="login.php">Minha conta</a></li>
+                                        <li class="list-group-item"><a href="">Minha conta</a></li>
                                         <li class="list-group-item"><a href="pedidos.php">Meus pedidos</a></li>
                                         <li class="list-group-item"><a href="televendas.php">Televendas</a></li>
                                         <li class="list-group-item"><a href="nossoEndereco.php">Contato</a></li>
@@ -54,11 +54,11 @@
                             <div class="footer-about-us">
                                 <h2 class="fonte-rodape-title">Categorias</h2>
                                     <ul>
-                                        <li class="list-group-item"><a href="">CFTV</a></li>
-                                        <li class="list-group-item"><a href="">Câmeras</a></li>
-                                        <li class="list-group-item"><a href="">Cabeamento</a></li>
-                                        <li class="list-group-item"><a href="">DVRs</a></li>
-                                        <li class="list-group-item"><a href="">Ofertas</a></li>
+                                        <li class="list-group-item"><a href="busca.php?txtBusca=CFTV">CFTV</a></li>
+                                        <li class="list-group-item"><a href="busca.php?txtBusca=Câmera">Câmeras</a></li>
+                                        <li class="list-group-item"><a href="busca.php?txtBusca=Cabeamento">Cabeamento</a></li>
+                                        <li class="list-group-item"><a href="busca.php?txtBusca=DVR">DVRs</a></li>
+                                        <li class="list-group-item"><a href="#">Ofertas</a></li>
                                     </ul>                        
                             </div>
                 </div>
