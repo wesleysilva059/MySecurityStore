@@ -118,6 +118,7 @@
 			<li><a href="sair.php"><span class="glyphicon glyphicon-off"></span>  Sair</a></li>
 		</ul>
 		<?php
+	}
 
 				}
 			}
