@@ -12,16 +12,16 @@
 ?>
 <div class="container">
     <div class="col-md-12">
-                <h1 class="text-center">Formas de pagamento</h1><br><br>
+        <h1 class="text-center">Formas de pagamento</h1><br><br>
     </div>
     <div class="col-lg-9">
-                <ul class="nav nav-pills">
-                    <li class="disabled"><a href="#"><i class="fa fa-truck"></i> Formas de entrega</a></li>
-                    <li class="active"><a href="#"><i class="fa fa-money"></i> Formas de pagamento</a></li>
-                    <li class="disabled"><a href="#"><i class="fa fa-eye"></i> Meus produtos</a></li>
-                </ul>
-                            <div class="margem"></div>
-                            <div class="content">
+        <ul class="nav nav-pills">
+            <li class="disabled"><a href="#"><i class="fa fa-truck"></i> Formas de entrega</a></li>
+            <li class="active"><a href="#"><i class="fa fa-money"></i> Formas de pagamento</a></li>
+             <li class="disabled"><a href="#"><i class="fa fa-eye"></i> Meus produtos</a></li>
+        </ul>
+            <div class="margem"></div>
+                <div class="content">
                                 <div class="row">
                                    <form name="form" method="POST">
                                         <div class="col-sm-4 box">
