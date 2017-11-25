@@ -25,10 +25,11 @@ foreach ($_SESSION['carrinho'] as $Codigo => $qnt) { // sessao carrinho criada a
                                     $preco = $exibe['pvenda'];
                                     $preco = number_format($exibe['pvenda'],2,',','.');
                                     $total +=$exibe['pvenda'] *$qnt;
+                                    $nome = $exibe['descricao'];
     
 	
-	$inserir = $conexao->query("INSERT INTO vendas (notafiscal, dtvenda, totalitens, valortotal, situacao, idlogin, tipopagamento, idendereco,tipoentrega) VALUES
-	('$notafiscal','$dtvenda','$qnt','$total','$situacao','$usuario','$tipopagamento','$idendereco',$tipoentrega)");
+	$inserir = $conexao->query("INSERT INTO vendas (notafiscal, dtvenda, totalitens, valortotal, situacao, idlogin, tipopagamento, idendereco,tipoentrega,nomeproduto) VALUES
+	('$notafiscal','$dtvenda','$qnt','$total','$situacao','$usuario','$tipopagamento','$idendereco','$tipoentrega','$nome')");
 	
 }
 
