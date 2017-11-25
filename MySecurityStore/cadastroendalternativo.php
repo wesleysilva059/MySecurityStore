@@ -20,7 +20,7 @@
 			INSERT INTO `enderecos`(`idlogin`, `tipo`, `logradouro`, `numero`, `bairro`, `cidade`, `cep`, `uf`, `pais`, `referencia`, `complemento`) VALUES ($idlogin,2,'$enderecoalt','$numeroalt','$bairroalt','$cidadealt','$cepalt','$estadoalt','$paisalt','$referenciaalt','$complementoalt')
 			");
 			
-			header('location:ok.php');
+			header('location:endereco.php');
 		}catch(PDOException $e){
 			echo $e->getMessage();
 		}

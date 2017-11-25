@@ -140,7 +140,7 @@ $(document).ready(function(){
             </div>
           </div>
         </div>
-        <?php }?>
+      <?php }?>
       </div>
       <button class="btn btn-primary" style="float:right;" >Clique aqui e veja mais</button>
     </div>
