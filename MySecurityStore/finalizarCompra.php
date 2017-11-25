@@ -32,8 +32,5 @@ foreach ($_SESSION['carrinho'] as $Codigo => $qnt) { // sessao carrinho criada a
 	('$notafiscal','$dtvenda','$qnt','$total','$situacao','$usuario','$tipopagamento','$idendereco','$tipoentrega','$nome')");
 	
 }
-
 include 'fim.php';
-
-
 ?>
