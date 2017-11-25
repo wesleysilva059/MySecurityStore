@@ -7,37 +7,31 @@
 	include("menu.php");
 	include 'conexao.php';
 	$usuario = $_SESSION['id'];
-	$consultaVenda = $conexao->query("SELECT * from vendas WHERE idlogin = '$usuario'"); 
+	$consultaVenda = $conexao->query("SELECT * from vendas WHERE idlogin = '$usuario' GROUP BY notafiscal"); 
 ?>
-<div class="container-fluid">
-	<h2 class="text-center">Meus pedidos</h2>
+<div class="container">
+	<h1 class="text-center">Meus pedidos</h1>
+	<br><br>
 	<div class="row" style="margin-top: 15px;">
 		
-		<div class="col-sm-1 col-sm-offset-1"><h5>Data</h5></div>
-		<div class="col-sm-2"><h5>Nota fiscal</h5></div>
-		<div class="col-sm-4"><h5>Produto</h5></div>
-		<div class="col-sm-1"><h5>Quantidade</h5></div>
-		<div class="col-sm-1"><h5>Preço</h5></div>
-		<div class="col-sm-2"><h5>Status</h5></div>		
+		<div class="col-sm-2 col-sm-offset-3"><h3 class="text-center">Data</h3></div>
+		<div class="col-sm-2"><h3 class="text-center">Nota fiscal</h3></div>
+		<div class="col-sm-2"><h3 class="text-center">Detalhes</h3></div>
 	</div>	
 	<?php while ($exibevenda = $consultaVenda->fetch(PDO::FETCH_ASSOC)){
 	?>
 	<div class="row" style="margin-top: 15px;">
 		
-		<div class="col-sm-1 col-sm-offset-1"><?php echo date('d/m/Y',strtotime($exibevenda['dtvenda']));?></div>
-		<div class="col-sm-2"><?php echo $exibevenda['notafiscal'];?></div>
-		<div class="col-sm-4"><?php echo $exibevenda['nomeproduto'];?></div>
-		<div class="col-sm-1"><?php echo $exibevenda['totalitens'];?></div>
-		<div class="col-sm-1"><?php echo number_format($exibevenda['valortotal'], 2,',','.');?></div>
-		<?php $status = $exibevenda['situacao'];
-			  if($status = 1){
-		?>
-		<div class="col-sm-2">Não entregue</div>
-		<?php }else{ ?>
-		<div class="col-sm-2">Entregue</div>	
-		<?php } ?>
-	</div>	
+		<div class="col-sm-2 col-sm-offset-3"><h4 class="text-center"><?php echo date('d/m/Y',strtotime($exibevenda['dtvenda']));?></h4></div>
+		<div class="col-sm-2"><h4 class="text-center"><?php echo $exibevenda['notafiscal'];?></h4></div>
+		<div class="col-sm-2"><a href="notafiscal.php?notafiscal=<?php echo $exibevenda['notafiscal'];?>"><button type="submit" class="btn btn-primary"> Veja mais detalhes <span class="glyphicon glyphicon-plus"></span></button></a></div>
+		
+	</div>
 	<?php } ?>
+	<br><br>
+	<a href="pedidos.php"><div class="col-sm-5 col-sm-offset-5"><button class="btn btn-primary text-center"><span class="fa fa-arrow-left" aria-hidden="true"></span> Voltar</button></div></a>
+	<br><br><br>
 </div>
+</div
 
 <?php include ("rodape.php");?>
