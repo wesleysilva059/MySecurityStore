@@ -1,7 +1,7 @@
 <?php 
 	  session_start();
 	  include ("topo.php"); 
-	  include ("menu");
+	  include ("menu.php");
 	  include 'conexao.php';
 ?>
 <div class="container-fluid">
