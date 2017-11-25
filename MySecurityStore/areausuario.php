@@ -13,8 +13,8 @@
 			<h2>Minha área</h2>
 			<br>
 			<div class="btn-group">
-				<a href="pedidos.php"><button type="submit" class="btn btn-block btn-primary">Meus pedidos</button></a><br>
-				<a href="formAlteraCliente.php"><button type="submit" class="btn btn-block btn-primary">Editar minhas informações</button></a><br>
+				<a href="pedidos.php"><button class="btn btn-block btn-primary">Meus pedidos</button></a><br>
+				<a href="formAlteraCliente.php"><button class="btn btn-block btn-primary">Editar minhas informações</button></a><br>
 			</div>
 		</div>
 	</div>
