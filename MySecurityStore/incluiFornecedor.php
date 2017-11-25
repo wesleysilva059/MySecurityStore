@@ -10,7 +10,6 @@
 ?>
 <?php
 
-include 'conexao_teste.php';
 $recebe_razaosocial = $_POST['txtRazaoSocial'];
 $recebe_nomefantasia = $_POST['txtNomeFantasia'];
 $recebe_cnpj = $_POST['txtCnpj'];

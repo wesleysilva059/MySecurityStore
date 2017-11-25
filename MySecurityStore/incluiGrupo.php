@@ -10,7 +10,6 @@
 ?>
 <?php
 
-include 'conexao_teste.php';
 
 $recebe_descrigrupo = $_POST['txtDescrigrupo'];
 
