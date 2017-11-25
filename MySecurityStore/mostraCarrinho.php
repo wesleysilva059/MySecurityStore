@@ -25,6 +25,7 @@
 
                                     $_SESSION['carrinho'] = array();
                                 }
+                                $totalqtecarrinho = 0;
                                 $total = null;
                                 foreach ($_SESSION['carrinho'] as $Codigo => $qnt) { // sessao carrinho criada anteriormente
                                     $consulta = $conexao->query("SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto AND produtos.Codigo = '$Codigo'"); //
@@ -53,7 +54,7 @@
                                            <h4> <?php echo $qnt; ?> </h4>
                                         </div>
                                     </td>
-
+                                    <?php $totalqtecarrinho +=  $qnt?>
                                      <td class="product-remove">
                                         <a title="Remover este item" class="remove" href="excluirCarrinho.php?Codigo=<?php echo $Codigo; ?> "><span class="fa fa-trash-o" aria-hidden="true"></span> Excluir</a> 
                                     </td>
@@ -61,6 +62,9 @@
                             <?php } ?>
                             </tbody>
                         </table>
+                        <script> //atualizar quantidade de elementos no carrinho
+                            $("#txtqtecarrinho").text('<?php echo $totalqtecarrinho; ?>');
+                        </script>
                     </form>         
                 </div>
             </div>                        
