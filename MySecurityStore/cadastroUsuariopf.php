@@ -44,6 +44,8 @@
 			INSERT INTO `enderecos`(`idlogin`, `tipo`, `logradouro`, `numero`, `bairro`, `cidade`, `cep`, `uf`, `pais`, `referencia`, `complemento`) VALUES (@id2,1,'$endereco','$numero','$bairro','$cidade','$cep','$estado','$pais','$referencia','$complemento')
 			");
 			
+			header('location:ok.php');
+			
 		}catch(PDOException $e){
 			echo $e->getMessage();
 		}
