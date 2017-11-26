@@ -238,7 +238,7 @@
                                             <option value="Benin">Benin</option>
                                             <option value="Bermudas">Bermudas</option>
                                             <option value="Botsuana">Botsuana</option>
-                                            <option value="Brasil" selected>Brasil</option>
+                                            <option value="Brasil">Brasil</option>
                                             <option value="Brunei">Brunei</option>
                                             <option value="Bulgária">Bulgária</option>
                                             <option value="Burkina Fasso">Burkina Fasso</option>
@@ -394,14 +394,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" value="Enviar" class="btn btn-success">Alterar</button>
-                                    </div>
-									    <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" value="Enviar" class="btn btn-danger">Excluir</button>
-                                    </div>
-                                </div>
-                            </form>
+                                    <div class="btn-group">
+                                        	<button type="submit" value="Enviar" class="btn btn-success">Alterar</button>
+                                        	<button type="submit" value="Enviar" class="btn btn-danger">Excluir</button>
+									</div>
+								</div>
+                        	</form>
                         </div>
                     </div>
 					<?php } else { 

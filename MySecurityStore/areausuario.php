@@ -1,8 +1,4 @@
 <?php 
-	  session_start();
-	  include ("topo.php"); 
-	  include ("menu.php");
-	  include 'conexao.php';
 
 	session_start();
 	if (empty($_SESSION['id'])){//se usuario não está logado

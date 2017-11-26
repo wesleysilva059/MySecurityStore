@@ -42,7 +42,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                
-     </button>                
+     </button>
   	<div id="navbarCollapse" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
            	<div class="navbar-header">
@@ -121,8 +121,9 @@
 
 				}
 			}
+		}
 		?>    
-  	</div>
+  	</div>	
 </nav>
 <div class="container container-inicio">
     <div class="row">
