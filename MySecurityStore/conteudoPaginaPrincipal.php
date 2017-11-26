@@ -117,7 +117,7 @@
                       <?php } ?>
                     </div>
                 </div>
-                 <h2 class="fonte-cont"><a href="carrinhoCompras.php?Codigo=<?php echo $listar['Codigo']?>"><center><?php echo $listar['descricao'];?></center></a></h2>
+                 <h2 class="fonte-cont"><a href="carrinhoCompras.php?Codigo=<?php echo $listar['Codigo']?>" title="<?php echo $listar['descricao'];?> - <?php echo $listar['pvenda'];?> reais"><center><?php echo $listar['descricao'];?></center></a></h2>
                   <center>
                       <p><strong>Desconto de <?php echo $listar['desconto']; ?>%</strong></p>
                   </center>
@@ -167,7 +167,7 @@
                     <?php } ?>
                   </div>
                 </div>
-                  <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar1['Codigo']; ?>"><center><?php echo $listar1['descricao']; ?></center></a></h2>
+                  <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar1['Codigo']; ?>" title="<?php echo $listar1['descricao'];?> - <?php echo $listar1['pvenda'];?> reais"><center><?php echo $listar1['descricao']; ?></center></a></h2>
                 <div class="product-carousel-price">
                   <center>
                     <ins>Por: R$ <?php echo number_format($listar1['pvenda'], 2,',','.');?></ins>
@@ -207,7 +207,7 @@
                     <?php } ?>
                 </div>
               </div>
-              <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar2['Codigo']; ?>"><center><?php echo $listar2['descricao']; ?></center></a></h2>
+              <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar2['Codigo']; ?>" title="<?php echo $listar2['descricao'];?> - <?php echo $listar2['pvenda'];?> reais"><center><?php echo $listar2['descricao']; ?></center></a></h2>
               <div class="product-carousel-price">
                 <center>
                   <ins>Por: R$ <?php echo number_format($listar2['pvenda'], 2,',','.');?></ins>
@@ -249,7 +249,7 @@
                     <?php } ?>
                   </div>
                 </div>
-                  <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar3['Codigo']; ?>"><center><?php echo $listar3['descricao']; ?></center></a></h2>
+                  <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar3['Codigo']; ?>" title="<?php echo $listar3['descricao'];?> - <?php echo $listar3['pvenda'];?> reais"><center><?php echo $listar3['descricao']; ?></center></a></h2>
                 <div class="product-carousel-price">
                   <center>
                     <ins>Por: R$ <?php echo number_format($listar3['pvenda'], 2,',','.');?></ins>
