@@ -427,18 +427,19 @@
 													inner join enderecos c on d.idlogin = c.idlogin");
 						$exibe = $consultausuario->fetch(PDO::FETCH_ASSOC);
 					?>
+
 <div class="cadastro_tela">
     <div class="container theme-showcase" role="main">
         <h3 class="form-signin-heading">Editar Cadastro</h3>      
         <div>
             <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#pessoa_fisica" aria-controls="pessoa_fisica" role="tab" data-toggle="tab">Pessoa Juridica</a></li>
+                <li role="presentation" class="active"><a href="#pessoa_fisica" aria-controls="pessoa_fisica" role="tab" data-toggle="tab">Pessoa juridica</a></li>
             </ul>
             <div class="formulario">
                 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane" id="pessoa_juridica">
+                    <div role="tabpanel" class="tab-pane active" id="pessoa_fisica">
                         <div style="padding-top:20px;">
-                            <form action="cadastroUsuariopj.php" method="POST" id="validate">
+                            <form action="cadastroUsuariopf.php" method="POST" id="validate">  
 								<div class="form-group">
                                     <label class="col-sm-2 control-label">Razão Social</label>
                                     <div class="col-sm-8">
@@ -448,7 +449,7 @@
 								<div class="form-group">
                                     <label class="col-sm-2 control-label"> Nome Fantasia</label>
                                     <div class="col-sm-8">
-                                        <input type="text" name="nfantasia" class="form-control" id="nfantasia" placeholder="Digite o Nome Fantasia" value="<?php echo $exibe['nomefantaisa'] ?>">
+                                        <input type="text" name="nfantasia" class="form-control" id="nfantasia" placeholder="Digite o Nome Fantasia" value="<?php echo $exibe['nomefantasia'] ?>">
                                     </div>
                                 </div>
 								<div class="form-group">

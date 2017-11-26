@@ -719,8 +719,13 @@ CREATE TABLE `tecnologias` (
 --
 
 INSERT INTO `tecnologias` (`idtecnologia`, `descritec`, `caracteristicas`) VALUES
-(1, 'IP', 'CONECTA SEM FIO ATRAVES DE PROTOCOLO DA INTERNET'),
-(2, 'AHCD', 'OTIMA IMAGEM DIGITAL');
+(1, 'IP', 'Sem fio'),
+(2, 'AHCD', 'Otima imagem digital'),
+(3, 'FULL HD', '1.920 colunas de pixels e 1.080 linhas'),
+(5, 'Analógico', 'Gravação analógica em alta definição'),
+(6, 'HDCVI', 'Método diferente e inovador de transmitir os sinais de vídeo.'),
+(7, 'HDTVI', 'Trabalha em uma arquitetura aberta'),
+(8, 'AHD', 'Alta Definição Analógica');
 
 -- --------------------------------------------------------
 
