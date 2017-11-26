@@ -35,7 +35,7 @@
                           <?php if ($listar['estoque']>0) { ?>
                             <a href="carrinhoCompras.php?Codigo=<?php echo $listar['Codigo']?>" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
 
-                            <a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar['Codigo']; ?>" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
+                            <a href="conteudoPromocaoCompra.php?Codigo=<?php echo $listar['Codigo']; ?>" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
 
                           <?php }else{ ?>
 
