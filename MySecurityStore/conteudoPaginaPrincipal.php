@@ -111,21 +111,24 @@
                       <?php if ($listar['estoque']>0) { ?>
 
                       <a href="carrinhoCompras.php?Codigo=<?php echo $listar['Codigo']?>" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                      <a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar['Codigo']; ?>" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
+                      <a href="conteudoPromocaoCompra.php?Codigo=<?php echo $listar['Codigo']; ?>" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
                       <?php }else{ ?>
                       <a class="add-to-cart-link"><i class="glyphicon glyphicon-ban-circle"></i> Indisponível</a>
                       <?php } ?>
                     </div>
                 </div>
-                  <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar['Codigo']; ?>"><center><?php echo $listar['descricao']; ?></center></a></h2>
-                <div class="product-carousel-price">
+                 <h2 class="fonte-cont"><a href="#"><center><?php echo $listar['descricao'];?></center></a></h2>
                   <center>
-                   <del class="fonte-cont-preco"><strong>R$ 
-                      <?php $valoranterior = $listar['pvenda'] / (1-($listar['desconto']/100));
-                        echo number_format($valoranterior, 2,',','.')?></strong>
-                    </del><br/>
-                    <ins>Por: R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins>
+                      <p><strong>Desconto de <?php echo $listar['desconto']; ?>%</strong></p>
                   </center>
+                  <div class="product-carousel-price">
+                    <center>
+                        <del class="fonte-cont-preco"><strong>R$ 
+                          <?php $valoranterior = $listar['pvenda'] / (1-($listar['desconto']/100));
+                            echo number_format($valoranterior, 2,',','.')?></strong>
+                        </del><br/>
+                        <ins>Por: R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins>
+                    </center>
                 </div>   
               </div>
             </div>
@@ -167,10 +170,6 @@
                   <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar1['Codigo']; ?>"><center><?php echo $listar1['descricao']; ?></center></a></h2>
                 <div class="product-carousel-price">
                   <center>
-                    <del class="fonte-cont-preco"><strong>R$ 
-                          <?php $valorprodant = ($listar1['pvenda'] *1.05);
-                            echo number_format($valorprodant, 2,',','.')?></strong>
-                        </del><br/>
                     <ins>Por: R$ <?php echo number_format($listar1['pvenda'], 2,',','.');?></ins>
                   </center>
                 </div>   
@@ -211,10 +210,6 @@
               <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar2['Codigo']; ?>"><center><?php echo $listar2['descricao']; ?></center></a></h2>
               <div class="product-carousel-price">
                 <center>
-                  <del class="fonte-cont-preco"><strong>R$ 
-                          <?php $valorprodant = ($listar2['pvenda'] *1.05);
-                            echo number_format($valorprodant, 2,',','.')?></strong>
-                        </del><br/>
                   <ins>Por: R$ <?php echo number_format($listar2['pvenda'], 2,',','.');?></ins>
                 </center>
               </div>   
@@ -257,10 +252,6 @@
                   <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar3['Codigo']; ?>"><center><?php echo $listar3['descricao']; ?></center></a></h2>
                 <div class="product-carousel-price">
                   <center>
-                   <del class="fonte-cont-preco"><strong>R$ 
-                      <?php $valorprodant = ($listar3['pvenda'] *1.05);
-                        echo number_format($valorprodant, 2,',','.')?></strong>
-                    </del><br/>
                     <ins>Por: R$ <?php echo number_format($listar3['pvenda'], 2,',','.');?></ins>
                   </center>
                 </div>   

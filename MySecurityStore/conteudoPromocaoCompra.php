@@ -7,7 +7,7 @@
 
       $Codigo = $_GET['Codigo'];
 
-      $consulta = $conexao->query("SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto AND produtos.Codigo = '$Codigo'");
+      $consulta = $conexao->query("SELECT * FROM `produtos`,`prodprecos`,prodestoque,prodpromocao WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto AND produtos.Codigo = prodpromocao.idproduto AND produtos.Codigo = '$Codigo'");
 
       $listar = $consulta->fetch(PDO::FETCH_ASSOC);
       }else{
@@ -90,8 +90,13 @@ function showDivs(n) {
 				
                 <div class="margem-produtos-geral-breadcrumb"></div>
            		<div class="col-sm-7 product-carousel-price">
-                    <p class="fonte-cont-pc">Por apenas: <ins>R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins> a vista 
-                    <p class="fonte-cont-pc"> em até <ins>3x</ins> de <ins>R$<?php $val = ($listar['pvenda'] /3); echo number_format($val, 2,',','.');?></ins></p>
+                   	<p class="fonte-cont-pc">De: <del class="fonte-cont-preco"><strong>R$ 
+                      <?php $valoranterior = $listar['pvenda'] / (1-($listar['desconto']/100));
+                        echo number_format($valoranterior, 2,',','.')?></strong>
+                    </del></p>
+                    <p class="fonte-cont-pc">Por apenas: <ins>R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins> a vista
+                    <p><strong>Desconto de <?php echo $listar['desconto']; ?>%</strong></p> 
+                    <p class="fonte-cont-pc"> Em até <ins>3x</ins> de <ins>R$<?php $val = ($listar['pvenda'] /3); echo number_format($val, 2,',','.');?></ins></p>
                     <p class="fonte-cont-pc"> ou <ins>6x</ins> de <ins>R$<?php $val = ($listar['pvenda'] /6) + 13; echo number_format($val, 2,',','.');?></ins> iguais</p>
               </div>
                 <div class="col-md-6 text-center">
