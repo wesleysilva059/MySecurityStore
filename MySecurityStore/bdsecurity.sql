@@ -441,7 +441,7 @@ INSERT INTO `pjuridicadados` (`idpjuridica`, `razaosocial`, `nomefantasia`, `cnp
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `prodestoque`
+-- Table structure for table `prodestoque`
 --
 
 CREATE TABLE `prodestoque` (
@@ -452,18 +452,38 @@ CREATE TABLE `prodestoque` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `prodestoque`
+-- Dumping data for table `prodestoque`
 --
 
 INSERT INTO `prodestoque` (`idproduto`, `estoque`, `estmin`, `estideal`) VALUES
 (1, 0, 2, 5),
 (3, 2, 4, 4),
-(4, 10, 3, 5);
+(4, 10, 3, 5),
+(5, 10, 10, 10),
+(6, 10, 10, 10),
+(7, 10, 10, 10),
+(8, 10, 10, 10),
+(9, 10, 10, 10),
+(10, 10, 10, 10),
+(11, 10, 10, 10),
+(12, 10, 10, 10),
+(13, 10, 10, 10),
+(14, 10, 10, 10),
+(15, 10, 10, 10),
+(16, 10, 10, 10),
+(17, 10, 10, 10),
+(18, 10, 10, 10),
+(22, 10, 10, 10),
+(23, 10, 10, 10),
+(24, 10, 10, 10),
+(25, 10, 10, 10),
+(26, 10, 10, 10),
+(27, 10, 10, 10);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `prodprecos`
+-- Table structure for table `prodprecos`
 --
 
 CREATE TABLE `prodprecos` (
@@ -475,18 +495,38 @@ CREATE TABLE `prodprecos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `prodprecos`
+-- Dumping data for table `prodprecos`
 --
 
 INSERT INTO `prodprecos` (`idproduto`, `data`, `pcusto`, `pmedio`, `pvenda`) VALUES
 (1, '0000-00-00', 12, 12, 22),
 (3, '0000-00-00', 300, 300, 399),
-(4, '0000-00-00', 10, 13, 299);
+(4, '0000-00-00', 10, 13, 299),
+(5, '2017-11-25', 1000, 1559, 1559),
+(6, '2017-11-25', 800, 1135, 1135),
+(7, '2017-11-25', 1300, 1925, 1925),
+(8, '2017-11-25', 2000, 2499, 2499),
+(9, '2017-11-25', 1800, 2086, 2086),
+(10, '2017-11-25', 2200, 2579, 2579),
+(11, '2017-11-25', 180, 235, 235),
+(12, '2017-11-25', 200, 270, 270),
+(13, '2017-11-25', 250, 309, 309),
+(14, '2017-11-25', 190, 263, 263),
+(15, '2017-11-25', 250, 312, 312),
+(16, '2017-11-25', 150, 195, 195),
+(17, '2017-11-25', 1900, 2290, 2290),
+(18, '2017-11-25', 600, 711, 711),
+(22, '2017-11-26', 1100, 1387, 1387),
+(23, '2017-11-26', 1100, 1231, 1231),
+(24, '2017-11-26', 3700, 3999, 3999),
+(25, '2017-11-26', 30, 43, 43),
+(26, '2017-11-26', 80, 112, 112),
+(27, '2017-11-26', 89, 119, 119);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `prodpromocao`
+-- Table structure for table `prodpromocao`
 --
 
 CREATE TABLE `prodpromocao` (
@@ -496,7 +536,7 @@ CREATE TABLE `prodpromocao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `prodpromocao`
+-- Dumping data for table `prodpromocao`
 --
 
 INSERT INTO `prodpromocao` (`idpromocao`, `idproduto`, `desconto`) VALUES
@@ -505,7 +545,7 @@ INSERT INTO `prodpromocao` (`idpromocao`, `idproduto`, `desconto`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `prodtecnologia`
+-- Table structure for table `prodtecnologia`
 --
 
 CREATE TABLE `prodtecnologia` (
@@ -514,19 +554,39 @@ CREATE TABLE `prodtecnologia` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `prodtecnologia`
+-- Dumping data for table `prodtecnologia`
 --
 
 INSERT INTO `prodtecnologia` (`codproduto`, `codtecnologia`) VALUES
 (1, 1),
 (1, 2),
 (3, 2),
-(4, 2);
+(4, 2),
+(5, 6),
+(6, 6),
+(7, 8),
+(8, 5),
+(9, 7),
+(10, 6),
+(11, 6),
+(12, 8),
+(13, 8),
+(14, 1),
+(15, 3),
+(16, 7),
+(17, 3),
+(18, 6),
+(22, 2),
+(23, 8),
+(24, 3),
+(25, 5),
+(26, 7),
+(27, 3);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `produtos`
+-- Table structure for table `produtos`
 --
 
 CREATE TABLE `produtos` (
@@ -547,14 +607,32 @@ CREATE TABLE `produtos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `produtos`
+-- Dumping data for table `produtos`
 --
 
 INSERT INTO `produtos` (`Codigo`, `codbarras`, `marca`, `modelo`, `grupo`, `descricao`, `garantia`, `obs`, `idfabricante`, `pesoliquido`, `pesoembalagem`, `foto`, `foto2`, `foto3`) VALUES
-(1, '99999999', 'MARC', '10M', 1, 'CAMERA AHCD E IP', '120', 'OTIMO', 1, 10, 2, '', '', ''),
-(2, '9999999888', 'MARC', '10M', 1, 'CAMERA IP', '90', 'OTIMO', 1, 10, 2, '', '', ''),
-(3, '78966652436', 'Intelbras', 'TTTTT', 1, 'KIT 24 CAMERAS', 'seis', 'Melhor da loja', 1, 2000, 2500, 'bd061f8dd14af1f81d226056ffa843bd.jpg', 'b54843d7acfcae32d6246fa52fa5edaf.jpg', '44b97d56b8b15b030f35271e7fc48033.jpg'),
-(4, '78966652436', 'TecVoz', '5', 1, 'KIT 10 CAMERAS', '120', 'MUITO BOM', 1, 44, 66, '01c44e61d36cd20c284bda09243201b9.jpg', 'fdd1083d552d78f9c79101bfd7d4623d.jpg', '7a994b5c064a4b2808d8ffce745eaaf9.jpg');
+(5, '78946434246', 'Intelbras', 'MHDX 1008', 5, 'KIT CFTV COMPLETO 7 CÂMERAS INTELBRAS', '365', '- 01 DVR\r\n- 07 CÂMERAS HDCVI \r\n- 01 Dísco Rígido HD\r\n- 01 Fonte \r\n- 01 Rolo de Cabo\r\n', 1, 2000, 2300, '15e886e6be77893a6b95106fa47c8b1b.jpg', '98896e9554c20b35985316dbf01cea5d.jpg', 'f93232e652a2402482bc797d718cee2d.jpg'),
+(6, '78934546322', 'Intelbras', 'MHDX 1004', 5, 'KIT CFTV COMPLETO 4 CÂMERAS INTELBRAS', '365', '01 DVR\r\n- 02 CÂMERAS HDCVI HB 2000;\r\n- 02 CÂMERAS HDCVI HB 306;\r\n- 01 Dísco Rígido HD\r\n- 01 Fonte\r\n-', 1, 1400, 1700, '38380e81d17e3b9494eaad7fbd7cea8d.jpg', 'ff2c44c9628f22b701411d0a20c6d5ec.jpg', 'a239aad5d084a44a4855305198622062.jpg'),
+(7, '78893453454', 'Intelbras', 'MHDX 1008', 5, 'KIT CFTV COMPLETO INTELBRAS 8 CÂMERAS ', '365', '04 CÂMERAS INTELBRAS \r\n01 Dísco Rígido HD\r\n01 Fonte\r\n01 Rolo de Cabo\r\n', 1, 2100, 2510, '4100327629a5f9297e386c8cb79d7796.jpg', '3e6d9f3ace9496ec9b24d52ddf848ce4.jpg', '8b50e7803fca8fac0faa9fd9f9219b1e.jpg'),
+(8, '78916665336', 'OUTROS', 'G1004A', 5, 'KIT CFTV COMPLETO 8 CAMERAS GIGA TCIP', '180', '04 Câmeras Dome \r\n04 Câmeras Bullet \r\n01 Dvr Giga \r\n01 HD\r\n08 Fontes \r\n01 Rolo de Cabo \r\n', 5, 1000, 1200, '003020747516fecc8f376540804c3e5a.jpg', '689bc022402663c01ffb21ebc2c7b9a3.jpg', '6ca05820315430c44557fd82d0ed3260.jpg'),
+(9, '7896665222', 'TecVoz', 'QCB-128P ', 5, 'KIT CFTV COMPLETO 12 CÂMERAS INFRA HD TEC VOZ', '365', '01 - DVR TecVoz\r\n12 Câmera Bullet \r\n01 Cabo Coaxial\r\n01 Fonte Chaveada \r\n', 4, 2200, 2450, '6092dc45ac4dd6cdafe279cab8de0bbe.jpg', 'b984f88e1431754c5f8ea54ece97998c.jpg', 'e44dc701332f8f3bd8ddfcf1c95ce8c0.jpg'),
+(10, '78966869999', 'LuxVision', 'LV2001A', 5, 'KIT CFTV COMPLETO LUX VISION DVR 24 CAMERAS', '365', '24 Câmeras IR 20M 1/4 720P AHD 2.8MM IP67 LV;\r\nCanais de vídeo: 08 BNC\r\nCanais de áudio: 04 RCA\r\n', 3, 3000, 3350, '264c46134d613bbdf957bf98b6e7a587.jpg', '043da409a9854d4deae0fd7c40d9b36b.jpg', '92332cd04e9045dd91dc1647f94d1b51.jpg'),
+(11, '789666555444', 'Intelbras', 'VIP S3020 G2', 1, 'CÂMERA INTELBRAS VIP S3020 G2 IR INTELIGENTE LENTE', '180', '- Resolução de 1 MP\r\n- Lente fixa de 3,6 mm\r\n- IR inteligente com alcance de 20 metros\r\n-Instalação ', 1, 150, 200, 'c3a8b7daba7dadfea54266cd403c0530.jpg', '2861011fa9c98849cb0dd846dea39aa7.jpg', '0828758ceaaaf7ffe1276749651a62d8.jpg'),
+(12, '78966651111', 'TecVoz', 'TW-ICB100', 1, 'CAMERA TEC VOZ TW-ICB100 MULTI STREAMING 3D LENTE ', '365', '- Resolução de 1.0 Mega Pixels (720p)\r\n- Lente Fixa 3.6mm\r\n- Multi-Streaming / H.264\r\n- 3D DNR / D-W', 4, 320, 400, '89bd6cc29fd8a681bb8010e42eeef614.jpg', '1c5318c52d1dbeff55da57e746acd9e3.jpg', 'ced26858ebfae9fd1f14ea9de72c626f.jpg'),
+(13, '78966631111', 'Intelbras', 'IC3', 1, 'CÁMERA INTELBRAS HD IC3 ARMAZENAMENTO EM CARTÃO MI', '365', '- Conexão Wi-Fi\r\n- Armazenamento em cartão micro-SD2\r\n- Campo de visão de 111° (diagonal)3\r\n- Imagen', 1, 120, 140, '8b72a9bc87e750e2a64d4a8b91d2c0e5.jpg', '838102f52eb9f8c92614c0e36ed5218b.jpg', '4285ca410a9e1499a4dda5df5530e822.jpg'),
+(14, '78966622222', 'TecVoz', 'TV-ICB202vm ', 1, 'CÂMERA TECVOZ TV-ICB202vm IP BULLET VARIFOCAL MULT', '365', '- Modelo: TV-ICB202vm\r\n- Tipo: Câmera IP Bullet Varifocal Infra Red 50m Mega\r\n- Tecnologia compatíve', 4, 200, 250, '9daeb3ea088fce49b9ceac38ac808e39.jpg', '54d041fabbd5274065d68aa04887aa1c.jpg', '4ac42ee4f51162cca609bc2ea6d16fa5.jpg'),
+(15, '78916665116', 'TecVoz', 'TW-ICB400v', 1, 'CAMERA TEC VOZ  CÂMERA IP BULLET INFRA TW-ICB400v', '365', '- Modelo: TW-ICB400v\r\n- Tipo: Câmera IP Bullet Varifocal Infra Red 50m Mega\r\n- Tecnologias compatíve', 4, 350, 390, '367266e1a2a556871e0806810dd7503d.jpg', '461475b3f3197f10bab56d7edfaf7915.jpg', 'f685beca43f915e00b44f29c51a4a1a9.jpg'),
+(16, '78966652444', 'TecVoz', 'TW-U1032 ', 7, 'DVR TEC VOZ TW-U1032 STAND ALONE PENTAPLEX MON', '365', '- Tipo: Stand Alone\r\n- Modo Operacional: PENTAPLEX (Monitora, Grava, Busca, Backup e Acesso Remoto)\r', 4, 2600, 3000, 'e14506cf101c95b515e3c89a99473e82.jpg', '9db3a70a47946a9dc2767ecd8deddd37.jpg', '554a50f905abab5861c62903935fc4c6.jpg'),
+(17, '78916665337', 'TecVoz', ' TW-P3032 ', 7, 'DVR TEC VOZ TW-P3032 STAND ALONE PENTAPLEX', '365', '- Tipo: Stand Alone\r\n- Modo Operacional: PENTAPLEX (Monitora, Grava, Busca, Backup e Acesso Remoto)\r', 4, 3500, 4100, '9e1544a83dfbceefec466f6e6c3ed3a2.jpg', 'df3240ce19635590aa908f435bbbfc30.jpg', '846e9aca4ed9594af48ea98c10f26acf.jpg'),
+(18, '78966652429', 'TecVoz', 'TW-E316(m) ', 7, 'DVR TEC VOZ TW-E316(m) STAND ALONE MODO PENTAPLEX', '365', '- Tipo: Stand Alone\r\n- Modo Operacional: PENTAPLEX (Monitora, Grava, Busca, Backup e Acesso Remoto)\r', 4, 2800, 3100, '6c744be0183cf17380cc4d9ce73f49ba.jpg', '4aa4c09348cabda4b8bf5d86b46a5bd9.jpg', '91531a7ff1915ab8363696fa8ec02ba8.jpg'),
+(19, '78893453454', 'Intelbras', 'MHDX 1008', 5, 'KIT CFTV COMPLETO INTELBRAS 8 CÂMERAS ', '365', '04 CÂMERAS INTELBRAS \r\n01 Dísco Rígido HD\r\n01 Fonte\r\n01 Rolo de Cabo\r\n', 1, 2100, 2510, '4100327629a5f9297e386c8cb79d7796.jpg', '3e6d9f3ace9496ec9b24d52ddf848ce4.jpg', '8b50e7803fca8fac0faa9fd9f9219b1e.jpg'),
+(20, '78934546322', 'Intelbras', 'MHDX 1004', 5, 'KIT CFTV COMPLETO 4 CÂMERAS INTELBRAS', '365', '01 DVR\r\n- 02 CÂMERAS HDCVI HB 2000;\r\n- 02 CÂMERAS HDCVI HB 306;\r\n- 01 Dísco Rígido HD\r\n- 01 Fonte\r\n-', 1, 1400, 1700, '38380e81d17e3b9494eaad7fbd7cea8d.jpg', 'ff2c44c9628f22b701411d0a20c6d5ec.jpg', 'a239aad5d084a44a4855305198622062.jpg'),
+(22, '78966652555', 'LuxVision', 'HVR ECD ALL HD DE 16 CANAIS', 9, 'HVR LUX VISION ECD ALL HD DE 16 CANAIS AHD, HDCVI,', '365', 'O sistema reconhece automaticamente a tecnologia da câmera conectada e renomeia o canal com as inici', 3, 3000, 3400, 'f5e32cce97d154997a1e98ac0c32fee7.jpg', 'c62cf0327ceac5c5b479980c167cd447.jpg', 'a6b4c14a57ce3dae4d7a5c60ce90efeb.jpg'),
+(23, '78966688888', 'LuxVision', 'DVR AHD-H 8 CANAIS SMART HÍBRI', 7, 'DVR AHD-H 8 CANAIS SMART HÍBRIDO ANALÓGICA, IP OU ', '365', 'o	Canais de vídeo: 08 BNC\r\nCanais de áudio: 04 RCA\r\nQualidade de imagem: AHD-H (1920×1080)\r\nAcesso c', 3, 2900, 3100, '940407645944e5b761b17e2e8a608081.jpg', '143f6b42cce80e62bf115ea9ca025e20.jpg', 'b7169ed50efcde95e257adeeccf016aa.jpg'),
+(24, '78266652436', 'Intelbras', 'MHDX 5016', 7, 'DVR MHDX 5016 INTELBRAS SERIE 5000 RESOLUÇÃO FULL ', '60', '-Série 5000: performance\r\n- Mais facilidade com acesso remoto\r\n- Possível visualizar até 16 câmeras ', 1, 1800, 2200, 'c1dcea3173954020ec2d6b5b2e6e471e.jpg', 'b7de83a5424401ff4685ecf53f49b59b.jpg', '5eb39970ef1e317d71d53d13e44684c2.jpg'),
+(25, '68655447679', 'OUTROS', 'CABO', 6, 'CABO COAXIAL CFTV FLEXÍVEL 4MM BIPOLAR 2 VIAS 40% ', '365', 'Condutor Interno: Fio de cobre nu flexível 26AWG ou 24AWG\r\n- Isolação Interna: Polietileno de baixa ', 5, 4000, 4050, 'b26bb12a4a30c1e789d1de4d575d3bd0.jpg', 'c381f33ec042af033745996172feb09f.jpg', 'de3989b3db030f116ab6c32b1a436895.jpg'),
+(26, '98655447679', 'OUTROS', 'CABO COAXIAL MALHA 95 RG 6 ROL', 6, 'CABO COAXIAL MALHA 95 RG 6 ROLO 100 MTS ANATEL AÇO', '365', 'Dados Técnicos: \r\nCondutor:  Aço Acobreado \r\nIsolação: Polietileno \r\nBlindagem:   Fios De Alumínio T', 5, 4000, 4050, '0defe7c19d16b52542b7732a29b55af9.jpg', 'bdeec6f7979c8c444644659a93d93c4e.jpg', '7abf3ba6a50b6207f2f1ae79fef4dc8c.jpg'),
+(27, '78866652436', 'OUTROS', 'COAXIAL RGE 06 60 BRANCO ROLO ', 6, 'COAXIAL RGE 06 60 BRANCO PRETO ROLO 100M CABLETECH', '365', 'Descrição Marca: Cabletech Modelo: Rge 06 60 Características Aplicação: Catv Blindagem: 60 Cor: Bran', 5, 4000, 4050, '13f563a2d02faf1999efce817d00c8d1.jpg', '44496f9487d7f18832bb0313fb8265a6.jpg', '39679d6dd8a5459f2221d720ab90817f.jpg');
 
 -- --------------------------------------------------------
 
@@ -724,7 +802,7 @@ INSERT INTO `usuariopermissoes` (`idfuncionario`, `idpermissao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `vendas`
+-- Table structure for table `vendas`
 --
 
 CREATE TABLE `vendas` (
@@ -742,14 +820,12 @@ CREATE TABLE `vendas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `vendas`
+-- Dumping data for table `vendas`
 --
 
 INSERT INTO `vendas` (`lancamento`, `notafiscal`, `dtvenda`, `totalitens`, `valortotal`, `situacao`, `idlogin`, `tipopagamento`, `idendereco`, `tipoentrega`, `nomeproduto`) VALUES
 (1, '11', '0000-00-00', 1, 200, 0, 1, '0', 0, 0, ''),
-(28, '5a18c9d38dba0', '2017-11-25', 1, 399, 1, 23, '1', 18, 1, 'KIT 24 CAMERAS'),
-(31, '5a18d30d12441', '2017-11-25', 2, 798, 1, 3, '1', 0, 1, 'KIT 24 CAMERAS');
-
+(39, '5a1a1a762522f', '2017-11-26', 2, 3118, 1, 1, '1', 1, 1, 'KIT CFTV COMPLETO 7 CÂMERAS INTELBRAS');
 --
 -- Indexes for dumped tables
 --
