@@ -30,9 +30,26 @@ try {
 	WHERE idfornecedor = '$idfornecedor'
 
 	");
-	
-	header('location:listaFornecedores.php');
-	
+?>
+<div class="container">
+	<div class="row">
+		
+			<div class="col-sm-4 col-sm-offset-4 text-center">
+				
+				<h2>Alteração feita com sucesso!</h2>
+				
+				<a href="listaFornecedores.php" class="btn btn-block btn-default" role="button">Voltar a lista de fornecedores</a>
+				<a href="admIndex.php">
+				<button type="button" class="btn btn-lg btn-link">
+					
+					Voltar ao menu administrativo
+					
+				</button></a>
+							
+			</div>
+		</div>
+</div>
+<?php
 } catch(PDOException $e) {
 	
 	
