@@ -167,7 +167,7 @@
       <?php 
         while ($listar1=$consulta1->fetch(PDO::FETCH_ASSOC)){
         ?>          
-        <div class="col-md-3">
+        <div class="col-sm-3">
           <div class="margem">
             <div class="img-thumbnail-promo">
               <div class="single-product-pag-prod">
@@ -206,14 +206,14 @@
     <?php 
       $consulta2 = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto');
     ?>
-    <h3 class="section-title">Os melhores CFTVs do mercado</h3>
+    <h3 class="section-title">DVRs com o melhor preço do Brasil</h3>
   </div>
   <div class="container">
     <div class="row">
       <?php 
         while ($listar2=$consulta2->fetch(PDO::FETCH_ASSOC)){
       ?>          
-      <div class="col-md-3">
+      <div class="col-sm-3">
         <div class="margem">
           <div class="img-thumbnail-promo">
             <div class="single-product-pag-prod">
@@ -252,14 +252,14 @@
     <?php 
       $consulta3 = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto');
     ?>
-    <h3 class="section-title">Os melhores CFTVs do mercado</h3>
+    <h3 class="section-title">Câmeras de todas as variedades</h3>
   </div>
   <div class="container">
     <div class="row">
       <?php 
         while ($listar3=$consulta3->fetch(PDO::FETCH_ASSOC)){
       ?>          
-        <div class="col-md-3">
+        <div class="col-sm-3">
           <div class="margem">
             <div class="img-thumbnail-promo">
               <div class="single-product-pag-prod">
