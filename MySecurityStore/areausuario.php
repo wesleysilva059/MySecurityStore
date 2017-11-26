@@ -7,12 +7,11 @@
 	include("topo.php");
 	include("menu.php");
 	include 'conexao.php';
-
 ?>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-4 text-center">
-			<h2>Minha área</h2>
+			<h2>Minha Área</h2>
 			<br>
 			<div class="btn-group">
 				<a href="pedidos.php"><button class="btn btn-block btn-primary">Meus pedidos</button></a><br>

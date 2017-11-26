@@ -10,7 +10,6 @@
 ?>
 <?php
 
-include 'conexao_teste.php';
 
 $recebe_descritec = $_POST['txtDescritec'];
 $recebe_caracteristicas = $_POST['txtCaracteristicas'];

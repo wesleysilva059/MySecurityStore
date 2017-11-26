@@ -17,7 +17,7 @@
 						        <a href="busca.php?txtBusca=Cabeamento" class="btn btn-primary">Cabeamento</a>
 						        <a href="busca.php?txtBusca=DVR" class="btn btn-primary">DVRs</a>
 						        <a href="busca.php?txtBusca=Controlador" class="btn btn-primary">Controladores de acesso</a>
-						        <a href="busca.php?txtBusca=Ofertas" class="btn btn-primary">Ofertas</a>
+						        <a href="promocoes.php" class="btn btn-primary">Ofertas</a>
 					       </div>
               </div>
             </div>

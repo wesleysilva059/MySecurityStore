@@ -30,7 +30,7 @@
 	
 	<div class="row" style="margin-top: 15px;">
 		
-		<div class="col-sm-3"><h4 style="padding-top:20px"><?php echo $exibe['descrigrupo']; ?></h4></div>
+		<div class="col-sm-3 col-sm-offset-3 "><h4 style="padding-top:20px"><?php echo $exibe['descrigrupo']; ?></h4></div>
 		<div class="col-sm-3" style="padding-top:20px">	
 		<a href="formAlterarGrupo.php?idgrupo=<?php echo $exibe['idgrupo']; ?>">	
 		<button class="btn btn-block btn-primary">
@@ -42,8 +42,6 @@
 		
 		</div> 
 				
-	</div>		
-	
 	
 	<?php } ?>
 	

@@ -90,7 +90,7 @@
 						</ul>
 						<?php	} ?>
 
-			<li><a href="formCadastroUsuario.php"><span class="glyphicon glyphicon-log-in"></span>  Cadastre-se</a></li>
+			<!--<li><a href="formCadastroUsuario.php"><span class="glyphicon glyphicon-log-in"></span>  Cadastre-se</a></li>-->
 	  	</ul>
 		<?php } else { 	
 			if($_SESSION['adm']==0){	
@@ -118,10 +118,11 @@
 			<li><a href="sair.php"><span class="glyphicon glyphicon-off"></span>  Sair</a></li>
 		</ul>
 		<?php
+	}
 
 				}
 			}
-		}
+		
 		?>    
   	</div>	
 </nav>

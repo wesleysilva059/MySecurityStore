@@ -29,7 +29,7 @@
 	</div>
 	<?php } ?>
 	<br><br>
-	<a href="pedidos.php"><div class="col-sm-5 col-sm-offset-1"><button class="btn btn-primary text-center"><span class="fa fa-arrow-left" aria-hidden="true"></span> Voltar</button></div></a>
+	<a href="areausuario.php"><div class="col-sm-5 col-sm-offset-1"><button class="btn btn-primary text-center"><span class="fa fa-arrow-left" aria-hidden="true"></span> Voltar</button></div></a>
 	<br><br><br>
 </div>
 </div
