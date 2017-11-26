@@ -90,11 +90,13 @@ function showDivs(n) {
 				
                 <div class="margem-produtos-geral-breadcrumb"></div>
            		<div class="col-sm-7 product-carousel-price">
-                   	<p class="fonte-cont-pc">De: <del class="fonte-cont-preco"><?php echo number_format($listar['pvenda'], 2,',','.');?></del></p>
-                    <p class="fonte-cont-pc">Por apenas: <ins>R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins> a vista ou</p>
-                    <p class="fonte-cont-pc"> <ins>R$<?php echo number_format($listar['pvenda'], 2,',','.');?></ins> a prazo</p>
-                    <p class="fonte-cont-pc"> em até <ins>3x</ins> de <ins>R$<?php echo number_format($listar['pvenda'], 2,',','.');?></ins></p>
-                    <p class="fonte-cont-pc"> ou <ins>6x</ins> de <ins>R$<?php echo number_format($listar['pvenda'], 2,',','.');?></ins> iguais</p>
+                   	<p class="fonte-cont-pc">De: <del class="fonte-cont-preco"><strong>R$ 
+                      <?php $valorprodant = ($listar['pvenda'] *1.05);
+                        echo number_format($valorprodant, 2,',','.')?></strong>
+                    </del></p>
+                    <p class="fonte-cont-pc">Por apenas: <ins>R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins> a vista 
+                    <p class="fonte-cont-pc"> em até <ins>3x</ins> de <ins>R$<?php $val = ($listar['pvenda'] /3); echo number_format($val, 2,',','.');?></ins></p>
+                    <p class="fonte-cont-pc"> ou <ins>6x</ins> de <ins>R$<?php $val = ($listar['pvenda'] /6) + 13; echo number_format($val, 2,',','.');?></ins> iguais</p>
               </div>
                 <div class="col-md-6 text-center">
                   <?php if ($listar['estoque']>0){ ?>
@@ -142,19 +144,19 @@ function showDivs(n) {
       </div>
       <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body">
-        	<p><?php echo $listar['descricao']; ?></p> 
+        	<p><?php echo $listar['obs']; ?></p> 
 		</div>
       </div>
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Especificações técnicas</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Modelo</a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
-        	<p><?php echo $listar['descricao']; ?></p>
+        	<p><?php echo $listar['modelo']; ?></p>
         </div>
       </div>
     </div>
