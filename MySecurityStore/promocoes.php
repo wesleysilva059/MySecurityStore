@@ -22,10 +22,10 @@
 </div>
 <div class="container">
 		<h2 class="section-title">PROMOÇÕES IMPERDÍVEIS</h2>
-    <div class="row">
+    <div class="row col-md-12">
        <?php while ($listar = $consulta->fetch(PDO::FETCH_ASSOC)){
     ?>
-          <div class="col-lg-3">
+          <div class="col-lg-4">
             <div class="margem">
               <div class="img-thumbnail-promo">
                 <div class="single-product-pag-prod">

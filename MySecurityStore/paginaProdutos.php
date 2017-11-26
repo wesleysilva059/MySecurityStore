@@ -4,11 +4,7 @@
   include("topo.php"); 
   include("menu.php");
   ?>
-<div class="margem-produtos-geral-home">
-</div>
 <div class="container">
-	<div class="margem-produtos-geral-home">
-	</div>
    		<div class="brands-area">
             <div class="row">
             <div class="col-md-12">
@@ -87,8 +83,7 @@
                   </div>
     					</div>
     			</div>
-    		        <img src="Imagens/intelbrasLado.png" class="img-rounded">
-                <!--<img src="Imagens/branco.png" class="img-rounded"> -->
+    		        <a href="busca.php?txtBusca=Intelbras"><img src="Imagens/intelbrasLado.png" class="img-rounded"></a>
   </div>
 
    

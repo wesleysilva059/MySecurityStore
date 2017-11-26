@@ -93,14 +93,13 @@
                   </div>
     					</div>
     			</div>
-    		        <img src="Imagens/intelbrasLado.png" class="img-rounded">
-                <!--<img src="Imagens/branco.png" class="img-rounded"> -->
+    		        <a href="busca.php?txtBusca=Intelbras"><img src="Imagens/intelbrasLado.png" class="img-rounded"></a>
   </div>
 		<h2 class="section-title">Resultados da Busca</h2>
-    <div class="row">
+    <div class="row col-md-9">
        <?php while ($listar = $consulta->fetch(PDO::FETCH_ASSOC)){
     ?>
-          <div class="col-lg-3">
+          <div class="col-lg-4">
             <div class="margem">
               <div class="img-thumbnail-promo">
                 <div class="single-product-pag-prod">

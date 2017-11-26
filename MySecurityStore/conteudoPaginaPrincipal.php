@@ -25,7 +25,7 @@
     </ol>
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="Imagens/slide1.jpg" alt="...">
+        <img src="Imagens/ofertas.jpg" alt="...">
 		    <div class="carousel-caption">
        		 <a href="paginaProdutos.php"><h2 class="fonte-slider">Clique aqui e saiba mais promoções.</h2></a>
       	</div>
@@ -62,7 +62,7 @@
 </div>
 </div>
 </div>
-<div class="margem-produtos-geral-home"></div>
+
 <script>
   $(document).ready(function(){
   
@@ -90,8 +90,6 @@
 });
 
 </script>	
-<div class="margem-produtos-geral-home"></div>
-<div class="margem-produtos-geral-home"></div>
 <div class="container">
   <div class="latest-product">
     <div class="margem-produtos-geral-home">
