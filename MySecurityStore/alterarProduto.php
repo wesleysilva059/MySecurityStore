@@ -9,9 +9,8 @@
 	include 'conexao.php';
 	include'resize-class.php';//classe que redimensionará a imagem
 
-$Codigo = $_GET['Codigo'];
-$consulta = $conexao->query("SELECT * FROM produtos,prodprecos,prodestoque,prodtecnologia WHERE produtos.Codigo='$Codigo' AND 
-prodprecos.idcodigo='$Codigo' AND prodestoque.idcodigo='$Codigo' AND prodtecnologia.codtecnologia='$Codigo'");
+$Codigo = $_POST['Codigo'];
+$consulta = $conexao->query("SELECT * FROM produtos,prodprecos,prodestoque,prodtecnologia WHERE prodprecos.idcodigo = produtos.Codigo AND prodestoque.idcodigo = produtos.Codigo AND prodtecnologia.codtecnologia = produtos.Codigo AND produtos.Codigo='$Codigo'");
 $exibe = $consulta->fetch(PDO::FETCH_ASSOC);
 $recebe_codbarras = $_POST['txtCodBarras'];
 $recebe_marca = $_POST['txtMarca'];
