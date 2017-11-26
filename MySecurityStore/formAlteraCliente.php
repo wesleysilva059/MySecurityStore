@@ -432,7 +432,7 @@
         <h3 class="form-signin-heading">Editar Cadastro</h3>      
         <div>
             <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#pessoa_fisica" aria-controls="pessoa_fisica" role="tab" data-toggle="tab">Pessoa Juridica</a></li>
+                <li role="presentation" class="active"><a href="#pessoa_juridica" aria-controls="pessoa_juridica" role="tab" data-toggle="tab">Pessoa Juridica</a></li>
             </ul>
             <div class="formulario">
                 <div class="tab-content">
@@ -752,7 +752,9 @@
                     </div>
 					<?php } ?>
                     </div>
+				
                 </div>
+			
         </div>
     </div>
 </div>

@@ -4,9 +4,9 @@
 
 		header('location:index.php');
 	}
-	include("topo.php");
-	include("menu.php");
+
 	include 'conexao.php';
+	include("topo.php");
 
 $idgrupo = $_GET['idgrupo'];
 $consulta = $conexao->query("SELECT * FROM grupo WHERE idgrupo='$idgrupo'");
@@ -25,9 +25,10 @@ try {
 	WHERE idgrupo = '$idgrupo'"
 
 	);
-	
-	header('location:listaGrupos.php');
-
+	?>
+	<h1>Grupo alterado com sucesso</h1>
+	<a href="listaGrupos.php">Voltar</a>
+	<?php
 } catch(PDOException $e) {
 	
 	
