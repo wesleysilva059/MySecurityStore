@@ -43,7 +43,7 @@
                             <div class="footer-about-us">
                                 <h2 class="fonte-rodape-title">Usuário</h2>
                                     <ul>
-                                        <li class="list-group-item"><a href="">Minha conta</a></li>
+                                        <li class="list-group-item"><a href="areausuario.php">Minha conta</a></li>
                                         <li class="list-group-item"><a href="pedidos.php">Meus pedidos</a></li>
                                         <li class="list-group-item"><a href="televendas.php">Televendas</a></li>
                                         <li class="list-group-item"><a href="nossoEndereco.php">Contato</a></li>

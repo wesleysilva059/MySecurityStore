@@ -96,7 +96,7 @@
   <div class="latest-product">
     <div class="margem-produtos-geral-home">
       <?php 
-          $consulta = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto');
+          $consulta = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque, prodpromocao WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto AND produtos.Codigo = prodpromocao.idproduto');
           ?>
           <h3 class="section-title">Promoções bombásticas!</h3>
       <div class="row">
@@ -122,7 +122,11 @@
                   <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar['Codigo']; ?>"><center><?php echo $listar['descricao']; ?></center></a></h2>
                 <div class="product-carousel-price">
                   <center>
-                    <del class="fonte-cont-preco">R$ 1355,00</del><br/><ins>Por: R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins>
+                   <del class="fonte-cont-preco"><strong>R$ 
+                      <?php $valoranterior = $listar['pvenda'] / (1-($listar['desconto']/100));
+                        echo number_format($valoranterior, 2,',','.')?></strong>
+                    </del><br/>
+                    <ins>Por: R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins>
                   </center>
                 </div>   
               </div>
@@ -181,7 +185,11 @@
                   <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar1['Codigo']; ?>"><center><?php echo $listar1['descricao']; ?></center></a></h2>
                 <div class="product-carousel-price">
                   <center>
-                    <del class="fonte-cont-preco">R$ 1355,00</del><br/><ins>Por: R$ <?php echo number_format($listar1['pvenda'], 2,',','.');?></ins>
+                    <del class="fonte-cont-preco"><strong>R$ 
+                          <?php $valorprodant = ($listar1['pvenda'] *1.05);
+                            echo number_format($valorprodant, 2,',','.')?></strong>
+                        </del><br/>
+                    <ins>Por: R$ <?php echo number_format($listar1['pvenda'], 2,',','.');?></ins>
                   </center>
                 </div>   
               </div>
@@ -223,7 +231,11 @@
               <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar2['Codigo']; ?>"><center><?php echo $listar2['descricao']; ?></center></a></h2>
               <div class="product-carousel-price">
                 <center>
-                  <del class="fonte-cont-preco">R$ 1355,00</del><br/><ins>Por: R$ <?php echo number_format($listar2['pvenda'], 2,',','.');?></ins>
+                  <del class="fonte-cont-preco"><strong>R$ 
+                          <?php $valorprodant = ($listar2['pvenda'] *1.05);
+                            echo number_format($valorprodant, 2,',','.')?></strong>
+                        </del><br/>
+                  <ins>Por: R$ <?php echo number_format($listar2['pvenda'], 2,',','.');?></ins>
                 </center>
               </div>   
             </div>
@@ -265,7 +277,11 @@
                   <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar3['Codigo']; ?>"><center><?php echo $listar3['descricao']; ?></center></a></h2>
                 <div class="product-carousel-price">
                   <center>
-                    <del class="fonte-cont-preco">R$ 1355,00</del><br/><ins>Por: R$ <?php echo number_format($listar3['pvenda'], 2,',','.');?></ins>
+                   <del class="fonte-cont-preco"><strong>R$ 
+                      <?php $valorprodant = ($listar3['pvenda'] *1.05);
+                        echo number_format($valorprodant, 2,',','.')?></strong>
+                    </del><br/>
+                    <ins>Por: R$ <?php echo number_format($listar3['pvenda'], 2,',','.');?></ins>
                   </center>
                 </div>   
               </div>
