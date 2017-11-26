@@ -27,7 +27,8 @@ try {
 
 	);
 	
-	
+	header('location:listaFabricantes.php');
+
 } catch(PDOException $e) {
 	
 	

@@ -26,6 +26,8 @@ try {
 
 	);
 	
+	header('location:listaGrupos.php');
+
 } catch(PDOException $e) {
 	
 	

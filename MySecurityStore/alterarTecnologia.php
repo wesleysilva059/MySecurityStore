@@ -27,6 +27,8 @@ try {
 
 	);
 	
+	header('location:listaTecnologias.php');
+	
 } catch(PDOException $e) {
 	
 	

@@ -169,6 +169,8 @@ try {
 		
 	}
 	
+	header('location:listaProdutos.php');
+
 } catch(PDOException $e) {
 	
 	

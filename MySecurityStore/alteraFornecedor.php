@@ -31,6 +31,7 @@ try {
 	
 	");
 	
+	header('location:listaFornecedores.php');
 	
 } catch(PDOException $e) {
 	
