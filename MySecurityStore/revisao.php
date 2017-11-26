@@ -35,7 +35,6 @@
                                     <th>Produto</th>
                                     <th>Preço</th>
                                     <th>Quantidade</th>
-                                    <th>Total</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -61,7 +60,7 @@
                                     </td>
 
                                     <td class="product-name">
-                                        <a href="conteudoProdutoCompra.php"><?php echo $produto; ?></a> 
+                                        <a href="conteudoProdutoCompra.php?Codigo=<?php echo $exibe['Codigo']; ?>"><?php echo $produto; ?></a>
                                     </td>
 
                                     <td class="product-price">
@@ -73,18 +72,25 @@
                                            <div> <?php echo $qnt; ?> </div>
                                         </div>
                                     </td>
-                                    <td>
-                                        <h4><strong>R$<?php echo number_format($total,2,',','.');?></strong></h4>
-                                    </td>
                                     <td class="product-remove">
                                         <a title="Remover este item" class="remove" href="excluirCarrinho.php?Codigo=<?php echo $Codigo; ?> "><span class="fa fa-trash-o" aria-hidden="true"></span> Excluir</a> 
                                     </td>
                                 </tr>
+                            </tbody>
+                            
                             <?php } ?>
+                        </table>
+                        <table cellspacing="0" class="shop_table cart">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <h2 class="section-title">Total: <strong>R$ <?php echo number_format($total,2,',','.');?></strong></h2>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </form>
-                                    <div class="margem"></div>
+                                <div class="margem"></div>
                                     <tr>
                                         <a href="index.php"><input type="submit" value="Continuar comprando" name="continuarComprando" class="button text-right"></a>
                                         <a title="Cancelar" class="remove" href="excluirCarrinho.php?Codigo=<?php echo $Codigo; ?> "><input type="submit" value="Cancelar compra" name="cancelarCompra" class="text-right"></a>
