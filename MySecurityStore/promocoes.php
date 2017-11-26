@@ -43,7 +43,7 @@
                           <?php } ?>
                       </div>
                   </div>
-                    <h2 class="fonte-cont"><a href="#"><center><?php echo $listar['descricao'];?></center></a></h2>
+                    <h2 class="fonte-cont"><a href="carrinhoCompras.php?Codigo=<?php echo $listar['Codigo']?>"><center><?php echo $listar['descricao'];?></center></a></h2>
                   <center>
                       <p><strong>Desconto de <?php echo $listar['desconto']; ?>%</strong></p>
                   </center>
