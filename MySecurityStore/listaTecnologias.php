@@ -45,6 +45,16 @@
 				
 	</div>		
 	<?php } ?>
+	<br><br>
+	<div class="col-sm-4 col-sm-offset-4 text-center">
+				
+				<a href="admIndex.php"><button type="button" class="btn btn-lg btn-link">
+					
+					Voltar ao menu administrativo
+					
+				</button></a>
+							
+	</div>
 </div>	
 
 	
