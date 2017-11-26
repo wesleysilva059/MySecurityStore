@@ -11,9 +11,8 @@
 
   $recebebusca = $_GET['txtBusca'];
 
-  $consulta = $conexao->query("SELECT DISTINCT * FROM produtos,prodprecos,prodestoque WHERE descricao LIKE CONCAT ('%','$recebebusca','%') OR marca LIKE CONCAT ('%','$recebebusca','%') OR modelo LIKE CONCAT ('%','$recebebusca','%')");
-
- 
+  //$consulta = $conexao->query("SELECT * FROM produtos,prodprecos,prodestoque WHERE descricao LIKE CONCAT ('%','$recebebusca','%') OR marca LIKE CONCAT ('%','$recebebusca','%') OR modelo LIKE CONCAT ('%','$recebebusca','%')");
+  $consulta = $conexao->query("SELECT * FROM produtos,prodprecos,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto AND descricao LIKE CONCAT ('%','$recebebusca','%')"); 
   ?>
 <div class="margem-produtos-geral-home">
 </div>
@@ -137,7 +136,11 @@
                     <h2 class="fonte-cont"><a href="#"><center><?php echo $listar['descricao'];?></center></a></h2>
                   <div class="product-carousel-price">
                     <center>
-                        <del class="fonte-cont-preco">R$ 1355.00</del><br/><ins>Por: R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins>
+                        <del class="fonte-cont-preco"><strong>R$ 
+                          <?php $valorprodant = ($listar['pvenda'] *1.05);
+                            echo number_format($valorprodant, 2,',','.')?></strong>
+                        </del><br/>
+                        <ins>Por: R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins>
                     </center>
                   </div>   
                 </div>

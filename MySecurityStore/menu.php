@@ -13,8 +13,8 @@
                     <li><a href="busca.php?txtBusca=LuxVision">LuxVision</a></li>
                     <li><a href="busca.php?txtBusca=TecVoz">TecVoz</a></li>
                   </ul>
-						        <a href="busca.php?txtBusca=Câmera" class="btn btn-primary">Câmeras</a>
-						        <a href="busca.php?txtBusca=Cabeamento" class="btn btn-primary">Cabeamento</a>
+						        <a href="busca.php?txtBusca=camera" class="btn btn-primary">Câmeras</a>
+						        <a href="busca.php?txtBusca=cabo" class="btn btn-primary">Cabeamento</a>
 						        <a href="busca.php?txtBusca=DVR" class="btn btn-primary">DVRs</a>
 						        <a href="busca.php?txtBusca=NVR" class="btn btn-primary">NVRs</a>
 						        <a href="promocoes.php" class="btn btn-primary">Promoções</a>

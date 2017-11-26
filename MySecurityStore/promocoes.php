@@ -4,7 +4,7 @@
   include("topo.php"); 
   include("menu.php");
 
-  $consulta = $conexao->query("SELECT * FROM produtos, prodprecos, prodpromocao WHERE produtos.Codigo = prodpromocao.idproduto AND produtos.Codigo = prodprecos.idproduto");
+  $consulta = $conexao->query("SELECT * FROM produtos, prodprecos, prodpromocao, prodestoque WHERE produtos.Codigo = prodpromocao.idproduto AND produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto");
 
   ?>
 <div class="margem-produtos-geral-home">

@@ -27,7 +27,7 @@
       <div class="item active">
         <img src="Imagens/slide1.jpg" alt="...">
 		    <div class="carousel-caption">
-       		 <a href="paginaProdutos.php"><h2 class="fonte-slider">Clique aqui e saiba mais.</h2></a>
+       		 <a href="paginaProdutos.php"><h2 class="fonte-slider">Clique aqui e saiba mais promoções.</h2></a>
       	</div>
       </div>
       <div class="item">
@@ -96,7 +96,7 @@
   <div class="latest-product">
     <div class="margem-produtos-geral-home">
       <?php 
-          $consulta = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque, prodpromocao WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto AND produtos.Codigo = prodpromocao.idproduto');
+          $consulta = $conexao->query("SELECT * FROM produtos,prodprecos,prodestoque, prodpromocao WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto AND produtos.Codigo = prodpromocao.idproduto ORDER BY prodpromocao.idproduto LIMIT 3");
           ?>
           <h3 class="section-title">Promoções bombásticas!</h3>
       <div class="row">
@@ -135,32 +135,16 @@
         </div>
       <?php }?>
       </div>
-      <button class="btn btn-primary" style="float:right;" >Clique aqui e veja mais</button>
+      <a href="promocoes.php" class="btn btn-primary" style="float:right;">Clique aqui e veja mais promoções...</a>
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="brands-area">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="brand-wrapper">
-          <div class="brand-list">
-            <a href="#"><img src="Imagens/intelbrasLogo.png" alt=""></a>
-            <a href="#"><img src="Imagens/luxvisionLogo.png" alt=""></a>
-            <a href="#"><img src="Imagens/tecVozLogo.png" alt=""></a>
-            <a href="#"><img src="Imagens/gigaByteLogo.png" alt=""></a>
-          </div>
-        </div>
-      </div>
-    </div>
-	</div>
 </div>
 <div class="latest-product">
   <div class="margem-produtos-geral-home">
       <?php 
-        $consulta1 = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto');
+        $consulta1 = $conexao->query("SELECT * FROM produtos,prodprecos,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto AND grupo = 1 ORDER BY produtos.Codigo LIMIT 4");
       ?>
-      <h3 class="section-title">Os melhores CFTVs do mercado</h3>
+      <h3 class="section-title">As melhores câmeras do mercado</h3>
   </div>
   <div class="container">
     <div class="row">
@@ -197,14 +181,12 @@
           </div>
         </div> 
           <?php } ?> 
-      </div>
-        <button class="btn btn-primary" style="float:right;" >Clique aqui e veja mais</button>
-    </div>
+        <a href="busca.php?txtBusca=camera" class="btn btn-primary" style="float:right;">Clique aqui e veja mais câmeras...</a>
 </div>
 <div class="latest-product">
   <div class="margem-produtos-geral-home">
     <?php 
-      $consulta2 = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto');
+      $consulta2 = $conexao->query("SELECT * FROM produtos,prodprecos,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto AND grupo = 7 ORDER BY produtos.Codigo DESC LIMIT 4");
     ?>
     <h3 class="section-title">DVRs com o melhor preço do Brasil</h3>
   </div>
@@ -244,15 +226,15 @@
       </div> 
       <?php } ?> 
     </div>
-    <button class="btn btn-primary" style="float:right;" >Clique aqui e veja mais</button>
+    <a href="busca.php?txtBusca=DVR" class="btn btn-primary" style="float:right;">Clique aqui e veja mais DVRs...</a>
   </div>
 </div>
 <div class="latest-product">
   <div class="margem-produtos-geral-home">
     <?php 
-      $consulta3 = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto');
+      $consulta3 = $conexao->query("SELECT * FROM produtos,prodprecos,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto AND grupo = 6 ORDER BY produtos.Codigo DESC LIMIT 4");
     ?>
-    <h3 class="section-title">Câmeras de todas as variedades</h3>
+    <h3 class="section-title">Cabos de excelente qualidade</h3>
   </div>
   <div class="container">
     <div class="row">
@@ -290,6 +272,22 @@
         </div> 
       <?php } ?> 
     </div>
-    <button class="btn btn-primary" style="float:right;">Clique aqui e veja mais</button>
+     <a href="busca.php?txtBusca=cabo" class="btn btn-primary" style="float:right;">Clique aqui e veja mais cabos...</a>
+  </div>
+</div>
+<div class="container">
+  <div class="brands-area">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="brand-wrapper">
+          <div class="brand-list">
+            <a href="busca.php?txtBusca=Intelbras"><img src="Imagens/intelbrasLogo.png" alt=""></a>
+            <a href="busca.php?txtBusca=LuxVision"><img src="Imagens/luxvisionLogo.png" alt=""></a>
+            <a href="busca.php?txtBusca=TecVoz"><img src="Imagens/tecVozLogo.png" alt=""></a>
+            <a href="busca.php?txtBusca=GigaByte"><img src="Imagens/gigaByteLogo.png" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
