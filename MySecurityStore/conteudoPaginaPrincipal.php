@@ -136,7 +136,7 @@
         </div>
       <?php }?>
       </div>
-      <a href="promocoes.php" class="btn btn-primary" style="float:right;">Clique aqui e veja mais promoções...</a>
+      <a href="promocoes.php" class="btn btn-primary" style="float:right;" title="Mais promoções">Clique aqui e veja mais promoções...</a>
     </div>
   </div>
 </div>
@@ -160,8 +160,8 @@
                   <img src="Imagens/<?php echo $listar1['foto']; ?>" alt="Nome do produto: <?php echo $listar1['descricao'];?>" title="Produto: <?php echo $listar1['descricao'];?>">
                   <div class="product-hover">
                     <?php if ($listar1['estoque']>0) { ?>
-                    <a href="carrinhoCompras.php?Codigo=<?php echo $listar1['Codigo']?>" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                    <a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar1['Codigo']; ?>" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
+                    <a href="carrinhoCompras.php?Codigo=<?php echo $listar1['Codigo']?>" class="add-to-cart-link" title="Adicionar ao carrinho"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
+                    <a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar1['Codigo']; ?>" class="view-details-link" title="Detalhes do produto"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
                     <?php }else{ ?>
                     <a class="add-to-cart-link"><i class="glyphicon glyphicon-ban-circle"></i> Indisponível</a>
                     <?php } ?>
@@ -178,7 +178,7 @@
           </div>
         </div> 
           <?php } ?> 
-        <a href="busca.php?txtBusca=camera" class="btn btn-primary" style="float:right;">Clique aqui e veja mais câmeras...</a>
+        <a href="busca.php?txtBusca=camera" class="btn btn-primary" style="float:right;" title="Mais câmeras">Clique aqui e veja mais câmeras...</a>
 </div>
 <div class="latest-product">
   <div class="margem-produtos-geral-home">
@@ -200,8 +200,8 @@
                 <img src="Imagens/<?php echo $listar2['foto']; ?>" alt="Nome do produto: <?php echo $listar2['descricao'];?>" title="Produto: <?php echo $listar2['descricao'];?>">
                 <div class="product-hover">
                   <?php if ($listar2['estoque']>0) { ?>
-                  <a href="carrinhoCompras.php?Codigo=<?php echo $listar2['Codigo']?>" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                  <a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar2['Codigo']; ?>" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
+                  <a href="carrinhoCompras.php?Codigo=<?php echo $listar2['Codigo']?>" class="add-to-cart-link" title="Adicionar ao carrinho"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
+                  <a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar2['Codigo']; ?>" class="view-details-link" title="Detalhes do produto"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
                   <?php }else{ ?>
                   <a class="add-to-cart-link"><i class="glyphicon glyphicon-ban-circle"></i> Indisponível</a>
                     <?php } ?>
@@ -219,7 +219,7 @@
       </div> 
       <?php } ?> 
     </div>
-    <a href="busca.php?txtBusca=DVR" class="btn btn-primary" style="float:right;">Clique aqui e veja mais DVRs...</a>
+    <a href="busca.php?txtBusca=DVR" class="btn btn-primary" style="float:right;" title="Mais DVRs">Clique aqui e veja mais DVRs...</a>
   </div>
 </div>
 <div class="latest-product">
@@ -242,8 +242,8 @@
                   <img src="Imagens/<?php echo $listar3['foto']; ?>" alt="Nome do produto: <?php echo $listar3['descricao'];?>" title="Produto: <?php echo $listar3['descricao'];?>">
                   <div class="product-hover">
                     <?php if ($listar3['estoque']>0) { ?>
-                    <a href="carrinhoCompras.php?Codigo=<?php echo $listar3['Codigo']?>" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                    <a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar3['Codigo']; ?>" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
+                    <a href="carrinhoCompras.php?Codigo=<?php echo $listar3['Codigo']?>" class="add-to-cart-link" title="Adicionar ao carrinho"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
+                    <a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar3['Codigo']; ?>" class="view-details-link" title="Detalhes do produto"title="Detalhes do produto"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
                     <?php }else{ ?>
                     <a class="add-to-cart-link"><i class="glyphicon glyphicon-ban-circle"></i> Indisponível</a>
                     <?php } ?>
@@ -261,7 +261,7 @@
         </div> 
       <?php } ?> 
     </div>
-     <a href="busca.php?txtBusca=cabo" class="btn btn-primary" style="float:right;">Clique aqui e veja mais cabos...</a>
+     <a href="busca.php?txtBusca=cabo" class="btn btn-primary" style="float:right;" title="Mais cabos">Clique aqui e veja mais cabos...</a>
   </div>
 </div>
 <div class="container">
@@ -270,10 +270,10 @@
       <div class="col-md-12">
         <div class="brand-wrapper">
           <div class="brand-list">
-            <a href="busca.php?txtBusca=Intelbras"><img src="Imagens/intelbrasLogo.png" alt=""></a>
-            <a href="busca.php?txtBusca=LuxVision"><img src="Imagens/luxvisionLogo.png" alt=""></a>
-            <a href="busca.php?txtBusca=TecVoz"><img src="Imagens/tecVozLogo.png" alt=""></a>
-            <a href="busca.php?txtBusca=GigaByte"><img src="Imagens/gigaByteLogo.png" alt=""></a>
+            <a href="busca.php?txtBusca=Intelbras"><img src="Imagens/intelbrasLogo.png" title="Produtos Intelbras"></a>
+            <a href="busca.php?txtBusca=LuxVision"><img src="Imagens/luxvisionLogo.png" title="Produtos LuxVision"></a>
+            <a href="busca.php?txtBusca=TecVoz"><img src="Imagens/tecVozLogo.png" title="Produtos TecVoz"></a>
+            <a href="busca.php?txtBusca=GigaByte"><img src="Imagens/gigaByteLogo.png" title="Produtos GigaByte"></a>
           </div>
         </div>
       </div>
