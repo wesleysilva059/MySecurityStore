@@ -10,8 +10,8 @@
                   <ul class="dropdown-menu">
                     <li><a href="paginaProdutos.php">Todos os produtos</a></li>
                     <li><a href="busca.php?txtBusca=Intelbras">Intelbras</a></li>
-                    <li><a href="busca.php?txtBusca=LuxVision">LuxVision</a></li>
-                    <li><a href="busca.php?txtBusca=TecVoz">TecVoz</a></li>
+                    <li><a href="busca.php?txtBusca=Lux">LuxVision</a></li>
+                    <li><a href="busca.php?txtBusca=Tec">TecVoz</a></li>
                   </ul>
 						        <a href="busca.php?txtBusca=camera" class="btn btn-primary">Câmeras</a>
 						        <a href="busca.php?txtBusca=cabo" class="btn btn-primary">Cabeamento</a>

@@ -44,54 +44,55 @@
                       <label><a href="busca.php?txtBusca=intelbras" value="">Intelbras <span class="badge">0</span></a></label>
                     </div>
                     <div class="checkbox">
-                      <label><a href="busca.php?txtBusca=luxvision" value="">LuxVision <span class="badge">0</span></a></label>
+                      <label><a href="busca.php?txtBusca=lux" value="">LuxVision <span class="badge">0</span></a></label>
                     </div>
                     <div class="checkbox">
-                      <label><a href="busca.php?txtBusca=tecvoz" value="">Tecvoz <span class="badge">0</span></a></label>
+                      <label><a href="busca.php?txtBusca=tec" value="">Tecvoz <span class="badge">0</span></a></label>
                     </div>      
                   </div>
     					</div>
 				     	<div class="panel panel-primary">
-				      		<div class="panel-heading">Filtrar por Tecnologia</div>
-				      		<div class="panel-body"><div class="checkbox">
-                      <label><input type="checkbox" value="">Intelbras <span class="badge">0</span></label>
+                  <div class="panel-heading">Filtrar por Marca</div>
+                  <div class="panel-body">
+                    <div class="checkbox">
+                      <label><a href="busca.php?txtBusca=intelbras" value="">Intelbras <span class="badge">0</span></a></label>
                     </div>
                     <div class="checkbox">
-                      <label><input type="checkbox" value="">LuxVision <span class="badge">0</span></label>
+                      <label><a href="busca.php?txtBusca=lux" value="">LuxVision <span class="badge">0</span></a></label>
                     </div>
                     <div class="checkbox">
-                      <label><input type="checkbox" value="">Outras <span class="badge">0</span></label>
-                    </div>     
-                  </div>
-			    		</div>
-    					<div class="panel panel-primary">
-      						<div class="panel-heading">Filtrar por Modelo</div>
-      						<div class="panel-body">
-                    <div class="checkbox">
-                      <label><input type="checkbox" value="">Intelbras <span class="badge">0</span></label>
-                    </div>
-                    <div class="checkbox">
-                      <label><input type="checkbox" value="">LuxVision <span class="badge">0</span></label>
-                    </div>
-                    <div class="checkbox">
-                      <label><input type="checkbox" value="">Outras <span class="badge">0</span></label>
+                      <label><a href="busca.php?txtBusca=tec" value="">Tecvoz <span class="badge">0</span></a></label>
                     </div>      
                   </div>
-    					</div>
+              </div>
     					<div class="panel panel-primary">
-      						<div class="panel-heading">Filtrar por Categoria</div>
-      						<div class="panel-body">
+                  <div class="panel-heading">Filtrar por Marca</div>
+                  <div class="panel-body">
                     <div class="checkbox">
-                      <label><input type="checkbox" value="">Intelbras <span class="badge">0</span></label>
+                      <label><a href="busca.php?txtBusca=intelbras" value="">Intelbras <span class="badge">0</span></a></label>
                     </div>
                     <div class="checkbox">
-                      <label><input type="checkbox" value="">LuxVision <span class="badge">0</span></label>
+                      <label><a href="busca.php?txtBusca=lux" value="">LuxVision <span class="badge">0</span></a></label>
                     </div>
                     <div class="checkbox">
-                      <label><input type="checkbox" value="">Outras <span class="badge">0</span></label>
+                      <label><a href="busca.php?txtBusca=tec" value="">Tecvoz <span class="badge">0</span></a></label>
                     </div>      
                   </div>
-    					</div>
+              </div>
+    					<div class="panel panel-primary">
+                  <div class="panel-heading">Filtrar por Marca</div>
+                  <div class="panel-body">
+                    <div class="checkbox">
+                      <label><a href="busca.php?txtBusca=intelbras" value="">Intelbras <span class="badge">0</span></a></label>
+                    </div>
+                    <div class="checkbox">
+                      <label><a href="busca.php?txtBusca=lux" value="">LuxVision <span class="badge">0</span></a></label>
+                    </div>
+                    <div class="checkbox">
+                      <label><a href="busca.php?txtBusca=tec" value="">Tecvoz <span class="badge">0</span></a></label>
+                    </div>      
+                  </div>
+              </div>
     			</div>
     		        <a href="busca.php?txtBusca=Intelbras"><img src="Imagens/intelbrasLado.png" class="img-rounded"></a>
   </div>
