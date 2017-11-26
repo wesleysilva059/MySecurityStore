@@ -50,6 +50,7 @@
                     </div>
                     <input type="submit" value="CONFIRMAR FORMA DE PAGAMENTO" name="formaPagamento">
                 </form>
+                <br><br>
                 <div class="margem"></div>
                 <?php if (isset($_POST['formaPagamento'])) {
                     if (isset($_POST['opcao1'])) {

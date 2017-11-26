@@ -42,7 +42,7 @@
                                     </td>
 
                                     <td class="product-name">
-                                        <a href="conteudoProdutoCompra.php"><?php echo $produto; ?></a> 
+                                        <a href="conteudoProdutoCompra.php?Codigo=<?php echo $Codigo; ?>"><?php echo $produto; ?></a> 
                                     </td>
 
                                     <td class="product-price">

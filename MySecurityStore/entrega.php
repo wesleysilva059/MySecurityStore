@@ -64,7 +64,7 @@
                     </div>
                     <?php } }?>
                 </div>
-                <input type="submit" value="Confirmar Endereço" name="endEnvio" style="float: left">
+                <input type="submit" value="Confirmar escolha do Endereço" name="endEnvio" style="float: center">
             </form>
             <br>
             <?php $idlogin = ($_SESSION['id']-1);
@@ -123,8 +123,9 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="submit" value="CONFIRMAR TIPO DE ENVIO" name="formaEnvio">
+                        <input type="submit" value="CONFIRMAR TIPO DE ENVIO" name="formaEnvio" style="float: center">
                     </form>
+                    <br><br>
                     <div class="margem"></div>
                     <?php if (isset($_POST['formaEnvio'])) {
                             if (isset($_POST['opcao'])) {
@@ -178,7 +179,7 @@
                             <table class="table">
                                 <tbody>
                                     <?php foreach ($_SESSION['carrinho'] as $Codigo => $qnt) { // sessao carrinho criada anteriormente
-                                        $consulta = $conexao->query("SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto AND produtos.Codigo = '$Codigo'"); //
+                                        $consulta = $conexao->query("SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto AND produtos.Codigo = '$Codigo' GROUP BY Codigo"); //
                                         $exibe = $consulta->fetch(PDO::FETCH_ASSOC);
                                         $preco = $exibe['pvenda'];
                                         $preco = number_format($exibe['pvenda'],2,',','.');
