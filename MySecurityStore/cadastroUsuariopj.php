@@ -37,7 +37,7 @@
 			VALUES ('$razaosocial','$nomefantasia','$cnpj','$inscEst','$dtAtual');
 			select last_insert_id() into @id;
 			INSERT INTO `pjuridicacontatos` (`telefonefixo`, `telefonecelular`, `idcliente`) VALUES ('$telefone','$celular',@id);
-			INSERT INTO `login`(`adm`,`tipousuario`, `email`, `senha`, `idcliente`) VALUES (0,1,'$email','$senha',@id);
+			INSERT INTO `login`(`adm`,`tipousuario`, `email`, `senha`, `idcliente`) VALUES (0,2,'$email','$senha',@id);
 			select last_insert_id() into @id2;
 			INSERT INTO `enderecos`(`idlogin`, `tipo`, `logradouro`, `numero`, `bairro`, `cidade`, `cep`, `uf`, `pais`, `referencia`, `complemento`) VALUES (@id2,2,'$endereco','$numero','$bairro','$cidade','$cep','$estado','$pais','$referencia','$complemento')
 			");

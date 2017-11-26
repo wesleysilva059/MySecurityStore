@@ -405,11 +405,9 @@
 					<?php } else { 
 						$consultausuario = $conexao->query("SELECT 	
 													a.razaosocial as razaosocial, 
-													a.sexo as sexo,
-													a.dtnasc as dtnasc, 
-													a.cpf as cpf, 
-													a.rg as rg, 
-													a.orgEmissor as orgEmissor, 
+													a.nomefantasia as nomefantasia,
+													a.cnpj as cnpj, 
+													a.inscest as inscest,  
 													a.dtcadastro as dtcadastro, 
 													d.email as email, 
 													b.telefonefixo as telefone,
@@ -429,126 +427,135 @@
 													inner join enderecos c on d.idlogin = c.idlogin");
 						$exibe = $consultausuario->fetch(PDO::FETCH_ASSOC);
 					?>
+<div class="cadastro_tela">
+    <div class="container theme-showcase" role="main">
+        <h3 class="form-signin-heading">Editar Cadastro</h3>      
+        <div>
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#pessoa_fisica" aria-controls="pessoa_fisica" role="tab" data-toggle="tab">Pessoa Juridica</a></li>
+            </ul>
+            <div class="formulario">
+                <div class="tab-content">
                     <div role="tabpanel" class="tab-pane" id="pessoa_juridica">
                         <div style="padding-top:20px;">
                             <form action="cadastroUsuariopj.php" method="POST" id="validate">
 								<div class="form-group">
                                     <label class="col-sm-2 control-label">Razão Social</label>
                                     <div class="col-sm-8">
-                                        <input type="text" name="razaosocial" class="form-control" id="razaosocial" placeholder="">
+                                        <input type="text" name="razaosocial" class="form-control" id="razaosocial" placeholder="<?php echo $exibe['razaosocial'] ?>">
                                     </div>
                                 </div>
 								<div class="form-group">
                                     <label class="col-sm-2 control-label"> Nome Fantasia</label>
                                     <div class="col-sm-8">
-                                        <input type="text" name="nfantasia" class="form-control" id="nfantasia" placeholder="Digite o Nome Fantasia" value="">
+                                        <input type="text" name="nfantasia" class="form-control" id="nfantasia" placeholder="Digite o Nome Fantasia" value="<?php echo $exibe['nomefantaisa'] ?>">
                                     </div>
                                 </div>
 								<div class="form-group">
                                     <label class="col-sm-2 control-label">* CNPJ</label>
                                     <div class="col-sm-8">
-                                        <input type="text" name="cnpj" class="form-control" id="cnpj" placeholder="Digite o CNPJ" value="">
+                                        <input type="text" name="cnpj" class="form-control" id="cnpj" placeholder="Digite o CNPJ" value="<?php echo $exibe['cnpj'] ?>">
                                     </div>
                                 </div>
 								<div class="form-group">
                                     <label class="col-sm-2 control-label"> Inscrição Estadual</label>
                                     <div class="col-sm-8">
-                                        <input type="text" name="inscEst" class="form-control" id="inscEst" placeholder="Digite a Inscrição Estadual" value="">
+                                        <input type="text" name="inscEst" class="form-control" id="inscEst" placeholder="Digite a Inscrição Estadual" value="<?php echo $exibe['inscest'] ?>">
                                     </div>
                                 </div>
 								<div class="form-group">
                                     <label class="col-sm-2 control-label">* E-mail</label>
                                     <div class="col-sm-8">
-                                        <input name="email" type="text" class="form-control" placeholder="Digite seu email">
+                                        <input name="email" type="text" class="form-control" placeholder="Digite seu email" value="<?php echo $exibe['email'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">* Telefone</label>
                                     <div class="col-sm-8">
-                                        <input name="telefone" type="text" class="form-control" placeholder="Digite o número de seu telefone" id="telefone">
+                                        <input name="telefone" type="text" class="form-control" placeholder="Digite o número de seu telefone" id="telefone" value="<?php echo $exibe['telefone'] ?>"> 
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">* Celular</label>
                                     <div class="col-sm-8">
-                                        <input name="celular" type="text" class="form-control" placeholder="Digite o número de seu celular" id="celular">
+                                        <input name="celular" type="text" class="form-control" placeholder="Digite o número de seu celular" id="celular" value="<?php echo $exibe['celular'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">* CEP</label>
                                     <div class="col-sm-8">
-                                        <input name="cep" type="text" class="form-control" placeholder="Digite seu CEP" id="cep">
+                                        <input name="cep" type="text" class="form-control" placeholder="Digite seu CEP" id="cep" value="<?php echo $exibe['cep'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">* Endereço</label>
                                     <div class="col-sm-8">
-                                        <input name="endereco" type="text" class="form-control" placeholder="Digite seu endereço">
+                                        <input name="endereco" type="text" class="form-control" placeholder="Digite seu endereço" value="<?php echo $exibe['logradouro'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">* Número</label>
                                     <div class="col-sm-8">
-                                        <input name="nro_endereco" type="number" class="form-control">
+                                        <input name="nro_endereco" type="number" class="form-control" value="<?php echo $exibe['numero'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Complemento</label>
                                     <div class="col-sm-8">
-                                        <input name="complemento_end" type="text" class="form-control" placeholder="Digite o complemento">
+                                        <input name="complemento_end" type="text" class="form-control" placeholder="Digite o complemento" value="<?php echo $exibe['complemento'] ?>">
                                     </div>
                                 </div>
                                  <div class="form-group">
                                     <label class="col-sm-2 control-label">Referência</label>
                                     <div class="col-sm-8">
-                                        <input name="referencia_end" type="text" class="form-control" placeholder="Digite a referência">
+                                        <input name="referencia_end" type="text" class="form-control" placeholder="Digite a referência" value="<?php echo $exibe['referencia'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">* Bairro</label>
                                     <div class="col-sm-8">
-                                        <input name="bairro" type="text" class="form-control" placeholder="Digite o nome de seu bairro">
+                                        <input name="bairro" type="text" class="form-control" placeholder="Digite o nome de seu bairro" value="<?php echo $exibe['bairro'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">* Cidade</label>
                                     <div class="col-sm-8">
-                                        <input name="cidade" type="text" class="form-control" placeholder="Digite o nome da sua cidade">
+                                        <input name="cidade" type="text" class="form-control" placeholder="Digite o nome da sua cidade" value="<?php echo $exibe['cidade'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">* Estado</label>
                                     <div class="col-sm-8">
                                         <select name="estado" class="form-control">
-                                            <option value="">Selecione</option>
-                                            <option value="Exterior">Estado no Exterior</option>
-                                            <option value="AC">Acre</option>
-                                            <option value="AL">Alagoas</option>
-                                            <option value="AP">Amapá</option>
-                                            <option value="AM">Amazonas</option>
-                                            <option value="BA">Bahia</option>
-                                            <option value="CE">Ceará</option>
-                                            <option value="DF">Distrito Federal</option>
-                                            <option value="ES">Espirito Santo</option>
-                                            <option value="GO">Goiás</option>
-                                            <option value="MA">Maranhão</option>
-                                            <option value="MS">Mato Grosso do Sul</option>
-                                            <option value="MT">Mato Grosso</option>
-                                            <option value="MG">Minas Gerais</option>
-                                            <option value="PA">Pará</option>
-                                            <option value="PB">Paraíba</option>
-                                            <option value="PR">Paraná</option>
-                                            <option value="PE">Pernambuco</option>
-                                            <option value="PI">Piauí</option>
-                                            <option value="RJ">Rio de Janeiro</option>
-                                            <option value="RN">Rio Grande do Norte</option>
-                                            <option value="RS">Rio Grande do Sul</option>
-                                            <option value="RO">Rondônia</option>
-                                            <option value="RR">Roraima</option>
-                                            <option value="SC">Santa Catarina</option>
-                                            <option value="SP">São Paulo</option>
-                                            <option value="SE">Sergipe</option>
-                                            <option value="TO">Tocantins</option>
+                                            <?=($exibe['orgaoemissor'] == 'OUT')?'selected':''?>1
+
+                                            <option value="AC" <?=($exibe['uf'] == 'AC')?"selected":""?>>Acre</option>
+                                            <option value="AL" <?=($exibe['uf'] == 'AL')?"selected":""?>>Alagoas</option>
+                                            <option value="AP" <?=($exibe['uf'] == 'AP')?"selected":""?>>Amapá</option>
+                                            <option value="AM" <?=($exibe['uf'] == 'AM')?"selected":""?>>Amazonas</option>
+                                            <option value="BA" <?=($exibe['uf'] == 'BA')?"selected":""?>>Bahia</option>
+                                            <option value="CE" <?=($exibe['uf'] == 'CE')?"selected":""?>>Ceará</option>
+                                            <option value="DF" <?=($exibe['uf'] == 'DF')?"selected":""?>>Distrito Federal</option>
+                                            <option value="ES" <?=($exibe['uf'] == 'ES')?"selected":""?>>Espirito Santo</option>
+                                            <option value="GO" <?=($exibe['uf'] == 'GO')?"selected":""?>>Goiás</option>
+                                            <option value="MA" <?=($exibe['uf'] == 'MA')?"selected":""?>>Maranhão</option>
+                                            <option value="MS" <?=($exibe['uf'] == 'MS')?"selected":""?>>Mato Grosso do Sul</option>
+                                            <option value="MT" <?=($exibe['uf'] == 'MT')?"selected":""?>>Mato Grosso</option>
+                                            <option value="MG" <?=($exibe['uf'] == 'MG')?"selected":""?>>Minas Gerais</option>
+                                            <option value="PA" <?=($exibe['uf'] == 'PA')?"selected":""?>>Pará</option>
+                                            <option value="PB" <?=($exibe['uf'] == 'PB')?"selected":""?>>Paraíba</option>
+                                            <option value="PR" <?=($exibe['uf'] == 'PR')?"selected":""?>>Paraná</option>
+                                            <option value="PE" <?=($exibe['uf'] == 'PE')?"selected":""?>>Pernambuco</option>
+                                            <option value="PI" <?=($exibe['uf'] == 'PI')?"selected":""?>>Piauí</option>
+                                            <option value="RJ" <?=($exibe['uf'] == 'RJ')?"selected":""?>>Rio de Janeiro</option>
+                                            <option value="RN" <?=($exibe['uf'] == 'RN')?"selected":""?>>Rio Grande do Norte</option>
+                                            <option value="RS" <?=($exibe['uf'] == 'RS')?"selected":""?>>Rio Grande do Sul</option>
+                                            <option value="RO" <?=($exibe['uf'] == 'RO')?"selected":""?>>Rondônia</option>
+                                            <option value="RR" <?=($exibe['uf'] == 'RR')?"selected":""?>>Roraima</option>
+                                            <option value="SC" <?=($exibe['uf'] == 'SC')?"selected":""?>>Santa Catarina</option>
+                                            <option value="SP" <?=($exibe['uf'] == 'SP')?"selected":""?>>São Paulo</option>
+                                            <option value="SE" <?=($exibe['uf'] == 'SE')?"selected":""?>>Sergipe</option>
+                                            <option value="TO" <?=($exibe['uf'] == 'TO')?"selected":""?>>Tocantins</option>
                                         </select>
                                     </div>
                                 </div>
@@ -556,7 +563,8 @@
                                     <label class="col-sm-2 control-label">* País</label>
                                     <div class="col-sm-8">
                                         <select name="pais" class="form-control">
-                                            <option value="África do Sul">África do Sul</option>
+                                            <option value="" selected><?php echo $exibe['pais']?></option>
+											<option value="África do Sul">África do Sul</option>
                                             <option value="Albânia">Albânia</option>
                                             <option value="Alemanha">Alemanha</option>
                                             <option value="Andorra">Andorra</option>
@@ -578,7 +586,7 @@
                                             <option value="Benin">Benin</option>
                                             <option value="Bermudas">Bermudas</option>
                                             <option value="Botsuana">Botsuana</option>
-                                            <option value="Brasil" selected>Brasil</option>
+                                            <option value="Brasil">Brasil</option>
                                             <option value="Brunei">Brunei</option>
                                             <option value="Bulgária">Bulgária</option>
                                             <option value="Burkina Fasso">Burkina Fasso</option>
@@ -734,13 +742,14 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" value="Enviar" class="btn btn-success" onClick="validarSenha()">Cadastrar</button>
-                                    </div>
-                                </div>
-							</form>
-                            </div>
+                                    <div class="btn-group">
+                                        	<button type="submit" value="Enviar" class="btn btn-success">Alterar</button>
+                                        	<button type="submit" value="Enviar" class="btn btn-danger">Excluir</button>
+									</div>
+								</div>
+                        	</form>
                         </div>
+                    </div>
 					<?php } ?>
                     </div>
                 </div>

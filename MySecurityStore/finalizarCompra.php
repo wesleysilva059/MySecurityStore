@@ -11,7 +11,7 @@ if (empty($_SESSION['carrinho'])){
     }
 $dtvenda = date('Y-m-d');
 $notafiscal = uniqid();//gera identificador único
-$usuario = $_SESSION['id'];
+$usuario = $_SESSION['idlogin'];
 $tipoentrega = $_SESSION['idtransportadora'];
 $situacao = 1;
 $tipopagamento = $_SESSION['idPagamento'];

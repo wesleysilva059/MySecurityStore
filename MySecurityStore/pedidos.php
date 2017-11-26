@@ -6,7 +6,7 @@
 	include("topo.php");
 	include("menu.php");
 	include 'conexao.php';
-	$usuario = $_SESSION['id'];
+	$usuario = $_SESSION['idlogin'];
 	$consultaVenda = $conexao->query("SELECT * from vendas WHERE idlogin = '$usuario' GROUP BY notafiscal"); 
 ?>
 <div class="container">
@@ -34,4 +34,4 @@
 </div>
 </div
 
-<?php include ("rodape.php");?>
+><?php include ("rodape.php");?>
