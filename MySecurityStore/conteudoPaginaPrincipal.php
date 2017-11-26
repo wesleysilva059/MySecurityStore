@@ -110,14 +110,14 @@
                     <div class="product-hover">
                       <?php if ($listar['estoque']>0) { ?>
 
-                      <a href="carrinhoCompras.php?Codigo=<?php echo $listar['Codigo']?>" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
-                      <a href="conteudoPromocaoCompra.php?Codigo=<?php echo $listar['Codigo']; ?>" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
+                      <a href="carrinhoCompras.php?Codigo=<?php echo $listar['Codigo']?>" class="add-to-cart-link" title="Adicionar ao carrinho"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
+                      <a href="conteudoPromocaoCompra.php?Codigo=<?php echo $listar['Codigo']; ?>" class="view-details-link" title="Detalhes do produto"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
                       <?php }else{ ?>
-                      <a class="add-to-cart-link"><i class="glyphicon glyphicon-ban-circle"></i> Indisponível</a>
+                      <a class="add-to-cart-link"><i class="glyphicon glyphicon-ban-circle" title="Produto indisponível"></i> Indisponível</a>
                       <?php } ?>
                     </div>
                 </div>
-                 <h2 class="fonte-cont"><a href="#"><center><?php echo $listar['descricao'];?></center></a></h2>
+                 <h2 class="fonte-cont"><a href="carrinhoCompras.php?Codigo=<?php echo $listar['Codigo']?>"><center><?php echo $listar['descricao'];?></center></a></h2>
                   <center>
                       <p><strong>Desconto de <?php echo $listar['desconto']; ?>%</strong></p>
                   </center>
