@@ -10,16 +10,14 @@
 	<div class="margem-produtos-geral-home">
 	</div>
    		<div class="brands-area">
-          	<div class="row">
-       			<div class="col-md-12">
-                   	<div class="brand-wrapper">
-                       	<div class="brand-list text-center">
-                      		<img src="Imagens/ofertasTitle.png" alt="">
-                        </div>
-                  	</div>
-          		</div>
-       		</div>
-   		</div>  		
+            <div class="row">
+            <div class="col-md-12">
+                    <div class="brand-wrapper text-center">
+                          <a href="promocoes.php"><img src="Imagens/ofertas.jpg" alt="" width="85%"></a>
+                    </div>
+              </div>
+          </div>
+      </div>  		
 </div>
 <div class="container">
       

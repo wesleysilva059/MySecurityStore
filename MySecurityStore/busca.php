@@ -14,18 +14,12 @@
   //$consulta = $conexao->query("SELECT * FROM produtos,prodprecos,prodestoque WHERE descricao LIKE CONCAT ('%','$recebebusca','%') OR marca LIKE CONCAT ('%','$recebebusca','%') OR modelo LIKE CONCAT ('%','$recebebusca','%')");
   $consulta = $conexao->query("SELECT * FROM produtos,prodprecos,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto AND descricao LIKE CONCAT ('%','$recebebusca','%')"); 
   ?>
-<div class="margem-produtos-geral-home">
-</div>
 <div class="container">
-	<div class="margem-produtos-geral-home">
-	</div>
    		<div class="brands-area">
           	<div class="row">
        			<div class="col-md-12">
-                   	<div class="brand-wrapper">
-                       	<div class="brand-list text-center">
-                      		<img src="Imagens/ofertasTitle.png" alt="">
-                        </div>
+                   	<div class="brand-wrapper text-center">
+                      		<a href="promocoes.php"><img src="Imagens/ofertas.jpg" alt="" width="85%"></a>
                   	</div>
           		</div>
        		</div>
@@ -102,16 +96,7 @@
     		        <img src="Imagens/intelbrasLado.png" class="img-rounded">
                 <!--<img src="Imagens/branco.png" class="img-rounded"> -->
   </div>
-    <div class="text-right">
-          <ul class="pagination fonte-cont">
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-          </ul>
-    </div>
-		<h2 class="section-title">Busca</h2>
+		<h2 class="section-title">Resultados da Busca</h2>
     <div class="row">
        <?php while ($listar = $consulta->fetch(PDO::FETCH_ASSOC)){
     ?>
