@@ -95,8 +95,8 @@ function showDivs(n) {
                         echo number_format($valorprodant, 2,',','.')?></strong>
                     </del></p>
                     <p class="fonte-cont-pc">Por apenas: <ins>R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins> a vista 
-                    <p class="fonte-cont-pc"> em até <ins>3x</ins> de <ins>R$<?php $val = ($listar['pvenda'] /3); echo number_format($val, 2,',','.');?></ins></p>
-                    <p class="fonte-cont-pc"> ou <ins>6x</ins> de <ins>R$<?php $val = ($listar['pvenda'] /6) + 13; echo number_format($val, 2,',','.');?></ins> iguais</p>
+                    <p class="fonte-cont-pc"> em até <ins>3x</ins> de <ins>R$ <?php $val = ($listar['pvenda'] /3); echo number_format($val, 2,',','.');?></ins></p>
+                    <p class="fonte-cont-pc"> ou <ins>6x</ins> de <ins>R$ <?php $val = ($listar['pvenda'] /6) + 13; echo number_format($val, 2,',','.');?></ins> iguais</p>
               </div>
                 <div class="col-md-6 text-center">
                   <?php if ($listar['estoque']>0){ ?>
