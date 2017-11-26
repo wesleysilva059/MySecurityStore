@@ -7,18 +7,20 @@
   $consulta = $conexao->query("SELECT * FROM produtos, prodprecos, prodpromocao, prodestoque WHERE produtos.Codigo = prodpromocao.idproduto AND produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto");
 
   ?>
-<div class="margem-produtos-geral-home">
+<div class="container">
+<div class="brands-area">
+            <div class="row">
+            <div class="col-md-12">
+                    <div class="brand-wrapper">
+                        <div class="brand-list text-center">
+                          <img src="Imagens/ofertasTitle.png" alt="">
+                        </div>
+                    </div>
+              </div>
+          </div>
+  </div>
 </div>
 <div class="container">
-    <div class="text-right">
-          <ul class="pagination fonte-cont">
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-          </ul>
-    </div>
 		<h2 class="section-title">PROMOÇÕES IMPERDÍVEIS</h2>
     <div class="row">
        <?php while ($listar = $consulta->fetch(PDO::FETCH_ASSOC)){
