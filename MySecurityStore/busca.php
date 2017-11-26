@@ -171,10 +171,6 @@
                     <h2 class="fonte-cont"><a href="#"><center><?php echo $listar['descricao'];?></center></a></h2>
                   <div class="product-carousel-price">
                     <center>
-                        <del class="fonte-cont-preco"><strong>R$ 
-                          <?php $valorprodant = ($listar['pvenda'] *1.05);
-                            echo number_format($valorprodant, 2,',','.')?></strong>
-                        </del><br/>
                         <ins>Por: R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins>
                     </center>
                   </div>   
