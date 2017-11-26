@@ -91,11 +91,11 @@
         $consulta = $conexao->query('SELECT * FROM `produtos`,`prodprecos`,prodestoque WHERE produtos.Codigo = prodprecos.idproduto AND produtos.Codigo = prodestoque.idproduto');
       ?>
 		<h2 class="section-title">Produtos</h2>
-    <div class="row">
+    <div class="row col-md-8">
       <?php 
         while ($listar=$consulta->fetch(PDO::FETCH_ASSOC)){
       ?>
-          <div class="col-lg-3">
+          <div class="col-lg-4">
             <div class="margem">
               <div class="img-thumbnail-promo">
                 <div class="single-product-pag-prod">
