@@ -44,7 +44,7 @@
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="pessoa_fisica">
                         <div style="padding-top:20px;">
-                            <form action="cadastroUsuariopf.php" method="POST" id="validate">  
+                            <form action="alteraUsuariopf.php" method="POST" id="validate">  
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">* Nome</label>
                                     <div class="col-sm-8">
@@ -426,6 +426,10 @@
 													inner join login d on a.idpjuridica = d.idcliente
 													inner join enderecos c on d.idlogin = c.idlogin");
 						$exibe = $consultausuario->fetch(PDO::FETCH_ASSOC);
+		
+					echo $exibe['telefone']."<br>";
+					echo $exibe['celular']."<br>";
+					echo $exibe['cep'];
 					?>
 
 <div class="cadastro_tela">
@@ -445,7 +449,7 @@
 								<div class="form-group">
                                     <label class="col-sm-2 control-label">Razão Social</label>
                                     <div class="col-sm-8">
-                                        <input type="text" name="razaosocial" class="form-control" id="razaosocial" placeholder="<?php echo $exibe['razaosocial'] ?>">
+                                        <input type="text" name="razaosocial" class="form-control" id="razaosocial" value="<?php echo $exibe['razaosocial'] ?>">
                                     </div>
                                 </div>
 								<div class="form-group">
@@ -475,13 +479,13 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">* Telefone</label>
                                     <div class="col-sm-8">
-                                        <input name="telefone" type="text" class="form-control" placeholder="Digite o número de seu telefone" id="telefone" value="<?php echo $exibe['telefone'] ?>"> 
+                                        <input name="telefone" type="text" class="form-control" placeholder="Digite o número de seu telefone" value="<?php echo $exibe['telefone']; ?>"> 
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">* Celular</label>
                                     <div class="col-sm-8">
-                                        <input name="celular" type="text" class="form-control" placeholder="Digite o número de seu celular" id="celular" value="<?php echo $exibe['celular'] ?>">
+                                        <input name="celular" type="text" class="form-control" placeholder="Digite o número de seu celular" value="<?php echo $exibe['celular'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
