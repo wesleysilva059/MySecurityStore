@@ -84,10 +84,11 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <h2 class="section-title">Total: <strong>R$ <?php echo number_format($total,2,',','.');?></strong></h2>
+                                        <h2 class="section-title">Total: <strong>R$ <?php echo number_format($total,2,',','.');?> sem frete*</strong></h2>
                                     </td>
                                 </tr>
                             </tbody>
+                            <p class="pull-right" style="font-size: 10px;"><i>*Valor com frete descrito a direita</i></p>
                         </table>
                     </form>
                                 <div class="margem"></div>
