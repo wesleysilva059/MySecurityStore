@@ -32,7 +32,6 @@ $('#pmedio').mask('000.000.000.000.000,00', {reverse: true});
 						<label for="codbarras">Codigo de barras</label>
 						<input name="txtCodBarras" value="<?php echo $exibe['codbarras']; ?>" type="text" class="form-control">
 					</div>
-					<?php echo $Codigo; ?>
 					<div class="form-group">
 					<label for="marca">Marca</label>
 					<select class="form-control" name="txtMarca">

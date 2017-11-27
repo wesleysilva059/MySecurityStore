@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Nov-2017 às 03:42
--- Versão do servidor: 10.1.28-MariaDB
--- PHP Version: 7.1.11
+-- Generation Time: Nov 27, 2017 at 01:24 PM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `contaspagar`
+-- Table structure for table `contaspagar`
 --
 
 CREATE TABLE `contaspagar` (
@@ -37,7 +37,7 @@ CREATE TABLE `contaspagar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `contaspagar`
+-- Dumping data for table `contaspagar`
 --
 
 INSERT INTO `contaspagar` (`lancamento`, `vencimento`, `parcela`, `valor`, `nrodocumento`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `contaspagar` (`lancamento`, `vencimento`, `parcela`, `valor`, `nrod
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `contasreceber`
+-- Table structure for table `contasreceber`
 --
 
 CREATE TABLE `contasreceber` (
@@ -58,7 +58,7 @@ CREATE TABLE `contasreceber` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `contasreceber`
+-- Dumping data for table `contasreceber`
 --
 
 INSERT INTO `contasreceber` (`lancamento`, `vencimento`, `parcela`, `valor`, `nrodocumento`) VALUES
@@ -67,7 +67,7 @@ INSERT INTO `contasreceber` (`lancamento`, `vencimento`, `parcela`, `valor`, `nr
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `enderecos`
+-- Table structure for table `enderecos`
 --
 
 CREATE TABLE `enderecos` (
@@ -86,25 +86,19 @@ CREATE TABLE `enderecos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `enderecos`
+-- Dumping data for table `enderecos`
 --
 
 INSERT INTO `enderecos` (`idlogin`, `tipo`, `logradouro`, `numero`, `bairro`, `cidade`, `cep`, `uf`, `pais`, `referencia`, `complemento`, `idendereco`) VALUES
 (1, 1, 'AA', 'NN', 'BB', 'CC', '123', 'MG', 'PP', 'RR', 'CC', 1),
-(19, 1, 'rua Varginha', '220', 'Jardim Primavera', 'Passos', '37903-214', 'MG', 'Brasil', '', '', 12),
+(19, 1, 'rua Varginha', '220', 'Jardim Primavera', 'Passos', '37903-214', 'MG', 'Brasil', 'Mercado', 'Casa', 12),
 (20, 1, '', '', '', '', '', '', 'Brasil', '', '', 13),
-(21, 2, 'rua 7 de setembro', '100', 'centro', 'passos', '37903214', 'MG', 'Brasil', '', '', 14),
-(22, 1, 'Aparecida Bulgari', '75', 'vila formosa', 'são sebastião do Paraiso', '37950-000', 'MG', 'Brasil', 'padaria', 'casa', 15),
-(1, 2, 'Rua Lopes Trovão', '14', 'mocoquinha', 'São Sebastião do Paraiso', '37950-000', 'MG', 'Brasil', 'qualquer uma', 'casa', 17),
-(23, 1, 'Aparecida Bulgari', '75', 'vila formosa', 'São Sebastião do Paraiso', '37950-000', 'MG', 'Brasil', 'padaria', 'casa', 18),
-(23, 2, 'Rua Lopes Trovão', '43', 'mocoquinha', 'São Sebastião do Paraiso', '37950-000', 'MG', 'Brasil', 'qualquer uma', 'casa', 19),
-(24, 1, 'Rua Varginha', '220', 'Jardim Primavera', 'Passos', '37903-214', 'MG', 'Brasil', '', '', 20),
-(25, 1, 'asdf', '12', 'centro', 'CAPITOLIO', '00100-110', 'MG', 'Brasil', '', '', 21);
+(21, 2, 'rua 7 de setembro', '100', 'centro', 'passos', '37903214', 'MG', 'Brasil', 'Mercado', 'Casa', 14);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `entprod`
+-- Table structure for table `entprod`
 --
 
 CREATE TABLE `entprod` (
@@ -115,7 +109,7 @@ CREATE TABLE `entprod` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `entprod`
+-- Dumping data for table `entprod`
 --
 
 INSERT INTO `entprod` (`lancamento`, `idproduto`, `qtde`, `punit`) VALUES
@@ -124,7 +118,7 @@ INSERT INTO `entprod` (`lancamento`, `idproduto`, `qtde`, `punit`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `entradas`
+-- Table structure for table `entradas`
 --
 
 CREATE TABLE `entradas` (
@@ -143,7 +137,7 @@ CREATE TABLE `entradas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `entradas`
+-- Dumping data for table `entradas`
 --
 
 INSERT INTO `entradas` (`lancamento`, `notafiscal`, `dtpedido`, `dtentrada`, `idfornecedor`, `totalitens`, `vltotal`, `tipo`, `situacao`, `idtransportador`, `tipopag`, `vlfrete`) VALUES
@@ -152,7 +146,7 @@ INSERT INTO `entradas` (`lancamento`, `notafiscal`, `dtpedido`, `dtentrada`, `id
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `envio`
+-- Table structure for table `envio`
 --
 
 CREATE TABLE `envio` (
@@ -166,7 +160,7 @@ CREATE TABLE `envio` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `envio`
+-- Dumping data for table `envio`
 --
 
 INSERT INTO `envio` (`idenvio`, `forma`, `vlfrete`, `dataenvio`, `dataentrega`, `idtransportador`, `idendereco`) VALUES
@@ -194,7 +188,8 @@ INSERT INTO `fabricantes` (`idfabricante`, `descricao`, `origem`) VALUES
 (1, 'Intelbras S.A.', 'Nacional'),
 (3, 'Lux Vision S.A.', 'Nacional'),
 (4, 'TecVoz S.A.', 'Nacional'),
-(5, 'Giga S.A.', 'Nacional');
+(5, 'Giga S.A.', 'Nacional'),
+(6, 'Cabos S.A.', 'Nacional');
 
 -- --------------------------------------------------------
 
@@ -216,10 +211,10 @@ CREATE TABLE `fornecedor` (
 --
 
 INSERT INTO `fornecedor` (`idfornecedor`, `razaosocial`, `nomefantasia`, `cnpj`, `inscest`, `idendereco`) VALUES
-(1, 'Revendedor autorizado Intelbras', 'Intelbras Minas', '13242435475', '34657895674', 12),
-(2, 'Revendedor autorizado TecVoz', 'TecVoz Minas', '34573678854', '34478643571', 14),
+(1, 'Revendedor autorizado Intelbras', 'Intelbras Minas', '13242435475', '34657895674', 1),
+(2, 'Revendedor autorizado TecVoz', 'TecVoz Minas', '34573678854', '34478643571', 12),
 (4, 'Revendedor autorizado LuxVision', 'LuxVision Minas', '23465673456', '34658980986', 12),
-(5, 'Revendedor autorizado GIGA', 'Giga Minas', '2346567234', '34657895629', 1);
+(5, 'Revendedor autorizado GIGA', 'Giga Minas', '23465672342', '34657895629', 12);
 
 -- --------------------------------------------------------
 
@@ -241,13 +236,13 @@ INSERT INTO `grupo` (`idgrupo`, `descrigrupo`) VALUES
 (5, 'Kits completos'),
 (6, 'Cabeamentos'),
 (7, 'DVRs'),
-(8, 'Controladores de acesso'),
+(8, 'Controles de acesso'),
 (9, 'NVRs');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `login`
+-- Table structure for table `login`
 --
 
 CREATE TABLE `login` (
@@ -260,36 +255,16 @@ CREATE TABLE `login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `login`
+-- Dumping data for table `login`
 --
 
 INSERT INTO `login` (`idlogin`, `adm`, `tipousuario`, `email`, `senha`, `idcliente`) VALUES
-(1, 1, 0, 'CONTATOCLAUDIOMAIA@GMAIL.COM', '1234', 1),
-(2, 2, 0, 'CRAUDIO@GMAIL.COM', '1234', 1),
-(3, 1, 0, 'EMAIL@EMAIL', '321', 1),
-(4, 1, 0, 'wesley@silva', '123', 1),
-(5, 2, 0, 'zxcv', '123', 2),
-(6, 2, 0, 'zxcv', '123', 5),
-(7, 1, 0, 'wesley@silva', '12345', 3),
-(8, 1, 0, 'wesley@silva', '12345', 7),
-(9, 1, 0, 'wesley@silva', '12345', 3),
-(10, 1, 0, 'wesley@silva', '12345', 9),
-(11, 1, 0, 'asdg@asdf', '123', 12),
-(12, 1, 0, 'asdg@asdf123', '1234', 14),
-(13, 1, 0, 'asdg@asdf12', '123', 15),
-(14, 1, 0, 'asdg@asdf1', 'asd', 16),
-(15, 1, 0, 'asdg@asdf10', 'zxc', 17),
-(20, 1, 0, '', '', 22),
-(21, 1, 0, 'teste@teste.com.br', '123', 6),
-(22, 0, 1, 'belini.higor@gmail.com', '1234', 23),
-(23, 0, 1, 'belini@gmail.com', '1234', 24),
-(24, 0, 1, 'wesleysilva059@gmail.com', '123', 25),
-(25, 0, 1, 'juniorcesarto@gmail.com', '123', 26);
+(1, 1, 0, 'CONTATOCLAUDIOMAIA@GMAIL.COM', '1234', 1);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pagamentos`
+-- Table structure for table `pagamentos`
 --
 
 CREATE TABLE `pagamentos` (
@@ -303,7 +278,7 @@ CREATE TABLE `pagamentos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `pagamentos`
+-- Dumping data for table `pagamentos`
 --
 
 INSERT INTO `pagamentos` (`lancamento`, `vlpago`, `data`, `desconto`, `acrescimo`, `situacao`, `nrodocumento`) VALUES
@@ -312,7 +287,7 @@ INSERT INTO `pagamentos` (`lancamento`, `vlpago`, `data`, `desconto`, `acrescimo
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `permissoes`
+-- Table structure for table `permissoes`
 --
 
 CREATE TABLE `permissoes` (
@@ -321,7 +296,7 @@ CREATE TABLE `permissoes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `permissoes`
+-- Dumping data for table `permissoes`
 --
 
 INSERT INTO `permissoes` (`idpermissao`, `descricao`) VALUES
@@ -330,7 +305,7 @@ INSERT INTO `permissoes` (`idpermissao`, `descricao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pfisicacontatos`
+-- Table structure for table `pfisicacontatos`
 --
 
 CREATE TABLE `pfisicacontatos` (
@@ -340,26 +315,11 @@ CREATE TABLE `pfisicacontatos` (
   `idcliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `pfisicacontatos`
---
-
-INSERT INTO `pfisicacontatos` (`idpfcontato`, `telefonefixo`, `telefonecelular`, `idcliente`) VALUES
-(1, '(12) 3123-1231', '0', 17),
-(2, '(35) 3521-7373', '0', 18),
-(3, '(35) 3521-7373', '0', 19),
-(4, '(35) 3521-7373', '0', 20),
-(5, '(35) 3521-7373', '0', 21),
-(6, '', '0', 22),
-(7, '(35) 3531-7961', '0', 23),
-(8, '(35) 9982-4018', '0', 24),
-(9, '(35) 3521-1382', '(35) 99975-9812', 25),
-(10, '(35) 1231-2312', '(35) 12312-3123', 26);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pfisicadados`
+-- Table structure for table `pfisicadados`
 --
 
 CREATE TABLE `pfisicadados` (
@@ -374,37 +334,14 @@ CREATE TABLE `pfisicadados` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `pfisicadados`
+-- Dumping data for table `pfisicadados`
 --
 
 INSERT INTO `pfisicadados` (`idpfisica`, `nome`, `sexo`, `dtnasc`, `cpf`, `rg`, `orgEmissor`, `dtcadastro`) VALUES
-(1, 'CRAUDIO ROBERTO', 'M', '0000-00-00', '', '', '', '0000-00-00'),
-(2, 'CABELO', 'M', '0000-00-00', '', '', '', '0000-00-00'),
-(3, 'CAPIVARA', 'M', '0000-00-00', '', '', '', '0000-00-00'),
-(4, 'DUCAPITOLIO', 'M', '0000-00-00', '', '', '', '0000-00-00'),
-(9, 'Wesley Samuel da Silva', '1', '0000-00-00', '059.149.186-93', '1232125', 'SSP', '0000-00-00'),
-(10, 'asdf', '2', '0000-00-00', '123.123.123-12', 'cbzs', 'SSP', '0000-00-00'),
-(11, 'asdf', '2', '0000-00-00', '123.123.123-12', 'cbzs', 'SSP', '0000-00-00'),
-(12, 'asdf', '2', '0000-00-00', '123.123.123-12', 'cbzs', 'SSP', '0000-00-00'),
-(13, 'asdf', '2', '0000-00-00', '123.123.123-12', 'cbzs', 'SSP', '0000-00-00'),
-(14, 'asdf', '2', '0000-00-00', '123.123.123-12', 'cbzs', 'SSP', '0000-00-00'),
-(15, 'asdf', '2', '0000-00-00', '123.123.123-12', 'cbzs', 'SSP', '0000-00-00'),
-(16, 'asdf', '2', '0000-00-00', '123.123.123-12', 'cbzs', 'SSP', '0000-00-00'),
-(17, 'asdf', '2', '0000-00-00', '123.123.123-12', 'cbzs', 'SSP', '0000-00-00'),
-(18, 'Wesley', '1', '0000-00-00', '059.149.186-93', 'mg11271963', 'SSP', '0000-00-00'),
-(19, 'Wesley', '1', '0000-00-00', '059.149.186-93', 'mg11271963', 'SSP', '0000-00-00'),
-(20, 'Wesley', '1', '0000-00-00', '059.149.186-93', 'mg11271963', 'SSP', '0000-00-00'),
-(21, 'Wesley', '1', '0000-00-00', '059.149.186-93', 'mg11271963', 'SSP', '0000-00-00'),
-(22, '', '', '0000-00-00', '', '', '', '0000-00-00'),
-(23, 'Higor Belini Pereira', '2', '0000-00-00', '122.173.786-43', 'mg-19.075.', 'CRM', '0000-00-00'),
-(24, 'Higor Belini Pereira', '1', '0000-00-00', '122.173.786-44', 'mg-19.075.', 'COREN', '0000-00-00'),
-(25, 'Wesley Samuel da Silva', '1', '0000-00-00', '059.149.186-93', 'mg11271963', 'SSP', '2017-11-25'),
-(26, 'Junior Cesar', '1', '0000-00-00', '000.111.222-44', 'asdf123123', 'CRE', '2017-11-26');
-
--- --------------------------------------------------------
+(1, 'CRAUDIO ROBERTO', 'M', '0000-00-00', '', '', '', '0000-00-00');
 
 --
--- Estrutura da tabela `pjuridicacontatos`
+-- Table structure for table `pjuridicacontatos`
 --
 
 CREATE TABLE `pjuridicacontatos` (
@@ -414,17 +351,11 @@ CREATE TABLE `pjuridicacontatos` (
   `idcliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `pjuridicacontatos`
---
-
-INSERT INTO `pjuridicacontatos` (`idpjcontato`, `telefonefixo`, `telefonecelular`, `idcliente`) VALUES
-(1, '123123123', '', 6);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pjuridicadados`
+-- Table structure for table `pjuridicadados`
 --
 
 CREATE TABLE `pjuridicadados` (
@@ -436,17 +367,6 @@ CREATE TABLE `pjuridicadados` (
   `dtcadastro` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `pjuridicadados`
---
-
-INSERT INTO `pjuridicadados` (`idpjuridica`, `razaosocial`, `nomefantasia`, `cnpj`, `inscest`, `dtcadastro`) VALUES
-(1, 'LOJA', 'LOJINHA', 0, 0, '0000-00-00'),
-(2, '', 'ind', 521, 0, '0000-00-00'),
-(3, 'teste', 'teste', 0, 0, '0000-00-00'),
-(4, 'teste', 'teste', 0, 0, '0000-00-00'),
-(5, 'teste2', 'teste', 0, 0, '0000-00-00'),
-(6, 'teste2', 'teste', 0, 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -488,7 +408,9 @@ INSERT INTO `prodestoque` (`idproduto`, `estoque`, `estmin`, `estideal`) VALUES
 (24, 10, 10, 10),
 (25, 10, 10, 10),
 (26, 10, 10, 10),
-(27, 10, 10, 10);
+(27, 10, 10, 10),
+(28, 10, 10, 10),
+(29, 11, 11, 11);
 
 -- --------------------------------------------------------
 
@@ -531,7 +453,9 @@ INSERT INTO `prodprecos` (`idproduto`, `data`, `pcusto`, `pmedio`, `pvenda`) VAL
 (24, '2017-11-26', 3700, 3999, 3999),
 (25, '2017-11-26', 30, 43, 43),
 (26, '2017-11-26', 80, 112, 112),
-(27, '2017-11-26', 89, 119, 119);
+(27, '2017-11-26', 89, 119, 119),
+(28, '2017-11-26', 1000, 1200, 1400),
+(29, '2017-11-26', 100, 120, 140);
 
 -- --------------------------------------------------------
 
@@ -550,7 +474,13 @@ CREATE TABLE `prodpromocao` (
 --
 
 INSERT INTO `prodpromocao` (`idpromocao`, `idproduto`, `desconto`) VALUES
-(1, 1, 15);
+(1, 1, 15),
+(1, 10, 20),
+(1, 15, 25),
+(1, 18, 30),
+(1, 22, 20),
+(1, 24, 30),
+(1, 27, 20);
 
 -- --------------------------------------------------------
 
@@ -591,7 +521,9 @@ INSERT INTO `prodtecnologia` (`codproduto`, `codtecnologia`) VALUES
 (24, 3),
 (25, 5),
 (26, 7),
-(27, 3);
+(27, 3),
+(28, 8),
+(29, 1);
 
 -- --------------------------------------------------------
 
@@ -628,7 +560,7 @@ INSERT INTO `produtos` (`Codigo`, `codbarras`, `marca`, `modelo`, `grupo`, `desc
 (9, '7896665222', 'TecVoz', 'QCB-128P ', 5, 'KIT CFTV COMPLETO 12 CÂMERAS INFRA HD TEC VOZ', '365', '01 - DVR TecVoz\r\n12 Câmera Bullet \r\n01 Cabo Coaxial\r\n01 Fonte Chaveada \r\n', 4, 2200, 2450, '6092dc45ac4dd6cdafe279cab8de0bbe.jpg', 'b984f88e1431754c5f8ea54ece97998c.jpg', 'e44dc701332f8f3bd8ddfcf1c95ce8c0.jpg'),
 (10, '78966869999', 'LuxVision', 'LV2001A', 5, 'KIT CFTV COMPLETO LUX VISION DVR 24 CAMERAS', '365', '24 Câmeras IR 20M 1/4 720P AHD 2.8MM IP67 LV;\r\nCanais de vídeo: 08 BNC\r\nCanais de áudio: 04 RCA\r\n', 3, 3000, 3350, '264c46134d613bbdf957bf98b6e7a587.jpg', '043da409a9854d4deae0fd7c40d9b36b.jpg', '92332cd04e9045dd91dc1647f94d1b51.jpg'),
 (11, '789666555444', 'Intelbras', 'VIP S3020 G2', 1, 'CÂMERA INTELBRAS VIP S3020 G2 IR INTELIGENTE LENTE', '180', '- Resolução de 1 MP\r\n- Lente fixa de 3,6 mm\r\n- IR inteligente com alcance de 20 metros\r\n-Instalação ', 1, 150, 200, 'c3a8b7daba7dadfea54266cd403c0530.jpg', '2861011fa9c98849cb0dd846dea39aa7.jpg', '0828758ceaaaf7ffe1276749651a62d8.jpg'),
-(12, '78966651111', 'TecVoz', 'TW-ICB100', 1, 'CAMERA TEC VOZ TW-ICB100 MULTI STREAMING 3D LENTE ', '365', '- Resolução de 1.0 Mega Pixels (720p)\r\n- Lente Fixa 3.6mm\r\n- Multi-Streaming / H.264\r\n- 3D DNR / D-W', 4, 320, 400, '89bd6cc29fd8a681bb8010e42eeef614.jpg', '1c5318c52d1dbeff55da57e746acd9e3.jpg', 'ced26858ebfae9fd1f14ea9de72c626f.jpg'),
+(12, '78966651111', 'TecVoz', 'TW-ICB100', 1, 'CAMERA TEC VOZ TW-ICB100 MULTI STREAMING 3D', '365', '- Resolução de 1.0 Mega Pixels (720p)\r\n- Lente Fixa 3.6mm\r\n- Multi-Streaming / H.264\r\n- 3D DNR / D-W', 4, 320, 400, '89bd6cc29fd8a681bb8010e42eeef614.jpg', '1c5318c52d1dbeff55da57e746acd9e3.jpg', 'ced26858ebfae9fd1f14ea9de72c626f.jpg'),
 (13, '78966631111', 'Intelbras', 'IC3', 1, 'CÁMERA INTELBRAS HD IC3 ARMAZENAMENTO EM CARTÃO MI', '365', '- Conexão Wi-Fi\r\n- Armazenamento em cartão micro-SD2\r\n- Campo de visão de 111° (diagonal)3\r\n- Imagen', 1, 120, 140, '8b72a9bc87e750e2a64d4a8b91d2c0e5.jpg', '838102f52eb9f8c92614c0e36ed5218b.jpg', '4285ca410a9e1499a4dda5df5530e822.jpg'),
 (14, '78966622222', 'TecVoz', 'TV-ICB202vm ', 1, 'CÂMERA TECVOZ TV-ICB202vm IP BULLET VARIFOCAL MULT', '365', '- Modelo: TV-ICB202vm\r\n- Tipo: Câmera IP Bullet Varifocal Infra Red 50m Mega\r\n- Tecnologia compatíve', 4, 200, 250, '9daeb3ea088fce49b9ceac38ac808e39.jpg', '54d041fabbd5274065d68aa04887aa1c.jpg', '4ac42ee4f51162cca609bc2ea6d16fa5.jpg'),
 (15, '78916665116', 'TecVoz', 'TW-ICB400v', 1, 'CAMERA TEC VOZ  CÂMERA IP BULLET INFRA TW-ICB400v', '365', '- Modelo: TW-ICB400v\r\n- Tipo: Câmera IP Bullet Varifocal Infra Red 50m Mega\r\n- Tecnologias compatíve', 4, 350, 390, '367266e1a2a556871e0806810dd7503d.jpg', '461475b3f3197f10bab56d7edfaf7915.jpg', 'f685beca43f915e00b44f29c51a4a1a9.jpg'),
@@ -638,7 +570,7 @@ INSERT INTO `produtos` (`Codigo`, `codbarras`, `marca`, `modelo`, `grupo`, `desc
 (19, '78893453454', 'Intelbras', 'MHDX 1008', 5, 'KIT CFTV COMPLETO INTELBRAS 8 CÂMERAS ', '365', '04 CÂMERAS INTELBRAS \r\n01 Dísco Rígido HD\r\n01 Fonte\r\n01 Rolo de Cabo\r\n', 1, 2100, 2510, '4100327629a5f9297e386c8cb79d7796.jpg', '3e6d9f3ace9496ec9b24d52ddf848ce4.jpg', '8b50e7803fca8fac0faa9fd9f9219b1e.jpg'),
 (20, '78934546322', 'Intelbras', 'MHDX 1004', 5, 'KIT CFTV COMPLETO 4 CÂMERAS INTELBRAS', '365', '01 DVR\r\n- 02 CÂMERAS HDCVI HB 2000;\r\n- 02 CÂMERAS HDCVI HB 306;\r\n- 01 Dísco Rígido HD\r\n- 01 Fonte\r\n-', 1, 1400, 1700, '38380e81d17e3b9494eaad7fbd7cea8d.jpg', 'ff2c44c9628f22b701411d0a20c6d5ec.jpg', 'a239aad5d084a44a4855305198622062.jpg'),
 (22, '78966652555', 'LuxVision', 'HVR ECD ALL HD DE 16 CANAIS', 9, 'HVR LUX VISION ECD ALL HD DE 16 CANAIS AHD, HDCVI,', '365', 'O sistema reconhece automaticamente a tecnologia da câmera conectada e renomeia o canal com as inici', 3, 3000, 3400, 'f5e32cce97d154997a1e98ac0c32fee7.jpg', 'c62cf0327ceac5c5b479980c167cd447.jpg', 'a6b4c14a57ce3dae4d7a5c60ce90efeb.jpg'),
-(23, '78966688888', 'LuxVision', 'DVR AHD-H 8 CANAIS SMART HÍBRI', 7, 'DVR AHD-H 8 CANAIS SMART HÍBRIDO ANALÓGICA, IP OU ', '365', 'o	Canais de vídeo: 08 BNC\r\nCanais de áudio: 04 RCA\r\nQualidade de imagem: AHD-H (1920×1080)\r\nAcesso c', 3, 2900, 3100, '940407645944e5b761b17e2e8a608081.jpg', '143f6b42cce80e62bf115ea9ca025e20.jpg', 'b7169ed50efcde95e257adeeccf016aa.jpg'),
+(23, '78966688888', 'LuxVision', 'DVR AHD-H 8 CANAIS SMART HÍBRI', 7, 'DVR AHD-H 8 CANAIS SMART HÍBRIDO ANALÓGICA, IP', '365', 'o	Canais de vídeo: 08 BNC\r\nCanais de áudio: 04 RCA\r\nQualidade de imagem: AHD-H (1920×1080)\r\nAcesso c', 3, 2900, 3100, '940407645944e5b761b17e2e8a608081.jpg', '143f6b42cce80e62bf115ea9ca025e20.jpg', 'b7169ed50efcde95e257adeeccf016aa.jpg'),
 (24, '78266652436', 'Intelbras', 'MHDX 5016', 7, 'DVR MHDX 5016 INTELBRAS SERIE 5000 RESOLUÇÃO FULL ', '60', '-Série 5000: performance\r\n- Mais facilidade com acesso remoto\r\n- Possível visualizar até 16 câmeras ', 1, 1800, 2200, 'c1dcea3173954020ec2d6b5b2e6e471e.jpg', 'b7de83a5424401ff4685ecf53f49b59b.jpg', '5eb39970ef1e317d71d53d13e44684c2.jpg'),
 (25, '68655447679', 'OUTROS', 'CABO', 6, 'CABO COAXIAL CFTV FLEXÍVEL 4MM BIPOLAR 2 VIAS 40% ', '365', 'Condutor Interno: Fio de cobre nu flexível 26AWG ou 24AWG\r\n- Isolação Interna: Polietileno de baixa ', 5, 4000, 4050, 'b26bb12a4a30c1e789d1de4d575d3bd0.jpg', 'c381f33ec042af033745996172feb09f.jpg', 'de3989b3db030f116ab6c32b1a436895.jpg'),
 (26, '98655447679', 'OUTROS', 'CABO COAXIAL MALHA 95 RG 6 ROL', 6, 'CABO COAXIAL MALHA 95 RG 6 ROLO 100 MTS ANATEL AÇO', '365', 'Dados Técnicos: \r\nCondutor:  Aço Acobreado \r\nIsolação: Polietileno \r\nBlindagem:   Fios De Alumínio T', 5, 4000, 4050, '0defe7c19d16b52542b7732a29b55af9.jpg', 'bdeec6f7979c8c444644659a93d93c4e.jpg', '7abf3ba6a50b6207f2f1ae79fef4dc8c.jpg'),
@@ -647,7 +579,7 @@ INSERT INTO `produtos` (`Codigo`, `codbarras`, `marca`, `modelo`, `grupo`, `desc
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `promocoes`
+-- Table structure for table `promocoes`
 --
 
 CREATE TABLE `promocoes` (
@@ -658,7 +590,7 @@ CREATE TABLE `promocoes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `promocoes`
+-- Dumping data for table `promocoes`
 --
 
 INSERT INTO `promocoes` (`idpromocao`, `descricao`, `dtini`, `dtfim`) VALUES
@@ -667,7 +599,7 @@ INSERT INTO `promocoes` (`idpromocao`, `descricao`, `dtini`, `dtfim`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `recebimentos`
+-- Table structure for table `recebimentos`
 --
 
 CREATE TABLE `recebimentos` (
@@ -681,7 +613,7 @@ CREATE TABLE `recebimentos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `recebimentos`
+-- Dumping data for table `recebimentos`
 --
 
 INSERT INTO `recebimentos` (`lancamento`, `nrodocumento`, `vlrecebido`, `desconto`, `acrescimo`, `data`, `situacao`) VALUES
@@ -690,7 +622,7 @@ INSERT INTO `recebimentos` (`lancamento`, `nrodocumento`, `vlrecebido`, `descont
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `saiprod`
+-- Table structure for table `saiprod`
 --
 
 CREATE TABLE `saiprod` (
@@ -705,7 +637,7 @@ CREATE TABLE `saiprod` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tecnologias`
+-- Table structure for table `tecnologias`
 --
 
 CREATE TABLE `tecnologias` (
@@ -715,12 +647,12 @@ CREATE TABLE `tecnologias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `tecnologias`
+-- Dumping data for table `tecnologias`
 --
 
 INSERT INTO `tecnologias` (`idtecnologia`, `descritec`, `caracteristicas`) VALUES
-(1, 'IP', 'Sem fio'),
-(2, 'AHCD', 'Otima imagem digital'),
+(1, 'IP', 'CONECTA SEM FIO ATRAVES DE PROTOCOLO DA INTERNET'),
+(2, 'AHCD', 'Ótima imagem digital'),
 (3, 'FULL HD', '1.920 colunas de pixels e 1.080 linhas'),
 (5, 'Analógico', 'Gravação analógica em alta definição'),
 (6, 'HDCVI', 'Método diferente e inovador de transmitir os sinais de vídeo.'),
@@ -730,7 +662,7 @@ INSERT INTO `tecnologias` (`idtecnologia`, `descritec`, `caracteristicas`) VALUE
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tipopagamentos`
+-- Table structure for table `tipopagamentos`
 --
 
 CREATE TABLE `tipopagamentos` (
@@ -740,16 +672,18 @@ CREATE TABLE `tipopagamentos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `tipopagamentos`
+-- Dumping data for table `tipopagamentos`
 --
 
 INSERT INTO `tipopagamentos` (`idtipo`, `descricao`, `parcelas`) VALUES
-(1, '3X', 3);
+(1, 'Boleto', 1),
+(2, 'Credito', 6),
+(3, 'Debito', 1);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `titularcartao`
+-- Table structure for table `titularcartao`
 --
 
 CREATE TABLE `titularcartao` (
@@ -763,7 +697,7 @@ CREATE TABLE `titularcartao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `titularcartao`
+-- Dumping data for table `titularcartao`
 --
 
 INSERT INTO `titularcartao` (`idcartao`, `nome`, `numero`, `validade`, `cpf`, `bandeira`, `idlogin`) VALUES
@@ -772,7 +706,7 @@ INSERT INTO `titularcartao` (`idcartao`, `nome`, `numero`, `validade`, `cpf`, `b
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `transportadora`
+-- Table structure for table `transportadora`
 --
 
 CREATE TABLE `transportadora` (
@@ -785,7 +719,7 @@ CREATE TABLE `transportadora` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `transportadora`
+-- Dumping data for table `transportadora`
 --
 
 INSERT INTO `transportadora` (`idtransportadora`, `razaosocial`, `nomefantasia`, `cnpj`, `inscest`, `idendereco`) VALUES
@@ -796,7 +730,7 @@ INSERT INTO `transportadora` (`idtransportadora`, `razaosocial`, `nomefantasia`,
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuariopermissoes`
+-- Table structure for table `usuariopermissoes`
 --
 
 CREATE TABLE `usuariopermissoes` (
@@ -805,7 +739,7 @@ CREATE TABLE `usuariopermissoes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `usuariopermissoes`
+-- Dumping data for table `usuariopermissoes`
 --
 
 INSERT INTO `usuariopermissoes` (`idfuncionario`, `idpermissao`) VALUES
@@ -817,7 +751,7 @@ INSERT INTO `usuariopermissoes` (`idfuncionario`, `idpermissao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `vendas`
+-- Table structure for table `vendas`
 --
 
 CREATE TABLE `vendas` (
@@ -834,9 +768,6 @@ CREATE TABLE `vendas` (
   `nomeproduto` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `vendas`
---
 --
 -- Indexes for dumped tables
 --
@@ -1049,141 +980,122 @@ ALTER TABLE `vendas`
 -- AUTO_INCREMENT for table `enderecos`
 --
 ALTER TABLE `enderecos`
-  MODIFY `idendereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
-
+  MODIFY `idendereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 --
 -- AUTO_INCREMENT for table `entradas`
 --
 ALTER TABLE `entradas`
   MODIFY `lancamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `envio`
 --
 ALTER TABLE `envio`
   MODIFY `idenvio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `fabricantes`
 --
 ALTER TABLE `fabricantes`
-  MODIFY `idfabricante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `idfabricante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `fornecedor`
 --
 ALTER TABLE `fornecedor`
-  MODIFY `idfornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `idfornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `grupo`
 --
 ALTER TABLE `grupo`
-  MODIFY `idgrupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `idgrupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `idlogin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
+  MODIFY `idlogin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT for table `permissoes`
 --
 ALTER TABLE `permissoes`
   MODIFY `idpermissao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `pfisicacontatos`
 --
 ALTER TABLE `pfisicacontatos`
-  MODIFY `idpfcontato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
+  MODIFY `idpfcontato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `pfisicadados`
 --
 ALTER TABLE `pfisicadados`
-  MODIFY `idpfisica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-
+  MODIFY `idpfisica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT for table `pjuridicacontatos`
 --
 ALTER TABLE `pjuridicacontatos`
-  MODIFY `idpjcontato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `idpjcontato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `pjuridicadados`
 --
 ALTER TABLE `pjuridicadados`
-  MODIFY `idpjuridica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
+  MODIFY `idpjuridica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `Codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `Codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT for table `promocoes`
 --
 ALTER TABLE `promocoes`
   MODIFY `idpromocao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `tecnologias`
 --
 ALTER TABLE `tecnologias`
-  MODIFY `idtecnologia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `idtecnologia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `tipopagamentos`
 --
 ALTER TABLE `tipopagamentos`
   MODIFY `idtipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `titularcartao`
 --
 ALTER TABLE `titularcartao`
   MODIFY `idcartao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `transportadora`
 --
 ALTER TABLE `transportadora`
   MODIFY `idtransportadora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `vendas`
 --
 ALTER TABLE `vendas`
-  MODIFY `lancamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
-
+  MODIFY `lancamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 --
 -- Constraints for dumped tables
 --
 
 --
--- Limitadores para a tabela `contasreceber`
+-- Constraints for table `contasreceber`
 --
 ALTER TABLE `contasreceber`
   ADD CONSTRAINT `ContasRec_vendas` FOREIGN KEY (`lancamento`) REFERENCES `vendas` (`lancamento`);
 
 --
--- Limitadores para a tabela `enderecos`
+-- Constraints for table `enderecos`
 --
 ALTER TABLE `enderecos`
   ADD CONSTRAINT `fk_endLogin` FOREIGN KEY (`idlogin`) REFERENCES `login` (`idlogin`);
 
 --
--- Limitadores para a tabela `entprod`
+-- Constraints for table `entprod`
 --
 ALTER TABLE `entprod`
   ADD CONSTRAINT `Ent_prod` FOREIGN KEY (`idproduto`) REFERENCES `produtos` (`Codigo`),
   ADD CONSTRAINT `Entprod_entradas` FOREIGN KEY (`lancamento`) REFERENCES `entradas` (`lancamento`);
 
 --
--- Limitadores para a tabela `entradas`
+-- Constraints for table `entradas`
 --
 ALTER TABLE `entradas`
   ADD CONSTRAINT `Ent_forn` FOREIGN KEY (`idfornecedor`) REFERENCES `fornecedor` (`idfornecedor`),
@@ -1191,78 +1103,78 @@ ALTER TABLE `entradas`
   ADD CONSTRAINT `Tranportes_ent` FOREIGN KEY (`idtransportador`) REFERENCES `transportadora` (`idtransportadora`);
 
 --
--- Limitadores para a tabela `envio`
+-- Constraints for table `envio`
 --
 ALTER TABLE `envio`
   ADD CONSTRAINT `Envio_end` FOREIGN KEY (`idendereco`) REFERENCES `enderecos` (`idendereco`),
   ADD CONSTRAINT `Envio_trans` FOREIGN KEY (`idtransportador`) REFERENCES `transportadora` (`idtransportadora`);
 
 --
--- Limitadores para a tabela `pagamentos`
+-- Constraints for table `pagamentos`
 --
 ALTER TABLE `pagamentos`
   ADD CONSTRAINT `Pagar` FOREIGN KEY (`nrodocumento`) REFERENCES `contaspagar` (`nrodocumento`);
 
 --
--- Limitadores para a tabela `prodestoque`
+-- Constraints for table `prodestoque`
 --
 ALTER TABLE `prodestoque`
   ADD CONSTRAINT `Prod_estoque` FOREIGN KEY (`idproduto`) REFERENCES `produtos` (`Codigo`);
 
 --
--- Limitadores para a tabela `prodprecos`
+-- Constraints for table `prodprecos`
 --
 ALTER TABLE `prodprecos`
   ADD CONSTRAINT `Prod_precos` FOREIGN KEY (`idproduto`) REFERENCES `produtos` (`Codigo`);
 
 --
--- Limitadores para a tabela `prodpromocao`
+-- Constraints for table `prodpromocao`
 --
 ALTER TABLE `prodpromocao`
   ADD CONSTRAINT `Prod_promo` FOREIGN KEY (`idpromocao`) REFERENCES `promocoes` (`idpromocao`),
   ADD CONSTRAINT `Promo_prod` FOREIGN KEY (`idproduto`) REFERENCES `produtos` (`Codigo`);
 
 --
--- Limitadores para a tabela `prodtecnologia`
+-- Constraints for table `prodtecnologia`
 --
 ALTER TABLE `prodtecnologia`
   ADD CONSTRAINT `Prod_tec` FOREIGN KEY (`codproduto`) REFERENCES `produtos` (`Codigo`),
   ADD CONSTRAINT `Tec_prod` FOREIGN KEY (`codtecnologia`) REFERENCES `tecnologias` (`idtecnologia`);
 
 --
--- Limitadores para a tabela `produtos`
+-- Constraints for table `produtos`
 --
 ALTER TABLE `produtos`
   ADD CONSTRAINT `Produtos_fab` FOREIGN KEY (`idfabricante`) REFERENCES `fabricantes` (`idfabricante`),
   ADD CONSTRAINT `Produtos_grupo` FOREIGN KEY (`grupo`) REFERENCES `grupo` (`idgrupo`);
 
 --
--- Limitadores para a tabela `recebimentos`
+-- Constraints for table `recebimentos`
 --
 ALTER TABLE `recebimentos`
   ADD CONSTRAINT `Recebimentos` FOREIGN KEY (`nrodocumento`) REFERENCES `contasreceber` (`nrodocumento`);
 
 --
--- Limitadores para a tabela `saiprod`
+-- Constraints for table `saiprod`
 --
 ALTER TABLE `saiprod`
   ADD CONSTRAINT `Sai_prod` FOREIGN KEY (`idproduto`) REFERENCES `produtos` (`Codigo`),
   ADD CONSTRAINT `sai_vendas` FOREIGN KEY (`lancamento`) REFERENCES `vendas` (`lancamento`);
 
 --
--- Limitadores para a tabela `titularcartao`
+-- Constraints for table `titularcartao`
 --
 ALTER TABLE `titularcartao`
   ADD CONSTRAINT `Titular_login` FOREIGN KEY (`idlogin`) REFERENCES `login` (`idlogin`);
 
 --
--- Limitadores para a tabela `usuariopermissoes`
+-- Constraints for table `usuariopermissoes`
 --
 ALTER TABLE `usuariopermissoes`
   ADD CONSTRAINT `Usu_permissoes` FOREIGN KEY (`idpermissao`) REFERENCES `permissoes` (`idpermissao`);
 
 --
--- Limitadores para a tabela `vendas`
+-- Constraints for table `vendas`
 --
 ALTER TABLE `vendas`
   ADD CONSTRAINT `Vendas_login` FOREIGN KEY (`idlogin`) REFERENCES `login` (`idlogin`);

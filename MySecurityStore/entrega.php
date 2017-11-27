@@ -27,7 +27,7 @@
         <div class="margem"></div>
         <div class="content">
             <?php
-                $idlogin = ($_SESSION['id']-1);
+                $idlogin = ($_SESSION['idlogin']);
                 $consulta3 = $conexao->query("SELECT * FROM `enderecos`, login WHERE enderecos.idlogin = login.idlogin AND login.idlogin = '$idlogin'");
                 while ($listar3=$consulta3->fetch(PDO::FETCH_ASSOC)){ 
                     $tipoendereco = $listar3['tipo'];
