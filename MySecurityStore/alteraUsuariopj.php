@@ -3,13 +3,11 @@
 
 	include("conexao.php");
 
-	$idpf = $_SESSION['id'];
-	$nome = $_POST["nome"];
-	$sexo = $_POST["sexo"];
-	$dataNasc = $_POST["dtnasc"];
-	$cpf = $_POST["cpf"];
-	$rg = $_POST["rg_nro"];
-	$orgaoEmissor = $_POST["rg_emissao"];
+	$idpj = $_SESSION['id'];
+	$razaosocial = $_POST["razaosocial"];
+	$nfantasia = $_POST["nfantasia"];
+	$cnpj = $_POST["cnpj"];
+	$inscEst = $_POST["inscEst"];
 	$email = $_POST["email"];
 	$telefone = $_POST["telefone"];
 	$celular = $_POST["celular"];
@@ -21,9 +19,8 @@
 	$bairro = $_POST["bairro"];
 	$cidade = $_POST["cidade"];
 	$estado = $_POST["estado"];
-	$pais = $_POST["pais"];
+	$pais = $_POST["pais"];	
 	$dtcadastro = date('Y-m-d');
-	
 	$consulta = $conexao->query("SELECT email,idlogin FROM login WHERE email='$email'");
 
 	$exibe = $consulta->fetch(PDO::FETCH_ASSOC);
@@ -34,18 +31,16 @@
 			$idlogin = $exibe['idlogin'];
 			
 			$incluir = $conexao->query("
-			UPDATE pfisicadados SET nome = '$nome',
-									sexo = '$sexo',
-									dtnasc = '$dataNasc',
-									cpf = '$cpf',
-									rg = '$rg',
-									orgEmissor = '$orgaoEmissor',
+			UPDATE pjuridicadados SET razaosocial = '$razaosocial',
+									nomefantasia = '$nfantasia',
+									cnpj = '$cnpj',
+									inscest = '$inscEst',
 									dtcadastro = '$dtcadastro'
-			WHERE idpfisica = '$idpf';
+			WHERE idpjuridica = '$idpj';
 			
-			UPDATE pfisicacontatos SET 	telefonefixo = '$telefone',
+			UPDATE pjuridicacontatos SET telefonefixo = '$telefone',
 										telefonecelular = '$celular' 
-			WHERE idcliente = '$idpf';
+			WHERE idcliente = '$idpj';
 			
 			UPDATE enderecos SET logradouro = '$endereco',
 									numero = '$numero',
@@ -69,21 +64,19 @@
 			$idlogin = $exibe['idlogin'];
 			
 			$incluir = $conexao->query("
-			UPDATE pfisicadados SET nome = '$nome',
-									sexo = '$sexo',
-									dtnasc = '$dataNasc',
-									cpf = '$cpf',
-									rg = '$rg',
-									orgEmissor = '$orgaoEmissor',
+			UPDATE pjuridicadados SET razaosocial = '$razaosocial',
+									nomefantasia = '$nfantasia',
+									cnpj = '$cnpj',
+									inscest = '$inscEst',
 									dtcadastro = '$dtcadastro'
-			WHERE idpfisica = '$idpf';
+			WHERE idpjuridica = '$idpj';
 			
-			UPDATE pfisicacontatos SET 	telefonefixo = '$telefone',
+			UPDATE pjuridicacontatos SET telefonefixo = '$telefone',
 										telefonecelular = '$celular' 
-			WHERE idcliente = '$idpf';
+			WHERE idcliente = '$idpj';
 			
 			UPDATE login SET email = '$email'
-			WHERE idcliente = '$idpf';
+			WHERE idcliente = '$idpj';
 			
 			UPDATE enderecos SET logradouro = '$endereco',
 									numero = '$numero',

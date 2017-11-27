@@ -429,7 +429,8 @@
 		
 					echo $exibe['telefone']."<br>";
 					echo $exibe['celular']."<br>";
-					echo $exibe['cep'];
+					echo $exibe['cep']."<br>";
+                    echo $exibe['cnpj'];
 					?>
 
 <div class="cadastro_tela">
@@ -445,7 +446,7 @@
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="pessoa_fisica">
                         <div style="padding-top:20px;">
-                            <form action="cadastroUsuariopf.php" method="POST" id="validate">  
+                            <form action="alteraUsuariopj.php" method="POST" id="validate">  
 								<div class="form-group">
                                     <label class="col-sm-2 control-label">Razão Social</label>
                                     <div class="col-sm-8">

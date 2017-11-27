@@ -34,15 +34,12 @@
 		<div class="col-sm-6"><h4 style="padding-top:20px"><?php echo $exibe['descricao']; ?></h4></div>
 		
 		<div class="col-sm-3" style="padding-top:20px">	
-		<a href="formAlterarProd.php?Codigo=<?php echo $exibe['Codigo']; ?>">	
+		<a href="formAlterarProd.php?Codigo=<?php $Codigo; ?>">	
 		<button class="btn btn-block btn-primary">
 		<span class="glyphicon glyphicon-pencil"></span> Alterar
 		</button>
 		</a>
-		</div>
-		
-		 
-				
+		</div>		
 	</div>		
 	
 	
