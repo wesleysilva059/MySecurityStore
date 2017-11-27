@@ -55,8 +55,8 @@
                                 <h2 class="fonte-rodape-title">Categorias</h2>
                                     <ul>
                                         <li class="list-group-item"><a href="busca.php?txtBusca=CFTV" title="CFTV">CFTV</a></li>
-                                        <li class="list-group-item"><a href="busca.php?txtBusca=Câmera" title="Câmeras">Câmeras</a></li>
-                                        <li class="list-group-item"><a href="busca.php?txtBusca=Cabeamento" title="Cabeamento">Cabeamento</a></li>
+                                        <li class="list-group-item"><a href="busca.php?txtBusca=camera" title="Câmeras">Câmeras</a></li>
+                                        <li class="list-group-item"><a href="busca.php?txtBusca=cabo" title="Cabeamento">Cabeamento</a></li>
                                         <li class="list-group-item"><a href="busca.php?txtBusca=DVR" title="DVRs">DVRs</a></li>
                                         <li class="list-group-item"><a href="promocoes.php" title="Promoções">Promoções</a></li>
                                     </ul>                        
