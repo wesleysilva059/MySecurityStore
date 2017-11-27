@@ -18,7 +18,7 @@ $('#pmedio').mask('000.000.000.000.000,00', {reverse: true});
 });
 </script>
 <div class="container">
-		<?php $consulta = $conexao->query("SELECT * FROM produtos WHERE Codigo='$Codigo'");
+		<?php $consulta = $conexao->query("SELECT * FROM produtos,prodprecos,prodtecnologia,prodestoque WHERE prodprecos.idproduto = produtos.Codigo AND prodtecnologia.codproduto = produtos.Codigo AND prodestoque.idproduto = produtos.Codigo AND produtos.Codigo = '$Codigo'");
 		$exibe = $consulta->fetch(PDO::FETCH_ASSOC) ?>
 		<div class="row">
 		

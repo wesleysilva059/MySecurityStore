@@ -158,9 +158,9 @@
                       <img src="Imagens/<?php echo $listar['foto']; ?>" alt="Nome da empresa: <?php echo $listar['descricao'];?>" title="Produto: <?php echo $listar['descricao'];?>">
                       <div class="product-hover">
                           <?php if ($listar['estoque']>0) { ?>
-                            <a href="carrinhoCompras.php?Codigo=<?php echo $listar['Codigo']?>" class="add-to-cart-link"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
+                            <a href="carrinhoCompras.php?Codigo=<?php echo $listar['Codigo']?>" class="add-to-cart-link" title="Adicionar ao carrinho"><i class="glyphicon glyphicon-ok"></i> Comprar</a>
 
-                            <a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar['Codigo']; ?>" class="view-details-link"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
+                            <a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar['Codigo']; ?>" class="view-details-link" title="Detalhes do produto"><i class="glyphicon glyphicon-plus"></i> Mais detalhes</a>
 
                           <?php }else{ ?>
 
@@ -168,13 +168,9 @@
                           <?php } ?>
                       </div>
                   </div>
-                    <h2 class="fonte-cont"><a href="#"><center><?php echo $listar['descricao'];?></center></a></h2>
+                    <h2 class="fonte-cont"><a href="conteudoProdutoCompra.php?Codigo=<?php echo $listar['Codigo']; ?>" title="<?php echo $listar['descricao'];?> - <?php echo $listar['pvenda'];?> reais"><center><?php echo $listar['descricao'];?></center></a></h2>
                   <div class="product-carousel-price">
                     <center>
-                        <del class="fonte-cont-preco"><strong>R$ 
-                          <?php $valorprodant = ($listar['pvenda'] *1.05);
-                            echo number_format($valorprodant, 2,',','.')?></strong>
-                        </del><br/>
                         <ins>Por: R$ <?php echo number_format($listar['pvenda'], 2,',','.');?></ins>
                     </center>
                   </div>   
