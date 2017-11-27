@@ -36,10 +36,10 @@ $('#pmedio').mask('000.000.000.000.000,00', {reverse: true});
 					<div class="form-group">
 					<label for="marca">Marca</label>
 					<select class="form-control" name="txtMarca">
-					  <option value="<?=($exibe['marca'] == 'Intelbras')?'selected':''?>">Intelbras</option>
-					  <option value="<?=($exibe['marca'] == 'LuxVision')?'selected':''?>">LuxVision</option>
-					  <option value="<?=($exibe['marca'] == 'Tecvoz')?'selected':''?>">TecVoz</option>
-					   <option value="<?=($exibe['marca'] == 'Outros')?'selected':''?>">Outros</option>
+					  <option value="Intelbras">Intelbras</option>
+					  <option value="LuxVision">LuxVision</option>
+					  <option value="TecVoz">TecVoz</option>
+					   <option value="Outros">Outros</option>
 					</select>
 					</div>
 					
@@ -70,17 +70,17 @@ $('#pmedio').mask('000.000.000.000.000,00', {reverse: true});
 					<div class="form-group">
 					<label for="garantia">Garantia</label>
 					<select class="form-control" required name="txtGarantia">
-					  <option value="<?=($exibe['garantia'] == '60')?'selected':''?>">60</option>
-					  <option value="<?=($exibe['garantia'] == '90')?'selected':''?>">90</option>
-					  <option value="<?=($exibe['garantia'] == '120')?'selected':''?>">120</option>
-					  <option value="<?=($exibe['garantia'] == '150')?'selected':''?>">150</option>
-					  <option value="<?=($exibe['garantia'] == '180')?'selected':''?>">180</option>
-					  <option value="<?=($exibe['garantia'] == '210')?'selected':''?>">210</option>
-					  <option value="<?=($exibe['garantia'] == '240')?'selected':''?>">240</option>
-					  <option value="<?=($exibe['garantia'] == '270')?'selected':''?>">270</option>
-					  <option value="<?=($exibe['garantia'] == '300')?'selected':''?>">300</option>
-					  <option value="<?=($exibe['garantia'] == '330')?'selected':''?>">330</option>
-					  <option value="<?=($exibe['garantia'] == '365')?'selected':''?>">365</option>
+					  <option value="60">60</option>
+					  <option value="90">90</option>
+					  <option value="120">120</option>
+					  <option value="150">150</option>
+					  <option value="180">180</option>
+					  <option value="210">210</option>
+					  <option value="240">240</option>
+					  <option value="270">270</option>
+					  <option value="300">300</option>
+					  <option value="330">330</option>
+					  <option value="365">365</option>
 					</select>
 					</div>
 

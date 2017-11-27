@@ -18,7 +18,7 @@
     <div class="col-md-12">
         <h1 class="text-center">Formas de entrega</h1><br><br>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-12">
         <ul class="nav nav-pills">
             <li class="active"><a href="#"><i class="fa fa-truck"></i> Formas de entrega</a></li>
             <li class="disabled"><a href="#"><i class="fa fa-money"></i> Formas de pagamento</a></li>
@@ -35,7 +35,7 @@
             ?>  
             <form name="form" method="POST">
                 <div class="row">
-                    <div class="col-sm-6 box">
+                    <div class="col-sm-4 box">
                         <h4 class="text-center">Endereço principal</h4>
                         <p>Rua: <?php echo $listar3['logradouro']; ?></p>
                         <p>Número: <?php echo $listar3['numero']; ?></p>
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                     <?php }else{ ?>    
-                    <div class="col-sm-6 box">
+                    <div class="col-sm-4 box">
                         <h4 class="text-center">Endereço Alternativo</h4>
                         <p>Rua: <?php echo $listar3['logradouro']; ?></p>
                         <p>Número: <?php echo $listar3['numero']; ?></p>
@@ -66,6 +66,7 @@
                 </div>
                 <input type="submit" value="Confirmar escolha do Endereço" name="endEnvio" style="float: center">
             </form>
+            <a href="endereco.php"><input type="submit" value="Cadastrar ou editar endereço Alternativo" name="outroEndereco" class="pull-right"></a>
             <br>
             <?php $idlogin = ($_SESSION['id']-1);
                 $consulta3 = $conexao->query("SELECT * FROM `enderecos`, login WHERE enderecos.idlogin = login.idlogin AND login.idlogin = '$idlogin'");
@@ -86,8 +87,6 @@
                 }
             ?>
             <br/><br/>
-            <a href="endereco.php?idendereco=<?php echo $idendereco ?>"><input type="submit" value="Atualizar endereço principal" name="enderecoPrincipal" class="button pull-left"></a>&nbsp&nbsp
-            <a href="endereco.php"><input type="submit" value="Cadastrar ou editar endereço Alternativo" name="outroEndereco"></a>
             <div class="container">
                 <div class="col-md-8">
                     <form name="form" method="POST">
