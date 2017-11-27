@@ -38,7 +38,7 @@ $('#pmedio').mask('000.000.000.000.000,00', {reverse: true});
 					  <option value="Intelbras">Intelbras</option>
 					  <option value="LuxVision">LuxVision</option>
 					  <option value="TecVoz">TecVoz</option>
-					   <option value="Outros">Outros</option>
+					   <option value="Outros">OUTROS</option>
 					</select>
 					</div>
 					
