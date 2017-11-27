@@ -27,7 +27,8 @@ if($consulta->rowCount()==1){
 		
 		$_SESSION['id']=$exibeUser['idcliente'];
 		$_SESSION['adm']=1;
-		
+		$_SESSION['tipousuario']=$exibeUser['tipousuario'];
+		$_SESSION['idlogin']=$exibeUser['idlogin'];
 		header('location:index.php');
 	}
 }

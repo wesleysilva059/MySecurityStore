@@ -24,7 +24,7 @@ foreach ($_SESSION['carrinho'] as $Codigo => $qnt) { // sessao carrinho criada a
                                     $produto = $exibe['descricao'];
                                     $preco = $exibe['pvenda'];
                                     $preco = number_format($exibe['pvenda'],2,',','.');
-                                    $total +=$exibe['pvenda'] *$qnt;
+                                    $total += $exibe['pvenda'] *$qnt;
                                     $nome = $exibe['descricao'];
     
 	
